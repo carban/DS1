@@ -4,7 +4,6 @@ import Modelo.Users;
 import ModeloDAO.Acceso;
 import ModeloDAO.UsersDAO;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
@@ -35,13 +34,14 @@ public class Controladora {
         
     }
     
-    public boolean createUser(String id, String fname, String lname, String pass, String position, String state, String placeid){
-        Users aU = new Users(id, fname, lname, pass, position, state, placeid);
+    public boolean createUser(String id, String fname, String lname, String position, String pass, String state, String placeid){
+        Users aU = new Users(id, fname, lname, position, pass, state, placeid);
         return usersDao.createNewUser(aU);
     }
     
     public void consultUser(String id){
         Users aU =  usersDao.consultUser(id);
+
         JOptionPane.showMessageDialog(null, "\nID: "+aU.getId()+"\nFirst Name: "+aU.getFname()+"\nLast Name: "+
                 aU.getLname()+"\nWork Position: "+aU.getPosition()+"\nPassword: "+aU.getPass()+
                 "\nState: "+aU.getState()+"\nId-Sede: "+aU.getPlaceid(), 

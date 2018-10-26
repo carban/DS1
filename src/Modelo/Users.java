@@ -10,7 +10,7 @@ public class Users {
     String state;
     String placeid;
     
-    public Users (String id, String fname, String lname, String pass, String position, String state, String placeid){
+    public Users (String id, String fname, String lname, String position, String pass, String state, String placeid){
         this.id = id;
         this.fname = fname;
         this.lname = lname;
