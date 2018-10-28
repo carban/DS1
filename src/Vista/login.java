@@ -2,12 +2,14 @@
 package Vista;
 import Controladora.*;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 public class login extends javax.swing.JFrame {
 
     Controladora control = new Controladora();
     
     public login() {
+        this.setResizable(false);
         initComponents();
     }
 
@@ -100,13 +102,25 @@ public class login extends javax.swing.JFrame {
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
         String user = userInput.getText();
         String pass = passwordInput.getText();
-        if(control.login(user, pass)=="Gerente"){
-            vistaGerente viGerente = new vistaGerente();
-            viGerente.setLocationRelativeTo(null);
-            viGerente.setVisible(true);
-            this.dispose();
+        
+        if(user.equals("") || pass.equals("")){
+            JOptionPane.showMessageDialog(null, "Error, you have null elements");
         }else{
-            JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente");
+            try {
+                int userint = Integer.parseInt(user);
+                if(userint<0){
+                    JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
+                }else if(control.login(user, pass)=="Gerente"){
+                        vistaGerente viGerente = new vistaGerente();
+                        viGerente.setLocationRelativeTo(null);
+                        viGerente.setVisible(true);
+                        this.dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
+                    }
+            }catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "The ID must be an Integer");
+            }
         }
     }//GEN-LAST:event_signInActionPerformed
 

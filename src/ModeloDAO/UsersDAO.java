@@ -40,7 +40,7 @@ public class UsersDAO {
     public boolean createNewUser(Users aUser){
         String QuerySQL = "INSERT INTO Users VALUES ("+ aUser.getId() + ", '"+aUser.getFname()+ "', '"+aUser.getLname()+ "', '"
                 +aUser.getPosition()+ "', '"+aUser.getPass()+ "', '"+aUser.getState()+ "', "+aUser.getPlaceid()+ ")";
-        String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"'";
+        String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
         System.out.println(QuerySQL);
         System.out.println(QuerySQLaux);
         Connection coneccion= this.access.getConnetion();
@@ -70,7 +70,7 @@ public class UsersDAO {
     }
     
     public Users consultUser(String id){
-        String QuerySQL = "SELECT * FROM Users WHERE idUser = '"+id+"'";
+        String QuerySQL = "SELECT * FROM Users WHERE idUser = '"+id+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
         System.out.println("Connection: "+coneccion);
@@ -120,5 +120,41 @@ public class UsersDAO {
         }
         return null;
     }
+
+    public boolean updateUser(Users aUser) {
+            String QuerySQL = "UPDATE Users SET first_name='"+aUser.getFname()+ "', last_name='"+aUser.getLname()+
+                    "', work_position='"+aUser.getPosition()+ "', stateuser='"+aUser.getState()+
+                    "', idsedes='"+aUser.getPlaceid()+"' WHERE iduser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
+            
+        String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
+        System.out.println(QuerySQL);
+        System.out.println(QuerySQLaux);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQLaux);
+            System.out.println("resultado: "+resultado);
+            if(resultado.next()){
+                int res = sentencia.executeUpdate(QuerySQL);
+                if(res==1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return false;    
+        
+    }
+      
     
 }
