@@ -26,6 +26,12 @@ public class UsersDAO {
                 if(cargo.equals("Gerente")){
                     return "Gerente";
                 }
+                else if(cargo.equals("Jefe de Taller")){
+                    return "Jefe de Taller";
+                }
+                else if(cargo.equals("Vendedor")){
+                    return "Vendedor";
+                }
             }else{
                 return "error";
             }

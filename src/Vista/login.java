@@ -102,7 +102,7 @@ public class login extends javax.swing.JFrame {
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
         String user = userInput.getText();
         String pass = passwordInput.getText();
-        
+        String aux = control.login(user, pass); //esto lo hago para que no se ejecute varias veces el llamado a este metodo
         if(user.equals("") || pass.equals("")){
             JOptionPane.showMessageDialog(null, "Error, you have null elements");
         }else{
@@ -110,12 +110,23 @@ public class login extends javax.swing.JFrame {
                 int userint = Integer.parseInt(user);
                 if(userint<0){
                     JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
-                }else if(control.login(user, pass)=="Gerente"){
+                }else if(aux =="Gerente"){
                         vistaGerente viGerente = new vistaGerente();
                         viGerente.setLocationRelativeTo(null);
                         viGerente.setVisible(true);
                         this.dispose();
-                }else{
+                }else if(aux =="Vendedor"){
+                    vistaVendedor viVendedor = new vistaVendedor();
+                    viVendedor.setLocationRelativeTo(null);
+                    viVendedor.setVisible(true);
+                    this.dispose();
+                }else if(aux =="Jefe de Taller"){
+                    vistaJefeTaller viJefeTaller = new vistaJefeTaller();
+                    viJefeTaller.setLocationRelativeTo(null);
+                    viJefeTaller.setVisible(true);
+                    this.dispose();
+                }
+                else{
                     JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
                     }
             }catch (NumberFormatException e){
