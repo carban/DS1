@@ -20,7 +20,7 @@ public class vistaGerente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPaneSedes = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         exit = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
@@ -50,18 +50,36 @@ public class vistaGerente extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        idSedeInput = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        cityInput = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        adressInput = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        comboStateSede = new javax.swing.JComboBox<>();
+        jLabel20 = new javax.swing.JLabel();
+        comboJefe = new javax.swing.JComboBox<>();
+        createButtonSedes = new javax.swing.JButton();
+        jComboConsultaSede = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        consultButtonSedes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTabbedPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        jTabbedPane1.setFont(new java.awt.Font("Khmer OS", 1, 14)); // NOI18N
+        jTabbedPaneSedes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTabbedPaneSedes.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPaneSedes.setFont(new java.awt.Font("Khmer OS", 1, 14)); // NOI18N
 
         exit.setBackground(new java.awt.Color(255, 102, 102));
         exit.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
         exit.setForeground(new java.awt.Color(255, 255, 255));
         exit.setText("Sign Out");
-        exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
@@ -83,7 +101,7 @@ public class vistaGerente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(304, 304, 304)
                         .addComponent(jLabel14)))
-                .addContainerGap(307, Short.MAX_VALUE))
+                .addContainerGap(507, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,7 +113,7 @@ public class vistaGerente extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Profile", jPanel1);
+        jTabbedPaneSedes.addTab("Profile", jPanel1);
 
         jLabel3.setText("ID user: ");
 
@@ -146,7 +164,7 @@ public class vistaGerente extends javax.swing.JFrame {
         createButton.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
         createButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save.png"))); // NOI18N
         createButton.setText("SAVE");
-        createButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        createButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createButtonActionPerformed(evt);
@@ -162,7 +180,7 @@ public class vistaGerente extends javax.swing.JFrame {
         consultButton.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
         consultButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search.png"))); // NOI18N
         consultButton.setText("SEARCH");
-        consultButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        consultButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         consultButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultButtonActionPerformed(evt);
@@ -232,7 +250,7 @@ public class vistaGerente extends javax.swing.JFrame {
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(comboPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 37, Short.MAX_VALUE))
+                        .addGap(0, 165, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,44 +308,178 @@ public class vistaGerente extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Users", jPanel2);
+        jTabbedPaneSedes.addTab("Users", jPanel2);
 
         jLabel15.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel15.setText("PLACES");
+
+        jLabel1.setText("Crear una nueva sede");
+
+        jLabel2.setText("Consultar o modificar sedes");
+
+        jLabel16.setText("ID sede:");
+
+        jLabel17.setText("Ciudad:");
+
+        jLabel18.setText("Direccion:");
+
+        jLabel19.setText("Estado:");
+
+        comboStateSede.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "T", "F" }));
+
+        jLabel20.setText("Jefe:");
+
+        comboJefe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
+        comboJefe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                comboJefeMouseEntered(evt);
+            }
+        });
+
+        createButtonSedes.setBackground(new java.awt.Color(204, 255, 204));
+        createButtonSedes.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        createButtonSedes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save.png"))); // NOI18N
+        createButtonSedes.setText("SAVE");
+        createButtonSedes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        createButtonSedes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createButtonSedesActionPerformed(evt);
+            }
+        });
+
+        jComboConsultaSede.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione sede:" }));
+        jComboConsultaSede.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jComboConsultaSedeMouseEntered(evt);
+            }
+        });
+
+        jLabel21.setText("Sede:");
+
+        consultButtonSedes.setBackground(new java.awt.Color(102, 153, 255));
+        consultButtonSedes.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        consultButtonSedes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search.png"))); // NOI18N
+        consultButtonSedes.setText("SEARCH");
+        consultButtonSedes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        consultButtonSedes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultButtonSedesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(303, 303, 303)
-                .addComponent(jLabel15)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel19))
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(idSedeInput)
+                                    .addComponent(comboStateSede, 0, 126, Short.MAX_VALUE))
+                                .addGap(48, 48, 48)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel17)
+                                            .addComponent(jLabel20))
+                                        .addGap(27, 27, 27)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(comboJefe, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addComponent(cityInput, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(90, 90, 90)
+                                                .addComponent(jLabel18)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(adressInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(createButtonSedes, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel21)
+                                .addGap(40, 40, 40)
+                                .addComponent(jComboConsultaSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(57, Short.MAX_VALUE))))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(303, 303, 303)
+                        .addComponent(jLabel15))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(334, 334, 334)
+                        .addComponent(consultButtonSedes)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel15)
-                .addContainerGap(364, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(30, 30, 30)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(idSedeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(cityInput, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18)
+                    .addComponent(adressInput, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(comboStateSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20)
+                    .addComponent(comboJefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(createButtonSedes, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboConsultaSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addGap(18, 18, 18)
+                .addComponent(consultButtonSedes, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
 
-        jTabbedPane1.addTab("Places", jPanel3);
+        jTabbedPaneSedes.addTab("Places", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPaneSedes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPaneSedes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jTabbedPane1.setIconAt(0, new javax.swing.ImageIcon(getClass().getResource("/Images/profile.png")));
-        jTabbedPane1.setIconAt(1, new javax.swing.ImageIcon(getClass().getResource("/Images/users2.png")));
-        jTabbedPane1.setIconAt(2, new javax.swing.ImageIcon(getClass().getResource("/Images/house.png")));
+        jTabbedPaneSedes.setIconAt(0, new javax.swing.ImageIcon(getClass().getResource("/Images/profile.png")));
+        jTabbedPaneSedes.setIconAt(1, new javax.swing.ImageIcon(getClass().getResource("/Images/users2.png")));
+        jTabbedPaneSedes.setIconAt(2, new javax.swing.ImageIcon(getClass().getResource("/Images/house.png")));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -387,6 +539,46 @@ public class vistaGerente extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_exitActionPerformed
 
+    private void createButtonSedesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonSedesActionPerformed
+        String[] cadena = comboJefe.getItemAt(comboJefe.getSelectedIndex()).split(",");
+        if(idSedeInput.getText().equals("") || cityInput.getText().equals("") || adressInput.getText().equals("") || cadena[0].equals("Seleccione")){
+            JOptionPane.showMessageDialog(null, "Error, hay algun campo vacio");
+        }else{
+            try{
+                int id = Integer.parseInt(idSedeInput.getText());
+                if(id <= 0){
+                    JOptionPane.showMessageDialog(null, "El ID debe ser mayor o igual a cero");
+                }
+                else if(control.createSede(idSedeInput.getText(), cityInput.getText(), adressInput.getText(), comboStateSede.getItemAt(comboStateSede.getSelectedIndex()),cadena[0])){
+                    this.cleanCreateSede();
+                    JOptionPane.showMessageDialog(null, "Sede creada exitosamente");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Datos incorrectos");
+                }
+            }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "El campo ID debe ser numerico");
+            }
+        }
+    }//GEN-LAST:event_createButtonSedesActionPerformed
+
+    private void jComboConsultaSedeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboConsultaSedeMouseEntered
+        control.alterCombo(jComboConsultaSede);
+    }//GEN-LAST:event_jComboConsultaSedeMouseEntered
+
+    private void comboJefeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboJefeMouseEntered
+        control.alterComboJefe(comboJefe);
+    }//GEN-LAST:event_comboJefeMouseEntered
+
+    private void consultButtonSedesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultButtonSedesActionPerformed
+        String[] cadena = jComboConsultaSede.getItemAt(jComboConsultaSede.getSelectedIndex()).split(",");
+        if(jComboConsultaSede.getItemAt(jComboConsultaSede.getSelectedIndex()).equals("Seleccione sede:")){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una sede");
+        }else{
+            control.consultSede(cadena[0]);
+            //this.cleanConsultSection();
+        }
+    }//GEN-LAST:event_consultButtonSedesActionPerformed
+
     private void cleanCreateSection() {
         idInput.setText("");
         fnameInput.setText("");
@@ -394,26 +586,48 @@ public class vistaGerente extends javax.swing.JFrame {
         passInput.setText("");
     }
     
+    private void cleanCreateSede() {
+        idSedeInput.setText("");
+        cityInput.setText("");
+        adressInput.setText("");
+    }
+    
     private void cleanConsultSection(){
         consultInput.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField adressInput;
+    private javax.swing.JTextField cityInput;
+    private javax.swing.JComboBox<String> comboJefe;
     private javax.swing.JComboBox<String> comboPlace;
     private javax.swing.JComboBox<String> comboPosition;
     private javax.swing.JComboBox<String> comboState;
+    private javax.swing.JComboBox<String> comboStateSede;
     private javax.swing.JButton consultButton;
+    private javax.swing.JButton consultButtonSedes;
     private javax.swing.JTextField consultInput;
     private javax.swing.JButton createButton;
+    private javax.swing.JButton createButtonSedes;
     private javax.swing.JButton exit;
     private javax.swing.JTextField fnameInput;
     private javax.swing.JTextField idInput;
+    private javax.swing.JTextField idSedeInput;
+    private javax.swing.JComboBox<String> jComboConsultaSede;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -426,7 +640,9 @@ public class vistaGerente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JTabbedPane jTabbedPaneSedes;
     private javax.swing.JTextField lnameInput;
     private javax.swing.JTextField passInput;
     // End of variables declaration//GEN-END:variables

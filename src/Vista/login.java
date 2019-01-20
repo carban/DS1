@@ -128,7 +128,7 @@ public class login extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
-                    }
+                }
             }catch (NumberFormatException e){
                 JOptionPane.showMessageDialog(null, "The ID must be an Integer");
             }
