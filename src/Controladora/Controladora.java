@@ -22,6 +22,10 @@ public class Controladora {
         return usersDao.login(user, pass);
     }
     
+    public Users consultProfile(String userID){
+        return usersDao.consultProfile(userID);
+    }
+    
     public void alterCombo(JComboBox combo){
         combo.removeAllItems();
         try {

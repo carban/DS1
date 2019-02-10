@@ -111,7 +111,7 @@ public class login extends javax.swing.JFrame {
                 if(userint<0){
                     JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
                 }else if(control.login(user, pass)=="Gerente"){
-                        vistaGerente viGerente = new vistaGerente();
+                        vistaGerente viGerente = new vistaGerente(user);
                         viGerente.setLocationRelativeTo(null);
                         viGerente.setVisible(true);
                         this.dispose();

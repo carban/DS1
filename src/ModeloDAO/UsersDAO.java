@@ -69,6 +69,38 @@ public class UsersDAO {
         return false;
     }
     
+        public Users consultProfile(String userID){
+        String QuerySQL = "SELECT * FROM Users WHERE idUser = '"+userID+"'";
+        System.out.println(QuerySQL);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+            System.out.println("resultado: "+resultado);
+            if(resultado.next()){
+                String iduser = resultado.getString("iduser");
+                String fname = resultado.getString("first_name");
+                String lname = resultado.getString("last_name");
+                String wp = resultado.getString("work_position");
+                String pass = resultado.getString("password");
+                String state = resultado.getString("stateuser");
+                String idsedes = null;
+                
+                return new Users(iduser, fname, lname, wp, pass, state, idsedes);
+            }else{
+                return new Users(null, null, null, null, null, null, null);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return new Users(null, null, null, null, null, null, null);
+    }
+    
     public Users consultUser(String id){
         String QuerySQL = "SELECT * FROM Users WHERE idUser = '"+id+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
         System.out.println(QuerySQL);
