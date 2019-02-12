@@ -1,5 +1,6 @@
 package Vista;
 import Controladora.*;
+import Modelo.Users;
 import java.awt.BorderLayout;
 import javafx.scene.paint.Color;
 import javax.swing.Icon;
@@ -10,10 +11,16 @@ public class vistaGerente extends javax.swing.JFrame {
 
     Controladora control = new Controladora();
     
-    public vistaGerente() {
+    public vistaGerente(String userID) {
         this.setResizable(false);
         initComponents();
-        
+        System.out.println("------------->");
+        Users profileInfo = control.consultProfile(userID);
+        this.profileID.setText(profileInfo.getId());
+        this.profileFName.setText(profileInfo.getFname());
+        this.profileLName.setText(profileInfo.getLname());
+        this.profileWP.setText(profileInfo.getPosition());
+        this.profileState.setText(profileInfo.getState());
     }
 
     @SuppressWarnings("unchecked")
@@ -24,6 +31,16 @@ public class vistaGerente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         exit = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        profileID = new javax.swing.JLabel();
+        profileFName = new javax.swing.JLabel();
+        profileLName = new javax.swing.JLabel();
+        profileWP = new javax.swing.JLabel();
+        profileState = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -89,6 +106,36 @@ public class vistaGerente extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel14.setText("PROFILE");
 
+        jLabel22.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel22.setText("ID: ");
+
+        jLabel23.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel23.setText("First Name:");
+
+        jLabel24.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel24.setText("Last Name:");
+
+        jLabel25.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel25.setText("Work Position: ");
+
+        jLabel26.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel26.setText("State: ");
+
+        profileID.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        profileID.setText("jLabel27");
+
+        profileFName.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        profileFName.setText("jLabel27");
+
+        profileLName.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        profileLName.setText("jLabel27");
+
+        profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        profileWP.setText("jLabel27");
+
+        profileState.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        profileState.setText("jLabel27");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -101,14 +148,56 @@ public class vistaGerente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(304, 304, 304)
                         .addComponent(jLabel14)))
-                .addContainerGap(507, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(profileWP))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel22))
+                        .addGap(94, 94, 94)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(profileID)
+                            .addComponent(profileFName))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel26))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(profileState)
+                    .addComponent(profileLName))
+                .addGap(165, 165, 165))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(profileID))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(profileFName)
+                    .addComponent(jLabel24)
+                    .addComponent(profileLName))
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(profileWP)
+                    .addComponent(jLabel26)
+                    .addComponent(profileState))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
                 .addComponent(exit)
                 .addContainerGap())
         );
@@ -250,7 +339,7 @@ public class vistaGerente extends javax.swing.JFrame {
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(comboPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 165, Short.MAX_VALUE))
+                        .addGap(0, 237, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -628,6 +717,11 @@ public class vistaGerente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -645,6 +739,11 @@ public class vistaGerente extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPaneSedes;
     private javax.swing.JTextField lnameInput;
     private javax.swing.JTextField passInput;
+    private javax.swing.JLabel profileFName;
+    private javax.swing.JLabel profileID;
+    private javax.swing.JLabel profileLName;
+    private javax.swing.JLabel profileState;
+    private javax.swing.JLabel profileWP;
     // End of variables declaration//GEN-END:variables
 
 
