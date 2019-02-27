@@ -8,16 +8,14 @@ public class Users {
     String pass;
     String position;
     String state;
-    String placeid;
     
-    public Users (String id, String fname, String lname, String position, String pass, String state, String placeid){
+    public Users (String id, String fname, String lname, String position, String pass, String state){
         this.id = id;
         this.fname = fname;
         this.lname = lname;
         this.pass = pass;
         this.position = position;
         this.state = state;
-        this.placeid = placeid;
     }
 
     public String getId() {
@@ -44,10 +42,6 @@ public class Users {
         return state;
     }
 
-    public String getPlaceid() {
-        return placeid;
-    }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -71,9 +65,4 @@ public class Users {
     public void setState(String state) {
         this.state = state;
     }
-
-    public void setPlaceid(String placeid) {
-        this.placeid = placeid;
-    }
-    
 }

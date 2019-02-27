@@ -1,6 +1,7 @@
 package ModeloDAO;
 import Modelo.Users;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 public class UsersDAO {
     Acceso access;
@@ -45,7 +46,7 @@ public class UsersDAO {
     
     public boolean createNewUser(Users aUser){
         String QuerySQL = "INSERT INTO Users VALUES ("+ aUser.getId() + ", '"+aUser.getFname()+ "', '"+aUser.getLname()+ "', '"
-                +aUser.getPosition()+ "', '"+aUser.getPass()+ "', '"+aUser.getState()+ "', "+aUser.getPlaceid()+ ")";
+                +aUser.getPosition()+ "', '"+aUser.getPass()+ "', '"+aUser.getState()+ "')";
         String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
         System.out.println(QuerySQL);
         System.out.println(QuerySQLaux);
@@ -58,7 +59,7 @@ public class UsersDAO {
             ResultSet resultado = sentencia.executeQuery(QuerySQLaux);
             System.out.println("resultado: "+resultado);
             if(resultado.next()){
-                return false;
+                JOptionPane.showMessageDialog(null, "User already exists \nTry again");
             }else{
                 int res = sentencia.executeUpdate(QuerySQL);
                 if(res==1){
@@ -93,18 +94,17 @@ public class UsersDAO {
                 String wp = resultado.getString("work_position");
                 String pass = resultado.getString("password");
                 String state = resultado.getString("stateuser");
-                String idsedes = null;
                 
-                return new Users(iduser, fname, lname, wp, pass, state, idsedes);
+                return new Users(iduser, fname, lname, wp, pass, state);
             }else{
-                return new Users(null, null, null, null, null, null, null);
+                return new Users(null, null, null, null, null, null);
             }
 
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();
         }
-        return new Users(null, null, null, null, null, null, null);
+        return new Users(null, null, null, null, null, null);
     }
     
     
@@ -126,18 +126,17 @@ public class UsersDAO {
                 String wp = resultado.getString("work_position");
                 String pass = resultado.getString("password");
                 String state = resultado.getString("stateuser");
-                String idsedes = resultado.getString("idsedes");
                 
-                return new Users(iduser, fname, lname, wp, pass, state, idsedes);
+                return new Users(iduser, fname, lname, wp, pass, state);
             }else{
-                return new Users(null, null, null, null, null, null, null);
+                return new Users(null, null, null, null, null, null);
             }
 
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();
         }
-        return new Users(null, null, null, null, null, null, null);
+        return new Users(null, null, null, null, null, null);
     }
     
     public ResultSet comboOptions(){
@@ -162,8 +161,7 @@ public class UsersDAO {
 
     public boolean updateUser(Users aUser) {
             String QuerySQL = "UPDATE Users SET first_name='"+aUser.getFname()+ "', last_name='"+aUser.getLname()+
-                    "', work_position='"+aUser.getPosition()+ "', stateuser='"+aUser.getState()+
-                    "', idsedes='"+aUser.getPlaceid()+"' WHERE iduser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
+                    "', work_position='"+aUser.getPosition()+ "', stateuser='"+aUser.getState()+"' WHERE iduser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
             
         String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
         System.out.println(QuerySQL);

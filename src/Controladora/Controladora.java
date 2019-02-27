@@ -123,13 +123,13 @@ public class Controladora {
         
     }
     
-    public boolean createUser(String id, String fname, String lname, String position, String pass, String state, String placeid){
-        Users aU = new Users(id, fname, lname, position, pass, state, placeid);
+    public boolean createUser(String id, String fname, String lname, String position, String pass, String state){
+        Users aU = new Users(id, fname, lname, position, pass, state);
         return usersDao.createNewUser(aU);
     }
     
-    public boolean updateUser(String id, String fname, String lname, String position, String state, String placeid){
-        Users aU = new Users(id, fname, lname, position, null, state, placeid);
+    public boolean updateUser(String id, String fname, String lname, String position, String state){
+        Users aU = new Users(id, fname, lname, position, null, state);
         return usersDao.updateUser(aU);
     }
     
@@ -162,7 +162,7 @@ public class Controladora {
     public void consultSede(String id){
         Sedes aS =  sedesDao.consultSede(id);
         if(aS.getId()==null && aS.getCiudad()==null){
-            JOptionPane.showMessageDialog(null, "The sede doesn't exists");
+            JOptionPane.showMessageDialog(null, "La sede No existe");
         }else{
             /*JOptionPane.showMessageDialog(null, "\nID: "+aU.getId()+"\nFirst Name: "+aU.getFname()+"\nLast Name: "+
                     aU.getLname()+"\nWork Position: "+aU.getPosition()+"\nPassword: "+aU.getPass()+

@@ -54,8 +54,6 @@ public class vistaGerente extends javax.swing.JFrame {
         passInput = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         comboState = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
-        comboPlace = new javax.swing.JComboBox<>();
         createButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
@@ -232,22 +230,7 @@ public class vistaGerente extends javax.swing.JFrame {
         jLabel8.setText("State: ");
 
         comboState.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
-        comboState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "t", "f" }));
-
-        jLabel9.setText("Place (ID, City, Address): ");
-
-        comboPlace.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
-        comboPlace.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Place" }));
-        comboPlace.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                vistaGerente.this.focusGained(evt);
-            }
-        });
-        comboPlace.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                vistaGerente.this.mouseEntered(evt);
-            }
-        });
+        comboState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "T", "F" }));
 
         createButton.setBackground(new java.awt.Color(204, 255, 204));
         createButton.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
@@ -295,7 +278,6 @@ public class vistaGerente extends javax.swing.JFrame {
                                 .addGap(308, 308, 308)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                     .addComponent(createButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(consultButton)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                         .addGap(7, 7, 7)
                                         .addComponent(jLabel13))))
@@ -308,37 +290,31 @@ public class vistaGerente extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jLabel7)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(idInput, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                                                    .addComponent(passInput)))
-                                            .addComponent(jLabel3))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jLabel6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(fnameInput)
-                                                    .addComponent(comboPosition, 0, 132, Short.MAX_VALUE)))
-                                            .addComponent(jLabel4))
+                                        .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jLabel8)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(comboState, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jLabel5)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(idInput, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                                            .addComponent(passInput)))
+                                    .addComponent(jLabel3))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel9)
+                                        .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(comboPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(fnameInput)
+                                            .addComponent(comboPosition, 0, 132, Short.MAX_VALUE)))
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(comboState, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 237, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
@@ -352,6 +328,10 @@ public class vistaGerente extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSeparator1)))))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(307, 307, 307)
+                .addComponent(consultButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,12 +358,8 @@ public class vistaGerente extends javax.swing.JFrame {
                     .addComponent(comboPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
                     .addComponent(comboState, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(comboPlace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(createButton, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addComponent(createButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -392,9 +368,9 @@ public class vistaGerente extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(consultInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(consultButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
 
         jTabbedPaneSedes.addTab("Users", jPanel2);
@@ -492,7 +468,9 @@ public class vistaGerente extends javax.swing.JFrame {
                                                 .addComponent(jLabel18)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(adressInput, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addComponent(createButtonSedes, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(57, 57, 57)
+                                        .addComponent(createButtonSedes, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel2)
@@ -503,14 +481,14 @@ public class vistaGerente extends javax.swing.JFrame {
                                 .addComponent(jLabel21)
                                 .addGap(40, 40, 40)
                                 .addComponent(jComboConsultaSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(57, Short.MAX_VALUE))))
+                        .addContainerGap(86, Short.MAX_VALUE))))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(303, 303, 303)
                         .addComponent(jLabel15))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(334, 334, 334)
+                        .addGap(342, 342, 342)
                         .addComponent(consultButtonSedes)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -538,9 +516,9 @@ public class vistaGerente extends javax.swing.JFrame {
                     .addComponent(comboStateSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
                     .addComponent(comboJefe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(createButtonSedes, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -592,16 +570,15 @@ public class vistaGerente extends javax.swing.JFrame {
     }//GEN-LAST:event_consultButtonActionPerformed
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-        String[] cadena = comboPlace.getItemAt(comboPlace.getSelectedIndex()).split(",");
         //System.out.print(cadena[0]);
-        if(idInput.getText().equals("") || fnameInput.getText().equals("") || lnameInput.getText().equals("") || passInput.getText().equals("") || cadena[0]=="Select Place"){
+        if(idInput.getText().equals("") || fnameInput.getText().equals("") || lnameInput.getText().equals("") || passInput.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Error, you have null elements");
         }else{
             try{
                 int identification = Integer.parseInt(idInput.getText());
                 if(identification<0){
                     JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
-                }else if(control.createUser(idInput.getText(), fnameInput.getText(), lnameInput.getText(), comboPosition.getItemAt(comboPosition.getSelectedIndex()), passInput.getText(), comboState.getItemAt(comboState.getSelectedIndex()), cadena[0])){
+                }else if(control.createUser(idInput.getText(), fnameInput.getText(), lnameInput.getText(), comboPosition.getItemAt(comboPosition.getSelectedIndex()), passInput.getText(), comboState.getItemAt(comboState.getSelectedIndex()))){
                     this.cleanCreateSection();
                     JOptionPane.showMessageDialog(null, "Success creating user");
                 }else{
@@ -612,14 +589,6 @@ public class vistaGerente extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_createButtonActionPerformed
-
-    private void mouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseEntered
-        control.alterCombo(comboPlace);
-    }//GEN-LAST:event_mouseEntered
-
-    private void focusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_focusGained
-        //control.alterCombo(comboPlace);
-    }//GEN-LAST:event_focusGained
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         login log = new login();
@@ -689,7 +658,6 @@ public class vistaGerente extends javax.swing.JFrame {
     private javax.swing.JTextField adressInput;
     private javax.swing.JTextField cityInput;
     private javax.swing.JComboBox<String> comboJefe;
-    private javax.swing.JComboBox<String> comboPlace;
     private javax.swing.JComboBox<String> comboPosition;
     private javax.swing.JComboBox<String> comboState;
     private javax.swing.JComboBox<String> comboStateSede;
@@ -728,7 +696,6 @@ public class vistaGerente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

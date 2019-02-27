@@ -19,9 +19,7 @@ public class consultEdit extends javax.swing.JFrame {
         this.inputFN.setText(u.getFname());
         this.inputLN.setText(u.getLname());
         this.comboWP.addItem(u.getPosition());
-        this.comboS.addItem(u.getState());
-        control.alterComboInConsult(comboP, u.getPlaceid());
-        
+        this.comboS.addItem(u.getState());        
         
     }
 
@@ -36,13 +34,11 @@ public class consultEdit extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
         inputFN = new javax.swing.JTextField();
         inputLN = new javax.swing.JTextField();
         comboWP = new javax.swing.JComboBox<>();
         comboS = new javax.swing.JComboBox<>();
-        comboP = new javax.swing.JComboBox<>();
         saveButton = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
@@ -62,8 +58,6 @@ public class consultEdit extends javax.swing.JFrame {
 
         jLabel6.setText("State: ");
 
-        jLabel7.setText("Place (ID, City, Address): ");
-
         inputID.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
         inputID.setDisabledTextColor(new java.awt.Color(255, 102, 102));
         inputID.setFocusable(false);
@@ -79,9 +73,6 @@ public class consultEdit extends javax.swing.JFrame {
 
         comboS.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
         comboS.setFocusable(false);
-
-        comboP.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
-        comboP.setFocusable(false);
 
         saveButton.setBackground(new java.awt.Color(204, 255, 204));
         saveButton.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
@@ -128,16 +119,14 @@ public class consultEdit extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(inputID)
                             .addComponent(inputFN)
                             .addComponent(inputLN)
-                            .addComponent(comboWP, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(comboS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(comboP, 0, 225, Short.MAX_VALUE))))
+                            .addComponent(comboWP, 0, 225, Short.MAX_VALUE)
+                            .addComponent(comboS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(96, 96, 96))
             .addGroup(layout.createSequentialGroup()
                 .addGap(166, 166, 166)
@@ -173,11 +162,7 @@ public class consultEdit extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboS, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboP, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -191,7 +176,6 @@ public class consultEdit extends javax.swing.JFrame {
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         
         if(editing){
-            String[] cadena = comboP.getItemAt(comboP.getSelectedIndex()).split(",");
             if(inputID.getText().equals("") || inputFN.getText().equals("") || inputLN.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Error, you have null elements");
             }else{
@@ -199,7 +183,7 @@ public class consultEdit extends javax.swing.JFrame {
                     int identification = Integer.parseInt(inputID.getText());
                     if(identification<0){
                         JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente1");
-                    }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()), comboS.getItemAt(comboS.getSelectedIndex()), cadena[0])){
+                    }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()), comboS.getItemAt(comboS.getSelectedIndex()))){
                         JOptionPane.showMessageDialog(null, "Success updating user");
                         this.dispose();
                     }else{
@@ -238,9 +222,6 @@ public class consultEdit extends javax.swing.JFrame {
         }else{
            this.comboS.addItem("t"); 
         }
- 
-        control.alterComboUpdating(comboP, comboP.getItemAt(comboP.getSelectedIndex()));
-        this.comboP.setFocusable(true);
         
         this.getContentPane().setBackground(java.awt.Color.pink);
         //this.inputID.setBackground(java.awt.Color.yellow);
@@ -253,7 +234,6 @@ public class consultEdit extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> comboP;
     private javax.swing.JComboBox<String> comboS;
     private javax.swing.JComboBox<String> comboWP;
     private javax.swing.JButton editButton;
@@ -267,7 +247,6 @@ public class consultEdit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables
 }

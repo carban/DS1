@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 /**
  *
  * @author juancamilo
@@ -23,7 +24,7 @@ public class SedesDAO {
     public boolean createNewSede(Sedes aSede){
         String querySQL = "INSERT INTO Sedes VALUES ("+ aSede.getId() + ", '"+aSede.getCiudad()+ "', '"+aSede.getDireccion()+ "', '"
                 +aSede.getEstado()+ "', '"+aSede.getJefe()+ "')";
-        String querySQLaux = "SELECT idSedes FROM Users WHERE idUser = '"+aSede.getId()+"'";
+        String querySQLaux = "SELECT idSedes FROM Sedes WHERE idSedes = '"+aSede.getId()+"'";
         System.out.println(querySQL);
         System.out.println(querySQLaux);
         Connection coneccion= this.access.getConnetion();
@@ -34,7 +35,7 @@ public class SedesDAO {
             ResultSet resultado = sentencia.executeQuery(querySQLaux);
             System.out.println("resultado: "+resultado);
             if(resultado.next()){
-                return false;
+                JOptionPane.showMessageDialog(null, "La sede ya existe \nIntenta de nuevo");
             }else{
                 int res = sentencia.executeUpdate(querySQL);
                 if(res==1){
