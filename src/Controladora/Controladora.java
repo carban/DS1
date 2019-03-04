@@ -8,6 +8,7 @@ import ModeloDAO.SedesDAO;
 import Vista.ConsultEditSedes;
 import Vista.consultEdit;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
@@ -138,19 +139,8 @@ public class Controladora {
         return sedesDao.updateSede(aS);
     }
     
-    public void consultUser(String id){
-        Users aU =  usersDao.consultUser(id);
-        if(aU.getId()==null && aU.getFname()==null){
-            JOptionPane.showMessageDialog(null, "The user doesn't exists");
-        }else{
-            /*JOptionPane.showMessageDialog(null, "\nID: "+aU.getId()+"\nFirst Name: "+aU.getFname()+"\nLast Name: "+
-                    aU.getLname()+"\nWork Position: "+aU.getPosition()+"\nPassword: "+aU.getPass()+
-                    "\nState: "+aU.getState()+"\nId-Sede: "+aU.getPlaceid(), 
-                    "RESULT", JOptionPane.INFORMATION_MESSAGE);*/
-            consultEdit cons = new consultEdit(aU);
-            cons.setLocationRelativeTo(null);
-            cons.setVisible(true);
-        }
+    public ArrayList<String[]> consultUsers(){
+        return  usersDao.consultUsers();
 
     }
     

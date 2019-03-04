@@ -18,6 +18,14 @@ public class Users {
         this.state = state;
     }
 
+    public Users(String id, String fname, String lname, String position, String state) {
+        this.id = id;
+        this.fname = fname;
+        this.lname = lname;
+        this.position = position;
+        this.state = state;
+    }
+
     public String getId() {
         return id;
     }

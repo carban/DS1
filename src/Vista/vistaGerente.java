@@ -560,7 +560,7 @@ public class vistaGerente extends javax.swing.JFrame {
                 if(identification<0){
                     JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
                 }else{
-                    control.consultUser(consultInput.getText());
+                    //control.consultUser(consultInput.getText());
                     this.cleanConsultSection();
                 } 
             }catch (NumberFormatException e){

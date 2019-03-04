@@ -1,6 +1,7 @@
 package ModeloDAO;
 import Modelo.Users;
 import java.sql.*;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class UsersDAO {
@@ -108,8 +109,8 @@ public class UsersDAO {
     }
     
     
-    public Users consultUser(String id){
-        String QuerySQL = "SELECT * FROM Users WHERE idUser = '"+id+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
+    public ArrayList<String[]> consultUsers(){
+        String QuerySQL = "select iduser, first_name, last_name, work_position, stateuser from users where work_position='Jefe de Taller' union select iduser, first_name, last_name, work_position, stateuser from users where work_position='Vendedor'";
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
         System.out.println("Connection: "+coneccion);
@@ -119,24 +120,28 @@ public class UsersDAO {
             System.out.println("sentencia: "+sentencia);
             ResultSet resultado = sentencia.executeQuery(QuerySQL);
             System.out.println("resultado: "+resultado);
-            if(resultado.next()){
-                String iduser = resultado.getString("iduser");
-                String fname = resultado.getString("first_name");
-                String lname = resultado.getString("last_name");
-                String wp = resultado.getString("work_position");
-                String pass = resultado.getString("password");
-                String state = resultado.getString("stateuser");
+            
+
+            ArrayList<String[]> matrixList = new ArrayList<String[]>();
+            int cont = 0;
+            while (resultado.next()) {
                 
-                return new Users(iduser, fname, lname, wp, pass, state);
-            }else{
-                return new Users(null, null, null, null, null, null);
+                String a1 = resultado.getString("iduser");
+                String a2 = resultado.getString("first_name");
+                String a3 = resultado.getString("last_name");
+                String a4 = resultado.getString("work_position");
+                String a5 = resultado.getString("stateuser");
+                String[] niu = {a1, a2, a3, a4, a5}; //Es importante crear un nuevo arreglo cada vez
+                matrixList.add(niu);
+                cont++;
             }
+            return matrixList;
 
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();
         }
-        return new Users(null, null, null, null, null, null);
+        return null;
     }
     
     public ResultSet comboOptions(){

@@ -10,6 +10,7 @@ public class consultEdit extends javax.swing.JFrame {
 
     Controladora control = new Controladora();
     boolean editing = false;
+    boolean refresh = false;
     
     public consultEdit(Users u) {
         this.setResizable(false);
@@ -21,6 +22,10 @@ public class consultEdit extends javax.swing.JFrame {
         this.comboWP.addItem(u.getPosition());
         this.comboS.addItem(u.getState());        
         
+    }
+
+    consultEdit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
@@ -171,6 +176,7 @@ public class consultEdit extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
@@ -184,8 +190,9 @@ public class consultEdit extends javax.swing.JFrame {
                     if(identification<0){
                         JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente1");
                     }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()), comboS.getItemAt(comboS.getSelectedIndex()))){
+                        refresh = true;
                         JOptionPane.showMessageDialog(null, "Success updating user");
-                        this.dispose();
+//                        this.dispose();
                     }else{
                         JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente2");
                     }
