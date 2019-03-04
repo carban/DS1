@@ -19,6 +19,8 @@ public class consultEdit extends javax.swing.JFrame {
         this.inputID.setText(u.getId());
         this.inputFN.setText(u.getFname());
         this.inputLN.setText(u.getLname());
+        this.inputTel.setText(u.getTel());
+        this.inputDir.setText(u.getDir());
         this.comboWP.addItem(u.getPosition());
         this.comboS.addItem(u.getState());        
         
@@ -47,6 +49,10 @@ public class consultEdit extends javax.swing.JFrame {
         saveButton = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
+        inputTel = new javax.swing.JTextField();
+        inputDir = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,6 +114,14 @@ public class consultEdit extends javax.swing.JFrame {
             }
         });
 
+        inputTel.setFocusable(false);
+
+        inputDir.setFocusable(false);
+
+        jLabel7.setText("Telefono:");
+
+        jLabel8.setText("Direccion:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,16 +131,23 @@ public class consultEdit extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(169, 169, 169)
                         .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)))
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inputDir)
+                            .addComponent(inputTel)
                             .addComponent(inputID)
                             .addComponent(inputFN)
                             .addComponent(inputLN)
@@ -138,9 +159,9 @@ public class consultEdit extends javax.swing.JFrame {
                 .addComponent(saveButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(editButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exitBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,18 +182,26 @@ public class consultEdit extends javax.swing.JFrame {
                     .addComponent(inputLN, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboWP, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(inputTel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboS, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(inputDir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboWP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(exitBtn))
-                .addGap(51, 51, 51))
+                .addGap(28, 28, 28))
         );
 
         pack();
@@ -189,10 +218,10 @@ public class consultEdit extends javax.swing.JFrame {
                     int identification = Integer.parseInt(inputID.getText());
                     if(identification<0){
                         JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente1");
-                    }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()), comboS.getItemAt(comboS.getSelectedIndex()))){
+                    }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), inputTel.getText(), inputDir.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()), comboS.getItemAt(comboS.getSelectedIndex()))){
                         refresh = true;
                         JOptionPane.showMessageDialog(null, "Success updating user");
-//                        this.dispose();
+                        this.dispose();
                     }else{
                         JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente2");
                     }
@@ -215,6 +244,8 @@ public class consultEdit extends javax.swing.JFrame {
         //this.inputID.setFocusable(true); 
         this.inputFN.setFocusable(true);
         this.inputLN.setFocusable(true);
+        this.inputTel.setFocusable(true);
+        this.inputDir.setFocusable(true);
         
         this.comboWP.setFocusable(true);
         if(comboWP.getItemAt(comboWP.getSelectedIndex()).equals("Jefe de Taller")){
@@ -245,15 +276,19 @@ public class consultEdit extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboWP;
     private javax.swing.JButton editButton;
     private javax.swing.JButton exitBtn;
+    private javax.swing.JTextField inputDir;
     private javax.swing.JTextField inputFN;
     private javax.swing.JTextField inputID;
     private javax.swing.JTextField inputLN;
+    private javax.swing.JTextField inputTel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables
 }

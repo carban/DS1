@@ -124,13 +124,13 @@ public class Controladora {
         
     }
     
-    public boolean createUser(String id, String fname, String lname, String position, String pass, String state){
-        Users aU = new Users(id, fname, lname, position, pass, state);
+    public boolean createUser(String id, String fname, String lname, String telefono, String direccion, String position, String pass, String state){
+        Users aU = new Users(id, fname, lname, telefono, direccion, position, pass, state);
         return usersDao.createNewUser(aU);
     }
     
-    public boolean updateUser(String id, String fname, String lname, String position, String state){
-        Users aU = new Users(id, fname, lname, position, null, state);
+    public boolean updateUser(String id, String fname, String lname, String telefono, String direccion, String position, String state){
+        Users aU = new Users(id, fname, lname, telefono, direccion, position, state);
         return usersDao.updateUser(aU);
     }
     

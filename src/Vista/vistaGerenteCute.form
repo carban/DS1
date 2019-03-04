@@ -451,8 +451,8 @@
                               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="profileWP" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                  <Component id="profileDir" min="-2" max="-2" attributes="0"/>
+                                  <Component id="profileTel" min="-2" max="-2" attributes="0"/>
                                   <Component id="profileLName" min="-2" max="-2" attributes="0"/>
                                   <Component id="profileID" min="-2" max="-2" attributes="0"/>
                                   <Component id="profileFName" min="-2" max="-2" attributes="0"/>
@@ -486,12 +486,12 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="profileTel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="profileDir" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -593,7 +593,7 @@
                 <Property name="text" type="java.lang.String" value="jLabel15"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel18">
+            <Component class="javax.swing.JLabel" name="profileTel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="DejaVu Sans" size="14" style="0"/>
@@ -601,7 +601,7 @@
                 <Property name="text" type="java.lang.String" value="jLabel15"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel19">
+            <Component class="javax.swing.JLabel" name="profileDir">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="DejaVu Sans" size="14" style="0"/>
@@ -665,11 +665,11 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jTextField3" pref="174" max="32767" attributes="0"/>
+                          <Component id="telInput" pref="174" max="32767" attributes="0"/>
                           <Component id="fnameInput" pref="174" max="32767" attributes="0"/>
                           <Component id="idInput" max="32767" attributes="0"/>
                           <Component id="lnameInput" pref="174" max="32767" attributes="0"/>
-                          <Component id="jTextField7" pref="174" max="32767" attributes="0"/>
+                          <Component id="dirInput" pref="174" max="32767" attributes="0"/>
                           <Component id="passInput" alignment="0" pref="174" max="32767" attributes="0"/>
                           <Component id="comboPosition" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -699,12 +699,12 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField3" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="telInput" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField7" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="dirInput" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -793,13 +793,13 @@
             </Component>
             <Component class="javax.swing.JTextField" name="fnameInput">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField3">
+            <Component class="javax.swing.JTextField" name="telInput">
             </Component>
             <Component class="javax.swing.JTextField" name="lnameInput">
             </Component>
             <Component class="javax.swing.JTextField" name="passInput">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField7">
+            <Component class="javax.swing.JTextField" name="dirInput">
             </Component>
             <Component class="javax.swing.JButton" name="createUser">
               <Properties>

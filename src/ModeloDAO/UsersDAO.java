@@ -47,7 +47,7 @@ public class UsersDAO {
     
     public boolean createNewUser(Users aUser){
         String QuerySQL = "INSERT INTO Users VALUES ("+ aUser.getId() + ", '"+aUser.getFname()+ "', '"+aUser.getLname()+ "', '"
-                +aUser.getPosition()+ "', '"+aUser.getPass()+ "', '"+aUser.getState()+ "')";
+                +aUser.getTel()+"', '"+aUser.getDir()+"', '"+aUser.getPosition()+ "', '"+aUser.getPass()+ "', '"+aUser.getState()+ "')";
         String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
         System.out.println(QuerySQL);
         System.out.println(QuerySQLaux);
@@ -92,25 +92,27 @@ public class UsersDAO {
                 String iduser = resultado.getString("iduser");
                 String fname = resultado.getString("first_name");
                 String lname = resultado.getString("last_name");
+                String tel = resultado.getString("telefono");
+                String dir = resultado.getString("direccion");
                 String wp = resultado.getString("work_position");
                 String pass = resultado.getString("password");
                 String state = resultado.getString("stateuser");
                 
-                return new Users(iduser, fname, lname, wp, pass, state);
+                return new Users(iduser, fname, lname, tel, dir, wp, pass, state);
             }else{
-                return new Users(null, null, null, null, null, null);
+                return new Users(null, null, null, null, null, null, null, null);
             }
 
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();
         }
-        return new Users(null, null, null, null, null, null);
+        return new Users(null, null, null, null, null, null, null, null);
     }
     
     
     public ArrayList<String[]> consultUsers(){
-        String QuerySQL = "select iduser, first_name, last_name, work_position, stateuser from users where work_position='Jefe de Taller' union select iduser, first_name, last_name, work_position, stateuser from users where work_position='Vendedor'";
+        String QuerySQL = "select iduser, first_name, last_name, telefono, direccion, work_position, stateuser from users where work_position='Jefe de Taller' union select iduser, first_name, last_name, telefono, direccion, work_position, stateuser from users where work_position='Vendedor'";
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
         System.out.println("Connection: "+coneccion);
@@ -129,9 +131,11 @@ public class UsersDAO {
                 String a1 = resultado.getString("iduser");
                 String a2 = resultado.getString("first_name");
                 String a3 = resultado.getString("last_name");
-                String a4 = resultado.getString("work_position");
-                String a5 = resultado.getString("stateuser");
-                String[] niu = {a1, a2, a3, a4, a5}; //Es importante crear un nuevo arreglo cada vez
+                String a4 = resultado.getString("telefono");
+                String a5 = resultado.getString("direccion");
+                String a6 = resultado.getString("work_position");
+                String a7 = resultado.getString("stateuser");
+                String[] niu = {a1, a2, a3, a4, a5, a6, a7}; //Es importante crear un nuevo arreglo cada vez
                 matrixList.add(niu);
                 cont++;
             }
@@ -165,8 +169,8 @@ public class UsersDAO {
     }
 
     public boolean updateUser(Users aUser) {
-            String QuerySQL = "UPDATE Users SET first_name='"+aUser.getFname()+ "', last_name='"+aUser.getLname()+
-                    "', work_position='"+aUser.getPosition()+ "', stateuser='"+aUser.getState()+"' WHERE iduser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
+            String QuerySQL = "UPDATE Users SET first_name='"+aUser.getFname()+ "', last_name='"+aUser.getLname()
+                    +"', telefono='"+aUser.getTel()+"', direccion='"+aUser.getDir()+"', work_position='"+aUser.getPosition()+ "', stateuser='"+aUser.getState()+"' WHERE iduser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
             
         String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
         System.out.println(QuerySQL);

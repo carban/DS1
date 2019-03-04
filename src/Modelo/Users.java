@@ -7,21 +7,27 @@ public class Users {
     String lname;
     String pass;
     String position;
+    String tel;
+    String dir;
     String state;
     
-    public Users (String id, String fname, String lname, String position, String pass, String state){
+    public Users (String id, String fname, String lname, String tel, String dir, String position, String pass, String state){
         this.id = id;
         this.fname = fname;
         this.lname = lname;
         this.pass = pass;
         this.position = position;
+        this.tel = tel;
+        this.dir = dir;
         this.state = state;
     }
 
-    public Users(String id, String fname, String lname, String position, String state) {
+    public Users(String id, String fname, String lname, String tel, String dir, String position, String state) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
+        this.tel = tel;
+        this.dir = dir;
         this.position = position;
         this.state = state;
     }
@@ -73,4 +79,22 @@ public class Users {
     public void setState(String state) {
         this.state = state;
     }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getDir() {
+        return dir;
+    }
+
+    public void setDir(String dir) {
+        this.dir = dir;
+    }
+    
+  
 }

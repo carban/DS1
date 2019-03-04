@@ -9,6 +9,8 @@ import Controladora.Controladora;
 import Modelo.Users;
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -23,6 +25,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
      */
     Controladora control = new Controladora();
     boolean editing = false;
+    boolean refresh = false;
     DefaultTableModel md;
             
     public vistaGerenteCute(String userID) {
@@ -36,10 +39,12 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         this.profileID.setText(profileInfo.getId());
         this.profileFName.setText(profileInfo.getFname());
         this.profileLName.setText(profileInfo.getLname());
+        this.profileTel.setText(profileInfo.getTel());
+        this.profileDir.setText(profileInfo.getDir());
         this.profileWP.setText(profileInfo.getPosition());
         
         String data[][] = {};
-        String columnNames[]={"Id","Nombre","Apellido","Posicion","Estado"};
+        String columnNames[]={"Id","Nombre","Apellido","Telefono","Direccion","Posicion","Estado"};
         md = new DefaultTableModel(data, columnNames);
         tablaDatos.setModel(md);
     }
@@ -81,8 +86,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         profileFName = new javax.swing.JLabel();
         profileID = new javax.swing.JLabel();
         profileLName = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        profileTel = new javax.swing.JLabel();
+        profileDir = new javax.swing.JLabel();
         profileWP = new javax.swing.JLabel();
         pink = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -95,10 +100,10 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         idInput = new javax.swing.JTextField();
         fnameInput = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        telInput = new javax.swing.JTextField();
         lnameInput = new javax.swing.JTextField();
         passInput = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        dirInput = new javax.swing.JTextField();
         createUser = new javax.swing.JButton();
         comboPosition = new javax.swing.JComboBox<>();
         green = new javax.swing.JPanel();
@@ -389,11 +394,11 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         profileLName.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
         profileLName.setText("jLabel15");
 
-        jLabel18.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
-        jLabel18.setText("jLabel15");
+        profileTel.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileTel.setText("jLabel15");
 
-        jLabel19.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
-        jLabel19.setText("jLabel15");
+        profileDir.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileDir.setText("jLabel15");
 
         profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
         profileWP.setText("jLabel15");
@@ -423,8 +428,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(profileWP)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel18)
+                            .addComponent(profileDir)
+                            .addComponent(profileTel)
                             .addComponent(profileLName)
                             .addComponent(profileID)
                             .addComponent(profileFName))))
@@ -450,11 +455,11 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel18))
+                    .addComponent(profileTel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jLabel19))
+                    .addComponent(profileDir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -528,11 +533,11 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                         .addComponent(jLabel23)
                         .addGap(117, 117, 117)))
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                    .addComponent(telInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                     .addComponent(fnameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                     .addComponent(idInput)
                     .addComponent(lnameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                    .addComponent(dirInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                     .addComponent(passInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                     .addComponent(comboPosition, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(282, 282, 282))
@@ -556,11 +561,11 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                     .addComponent(jLabel17))
                 .addGap(18, 18, 18)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(telInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
                 .addGap(18, 18, 18)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dirInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23))
                 .addGap(18, 18, 18)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -767,14 +772,14 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void createUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserActionPerformed
-                if(idInput.getText().equals("") || fnameInput.getText().equals("") || lnameInput.getText().equals("") || passInput.getText().equals("")){
+                if(idInput.getText().equals("") || fnameInput.getText().equals("") || lnameInput.getText().equals("") || telInput.getText().equals("") || dirInput.getText().equals("") || passInput.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Error, you have null elements");
         }else{
             try{
                 int identification = Integer.parseInt(idInput.getText());
                 if(identification<0){
                     JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
-                }else if(control.createUser(idInput.getText(), fnameInput.getText(), lnameInput.getText(), comboPosition.getItemAt(comboPosition.getSelectedIndex()), passInput.getText(), "T")){
+                }else if(control.createUser(idInput.getText(), fnameInput.getText(), lnameInput.getText(), telInput.getText(), dirInput.getText(), comboPosition.getItemAt(comboPosition.getSelectedIndex()), passInput.getText(), "T")){
                     this.cleanCreateSection();
                     JOptionPane.showMessageDialog(null, "Success creating user");
                 }else{
@@ -801,10 +806,12 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         String aid = tablaDatos.getModel().getValueAt(index, 0).toString();
         String anombre = tablaDatos.getModel().getValueAt(index, 1).toString();
         String aapellido = tablaDatos.getModel().getValueAt(index, 2).toString();
-        String aposicion = tablaDatos.getModel().getValueAt(index, 3).toString();
-        String aestado = tablaDatos.getModel().getValueAt(index, 4).toString();
+        String atel = tablaDatos.getModel().getValueAt(index, 3).toString();
+        String adir = tablaDatos.getModel().getValueAt(index, 4).toString();
+        String aposicion = tablaDatos.getModel().getValueAt(index, 5).toString();
+        String aestado = tablaDatos.getModel().getValueAt(index, 6).toString();
         
-        consultEdit ce = new consultEdit(new Users(aid, anombre, aapellido, aposicion, aestado));
+        consultEdit ce = new consultEdit(new Users(aid, anombre, aapellido, atel, adir, aposicion, aestado));
         ce.setVisible(true);
     }//GEN-LAST:event_editarUserActionPerformed
 
@@ -812,6 +819,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         idInput.setText("");
         fnameInput.setText("");
         lnameInput.setText("");
+        telInput.setText("");
+        dirInput.setText("");
         passInput.setText("");
     }
     
@@ -841,6 +850,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JButton cargarButton;
     private javax.swing.JComboBox<String> comboPosition;
     private javax.swing.JButton createUser;
+    private javax.swing.JTextField dirInput;
     private javax.swing.JButton editarUser;
     private javax.swing.JTextField fnameInput;
     private javax.swing.JPanel green;
@@ -858,8 +868,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
@@ -877,19 +885,20 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField lnameInput;
     private javax.swing.JPanel parent;
     private javax.swing.JTextField passInput;
     private javax.swing.JPanel pink;
+    private javax.swing.JLabel profileDir;
     private javax.swing.JLabel profileFName;
     private javax.swing.JLabel profileID;
     private javax.swing.JLabel profileLName;
+    private javax.swing.JLabel profileTel;
     private javax.swing.JLabel profileWP;
     private javax.swing.JPanel purple;
     private javax.swing.JPanel side_pane;
     private javax.swing.JTable tablaDatos;
+    private javax.swing.JTextField telInput;
     private javax.swing.JPanel yellow;
     // End of variables declaration//GEN-END:variables
 }
