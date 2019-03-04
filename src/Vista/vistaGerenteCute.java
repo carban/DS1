@@ -590,17 +590,17 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         tablaDatos.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
         tablaDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Apellido", "Posicion", "Estado"
+                "ID", "Nombre", "Apellido", "Telefono", "Direccion", "Posicion", "Estado"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -616,7 +616,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
             }
         });
 
-        editarUser.setText("Editar");
+        editarUser.setText("EDITAR");
         editarUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editarUserActionPerformed(evt);
@@ -628,31 +628,32 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         greenLayout.setHorizontalGroup(
             greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, greenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13)
+                .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(greenLayout.createSequentialGroup()
+                        .addGap(351, 351, 351)
+                        .addComponent(cargarButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(greenLayout.createSequentialGroup()
+                        .addContainerGap(384, Short.MAX_VALUE)
+                        .addComponent(jLabel13)))
                 .addGap(362, 362, 362))
             .addGroup(greenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cargarButton)
-                    .addComponent(editarUser))
-                .addContainerGap(300, Short.MAX_VALUE))
+                .addComponent(jScrollPane2)
+                .addContainerGap())
         );
         greenLayout.setVerticalGroup(
             greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(greenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel13)
-                .addGap(31, 31, 31)
-                .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(greenLayout.createSequentialGroup()
-                        .addComponent(cargarButton)
-                        .addGap(56, 56, 56)
-                        .addComponent(editarUser)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGap(68, 68, 68)
+                .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cargarButton)
+                    .addComponent(editarUser))
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(234, Short.MAX_VALUE))
         );
 
         parent.add(green, "card4");
