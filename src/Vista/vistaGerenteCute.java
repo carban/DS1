@@ -58,6 +58,25 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        editPopUp = new javax.swing.JFrame();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        inputID = new javax.swing.JTextField();
+        inputFN = new javax.swing.JTextField();
+        inputLN = new javax.swing.JTextField();
+        comboWP = new javax.swing.JComboBox<>();
+        comboS = new javax.swing.JComboBox<>();
+        saveButton = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
+        exitBtn = new javax.swing.JButton();
+        inputTel = new javax.swing.JTextField();
+        inputDir = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
         side_pane = new javax.swing.JPanel();
         btn_1 = new javax.swing.JPanel();
         ind_1 = new javax.swing.JPanel();
@@ -115,6 +134,156 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         purple = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+
+        editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel19.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel19.setText("Consult / Edit");
+
+        jLabel21.setText("ID user: ");
+
+        jLabel26.setText("First name:");
+
+        jLabel27.setText("Last name: ");
+
+        jLabel28.setText("Work position: ");
+
+        jLabel29.setText("State: ");
+
+        inputID.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        inputID.setDisabledTextColor(new java.awt.Color(255, 102, 102));
+        inputID.setFocusable(false);
+
+        inputFN.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        inputFN.setFocusable(false);
+
+        inputLN.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        inputLN.setFocusable(false);
+
+        comboWP.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        comboWP.setFocusable(false);
+
+        comboS.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        comboS.setFocusable(false);
+
+        saveButton.setBackground(new java.awt.Color(204, 255, 204));
+        saveButton.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save.png"))); // NOI18N
+        saveButton.setText("SAVE");
+        saveButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+
+        editButton.setBackground(new java.awt.Color(255, 204, 204));
+        editButton.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        editButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/edit.png"))); // NOI18N
+        editButton.setText("EDIT");
+        editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
+
+        exitBtn.setText("EXIT");
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
+
+        inputTel.setFocusable(false);
+
+        inputDir.setFocusable(false);
+
+        jLabel30.setText("Telefono:");
+
+        jLabel31.setText("Direccion:");
+
+        javax.swing.GroupLayout editPopUpLayout = new javax.swing.GroupLayout(editPopUp.getContentPane());
+        editPopUp.getContentPane().setLayout(editPopUpLayout);
+        editPopUpLayout.setHorizontalGroup(
+            editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editPopUpLayout.createSequentialGroup()
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(editPopUpLayout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(jLabel19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editPopUpLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel27)
+                            .addGroup(editPopUpLayout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel28)
+                                    .addComponent(jLabel29)))
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel31))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inputDir)
+                            .addComponent(inputTel)
+                            .addComponent(inputID)
+                            .addComponent(inputFN)
+                            .addComponent(inputLN)
+                            .addComponent(comboWP, 0, 225, Short.MAX_VALUE)
+                            .addComponent(comboS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(96, 96, 96))
+            .addGroup(editPopUpLayout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addComponent(saveButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(editButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(exitBtn)
+                .addContainerGap(111, Short.MAX_VALUE))
+        );
+        editPopUpLayout.setVerticalGroup(
+            editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editPopUpLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel19)
+                .addGap(39, 39, 39)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(inputID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(inputFN, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(inputLN, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputTel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30))
+                .addGap(18, 18, 18)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputDir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboWP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(exitBtn))
+                .addGap(28, 28, 28))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -360,7 +529,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         parent.setBackground(new java.awt.Color(255, 255, 255));
         parent.setLayout(new java.awt.CardLayout());
 
-        yellow.setBackground(new java.awt.Color(204, 204, 0));
+        yellow.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel14.setText("PERFIL");
@@ -471,7 +640,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         parent.add(yellow, "card6");
 
-        pink.setBackground(new java.awt.Color(255, 0, 153));
+        pink.setBackground(new java.awt.Color(204, 204, 204));
         pink.setForeground(new java.awt.Color(255, 153, 51));
 
         jLabel15.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
@@ -582,7 +751,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         parent.add(pink, "card5");
 
-        green.setBackground(new java.awt.Color(102, 255, 102));
+        green.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel13.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel13.setText("LISTA DE USUARIOS");
@@ -658,7 +827,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         parent.add(green, "card4");
 
-        purple.setBackground(new java.awt.Color(102, 102, 255));
+        purple.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout purpleLayout = new javax.swing.GroupLayout(purple);
         purple.setLayout(purpleLayout);
@@ -811,10 +980,83 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         String adir = tablaDatos.getModel().getValueAt(index, 4).toString();
         String aposicion = tablaDatos.getModel().getValueAt(index, 5).toString();
         String aestado = tablaDatos.getModel().getValueAt(index, 6).toString();
+//        
+//        consultEdit ce = new consultEdit(new Users(aid, anombre, aapellido, atel, adir, aposicion, aestado));
+//        ce.setVisible(true);
+        this.inputID.setText(aid);
+        this.inputFN.setText(anombre);
+        this.inputLN.setText(aapellido);
+        this.inputTel.setText(atel);
+        this.inputDir.setText(adir);
+        this.comboWP.addItem(aposicion);
+        this.comboS.addItem(aestado);
         
-        consultEdit ce = new consultEdit(new Users(aid, anombre, aapellido, atel, adir, aposicion, aestado));
-        ce.setVisible(true);
+        this.editPopUp.setSize(527, 511);
+        this.editPopUp.setLocationRelativeTo(null);
+        this.editPopUp.setVisible(true);
     }//GEN-LAST:event_editarUserActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+
+        if(editing){
+            if(inputID.getText().equals("") || inputFN.getText().equals("") || inputLN.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Error, you have null elements");
+            }else{
+                try{
+                    int identification = Integer.parseInt(inputID.getText());
+                    if(identification<0){
+                        JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente1");
+                    }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), inputTel.getText(), inputDir.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()), comboS.getItemAt(comboS.getSelectedIndex()))){
+                        refresh = true;
+                        JOptionPane.showMessageDialog(null, "Success updating user");
+                        cargarTable();
+                        this.editPopUp.dispose();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente2");
+                    }
+                }catch (NumberFormatException e){
+                    JOptionPane.showMessageDialog(null, "The ID must be an Integer");
+                }
+            }
+        }else{
+            editing = false;
+            this.dispose();
+        }
+
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+
+        editing = true;
+        //LA CEDULA NO SE PUEDE MODIFICAR POR RAZONES OBVIAS...XD
+        //this.inputID.setFocusable(true);
+        this.inputFN.setFocusable(true);
+        this.inputLN.setFocusable(true);
+        this.inputTel.setFocusable(true);
+        this.inputDir.setFocusable(true);
+
+        this.comboWP.setFocusable(true);
+        if(comboWP.getItemAt(comboWP.getSelectedIndex()).equals("Jefe de Taller")){
+            this.comboWP.addItem("Vendedor");
+        }else{
+            this.comboWP.addItem("Jefe de Taller");
+        }
+
+        this.comboS.setFocusable(true);
+        if(comboS.getItemAt(comboS.getSelectedIndex()).equals("t")){
+            this.comboS.addItem("f");
+        }else{
+            this.comboS.addItem("t");
+        }
+
+        this.editPopUp.getContentPane().setBackground(java.awt.Color.pink);
+        //this.inputID.setBackground(java.awt.Color.yellow);
+    }//GEN-LAST:event_editButtonActionPerformed
+
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        // TODO add your handling code here:
+        this.editPopUp.dispose();
+    }//GEN-LAST:event_exitBtnActionPerformed
 
     private void cleanCreateSection() {
         idInput.setText("");
@@ -850,9 +1092,14 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JPanel btn_4;
     private javax.swing.JButton cargarButton;
     private javax.swing.JComboBox<String> comboPosition;
+    private javax.swing.JComboBox<String> comboS;
+    private javax.swing.JComboBox<String> comboWP;
     private javax.swing.JButton createUser;
     private javax.swing.JTextField dirInput;
+    private javax.swing.JButton editButton;
+    private javax.swing.JFrame editPopUp;
     private javax.swing.JButton editarUser;
+    private javax.swing.JButton exitBtn;
     private javax.swing.JTextField fnameInput;
     private javax.swing.JPanel green;
     private javax.swing.JTextField idInput;
@@ -860,6 +1107,11 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
     private javax.swing.JPanel ind_4;
+    private javax.swing.JTextField inputDir;
+    private javax.swing.JTextField inputFN;
+    private javax.swing.JTextField inputID;
+    private javax.swing.JTextField inputLN;
+    private javax.swing.JTextField inputTel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -869,13 +1121,21 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -897,6 +1157,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel profileTel;
     private javax.swing.JLabel profileWP;
     private javax.swing.JPanel purple;
+    private javax.swing.JButton saveButton;
     private javax.swing.JPanel side_pane;
     private javax.swing.JTable tablaDatos;
     private javax.swing.JTextField telInput;
