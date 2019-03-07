@@ -25,7 +25,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
      */
     Controladora control = new Controladora();
     boolean editing = false;
-    boolean refresh = false;
     DefaultTableModel md;
             
     public vistaGerenteCute(String userID) {
@@ -161,9 +160,13 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         inputLN.setFocusable(false);
 
         comboWP.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        comboWP.setForeground(new java.awt.Color(204, 0, 51));
+        comboWP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jefe de Taller", "Vendendor" }));
         comboWP.setFocusable(false);
 
         comboS.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        comboS.setForeground(new java.awt.Color(255, 0, 51));
+        comboS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "T", "F" }));
         comboS.setFocusable(false);
 
         saveButton.setBackground(new java.awt.Color(204, 255, 204));
@@ -988,8 +991,21 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         this.inputLN.setText(aapellido);
         this.inputTel.setText(atel);
         this.inputDir.setText(adir);
-        this.comboWP.addItem(aposicion);
-        this.comboS.addItem(aestado);
+        //this.comboWP.addItem(aposicion);
+        //this.comboS.addItem(aestado);
+        if(aposicion.equals("Jefe de Taller")){
+            this.comboWP.setSelectedIndex(0);
+        }else{
+            this.comboWP.setSelectedIndex(1);
+        }
+        this.comboWP.setEnabled(false);
+        if(aestado.equals("T")){
+            this.comboS.setSelectedIndex(0);
+        }else{
+            this.comboS.setSelectedIndex(1);
+        }
+        this.comboS.setEnabled(false);
+        
         
         this.editPopUp.setSize(527, 511);
         this.editPopUp.setLocationRelativeTo(null);
@@ -998,8 +1014,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
 
-        if(editing){
-            if(inputID.getText().equals("") || inputFN.getText().equals("") || inputLN.getText().equals("")){
+        if(editing){            
+            if(inputID.getText().equals("") || inputFN.getText().equals("") || inputLN.getText().equals("") || inputTel.getText().equals("") || inputDir.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Error, you have null elements");
             }else{
                 try{
@@ -1007,8 +1023,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                     if(identification<0){
                         JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente1");
                     }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), inputTel.getText(), inputDir.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()), comboS.getItemAt(comboS.getSelectedIndex()))){
-                        refresh = true;
                         JOptionPane.showMessageDialog(null, "Success updating user");
+                        this.editingState(false);
                         cargarTable();
                         this.editPopUp.dispose();
                     }else{
@@ -1026,33 +1042,55 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-
-        editing = true;
-        //LA CEDULA NO SE PUEDE MODIFICAR POR RAZONES OBVIAS...XD
-        //this.inputID.setFocusable(true);
-        this.inputFN.setFocusable(true);
-        this.inputLN.setFocusable(true);
-        this.inputTel.setFocusable(true);
-        this.inputDir.setFocusable(true);
-
-        this.comboWP.setFocusable(true);
-        if(comboWP.getItemAt(comboWP.getSelectedIndex()).equals("Jefe de Taller")){
-            this.comboWP.addItem("Vendedor");
-        }else{
-            this.comboWP.addItem("Jefe de Taller");
-        }
-
-        this.comboS.setFocusable(true);
-        if(comboS.getItemAt(comboS.getSelectedIndex()).equals("t")){
-            this.comboS.addItem("f");
-        }else{
-            this.comboS.addItem("t");
-        }
-
-        this.editPopUp.getContentPane().setBackground(java.awt.Color.pink);
-        //this.inputID.setBackground(java.awt.Color.yellow);
+        this.editingState(true);
     }//GEN-LAST:event_editButtonActionPerformed
 
+    private void editingState(boolean s){
+    
+        editing = s;
+        //LA CEDULA NO SE PUEDE MODIFICAR POR RAZONES OBVIAS...XD
+        //this.inputID.setFocusable(true);
+        this.inputFN.setFocusable(s);
+        this.inputLN.setFocusable(s);
+        this.inputTel.setFocusable(s);
+        this.inputDir.setFocusable(s);
+        this.comboWP.setEnabled(s);
+        this.comboS.setEnabled(s);
+        if (s) {
+             this.editPopUp.getContentPane().setBackground(java.awt.Color.pink);
+        }else{
+            this.editPopUp.getContentPane().setBackground(new Color(204, 204, 204));
+            this.comboWP.setOpaque(true);
+        }
+        /*
+        if(s){
+            //this.comboWP.removeAllItems();
+            this.comboWP.setFocusable(true);
+            if(comboWP.getItemAt(comboWP.getSelectedIndex()).equals("Jefe de Taller")){
+                this.comboWP.addItem("Vendedor");
+            }else{
+                this.comboWP.addItem("Jefe de Taller");
+            }
+            
+            //this.comboS.removeAllItems();
+            this.comboS.setFocusable(true);
+            
+            if(comboS.getItemAt(comboS.getSelectedIndex()).equals("T")){
+                this.comboS.addItem("F");
+            }else{
+                this.comboS.addItem("T");
+            }
+
+            this.editPopUp.getContentPane().setBackground(java.awt.Color.pink);    
+        }else{
+            //this.comboWP.removeAllItems();
+            this.comboWP.setEnabled(false);
+            //this.comboS.removeAllItems();
+            this.comboS.setEnabled(false);
+            this.editPopUp.getContentPane().setBackground(new Color(204, 204, 204));
+        }*/
+    }
+    
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
         this.editPopUp.dispose();

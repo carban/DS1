@@ -5,7 +5,6 @@ import Modelo.Users;
 import ModeloDAO.Acceso;
 import ModeloDAO.UsersDAO;
 import ModeloDAO.SedesDAO;
-import Vista.ConsultEditSedes;
 import Vista.consultEdit;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -147,21 +146,5 @@ public class Controladora {
     public boolean createSede(String idSede, String ciudad, String direccion,String estado ,String jefe){
         Sedes sede = new Sedes(idSede, ciudad, direccion, estado,jefe);
         return sedesDao.createNewSede(sede);
-    }
-    
-    public void consultSede(String id){
-        Sedes aS =  sedesDao.consultSede(id);
-        if(aS.getId()==null && aS.getCiudad()==null){
-            JOptionPane.showMessageDialog(null, "La sede No existe");
-        }else{
-            /*JOptionPane.showMessageDialog(null, "\nID: "+aU.getId()+"\nFirst Name: "+aU.getFname()+"\nLast Name: "+
-                    aU.getLname()+"\nWork Position: "+aU.getPosition()+"\nPassword: "+aU.getPass()+
-                    "\nState: "+aU.getState()+"\nId-Sede: "+aU.getPlaceid(), 
-                    "RESULT", JOptionPane.INFORMATION_MESSAGE);*/
-            ConsultEditSedes cons = new ConsultEditSedes(aS);
-            cons.setLocationRelativeTo(null);
-            cons.setVisible(true);
-        }
-
     }
 }
