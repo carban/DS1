@@ -60,7 +60,7 @@ public class UsersDAO {
             ResultSet resultado = sentencia.executeQuery(QuerySQLaux);
             System.out.println("resultado: "+resultado);
             if(resultado.next()){
-                JOptionPane.showMessageDialog(null, "User already exists \nTry again");
+                JOptionPane.showMessageDialog(null, "El usuario ya existe \nIntentelo nuevamente");
             }else{
                 int res = sentencia.executeUpdate(QuerySQL);
                 if(res==1){

@@ -13,6 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -46,6 +47,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         String columnNames[]={"Id","Nombre","Apellido","Telefono","Direccion","Posicion","Estado"};
         md = new DefaultTableModel(data, columnNames);
         tablaDatos.setModel(md);
+        tablaDatos.setDefaultEditor(Object.class, null);
     }
 
     /**
@@ -70,7 +72,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         comboWP = new javax.swing.JComboBox<>();
         comboS = new javax.swing.JComboBox<>();
         saveButton = new javax.swing.JButton();
-        editButton = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
         inputTel = new javax.swing.JTextField();
         inputDir = new javax.swing.JTextField();
@@ -107,6 +108,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         profileTel = new javax.swing.JLabel();
         profileDir = new javax.swing.JLabel();
         profileWP = new javax.swing.JLabel();
+        SignOut = new javax.swing.JButton();
         pink = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -137,42 +139,39 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel19.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel19.setText("Consult / Edit");
+        jLabel19.setText("Editar Usuario");
 
         jLabel21.setText("ID user: ");
 
-        jLabel26.setText("First name:");
+        jLabel26.setText("Nombre:");
 
-        jLabel27.setText("Last name: ");
+        jLabel27.setText("Apellido:");
 
-        jLabel28.setText("Work position: ");
+        jLabel28.setText("Posicion de Trabajo:");
 
-        jLabel29.setText("State: ");
+        jLabel29.setText("Estado:");
 
+        inputID.setBackground(new java.awt.Color(204, 255, 255));
         inputID.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
         inputID.setDisabledTextColor(new java.awt.Color(255, 102, 102));
         inputID.setFocusable(false);
 
         inputFN.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
-        inputFN.setFocusable(false);
 
         inputLN.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
-        inputLN.setFocusable(false);
 
-        comboWP.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
-        comboWP.setForeground(new java.awt.Color(204, 0, 51));
-        comboWP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jefe de Taller", "Vendendor" }));
+        comboWP.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        comboWP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jefe de Taller", "Vendedor" }));
         comboWP.setFocusable(false);
 
-        comboS.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
-        comboS.setForeground(new java.awt.Color(255, 0, 51));
+        comboS.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         comboS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "T", "F" }));
         comboS.setFocusable(false);
 
         saveButton.setBackground(new java.awt.Color(204, 255, 204));
         saveButton.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
         saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save.png"))); // NOI18N
-        saveButton.setText("SAVE");
+        saveButton.setText("GUARDAR");
         saveButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,27 +179,12 @@ public class vistaGerenteCute extends javax.swing.JFrame {
             }
         });
 
-        editButton.setBackground(new java.awt.Color(255, 204, 204));
-        editButton.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
-        editButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/edit.png"))); // NOI18N
-        editButton.setText("EDIT");
-        editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        editButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editButtonActionPerformed(evt);
-            }
-        });
-
-        exitBtn.setText("EXIT");
+        exitBtn.setText("SALIR");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitBtnActionPerformed(evt);
             }
         });
-
-        inputTel.setFocusable(false);
-
-        inputDir.setFocusable(false);
 
         jLabel30.setText("Telefono:");
 
@@ -210,42 +194,37 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         editPopUp.getContentPane().setLayout(editPopUpLayout);
         editPopUpLayout.setHorizontalGroup(
             editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editPopUpLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel28))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(inputFN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputLN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputTel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputDir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboWP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72))
             .addGroup(editPopUpLayout.createSequentialGroup()
                 .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(editPopUpLayout.createSequentialGroup()
                         .addGap(169, 169, 169)
                         .addComponent(jLabel19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editPopUpLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel27)
-                            .addGroup(editPopUpLayout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel28)
-                                    .addComponent(jLabel29)))
-                            .addComponent(jLabel30)
-                            .addComponent(jLabel31))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(inputDir)
-                            .addComponent(inputTel)
-                            .addComponent(inputID)
-                            .addComponent(inputFN)
-                            .addComponent(inputLN)
-                            .addComponent(comboWP, 0, 225, Short.MAX_VALUE)
-                            .addComponent(comboS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(96, 96, 96))
-            .addGroup(editPopUpLayout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addComponent(saveButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(editButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(exitBtn)
-                .addContainerGap(111, Short.MAX_VALUE))
+                    .addGroup(editPopUpLayout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(saveButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         editPopUpLayout.setVerticalGroup(
             editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,20 +251,19 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                 .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputDir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboWP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 23, Short.MAX_VALUE)
+                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(comboWP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel29)
+                    .addComponent(comboS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(exitBtn))
-                .addGap(28, 28, 28))
+                    .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -575,15 +553,19 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
         profileWP.setText("jLabel15");
 
+        SignOut.setText("SALIR");
+        SignOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout yellowLayout = new javax.swing.GroupLayout(yellow);
         yellow.setLayout(yellowLayout);
         yellowLayout.setHorizontalGroup(
             yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(yellowLayout.createSequentialGroup()
                 .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(yellowLayout.createSequentialGroup()
-                        .addGap(416, 416, 416)
-                        .addComponent(jLabel14))
                     .addGroup(yellowLayout.createSequentialGroup()
                         .addGap(272, 272, 272)
                         .addComponent(jLabel3)
@@ -604,7 +586,12 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                             .addComponent(profileTel)
                             .addComponent(profileLName)
                             .addComponent(profileID)
-                            .addComponent(profileFName))))
+                            .addComponent(profileFName)))
+                    .addGroup(yellowLayout.createSequentialGroup()
+                        .addGap(404, 404, 404)
+                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(SignOut)
+                            .addComponent(jLabel14))))
                 .addContainerGap(352, Short.MAX_VALUE))
         );
         yellowLayout.setVerticalGroup(
@@ -638,7 +625,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                     .addComponent(profileWP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addComponent(SignOut)
+                .addGap(33, 33, 33))
         );
 
         parent.add(yellow, "card6");
@@ -759,7 +748,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel13.setText("LISTA DE USUARIOS");
 
-        tablaDatos.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        tablaDatos.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         tablaDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -779,6 +768,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        tablaDatos.setAlignmentY(1.0F);
+        tablaDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tablaDatos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(tablaDatos);
 
         cargarButton.setText("CARGAR");
@@ -824,8 +816,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                     .addComponent(cargarButton)
                     .addComponent(editarUser))
                 .addGap(44, 44, 44)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         parent.add(green, "card4");
@@ -946,20 +938,20 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
     private void createUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserActionPerformed
                 if(idInput.getText().equals("") || fnameInput.getText().equals("") || lnameInput.getText().equals("") || telInput.getText().equals("") || dirInput.getText().equals("") || passInput.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Error, you have null elements");
+            JOptionPane.showMessageDialog(null, "Error, tienes elementos vacios");
         }else{
             try{
                 int identification = Integer.parseInt(idInput.getText());
                 if(identification<0){
-                    JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
+                    JOptionPane.showMessageDialog(null, "Datos Incorrectos \nIntentalo Nuevamente");
                 }else if(control.createUser(idInput.getText(), fnameInput.getText(), lnameInput.getText(), telInput.getText(), dirInput.getText(), comboPosition.getItemAt(comboPosition.getSelectedIndex()), passInput.getText(), "T")){
                     this.cleanCreateSection();
-                    JOptionPane.showMessageDialog(null, "Success creating user");
+                    JOptionPane.showMessageDialog(null, "Usuario creado exitosamente");
                 }else{
-                    JOptionPane.showMessageDialog(null, "Incorrect Data \nTry again");
+                    JOptionPane.showMessageDialog(null, "Datos Incorrectos \nIntentalo Nuevamente");
                 }
             }catch (NumberFormatException e){
-                JOptionPane.showMessageDialog(null, "The ID must be an Integer");
+                JOptionPane.showMessageDialog(null, "La ID debe ser un entero");
             }
         }
     }//GEN-LAST:event_createUserActionPerformed
@@ -998,103 +990,56 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         }else{
             this.comboWP.setSelectedIndex(1);
         }
-        this.comboWP.setEnabled(false);
+        //this.comboWP.setEditable(true);
+        //this.comboWP.setEnabled(false);
         if(aestado.equals("T")){
             this.comboS.setSelectedIndex(0);
         }else{
             this.comboS.setSelectedIndex(1);
         }
-        this.comboS.setEnabled(false);
+        //this.comboS.setEditable(true);
+        //this.comboS.setEnabled(false);
         
         
-        this.editPopUp.setSize(527, 511);
+        this.editPopUp.setSize(527, 531);
         this.editPopUp.setLocationRelativeTo(null);
         this.editPopUp.setVisible(true);
     }//GEN-LAST:event_editarUserActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-
-        if(editing){            
-            if(inputID.getText().equals("") || inputFN.getText().equals("") || inputLN.getText().equals("") || inputTel.getText().equals("") || inputDir.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Error, you have null elements");
-            }else{
-                try{
-                    int identification = Integer.parseInt(inputID.getText());
-                    if(identification<0){
-                        JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente1");
-                    }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), inputTel.getText(), inputDir.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()), comboS.getItemAt(comboS.getSelectedIndex()))){
-                        JOptionPane.showMessageDialog(null, "Success updating user");
-                        this.editingState(false);
-                        cargarTable();
-                        this.editPopUp.dispose();
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente2");
-                    }
-                }catch (NumberFormatException e){
-                    JOptionPane.showMessageDialog(null, "The ID must be an Integer");
-                }
-            }
+        if(inputID.getText().equals("") || inputFN.getText().equals("") || inputLN.getText().equals("") || inputTel.getText().equals("") || inputDir.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Error, tienes elementos vacios");
         }else{
-            editing = false;
-            this.dispose();
+            try{
+                int identification = Integer.parseInt(inputID.getText());
+                if(identification<0){
+                    JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente1");
+                }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), inputTel.getText(), inputDir.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()), comboS.getItemAt(comboS.getSelectedIndex()))){
+                    JOptionPane.showMessageDialog(null, "Usuario actualizado exitosamente");
+                    //this.editingState(false);
+                    cargarTable();
+                    this.editPopUp.dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente2");
+                }
+            }catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "La ID debe ser un entero");
+            }
         }
-
     }//GEN-LAST:event_saveButtonActionPerformed
 
-    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-        this.editingState(true);
-    }//GEN-LAST:event_editButtonActionPerformed
-
-    private void editingState(boolean s){
-    
-        editing = s;
-        //LA CEDULA NO SE PUEDE MODIFICAR POR RAZONES OBVIAS...XD
-        //this.inputID.setFocusable(true);
-        this.inputFN.setFocusable(s);
-        this.inputLN.setFocusable(s);
-        this.inputTel.setFocusable(s);
-        this.inputDir.setFocusable(s);
-        this.comboWP.setEnabled(s);
-        this.comboS.setEnabled(s);
-        if (s) {
-             this.editPopUp.getContentPane().setBackground(java.awt.Color.pink);
-        }else{
-            this.editPopUp.getContentPane().setBackground(new Color(204, 204, 204));
-            this.comboWP.setOpaque(true);
-        }
-        /*
-        if(s){
-            //this.comboWP.removeAllItems();
-            this.comboWP.setFocusable(true);
-            if(comboWP.getItemAt(comboWP.getSelectedIndex()).equals("Jefe de Taller")){
-                this.comboWP.addItem("Vendedor");
-            }else{
-                this.comboWP.addItem("Jefe de Taller");
-            }
-            
-            //this.comboS.removeAllItems();
-            this.comboS.setFocusable(true);
-            
-            if(comboS.getItemAt(comboS.getSelectedIndex()).equals("T")){
-                this.comboS.addItem("F");
-            }else{
-                this.comboS.addItem("T");
-            }
-
-            this.editPopUp.getContentPane().setBackground(java.awt.Color.pink);    
-        }else{
-            //this.comboWP.removeAllItems();
-            this.comboWP.setEnabled(false);
-            //this.comboS.removeAllItems();
-            this.comboS.setEnabled(false);
-            this.editPopUp.getContentPane().setBackground(new Color(204, 204, 204));
-        }*/
-    }
     
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
         this.editPopUp.dispose();
     }//GEN-LAST:event_exitBtnActionPerformed
+
+    private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
+        login log = new login();
+        log.setLocationRelativeTo(null);
+        log.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_SignOutActionPerformed
 
     private void cleanCreateSection() {
         idInput.setText("");
@@ -1124,6 +1069,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton SignOut;
     private javax.swing.JPanel btn_1;
     private javax.swing.JPanel btn_2;
     private javax.swing.JPanel btn_3;
@@ -1134,7 +1080,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboWP;
     private javax.swing.JButton createUser;
     private javax.swing.JTextField dirInput;
-    private javax.swing.JButton editButton;
     private javax.swing.JFrame editPopUp;
     private javax.swing.JButton editarUser;
     private javax.swing.JButton exitBtn;
