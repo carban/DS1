@@ -47,7 +47,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         String columnNames[]={"Id","Nombre","Apellido","Telefono","Direccion","Posicion","Estado"};
         md = new DefaultTableModel(data, columnNames);
         tablaDatos.setModel(md);
-        tablaDatos.setDefaultEditor(Object.class, null);
+        tablaDatos.setDefaultEditor(Object.class, null); //Permite que las celdas no se modifiquen, pero si se seleccionen
     }
 
     /**
@@ -109,6 +109,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         profileDir = new javax.swing.JLabel();
         profileWP = new javax.swing.JLabel();
         SignOut = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
         pink = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -132,6 +133,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         tablaDatos = new javax.swing.JTable();
         cargarButton = new javax.swing.JButton();
         editarUser = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
         purple = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -560,6 +562,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
             }
         });
 
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/profile.png"))); // NOI18N
+
         javax.swing.GroupLayout yellowLayout = new javax.swing.GroupLayout(yellow);
         yellow.setLayout(yellowLayout);
         yellowLayout.setHorizontalGroup(
@@ -589,9 +593,11 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                             .addComponent(profileFName)))
                     .addGroup(yellowLayout.createSequentialGroup()
                         .addGap(404, 404, 404)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(SignOut)
-                            .addComponent(jLabel14))))
+                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(SignOut)
+                                .addComponent(jLabel14)))))
                 .addContainerGap(352, Short.MAX_VALUE))
         );
         yellowLayout.setVerticalGroup(
@@ -599,7 +605,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
             .addGroup(yellowLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(profileID))
@@ -625,7 +633,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                     .addComponent(profileWP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addComponent(SignOut)
                 .addGap(33, 33, 33))
         );
@@ -787,37 +795,45 @@ public class vistaGerenteCute extends javax.swing.JFrame {
             }
         });
 
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/notebook.png"))); // NOI18N
+
         javax.swing.GroupLayout greenLayout = new javax.swing.GroupLayout(green);
         green.setLayout(greenLayout);
         greenLayout.setHorizontalGroup(
             greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, greenLayout.createSequentialGroup()
-                .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(greenLayout.createSequentialGroup()
-                        .addGap(351, 351, 351)
-                        .addComponent(cargarButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(greenLayout.createSequentialGroup()
-                        .addContainerGap(384, Short.MAX_VALUE)
-                        .addComponent(jLabel13)))
+                .addContainerGap(384, Short.MAX_VALUE)
+                .addComponent(jLabel13)
                 .addGap(362, 362, 362))
             .addGroup(greenLayout.createSequentialGroup()
                 .addComponent(jScrollPane2)
                 .addContainerGap())
+            .addGroup(greenLayout.createSequentialGroup()
+                .addGap(299, 299, 299)
+                .addComponent(jLabel32)
+                .addGap(75, 75, 75)
+                .addComponent(cargarButton)
+                .addGap(57, 57, 57)
+                .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         greenLayout.setVerticalGroup(
             greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(greenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel13)
-                .addGap(68, 68, 68)
-                .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cargarButton)
-                    .addComponent(editarUser))
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(greenLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel32)
+                        .addGap(74, 74, 74))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, greenLayout.createSequentialGroup()
+                        .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(editarUser)
+                            .addComponent(cargarButton))
+                        .addGap(89, 89, 89)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         parent.add(green, "card4");
@@ -1104,6 +1120,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1119,6 +1136,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
