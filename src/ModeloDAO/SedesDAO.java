@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 /**
  *
@@ -22,9 +23,9 @@ public class SedesDAO {
     }
     
     public boolean createNewSede(Sedes aSede){
-        String querySQL = "INSERT INTO Sedes VALUES ("+ aSede.getId() + ", '"+aSede.getCiudad()+ "', '"+aSede.getDireccion()+ "', '"
+        String querySQL = "INSERT INTO Sedes(city,address,stateSede,idUser) VALUES ('"+aSede.getCiudad()+ "', '"+aSede.getDireccion()+ "', '"
                 +aSede.getEstado()+ "', '"+aSede.getJefe()+ "')";
-        String querySQLaux = "SELECT idSedes FROM Sedes WHERE idSedes = '"+aSede.getId()+"'";
+        String querySQLaux = "SELECT idSedes FROM Sedes WHERE city = '"+aSede.getCiudad()+"' and address = '"+aSede.getDireccion()+"'";
         System.out.println(querySQL);
         System.out.println(querySQLaux);
         Connection coneccion= this.access.getConnetion();
@@ -107,8 +108,8 @@ public class SedesDAO {
         
     }
        
-    public Sedes consultSede(String id){
-        String QuerySQL = "SELECT * FROM Sedes WHERE idSedes = '"+id+"'";
+    public ArrayList<String[]> consultSede(){
+        String QuerySQL = "select * from sedes";
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
         System.out.println("Connection: "+coneccion);
@@ -118,22 +119,27 @@ public class SedesDAO {
             System.out.println("sentencia: "+sentencia);
             ResultSet resultado = sentencia.executeQuery(QuerySQL);
             System.out.println("resultado: "+resultado);
-            if(resultado.next()){
-                String idSede = resultado.getString("idSedes");
-                String city = resultado.getString("city");
-                String address = resultado.getString("address");
-                String stateSede = resultado.getString("stateSede");
-                String idUser = resultado.getString("idUser");
+            
+
+            ArrayList<String[]> matrixList = new ArrayList<String[]>();
+            int cont = 0;
+            while (resultado.next()) {
                 
-                return new Sedes(idSede, city, address, stateSede, idUser);
-            }else{
-                return new Sedes(null, null, null, null, null);
+                String a1 = resultado.getString("idSedes");
+                String a2 = resultado.getString("city");
+                String a3 = resultado.getString("address");
+                String a4 = resultado.getString("stateSede");
+                String a5 = resultado.getString("idUser");
+                String[] niu = {a1, a2, a3, a4, a5}; //Es importante crear un nuevo arreglo cada vez
+                matrixList.add(niu);
+                cont++;
             }
+            return matrixList;
 
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();
         }
-        return new Sedes(null, null, null, null, null);
+        return null;
     }
 }

@@ -134,7 +134,7 @@ public class Controladora {
     }
     
     public boolean updateSede(String idSede, String city, String address,String state, String placeid){
-        Sedes aS = new Sedes(idSede, city, address, state, placeid);
+        Sedes aS = new Sedes(city, address, state, placeid);
         return sedesDao.updateSede(aS);
     }
     
@@ -143,8 +143,13 @@ public class Controladora {
 
     }
     
-    public boolean createSede(String idSede, String ciudad, String direccion,String estado ,String jefe){
-        Sedes sede = new Sedes(idSede, ciudad, direccion, estado,jefe);
+    public ArrayList<String[]> consultSedes(){
+        return  sedesDao.consultSede();
+
+    }
+    
+    public boolean createSede(String ciudad, String direccion,String estado ,String jefe){
+        Sedes sede = new Sedes(ciudad, direccion, estado,jefe);
         return sedesDao.createNewSede(sede);
     }
 }

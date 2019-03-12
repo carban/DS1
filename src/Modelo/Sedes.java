@@ -16,8 +16,7 @@ public class Sedes {
     String estado;
     String jefe;
 
-    public Sedes(String id, String ciudad, String direccion,String estado, String jefe) {
-        this.id = id;
+    public Sedes(String ciudad, String direccion,String estado, String jefe) {
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.estado = estado;
