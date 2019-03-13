@@ -74,7 +74,7 @@ public class SedesDAO {
     }
     
     public boolean updateSede(Sedes aSede) {
-            String QuerySQL = "UPDATE Sedes SET idSedes='"+aSede.getId()+ "', city='"+aSede.getCiudad()+
+            String QuerySQL = "UPDATE Sedes SET city='"+aSede.getCiudad()+
                     "', address='"+aSede.getDireccion()+ "', stateSede='"+aSede.getEstado()
                     + "', idUser='"+aSede.getJefe()+"' WHERE idSedes = '"+aSede.getId()+"'";
             

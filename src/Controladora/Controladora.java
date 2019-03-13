@@ -135,6 +135,7 @@ public class Controladora {
     
     public boolean updateSede(String idSede, String city, String address,String state, String placeid){
         Sedes aS = new Sedes(city, address, state, placeid);
+        aS.setId(idSede);
         return sedesDao.updateSede(aS);
     }
     
