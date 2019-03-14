@@ -27,6 +27,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     Controladora control = new Controladora();
     boolean editing = false;
     DefaultTableModel md;
+    DefaultTableModel mdSede;
             
     public vistaGerenteCute(String userID) {
         initComponents();
@@ -48,6 +49,10 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         md = new DefaultTableModel(data, columnNames);
         tablaDatos.setModel(md);
         tablaDatos.setDefaultEditor(Object.class, null); //Permite que las celdas no se modifiquen, pero si se seleccionen
+        String columnNamesSedes[]={"ID","Ciudad","Direccion","Estado","Jefe de Taller"};
+        mdSede = new DefaultTableModel(data, columnNamesSedes);
+        tablaSedes.setModel(mdSede);
+        tablaSedes.setDefaultEditor(Object.class, null);
     }
 
     /**
@@ -77,6 +82,20 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         inputDir = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        editSedePopUp = new javax.swing.JFrame();
+        inputIDSede = new javax.swing.JTextField();
+        jLabel46 = new javax.swing.JLabel();
+        saveButtonSede = new javax.swing.JButton();
+        jLabel47 = new javax.swing.JLabel();
+        exitBtn1 = new javax.swing.JButton();
+        jLabel48 = new javax.swing.JLabel();
+        cityInputEdit = new javax.swing.JTextField();
+        adressInputEdit = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        comboStateSedeEdit = new javax.swing.JComboBox<>();
+        comboJefeEdit = new javax.swing.JComboBox<>();
+        jLabel51 = new javax.swing.JLabel();
         side_pane = new javax.swing.JPanel();
         btn_1 = new javax.swing.JPanel();
         ind_1 = new javax.swing.JPanel();
@@ -90,6 +109,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         btn_4 = new javax.swing.JPanel();
         ind_4 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
+        btn_5 = new javax.swing.JPanel();
+        ind_5 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         parent = new javax.swing.JPanel();
@@ -135,8 +157,25 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         editarUser = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
         purple = new javax.swing.JPanel();
+        pink1 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        cityInput = new javax.swing.JTextField();
+        adressInput = new javax.swing.JTextField();
+        btnCreateSede = new javax.swing.JButton();
+        comboStateSede = new javax.swing.JComboBox<>();
+        jLabel40 = new javax.swing.JLabel();
+        comboJefe = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        red = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaSedes = new javax.swing.JTable();
+        cargarButtonSede = new javax.swing.JButton();
+        editarSede = new javax.swing.JButton();
 
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -268,6 +307,126 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        inputIDSede.setBackground(new java.awt.Color(204, 255, 255));
+        inputIDSede.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        inputIDSede.setDisabledTextColor(new java.awt.Color(255, 102, 102));
+        inputIDSede.setFocusable(false);
+
+        jLabel46.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel46.setText("Editar Sede");
+
+        saveButtonSede.setBackground(new java.awt.Color(204, 255, 204));
+        saveButtonSede.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        saveButtonSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save.png"))); // NOI18N
+        saveButtonSede.setText("GUARDAR");
+        saveButtonSede.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        saveButtonSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonSedeActionPerformed(evt);
+            }
+        });
+
+        jLabel47.setText("ID Sede: ");
+
+        exitBtn1.setText("SALIR");
+        exitBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtn1ActionPerformed(evt);
+            }
+        });
+
+        jLabel48.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel48.setText("Ciudad:");
+
+        jLabel49.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel49.setText("Direccion:");
+
+        jLabel50.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel50.setText("Estado:");
+
+        comboStateSedeEdit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+
+        comboJefeEdit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
+        comboJefeEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                comboJefeEditMouseEntered(evt);
+            }
+        });
+
+        jLabel51.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel51.setText("Jefe de Taller:");
+
+        javax.swing.GroupLayout editSedePopUpLayout = new javax.swing.GroupLayout(editSedePopUp.getContentPane());
+        editSedePopUp.getContentPane().setLayout(editSedePopUpLayout);
+        editSedePopUpLayout.setHorizontalGroup(
+            editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editSedePopUpLayout.createSequentialGroup()
+                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(editSedePopUpLayout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(jLabel46))
+                    .addGroup(editSedePopUpLayout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(saveButtonSede)
+                        .addGap(18, 18, 18)
+                        .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(editSedePopUpLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(editSedePopUpLayout.createSequentialGroup()
+                                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel49)
+                                    .addComponent(jLabel50)
+                                    .addComponent(jLabel51))
+                                .addGap(117, 117, 117)
+                                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(comboJefeEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(comboStateSedeEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(adressInputEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(editSedePopUpLayout.createSequentialGroup()
+                                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel48)
+                                    .addGroup(editSedePopUpLayout.createSequentialGroup()
+                                        .addGap(9, 9, 9)
+                                        .addComponent(jLabel47)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cityInputEdit, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                    .addComponent(inputIDSede))))))
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+        editSedePopUpLayout.setVerticalGroup(
+            editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editSedePopUpLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel46)
+                .addGap(39, 39, 39)
+                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(inputIDSede, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel48)
+                    .addComponent(cityInputEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(adressInputEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(comboStateSedeEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(comboJefeEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(editSedePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(saveButtonSede, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
@@ -371,7 +530,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        side_pane.add(btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 120, -1));
+        side_pane.add(btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 120, -1));
 
         btn_3.setBackground(new java.awt.Color(23, 35, 51));
         btn_3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -468,6 +627,54 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         );
 
         side_pane.add(btn_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 120, -1));
+
+        btn_5.setBackground(new java.awt.Color(23, 35, 51));
+        btn_5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btn_5MouseReleased(evt);
+            }
+        });
+
+        ind_5.setOpaque(false);
+        ind_5.setPreferredSize(new java.awt.Dimension(3, 43));
+
+        javax.swing.GroupLayout ind_5Layout = new javax.swing.GroupLayout(ind_5);
+        ind_5.setLayout(ind_5Layout);
+        ind_5Layout.setHorizontalGroup(
+            ind_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+        ind_5Layout.setVerticalGroup(
+            ind_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 43, Short.MAX_VALUE)
+        );
+
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("Consult S");
+
+        javax.swing.GroupLayout btn_5Layout = new javax.swing.GroupLayout(btn_5);
+        btn_5.setLayout(btn_5Layout);
+        btn_5Layout.setHorizontalGroup(
+            btn_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_5Layout.createSequentialGroup()
+                .addComponent(ind_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel35)
+                .addGap(0, 23, Short.MAX_VALUE))
+        );
+        btn_5Layout.setVerticalGroup(
+            btn_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_5Layout.createSequentialGroup()
+                .addComponent(ind_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(btn_5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        side_pane.add(btn_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 120, -1));
 
         getContentPane().add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 590));
 
@@ -833,22 +1040,114 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                             .addComponent(cargarButton))
                         .addGap(89, 89, 89)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         parent.add(green, "card4");
 
         purple.setBackground(new java.awt.Color(204, 204, 204));
 
+        pink1.setBackground(new java.awt.Color(204, 204, 204));
+        pink1.setForeground(new java.awt.Color(255, 153, 51));
+
+        jLabel33.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel33.setText("CREAR SEDE");
+
+        jLabel34.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel34.setText("Ciudad:");
+
+        jLabel38.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel38.setText("Direccion:");
+
+        jLabel39.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel39.setText("Estado:");
+
+        btnCreateSede.setText("GUARDAR");
+        btnCreateSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateSedeActionPerformed(evt);
+            }
+        });
+
+        comboStateSede.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+
+        jLabel40.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel40.setText("Jefe de Taller:");
+
+        comboJefe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
+        comboJefe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                comboJefeMouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pink1Layout = new javax.swing.GroupLayout(pink1);
+        pink1.setLayout(pink1Layout);
+        pink1Layout.setHorizontalGroup(
+            pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pink1Layout.createSequentialGroup()
+                .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pink1Layout.createSequentialGroup()
+                        .addGap(395, 395, 395)
+                        .addComponent(jLabel33))
+                    .addGroup(pink1Layout.createSequentialGroup()
+                        .addGap(399, 399, 399)
+                        .addComponent(btnCreateSede, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pink1Layout.createSequentialGroup()
+                .addContainerGap(267, Short.MAX_VALUE)
+                .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(pink1Layout.createSequentialGroup()
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cityInput, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pink1Layout.createSequentialGroup()
+                        .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel40))
+                        .addGap(117, 117, 117)
+                        .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboJefe, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboStateSede, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adressInput, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(282, 282, 282))
+        );
+        pink1Layout.setVerticalGroup(
+            pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pink1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel33)
+                .addGap(38, 38, 38)
+                .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(cityInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(adressInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(comboStateSede, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel40)
+                    .addComponent(comboJefe, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                .addComponent(btnCreateSede, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+        );
+
         javax.swing.GroupLayout purpleLayout = new javax.swing.GroupLayout(purple);
         purple.setLayout(purpleLayout);
         purpleLayout.setHorizontalGroup(
             purpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
+            .addComponent(pink1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         purpleLayout.setVerticalGroup(
             purpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+            .addComponent(pink1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         parent.add(purple, "card2");
@@ -881,6 +1180,79 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         parent.add(jScrollPane1, "card3");
 
+        jLabel36.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel36.setText("LISTA DE SEDES");
+
+        tablaSedes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Ciudad", "Direccion", "Estado", "Jefe de Taller"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tablaSedes);
+
+        cargarButtonSede.setText("CARGAR");
+        cargarButtonSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cargarButtonSedeActionPerformed(evt);
+            }
+        });
+
+        editarSede.setText("EDITAR");
+        editarSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarSedeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout redLayout = new javax.swing.GroupLayout(red);
+        red.setLayout(redLayout);
+        redLayout.setHorizontalGroup(
+            redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(redLayout.createSequentialGroup()
+                .addGroup(redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(redLayout.createSequentialGroup()
+                        .addGap(379, 379, 379)
+                        .addComponent(jLabel36))
+                    .addGroup(redLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 903, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(redLayout.createSequentialGroup()
+                        .addGap(341, 341, 341)
+                        .addComponent(cargarButtonSede)
+                        .addGap(57, 57, 57)
+                        .addComponent(editarSede, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        redLayout.setVerticalGroup(
+            redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(redLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel36)
+                .addGap(48, 48, 48)
+                .addGroup(redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editarSede)
+                    .addComponent(cargarButtonSede))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
+        );
+
+        parent.add(red, "card7");
+
         getContentPane().add(parent, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 950, 540));
 
         pack();
@@ -890,7 +1262,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btn_1); 
         ind_1.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_3,btn_4}, new JPanel[]{ind_2,ind_3, ind_4});
+        resetColor(new JPanel[]{btn_2,btn_3,btn_4,btn_5}, new JPanel[]{ind_2,ind_3, ind_4,ind_5});
         parent.removeAll();
         parent.add(yellow);
         parent.repaint();
@@ -902,7 +1274,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         // TODO add your handling code here:
          setColor(btn_3); 
         ind_3.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_1,btn_4}, new JPanel[]{ind_2,ind_1, ind_4});
+        resetColor(new JPanel[]{btn_2,btn_1,btn_4,btn_5}, new JPanel[]{ind_2,ind_1, ind_4,ind_5});
         parent.removeAll();
         parent.add(pink);
         parent.repaint();
@@ -913,7 +1285,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         // TODO add your handling code here:
           setColor(btn_4); 
         ind_4.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_3,btn_1}, new JPanel[]{ind_2,ind_3, ind_1});
+        resetColor(new JPanel[]{btn_2,btn_3,btn_1,btn_5}, new JPanel[]{ind_2,ind_3, ind_1,ind_5});
         parent.removeAll();
         parent.add(green);
         parent.repaint();
@@ -1057,6 +1429,90 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_SignOutActionPerformed
 
+    private void btnCreateSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateSedeActionPerformed
+        // TODO add your handling code here:
+        String[] cadena = comboJefe.getItemAt(comboJefe.getSelectedIndex()).split(",");
+        if(cityInput.getText().equals("") || adressInput.getText().equals("") || cadena[0].equals("Seleccione")){
+            JOptionPane.showMessageDialog(null, "Error, hay algun campo vacio");
+        }else if(control.createSede(cityInput.getText(), adressInput.getText(), comboStateSede.getItemAt(comboStateSede.getSelectedIndex()),cadena[0])){
+                this.cleanCreateSede();
+                JOptionPane.showMessageDialog(null, "Sede creada exitosamente");
+        }else{
+            JOptionPane.showMessageDialog(null, "Datos incorrectos");
+        }
+    }//GEN-LAST:event_btnCreateSedeActionPerformed
+
+    private void comboJefeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboJefeMouseEntered
+         control.alterComboJefe(comboJefe);
+    }//GEN-LAST:event_comboJefeMouseEntered
+
+    private void btn_5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseReleased
+        // TODO add your handling code here:
+        setColor(btn_5); 
+        ind_2.setOpaque(true);
+        resetColor(new JPanel[]{btn_1,btn_2,btn_3,btn_4}, new JPanel[]{ind_1,ind_2,ind_3, ind_4});
+        parent.removeAll();
+        parent.add(red);
+        parent.repaint();
+        parent.revalidate();
+    }//GEN-LAST:event_btn_5MouseReleased
+
+    private void cargarButtonSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarButtonSedeActionPerformed
+        // TODO add your handling code here:
+        this.cargarTableSede();
+    }//GEN-LAST:event_cargarButtonSedeActionPerformed
+
+    public void cargarTableSede(){
+        mdSede.setRowCount(0); //Para limpiar la tabla
+        ArrayList<String[]> lista = control.consultSedes();
+        for (int i = 0; i < lista.size(); i++) {
+            mdSede.addRow(lista.get(i));
+        }      
+    }
+    
+    private void editarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarSedeActionPerformed
+        // TODO add your handling code here:
+        int index = tablaSedes.getSelectedRow();
+        String aid = tablaSedes.getModel().getValueAt(index, 0).toString();
+        String aciudad = tablaSedes.getModel().getValueAt(index, 1).toString();
+        String adireccion = tablaSedes.getModel().getValueAt(index, 2).toString();
+        String aestado = tablaSedes.getModel().getValueAt(index, 3).toString();
+        String ajefe = tablaSedes.getModel().getValueAt(index, 4).toString();
+        this.inputIDSede.setText(aid);
+        this.cityInputEdit.setText(aciudad);
+        this.adressInputEdit.setText(adireccion);
+        this.comboStateSedeEdit.setSelectedItem(aestado);
+        this.comboJefeEdit.setSelectedItem(ajefe);
+        this.editSedePopUp.setSize(527, 531);
+        this.editSedePopUp.setLocationRelativeTo(null);
+        this.editSedePopUp.setVisible(true);
+    }//GEN-LAST:event_editarSedeActionPerformed
+
+    private void exitBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtn1ActionPerformed
+        // TODO add your handling code here:
+        this.editSedePopUp.dispose();
+    }//GEN-LAST:event_exitBtn1ActionPerformed
+
+    private void saveButtonSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonSedeActionPerformed
+        // TODO add your handling code here:
+        String[] cadena = comboJefeEdit.getItemAt(comboJefeEdit.getSelectedIndex()).split(",");
+        if(cityInputEdit.getText().equals("") || adressInputEdit.getText().equals("") || cadena[0].equals("Seleccione")){
+            JOptionPane.showMessageDialog(null, "Error, hay algun campo vacio");
+        }else if(control.updateSede(inputIDSede.getText(),cityInputEdit.getText(), adressInputEdit.getText(), comboStateSedeEdit.getItemAt(comboStateSedeEdit.getSelectedIndex()),cadena[0])){
+                this.cleanCreateSede();
+                JOptionPane.showMessageDialog(null, "Sede actualizada exitosamente");
+                cargarTableSede();
+                this.editSedePopUp.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Datos incorrectos");
+        }
+    }//GEN-LAST:event_saveButtonSedeActionPerformed
+
+    private void comboJefeEditMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboJefeEditMouseEntered
+        // TODO add your handling code here:
+        control.alterComboJefe(comboJefeEdit);
+    }//GEN-LAST:event_comboJefeEditMouseEntered
+
     private void cleanCreateSection() {
         idInput.setText("");
         fnameInput.setText("");
@@ -1066,6 +1522,10 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         passInput.setText("");
     }
     
+    private void cleanCreateSede() {
+        cityInput.setText("");
+        adressInput.setText("");
+    }
     
     private void setColor(JPanel pane)
     {
@@ -1086,19 +1546,33 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton SignOut;
+    private javax.swing.JTextField adressInput;
+    private javax.swing.JTextField adressInputEdit;
+    private javax.swing.JButton btnCreateSede;
     private javax.swing.JPanel btn_1;
     private javax.swing.JPanel btn_2;
     private javax.swing.JPanel btn_3;
     private javax.swing.JPanel btn_4;
+    private javax.swing.JPanel btn_5;
     private javax.swing.JButton cargarButton;
+    private javax.swing.JButton cargarButtonSede;
+    private javax.swing.JTextField cityInput;
+    private javax.swing.JTextField cityInputEdit;
+    private javax.swing.JComboBox<String> comboJefe;
+    private javax.swing.JComboBox<String> comboJefeEdit;
     private javax.swing.JComboBox<String> comboPosition;
     private javax.swing.JComboBox<String> comboS;
+    private javax.swing.JComboBox<String> comboStateSede;
+    private javax.swing.JComboBox<String> comboStateSedeEdit;
     private javax.swing.JComboBox<String> comboWP;
     private javax.swing.JButton createUser;
     private javax.swing.JTextField dirInput;
     private javax.swing.JFrame editPopUp;
+    private javax.swing.JFrame editSedePopUp;
+    private javax.swing.JButton editarSede;
     private javax.swing.JButton editarUser;
     private javax.swing.JButton exitBtn;
+    private javax.swing.JButton exitBtn1;
     private javax.swing.JTextField fnameInput;
     private javax.swing.JPanel green;
     private javax.swing.JTextField idInput;
@@ -1106,9 +1580,11 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
     private javax.swing.JPanel ind_4;
+    private javax.swing.JPanel ind_5;
     private javax.swing.JTextField inputDir;
     private javax.swing.JTextField inputFN;
     private javax.swing.JTextField inputID;
+    private javax.swing.JTextField inputIDSede;
     private javax.swing.JTextField inputLN;
     private javax.swing.JTextField inputTel;
     private javax.swing.JLabel jLabel1;
@@ -1137,8 +1613,21 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1146,11 +1635,13 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField lnameInput;
     private javax.swing.JPanel parent;
     private javax.swing.JTextField passInput;
     private javax.swing.JPanel pink;
+    private javax.swing.JPanel pink1;
     private javax.swing.JLabel profileDir;
     private javax.swing.JLabel profileFName;
     private javax.swing.JLabel profileID;
@@ -1158,9 +1649,12 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel profileTel;
     private javax.swing.JLabel profileWP;
     private javax.swing.JPanel purple;
+    private javax.swing.JPanel red;
     private javax.swing.JButton saveButton;
+    private javax.swing.JButton saveButtonSede;
     private javax.swing.JPanel side_pane;
     private javax.swing.JTable tablaDatos;
+    private javax.swing.JTable tablaSedes;
     private javax.swing.JTextField telInput;
     private javax.swing.JPanel yellow;
     // End of variables declaration//GEN-END:variables
