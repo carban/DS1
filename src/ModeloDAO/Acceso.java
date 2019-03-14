@@ -6,9 +6,9 @@ public class Acceso {
     Connection conexion = null;
     
     public Acceso() {
-        this.url = "jdbc:postgresql://localhost:5432/db1";
+        this.url = "jdbc:postgresql://localhost:5433/ds1";
         this.usuario = "postgres";
-        this.password = "24880312";
+        this.password = "p";
     }
     
     public Connection conectar(){

@@ -33,7 +33,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         initComponents();
         setColor(btn_1); 
         ind_1.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_3,btn_4}, new JPanel[]{ind_2,ind_3, ind_4});
+        resetColor(new JPanel[]{btn_2,btn_3,btn_4, btn_5}, new JPanel[]{ind_2,ind_3, ind_4, ind_5});
         
         System.out.println("------------->");
         Users profileInfo = control.consultProfile(userID);
@@ -206,7 +206,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         comboWP.setFocusable(false);
 
         comboS.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        comboS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "T", "F" }));
+        comboS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
         comboS.setFocusable(false);
 
         saveButton.setBackground(new java.awt.Color(204, 255, 204));
@@ -1296,7 +1296,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         // TODO add your handling code here:
           setColor(btn_2); 
         ind_2.setOpaque(true);
-        resetColor(new JPanel[]{btn_1,btn_3,btn_4}, new JPanel[]{ind_1,ind_3, ind_4});
+        resetColor(new JPanel[]{btn_1,btn_3,btn_4, btn_5}, new JPanel[]{ind_1,ind_3, ind_4, ind_5});
         parent.removeAll();
         parent.add(purple);
         parent.repaint();
@@ -1449,7 +1449,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private void btn_5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseReleased
         // TODO add your handling code here:
         setColor(btn_5); 
-        ind_2.setOpaque(true);
+        ind_5.setOpaque(true);
         resetColor(new JPanel[]{btn_1,btn_2,btn_3,btn_4}, new JPanel[]{ind_1,ind_2,ind_3, ind_4});
         parent.removeAll();
         parent.add(red);
