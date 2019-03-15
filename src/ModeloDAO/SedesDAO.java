@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import org.postgresql.util.PSQLException;
 /**
  *
  * @author juancamilo
@@ -26,6 +27,7 @@ public class SedesDAO {
         String querySQL = "INSERT INTO Sedes(city,address,stateSede,idUser) VALUES ('"+aSede.getCiudad()+ "', '"+aSede.getDireccion()+ "', '"
                 +aSede.getEstado()+ "', '"+aSede.getJefe()+ "')";
         String querySQLaux = "SELECT idSedes FROM Sedes WHERE city = '"+aSede.getCiudad()+"' and address = '"+aSede.getDireccion()+"'";
+        String queryActivo = "UPDATE users SET stateuser='Activo' WHERE idUser = '"+aSede.getJefe()+"'";
         System.out.println(querySQL);
         System.out.println(querySQLaux);
         Connection coneccion= this.access.getConnetion();
@@ -35,17 +37,22 @@ public class SedesDAO {
             System.out.println("sentencia: "+sentencia);
             ResultSet resultado = sentencia.executeQuery(querySQLaux);
             System.out.println("resultado: "+resultado);
+            
             if(resultado.next()){
                 JOptionPane.showMessageDialog(null, "La sede ya existe \nIntenta de nuevo");
             }else{
                 int res = sentencia.executeUpdate(querySQL);
-                if(res==1){
+                int active = sentencia.executeUpdate(queryActivo);
+                if(res==1 && active==1){
                     return true;
                 }else{
                     return false;
                 }
             }
 
+        } catch (PSQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();
@@ -54,7 +61,27 @@ public class SedesDAO {
     }
  
     public ResultSet comboOptions(){
-        String QuerySQL = "SELECT * FROM Users WHERE work_position = 'Jefe de Taller'";
+        String QuerySQL = "SELECT * FROM Users WHERE work_position = 'Jefe de Taller' AND stateuser='Inactivo'";
+        System.out.println(QuerySQL);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+            System.out.println("resultado: "+resultado);
+            return resultado;
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
+        public ResultSet comboJefeAsignado(){
+        String QuerySQL = "SELECT * FROM Users WHERE work_position = 'Jefe de Taller' AND stateuser='Inactivo'";
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
         System.out.println("Connection: "+coneccion);

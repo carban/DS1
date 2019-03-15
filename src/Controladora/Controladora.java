@@ -30,12 +30,14 @@ public class Controladora {
         return usersDao.consultProfile(userID);
     }
     
-    public void alterCombo(JComboBox combo){
+    public void alterComboJefeEditing(JComboBox combo){//NO C
+        String first = (String) combo.getItemAt(0);
         combo.removeAllItems();
+        combo.addItem(first);
         try {
-            ResultSet res = usersDao.comboOptions();
+            ResultSet res = sedesDao.comboOptions();
             while(res.next()){
-                combo.addItem(res.getString("idSedes")+", "+res.getString("city")+", "+res.getString("address"));
+                combo.addItem(res.getString("idUser")+", "+res.getString("first_name")+", "+res.getString("last_name"));
             }
         } catch (Exception e) {
             System.out.println("---- Problema en la ejecucion.");
@@ -47,8 +49,13 @@ public class Controladora {
         combo.removeAllItems();
         try {
             ResultSet res = sedesDao.comboOptions();
+            int c = 0;
             while(res.next()){
+                c++;
                 combo.addItem(res.getString("idUser")+", "+res.getString("first_name")+", "+res.getString("last_name"));
+            }
+            if(c==0){
+                combo.addItem("Seleccione");
             }
         } catch (Exception e) {
             System.out.println("---- Problema en la ejecucion.");
@@ -56,72 +63,7 @@ public class Controladora {
         }
         
     }
-    
-    public void alterComboInConsult(JComboBox combo, String identificator){
-        combo.removeAllItems();
-        try {
-            ResultSet res = usersDao.comboOptions();
-            while(res.next()){
-                if(identificator.equals(res.getString("idSedes"))){
-                    combo.addItem(res.getString("idSedes")+", "+res.getString("city")+", "+res.getString("address"));
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("---- Problema en la ejecucion.");
-        }
-        
-    }
-    
-     public void alterComboJefeInConsult(JComboBox combo, String identificator){
-        combo.removeAllItems();
-        try {
-            ResultSet res = sedesDao.comboOptions();
-            while(res.next()){
-                if(identificator.equals(res.getString("idUser"))){
-                    combo.addItem(res.getString("idUser")+", "+res.getString("first_name")+", "+res.getString("last_name"));
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("---- Problema en la ejecucion.");
-        }
-        
-    }
-        
-    public void alterComboUpdating(JComboBox combo, String actualItem){
-        combo.removeAllItems();
-        combo.addItem(actualItem);
-        String[] cadenaID = actualItem.split(",");
-        try {
-            ResultSet res = usersDao.comboOptions();
-            while(res.next()){
-                if(!cadenaID[0].equals(res.getString("idSedes"))){
-                    combo.addItem(res.getString("idSedes")+", "+res.getString("city")+", "+res.getString("address"));
-                }
-                
-            }
-        } catch (Exception e) {
-            System.out.println("---- Problema en la ejecucion.");
-        }
-        
-    }
-    
-    public void alterComboSedesUpdating(JComboBox combo, String actualItem){
-        combo.removeAllItems();
-        combo.addItem(actualItem);
-        String[] cadenaID = actualItem.split(",");
-        try {
-            ResultSet res = sedesDao.comboOptions();
-            while(res.next()){
-                if(!cadenaID[0].equals(res.getString("idUser"))){
-                    combo.addItem(res.getString("idUser")+", "+res.getString("first_name")+", "+res.getString("last_name"));
-                }
-                
-            }
-        } catch (Exception e) {
-            System.out.println("---- Problema en la ejecucion.");
-        }
-        
-    }
+
     
     public boolean createUser(String id, String fname, String lname, String telefono, String direccion, String position, String pass, String state){
         Users aU = new Users(id, fname, lname, telefono, direccion, position, pass, state);

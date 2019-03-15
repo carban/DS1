@@ -346,7 +346,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         comboStateSedeEdit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
 
-        comboJefeEdit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
         comboJefeEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 comboJefeEditMouseEntered(evt);
@@ -1332,7 +1331,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                 int identification = Integer.parseInt(idInput.getText());
                 if(identification<0){
                     JOptionPane.showMessageDialog(null, "Datos Incorrectos \nIntentalo Nuevamente");
-                }else if(control.createUser(idInput.getText(), fnameInput.getText(), lnameInput.getText(), telInput.getText(), dirInput.getText(), comboPosition.getItemAt(comboPosition.getSelectedIndex()), passInput.getText(), "T")){
+                }else if(control.createUser(idInput.getText(), fnameInput.getText(), lnameInput.getText(), telInput.getText(), dirInput.getText(), comboPosition.getItemAt(comboPosition.getSelectedIndex()), passInput.getText(), "Inactivo")){
                     this.cleanCreateSection();
                     JOptionPane.showMessageDialog(null, "Usuario creado exitosamente");
                 }else{
@@ -1432,6 +1431,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private void btnCreateSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateSedeActionPerformed
         // TODO add your handling code here:
         String[] cadena = comboJefe.getItemAt(comboJefe.getSelectedIndex()).split(",");
+        
         if(cityInput.getText().equals("") || adressInput.getText().equals("") || cadena[0].equals("Seleccione")){
             JOptionPane.showMessageDialog(null, "Error, hay algun campo vacio");
         }else if(control.createSede(cityInput.getText(), adressInput.getText(), comboStateSede.getItemAt(comboStateSede.getSelectedIndex()),cadena[0])){
@@ -1482,7 +1482,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         this.cityInputEdit.setText(aciudad);
         this.adressInputEdit.setText(adireccion);
         this.comboStateSedeEdit.setSelectedItem(aestado);
-        this.comboJefeEdit.setSelectedItem(ajefe);
+        this.comboJefeEdit.addItem(ajefe);
         this.editSedePopUp.setSize(527, 531);
         this.editSedePopUp.setLocationRelativeTo(null);
         this.editSedePopUp.setVisible(true);
@@ -1510,7 +1510,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
     private void comboJefeEditMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboJefeEditMouseEntered
         // TODO add your handling code here:
-        control.alterComboJefe(comboJefeEdit);
+        //control.alterComboJefeEditing(comboJefeEdit);
     }//GEN-LAST:event_comboJefeEditMouseEntered
 
     private void cleanCreateSection() {
