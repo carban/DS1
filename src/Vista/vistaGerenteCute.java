@@ -29,6 +29,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     DefaultTableModel md;
     DefaultTableModel mdSede;
     String JefeActualParaEditarXD;
+    String[] arregloJefeActualNPI;
     
     public vistaGerenteCute(String userID) {
         initComponents();
@@ -54,6 +55,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         mdSede = new DefaultTableModel(data, columnNamesSedes);
         tablaSedes.setModel(mdSede);
         tablaSedes.setDefaultEditor(Object.class, null);
+        
     }
 
     /**
@@ -1311,7 +1313,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void createUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserActionPerformed
-                if(idInput.getText().equals("") || fnameInput.getText().equals("") || lnameInput.getText().equals("") || telInput.getText().equals("") || dirInput.getText().equals("") || passInput.getText().equals("")){
+        if(idInput.getText().equals("") || fnameInput.getText().equals("") || lnameInput.getText().equals("") || telInput.getText().equals("") || dirInput.getText().equals("") || passInput.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Error, tienes elementos vacios");
         }else{
             try{
@@ -1381,7 +1383,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     }//GEN-LAST:event_editarUserActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        if(inputID.getText().equals("") || inputFN.getText().equals("") || inputLN.getText().equals("") || inputTel.getText().equals("") || inputDir.getText().equals("")){
+        
+        if(inputID.getText().equals("") || inputFN.equals("") || inputLN.getText().equals("") || inputTel.getText().equals("") || inputDir.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Error, tienes elementos vacios");
         }else{
             try{
@@ -1470,7 +1473,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         this.adressInputEdit.setText(adireccion);
         this.comboStateSedeEdit.setSelectedItem(aestado);
         this.comboJefeEdit.addItem(ajefe);
-        String[] arregloJefeActual = ajefe.split(",");
+        String[] arregloJefeActual = ajefe.split(","); //Para hacer esplit
+        arregloJefeActualNPI = ajefe.split(","); //porque si...
         JefeActualParaEditarXD = arregloJefeActual[0];
         System.err.println(JefeActualParaEditarXD);
         this.editSedePopUp.setSize(527, 531);
@@ -1501,7 +1505,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
     private void comboJefeEditMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboJefeEditMouseEntered
         // TODO add your handling code here:
-        control.alterComboJefeEditing(comboJefeEdit);
+        control.alterComboJefeEditing(comboJefeEdit, arregloJefeActualNPI);
+        System.out.println("----------JEFE:3->"+JefeActualParaEditarXD);
     }//GEN-LAST:event_comboJefeEditMouseEntered
 
     private void cleanCreateSection() {

@@ -29,12 +29,14 @@ public class Controladora {
         return usersDao.consultProfile(userID);
     }
     
-    public void alterComboJefeEditing(JComboBox combo){//NO C
-        String first = (String) combo.getItemAt(0);
+    public void alterComboJefeEditing(JComboBox combo, String[] firstPersonOnCombo){//NO C
+        
+        System.err.println(firstPersonOnCombo);
         combo.removeAllItems();
-        combo.addItem(first);
+        combo.addItem(firstPersonOnCombo[0]+","+firstPersonOnCombo[1]); //JAMES JAMES
         try {
             ResultSet res = sedesDao.comboOptions();
+            
             while(res.next()){
                 combo.addItem(res.getString("idUser")+", "+res.getString("first_name")+" "+res.getString("last_name"));
             }
