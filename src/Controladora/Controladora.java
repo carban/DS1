@@ -5,7 +5,6 @@ import Modelo.Users;
 import ModeloDAO.Acceso;
 import ModeloDAO.UsersDAO;
 import ModeloDAO.SedesDAO;
-import Vista.consultEdit;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
@@ -37,7 +36,7 @@ public class Controladora {
         try {
             ResultSet res = sedesDao.comboOptions();
             while(res.next()){
-                combo.addItem(res.getString("idUser")+", "+res.getString("first_name")+", "+res.getString("last_name"));
+                combo.addItem(res.getString("idUser")+", "+res.getString("first_name")+" "+res.getString("last_name"));
             }
         } catch (Exception e) {
             System.out.println("---- Problema en la ejecucion.");
@@ -65,20 +64,21 @@ public class Controladora {
     }
 
     
-    public boolean createUser(String id, String fname, String lname, String telefono, String direccion, String position, String pass, String state){
-        Users aU = new Users(id, fname, lname, telefono, direccion, position, pass, state);
+    public boolean createUser(String id, String fname, String lname, String telefono, String direccion, String position, String pass){
+        Users aU = new Users(id, fname, lname, telefono, direccion, position, pass);
+        aU.setState("Inactivo");
         return usersDao.createNewUser(aU);
     }
     
-    public boolean updateUser(String id, String fname, String lname, String telefono, String direccion, String position, String state){
-        Users aU = new Users(id, fname, lname, telefono, direccion, position, state);
+    public boolean updateUser(String id, String fname, String lname, String telefono, String direccion, String position){
+        Users aU = new Users(id, fname, lname, telefono, direccion, position);
         return usersDao.updateUser(aU);
     }
     
-    public boolean updateSede(String idSede, String city, String address,String state, String placeid){
+    public boolean updateSede(String idSede, String city, String address,String state, String placeid, String jefeActual){
         Sedes aS = new Sedes(city, address, state, placeid);
         aS.setId(idSede);
-        return sedesDao.updateSede(aS);
+        return sedesDao.updateSede(aS, jefeActual);
     }
     
     public ArrayList<String[]> consultUsers(){

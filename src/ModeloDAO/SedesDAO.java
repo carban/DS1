@@ -50,9 +50,9 @@ public class SedesDAO {
                 }
             }
 
-        } catch (PSQLException ex) {
+        } catch (PSQLException exe) {
             System.out.println("---- Problema en la ejecucion.");
-            ex.printStackTrace();
+            exe.printStackTrace();
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();
@@ -81,31 +81,34 @@ public class SedesDAO {
     }
     
         public ResultSet comboJefeAsignado(){
-        String QuerySQL = "SELECT * FROM Users WHERE work_position = 'Jefe de Taller' AND stateuser='Inactivo'";
-        System.out.println(QuerySQL);
-        Connection coneccion= this.access.getConnetion();
-        System.out.println("Connection: "+coneccion);
-        
-        try {
-            Statement sentencia = coneccion.createStatement();
-            System.out.println("sentencia: "+sentencia);
-            ResultSet resultado = sentencia.executeQuery(QuerySQL);
-            System.out.println("resultado: "+resultado);
-            return resultado;
+            String QuerySQL = "SELECT * FROM Users WHERE work_position = 'Jefe de Taller' AND stateuser='Inactivo'";
+            System.out.println(QuerySQL);
+            Connection coneccion= this.access.getConnetion();
+            System.out.println("Connection: "+coneccion);
 
-        } catch (SQLException ex) {
-            System.out.println("---- Problema en la ejecucion.");
-            ex.printStackTrace();
-        }
-        return null;
+            try {
+                Statement sentencia = coneccion.createStatement();
+                System.out.println("sentencia: "+sentencia);
+                ResultSet resultado = sentencia.executeQuery(QuerySQL);
+                System.out.println("resultado: "+resultado);
+                return resultado;
+
+            } catch (SQLException ex) {
+                System.out.println("---- Problema en la ejecucion.");
+                ex.printStackTrace();
+            }
+            return null;
     }
     
-    public boolean updateSede(Sedes aSede) {
+    public boolean updateSede(Sedes aSede, String jefeActual) {
             String QuerySQL = "UPDATE Sedes SET city='"+aSede.getCiudad()+
                     "', address='"+aSede.getDireccion()+ "', stateSede='"+aSede.getEstado()
                     + "', idUser='"+aSede.getJefe()+"' WHERE idSedes = '"+aSede.getId()+"'";
             
         String QuerySQLaux = "SELECT idSedes FROM Sedes WHERE idSedes = '"+aSede.getId()+"'";
+        String queryActivo = "UPDATE users SET stateuser='Activo' WHERE idUser = '"+aSede.getJefe()+"'";
+        String queryInactivo = "UPDATE users SET stateuser='Inactivo' WHERE idUser = '"+jefeActual+"'";
+
         System.out.println(QuerySQL);
         System.out.println(QuerySQLaux);
         Connection coneccion= this.access.getConnetion();
@@ -118,11 +121,27 @@ public class SedesDAO {
             System.out.println("resultado: "+resultado);
             if(resultado.next()){
                 int res = sentencia.executeUpdate(QuerySQL);
-                if(res==1){
-                    return true;
+                //VALIDACION DE CAMBIO DE USUARIO
+                int active = 0;
+                int inactive = 0;
+                System.out.println("Current"+jefeActual);
+                System.out.println("Other:" +aSede.getJefe());
+                if(!aSede.getJefe().equals(jefeActual)){
+                    System.out.println("HOLIWI");
+                    active = sentencia.executeUpdate(queryActivo);
+                    inactive = sentencia.executeUpdate(queryInactivo);
+                    if(res==1 && (active==1 || inactive==1)){ //Esta condicion es necesaria para que funcione todo 
+                        return true;
+                    }else{
+                        return false;
+                    }
                 }else{
-                    return false;
+                    if(res==1){
+                        return true;
+                    }
                 }
+                          
+
             }else{
                 return false;
             }
@@ -136,7 +155,7 @@ public class SedesDAO {
     }
        
     public ArrayList<String[]> consultSede(){
-        String QuerySQL = "select * from sedes";
+        String QuerySQL = "select idSedes, city, address, stateSede, idUser, first_name, last_name from sedes NATURAL JOIN users";
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
         System.out.println("Connection: "+coneccion);
@@ -156,7 +175,7 @@ public class SedesDAO {
                 String a2 = resultado.getString("city");
                 String a3 = resultado.getString("address");
                 String a4 = resultado.getString("stateSede");
-                String a5 = resultado.getString("idUser");
+                String a5 = resultado.getString("idUser")+", "+resultado.getString("first_name")+" "+resultado.getString("last_name");
                 String[] niu = {a1, a2, a3, a4, a5}; //Es importante crear un nuevo arreglo cada vez
                 matrixList.add(niu);
                 cont++;

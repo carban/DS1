@@ -28,7 +28,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     boolean editing = false;
     DefaultTableModel md;
     DefaultTableModel mdSede;
-            
+    String JefeActualParaEditarXD;
+    
     public vistaGerenteCute(String userID) {
         initComponents();
         setColor(btn_1); 
@@ -45,7 +46,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         this.profileWP.setText(profileInfo.getPosition());
         
         String data[][] = {};
-        String columnNames[]={"Id","Nombre","Apellido","Telefono","Direccion","Posicion","Estado"};
+        String columnNames[]={"Id","Nombre","Apellido","Telefono","Direccion","Posicion"};
         md = new DefaultTableModel(data, columnNames);
         tablaDatos.setModel(md);
         tablaDatos.setDefaultEditor(Object.class, null); //Permite que las celdas no se modifiquen, pero si se seleccionen
@@ -70,12 +71,10 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
         inputFN = new javax.swing.JTextField();
         inputLN = new javax.swing.JTextField();
         comboWP = new javax.swing.JComboBox<>();
-        comboS = new javax.swing.JComboBox<>();
         saveButton = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
         inputTel = new javax.swing.JTextField();
@@ -190,8 +189,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         jLabel28.setText("Posicion de Trabajo:");
 
-        jLabel29.setText("Estado:");
-
         inputID.setBackground(new java.awt.Color(204, 255, 255));
         inputID.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
         inputID.setDisabledTextColor(new java.awt.Color(255, 102, 102));
@@ -204,10 +201,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         comboWP.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         comboWP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jefe de Taller", "Vendedor" }));
         comboWP.setFocusable(false);
-
-        comboS.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        comboS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
-        comboS.setFocusable(false);
 
         saveButton.setBackground(new java.awt.Color(204, 255, 204));
         saveButton.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
@@ -238,7 +231,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editPopUpLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel29)
                     .addComponent(jLabel26)
                     .addComponent(jLabel21)
                     .addComponent(jLabel27)
@@ -252,8 +244,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                     .addComponent(inputLN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputTel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputDir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboWP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboWP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(72, 72, 72))
             .addGroup(editPopUpLayout.createSequentialGroup()
                 .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,15 +283,11 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                 .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputDir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31))
-                .addGap(18, 23, Short.MAX_VALUE)
+                .addGap(18, 31, Short.MAX_VALUE)
                 .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(comboWP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(comboS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -965,17 +952,17 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         tablaDatos.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         tablaDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Apellido", "Telefono", "Direccion", "Posicion", "Estado"
+                "ID", "Nombre", "Apellido", "Telefono", "Direccion", "Posicion"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1331,7 +1318,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                 int identification = Integer.parseInt(idInput.getText());
                 if(identification<0){
                     JOptionPane.showMessageDialog(null, "Datos Incorrectos \nIntentalo Nuevamente");
-                }else if(control.createUser(idInput.getText(), fnameInput.getText(), lnameInput.getText(), telInput.getText(), dirInput.getText(), comboPosition.getItemAt(comboPosition.getSelectedIndex()), passInput.getText(), "Inactivo")){
+                }else if(control.createUser(idInput.getText(), fnameInput.getText(), lnameInput.getText(), telInput.getText(), dirInput.getText(), comboPosition.getItemAt(comboPosition.getSelectedIndex()), passInput.getText())){
                     this.cleanCreateSection();
                     JOptionPane.showMessageDialog(null, "Usuario creado exitosamente");
                 }else{
@@ -1361,7 +1348,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         String atel = tablaDatos.getModel().getValueAt(index, 3).toString();
         String adir = tablaDatos.getModel().getValueAt(index, 4).toString();
         String aposicion = tablaDatos.getModel().getValueAt(index, 5).toString();
-        String aestado = tablaDatos.getModel().getValueAt(index, 6).toString();
 //        
 //        consultEdit ce = new consultEdit(new Users(aid, anombre, aapellido, atel, adir, aposicion, aestado));
 //        ce.setVisible(true);
@@ -1379,11 +1365,12 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         }
         //this.comboWP.setEditable(true);
         //this.comboWP.setEnabled(false);
+        /*
         if(aestado.equals("T")){
             this.comboS.setSelectedIndex(0);
         }else{
             this.comboS.setSelectedIndex(1);
-        }
+        }*/
         //this.comboS.setEditable(true);
         //this.comboS.setEnabled(false);
         
@@ -1401,7 +1388,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                 int identification = Integer.parseInt(inputID.getText());
                 if(identification<0){
                     JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente1");
-                }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), inputTel.getText(), inputDir.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()), comboS.getItemAt(comboS.getSelectedIndex()))){
+                }else if(control.updateUser(inputID.getText(), inputFN.getText(), inputLN.getText(), inputTel.getText(), inputDir.getText(), comboWP.getItemAt(comboWP.getSelectedIndex()))){
                     JOptionPane.showMessageDialog(null, "Usuario actualizado exitosamente");
                     //this.editingState(false);
                     cargarTable();
@@ -1483,6 +1470,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         this.adressInputEdit.setText(adireccion);
         this.comboStateSedeEdit.setSelectedItem(aestado);
         this.comboJefeEdit.addItem(ajefe);
+        String[] arregloJefeActual = ajefe.split(",");
+        JefeActualParaEditarXD = arregloJefeActual[0];
+        System.err.println(JefeActualParaEditarXD);
         this.editSedePopUp.setSize(527, 531);
         this.editSedePopUp.setLocationRelativeTo(null);
         this.editSedePopUp.setVisible(true);
@@ -1496,9 +1486,10 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private void saveButtonSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonSedeActionPerformed
         // TODO add your handling code here:
         String[] cadena = comboJefeEdit.getItemAt(comboJefeEdit.getSelectedIndex()).split(",");
+        
         if(cityInputEdit.getText().equals("") || adressInputEdit.getText().equals("") || cadena[0].equals("Seleccione")){
             JOptionPane.showMessageDialog(null, "Error, hay algun campo vacio");
-        }else if(control.updateSede(inputIDSede.getText(),cityInputEdit.getText(), adressInputEdit.getText(), comboStateSedeEdit.getItemAt(comboStateSedeEdit.getSelectedIndex()),cadena[0])){
+        }else if(control.updateSede(inputIDSede.getText(),cityInputEdit.getText(), adressInputEdit.getText(), comboStateSedeEdit.getItemAt(comboStateSedeEdit.getSelectedIndex()),cadena[0],JefeActualParaEditarXD)){
                 this.cleanCreateSede();
                 JOptionPane.showMessageDialog(null, "Sede actualizada exitosamente");
                 cargarTableSede();
@@ -1510,7 +1501,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
     private void comboJefeEditMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboJefeEditMouseEntered
         // TODO add your handling code here:
-        //control.alterComboJefeEditing(comboJefeEdit);
+        control.alterComboJefeEditing(comboJefeEdit);
     }//GEN-LAST:event_comboJefeEditMouseEntered
 
     private void cleanCreateSection() {
@@ -1561,7 +1552,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboJefe;
     private javax.swing.JComboBox<String> comboJefeEdit;
     private javax.swing.JComboBox<String> comboPosition;
-    private javax.swing.JComboBox<String> comboS;
     private javax.swing.JComboBox<String> comboStateSede;
     private javax.swing.JComboBox<String> comboStateSedeEdit;
     private javax.swing.JComboBox<String> comboWP;
@@ -1608,7 +1598,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;

@@ -98,21 +98,21 @@ public class UsersDAO {
                 String pass = resultado.getString("password");
                 String state = resultado.getString("stateuser");
                 
-                return new Users(iduser, fname, lname, tel, dir, wp, pass, state);
+                return new Users(iduser, fname, lname, tel, dir, wp, pass);
             }else{
-                return new Users(null, null, null, null, null, null, null, null);
+                return new Users(null, null, null, null, null, null, null);
             }
 
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();
         }
-        return new Users(null, null, null, null, null, null, null, null);
+        return new Users(null, null, null, null, null, null, null);
     }
     
     
     public ArrayList<String[]> consultUsers(){
-        String QuerySQL = "select iduser, first_name, last_name, telefono, direccion, work_position, stateuser from users where work_position='Jefe de Taller' union select iduser, first_name, last_name, telefono, direccion, work_position, stateuser from users where work_position='Vendedor'";
+        String QuerySQL = "select iduser, first_name, last_name, telefono, direccion, work_position from users where work_position='Jefe de Taller' union select iduser, first_name, last_name, telefono, direccion, work_position from users where work_position='Vendedor'";
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
         System.out.println("Connection: "+coneccion);
@@ -134,8 +134,7 @@ public class UsersDAO {
                 String a4 = resultado.getString("telefono");
                 String a5 = resultado.getString("direccion");
                 String a6 = resultado.getString("work_position");
-                String a7 = resultado.getString("stateuser");
-                String[] niu = {a1, a2, a3, a4, a5, a6, a7}; //Es importante crear un nuevo arreglo cada vez
+                String[] niu = {a1, a2, a3, a4, a5, a6}; //Es importante crear un nuevo arreglo cada vez
                 matrixList.add(niu);
                 cont++;
             }

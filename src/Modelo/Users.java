@@ -11,7 +11,7 @@ public class Users {
     String dir;
     String state;
     
-    public Users (String id, String fname, String lname, String tel, String dir, String position, String pass, String state){
+    public Users (String id, String fname, String lname, String tel, String dir, String position, String pass){
         this.id = id;
         this.fname = fname;
         this.lname = lname;
@@ -19,17 +19,15 @@ public class Users {
         this.position = position;
         this.tel = tel;
         this.dir = dir;
-        this.state = state;
     }
 
-    public Users(String id, String fname, String lname, String tel, String dir, String position, String state) {
+    public Users(String id, String fname, String lname, String tel, String dir, String position) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
         this.tel = tel;
         this.dir = dir;
         this.position = position;
-        this.state = state;
     }
 
     public String getId() {
