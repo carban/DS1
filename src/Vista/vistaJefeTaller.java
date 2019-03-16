@@ -421,10 +421,10 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        side_pane.setBackground(new java.awt.Color(23, 35, 51));
+        side_pane.setBackground(new java.awt.Color(0, 51, 51));
         side_pane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_1.setBackground(new java.awt.Color(23, 35, 51));
+        btn_1.setBackground(new java.awt.Color(0, 51, 51));
         btn_1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_1MousePressed(evt);
@@ -472,7 +472,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         side_pane.add(btn_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 120, -1));
 
-        btn_2.setBackground(new java.awt.Color(23, 35, 51));
+        btn_2.setBackground(new java.awt.Color(0, 51, 51));
         btn_2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 btn_2MouseReleased(evt);
@@ -520,7 +520,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         side_pane.add(btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 120, -1));
 
-        btn_3.setBackground(new java.awt.Color(23, 35, 51));
+        btn_3.setBackground(new java.awt.Color(0, 51, 51));
         btn_3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_3MousePressed(evt);
@@ -568,7 +568,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         side_pane.add(btn_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 120, -1));
 
-        btn_4.setBackground(new java.awt.Color(23, 35, 51));
+        btn_4.setBackground(new java.awt.Color(0, 51, 51));
         btn_4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_4MousePressed(evt);
@@ -616,7 +616,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         side_pane.add(btn_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 120, -1));
 
-        btn_5.setBackground(new java.awt.Color(23, 35, 51));
+        btn_5.setBackground(new java.awt.Color(0, 51, 51));
         btn_5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 btn_5MouseReleased(evt);
@@ -666,7 +666,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         getContentPane().add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 590));
 
-        jPanel2.setBackground(new java.awt.Color(71, 120, 197));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 51));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel2MouseDragged(evt);
@@ -1528,13 +1528,13 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     
     private void setColor(JPanel pane)
     {
-        pane.setBackground(new Color(41,57,80));
+        pane.setBackground(new Color(0,102,51));
     }
     
     private void resetColor(JPanel [] pane, JPanel [] indicators)
     {
         for(int i=0;i<pane.length;i++){
-           pane[i].setBackground(new Color(23,35,51));
+           pane[i].setBackground(new Color(0,51,51));
            
         } for(int i=0;i<indicators.length;i++){
            indicators[i].setOpaque(false);           
