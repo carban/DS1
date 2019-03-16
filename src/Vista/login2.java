@@ -42,7 +42,7 @@ public class login2 extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/users.png"))); // NOI18N
 
         userInput.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        userInput.setForeground(new java.awt.Color(204, 204, 204));
+        userInput.setForeground(new java.awt.Color(102, 102, 102));
         userInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         userInput.setText("USUARIO");
         userInput.setToolTipText("");
@@ -61,7 +61,7 @@ public class login2 extends javax.swing.JFrame {
             }
         });
 
-        passwordInput.setForeground(new java.awt.Color(204, 204, 204));
+        passwordInput.setForeground(new java.awt.Color(102, 102, 102));
         passwordInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passwordInput.setText("•••••••••••••••");
         passwordInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -152,8 +152,8 @@ public class login2 extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("INICIAR SESION");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 280, 40));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/xyz_1.png"))); // NOI18N
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 380, 100));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cabecera.png"))); // NOI18N

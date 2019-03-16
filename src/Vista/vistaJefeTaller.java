@@ -1465,7 +1465,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
-        login log = new login();
+        login2 log = new login2();
         log.setLocationRelativeTo(null);
         log.setVisible(true);
         this.dispose();

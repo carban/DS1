@@ -113,6 +113,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         btn_5 = new javax.swing.JPanel();
         ind_5 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         parent = new javax.swing.JPanel();
@@ -669,6 +670,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         );
 
         side_pane.add(btn_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 190, -1));
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/xyz_1.png"))); // NOI18N
+        side_pane.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         getContentPane().add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 590));
 
@@ -1390,7 +1394,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
-        login log = new login();
+        login2 log = new login2();
         log.setLocationRelativeTo(null);
         log.setVisible(true);
         this.dispose();
@@ -1596,6 +1600,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
