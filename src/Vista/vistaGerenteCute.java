@@ -475,6 +475,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 btn_2MouseReleased(evt);
             }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_2MouseClicked(evt);
+            }
         });
 
         ind_2.setOpaque(false);
@@ -620,6 +623,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         btn_5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 btn_5MouseReleased(evt);
+            }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_5MouseClicked(evt);
             }
         });
 
@@ -1485,6 +1491,16 @@ public class vistaGerenteCute extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Datos incorrectos");
         }
     }//GEN-LAST:event_btnCreateSedeActionPerformed
+
+    private void btn_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseClicked
+        // TODO add your handling code here:
+        control.alterComboJefe(comboJefe);
+    }//GEN-LAST:event_btn_2MouseClicked
+
+    private void btn_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseClicked
+        // TODO add your handling code here:
+        this.cargarTableSede();
+    }//GEN-LAST:event_btn_5MouseClicked
 
     private void cleanCreateSection() {
         idInput.setText("");
