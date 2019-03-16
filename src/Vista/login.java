@@ -116,12 +116,12 @@ public class login extends javax.swing.JFrame {
                         viGerente.setVisible(true);
                         this.dispose();
                 }else if(aux =="Vendedor"){
-                    vistaVendedor viVendedor = new vistaVendedor();
+                    vistaVendedor viVendedor = new vistaVendedor(user);
                     viVendedor.setLocationRelativeTo(null);
                     viVendedor.setVisible(true);
                     this.dispose();
                 }else if(aux =="Jefe de Taller"){
-                    vistaJefeTaller viJefeTaller = new vistaJefeTaller();
+                    vistaJefeTaller viJefeTaller = new vistaJefeTaller(user);
                     viJefeTaller.setLocationRelativeTo(null);
                     viJefeTaller.setVisible(true);
                     this.dispose();
