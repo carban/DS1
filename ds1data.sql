@@ -45,6 +45,7 @@ insert into Users values(777, 'Chritopher', 'Nolan', '63110','casa 80', 'Vendedo
 insert into Sedes (city, address, stateSede, idUser) values ('Cali', 'Calle 6 casa 7', 'Activo', 222);
 insert into Sedes (city, address, stateSede, idUser) values ('Palmira', 'Calle 18 casa 9', 'Activo', 333);
 /*vendedores sedes*/
+/*La idea es que solo hayan ids de vendedores*/
 insert into vendedoresSede values (1, 444);
 insert into vendedoresSede values (2, 666);
 insert into vendedoresSede values (2, 777);

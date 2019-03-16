@@ -710,7 +710,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         yellow.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel14.setText("PERFIL");
+        jLabel14.setText("PERFIL JEFE DE TALLER");
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel1.setText("ID :");
@@ -790,19 +790,22 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                         .addGap(404, 404, 404)
                         .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
-                            .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(SignOut)
-                                .addComponent(jLabel14)))))
-                .addContainerGap(352, Short.MAX_VALUE))
+                            .addGroup(yellowLayout.createSequentialGroup()
+                                .addGap(158, 158, 158)
+                                .addComponent(SignOut))))
+                    .addGroup(yellowLayout.createSequentialGroup()
+                        .addGap(336, 336, 336)
+                        .addComponent(jLabel14)))
+                .addContainerGap(315, Short.MAX_VALUE))
         );
         yellowLayout.setVerticalGroup(
             yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(yellowLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addContainerGap()
                 .addComponent(jLabel14)
-                .addGap(36, 36, 36)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(profileID))
@@ -828,7 +831,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                     .addComponent(profileWP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addComponent(SignOut)
                 .addGap(33, 33, 33))
         );

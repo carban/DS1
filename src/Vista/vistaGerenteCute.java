@@ -169,8 +169,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         comboStateSede = new javax.swing.JComboBox<>();
         jLabel40 = new javax.swing.JLabel();
         comboJefe = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         red = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -573,6 +571,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_4MousePressed(evt);
             }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                consultarEmpleados(evt);
+            }
         });
 
         ind_4.setOpaque(false);
@@ -710,7 +711,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         yellow.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel14.setText("PERFIL");
+        jLabel14.setText("PERFIL GERENTE");
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel1.setText("ID :");
@@ -1140,34 +1141,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         parent.add(purple, "card2");
 
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"12/1/2018", "Expresso POS", "Kenya", null},
-                {"12/1/2018", "ROM Gen", "US", null},
-                {"12/1/2018", "Text Ed", "UK", null},
-                {"12/1/2018", "Mola Con", "China", null}
-            },
-            new String [] {
-                "Date", "Item", "Location", "Completed"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setRowHeight(22);
-        jScrollPane1.setViewportView(jTable1);
-
-        parent.add(jScrollPane1, "card3");
-
         jLabel36.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel36.setText("LISTA DE SEDES");
 
@@ -1509,6 +1482,10 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         System.out.println("----------JEFE:3->"+JefeActualParaEditarXD);
     }//GEN-LAST:event_comboJefeEditMouseEntered
 
+    private void consultarEmpleados(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultarEmpleados
+        this.cargarTable();
+    }//GEN-LAST:event_consultarEmpleados
+
     private void cleanCreateSection() {
         idInput.setText("");
         fnameInput.setText("");
@@ -1627,10 +1604,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField lnameInput;
     private javax.swing.JPanel parent;
     private javax.swing.JTextField passInput;
