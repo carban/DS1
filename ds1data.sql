@@ -16,8 +16,8 @@ create table Users (idUser int PRIMARY KEY, first_name varchar(30) NOT NULL, las
 /*SEDES*/
 create table Sedes (idSedes SERIAL PRIMARY KEY, city varchar(30), address varchar(50) NOT NULL, stateSede varchar(8) NOT NULL, idUser int UNIQUE, FOREIGN KEY (idUser) REFERENCES Users (idUser));
 
-/*TABLA VENDEDOR*/
-create table vendedoresSede (idSedes int, idUser int UNIQUE, PRIMARY KEY(idSedes, idUser	), FOREIGN KEY (idUser) REFERENCES Users (idUser), FOREIGN KEY (idSedes) REFERENCES Sedes (idSedes));
+/*TABLA VENDEDOR SEDE*/
+create table vendedoresSede (idSedes int, idUser int UNIQUE, PRIMARY KEY(idSedes, idUser), FOREIGN KEY (idUser) REFERENCES Users (idUser), FOREIGN KEY (idSedes) REFERENCES Sedes (idSedes));
 
 /*PRODUCTO*/
 create table Producto (idProducto int PRIMARY KEY, nombre varchar(30), descripcion varchar(50) NOT NULL, color varchar(20) NOT NULL,
