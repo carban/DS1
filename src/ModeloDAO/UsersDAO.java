@@ -48,7 +48,7 @@ public class UsersDAO {
     public boolean createNewUser(Users aUser){
         String QuerySQL = "INSERT INTO Users VALUES ("+ aUser.getId() + ", '"+aUser.getFname()+ "', '"+aUser.getLname()+ "', '"
                 +aUser.getTel()+"', '"+aUser.getDir()+"', '"+aUser.getPosition()+ "', '"+aUser.getPass()+ "', '"+aUser.getState()+ "')";
-        String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
+        String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"'"; //AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
         System.out.println(QuerySQL);
         System.out.println(QuerySQLaux);
         Connection coneccion= this.access.getConnetion();

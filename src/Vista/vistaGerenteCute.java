@@ -728,7 +728,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         jLabel5.setText("Telefono:");
 
         jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        jLabel6.setText("Posicion de Trabajo:");
+        jLabel6.setText("Cargo:");
 
         jLabel12.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel12.setText("Direccion:");
@@ -794,7 +794,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                             .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(SignOut)
                                 .addComponent(jLabel14)))))
-                .addContainerGap(352, Short.MAX_VALUE))
+                .addContainerGap(379, Short.MAX_VALUE))
         );
         yellowLayout.setVerticalGroup(
             yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

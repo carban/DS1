@@ -2,7 +2,9 @@ package Controladora;
 
 import Modelo.Sedes;
 import Modelo.Users;
+import Modelo.Jefes;
 import ModeloDAO.Acceso;
+import ModeloDAO.JefesDAO;
 import ModeloDAO.UsersDAO;
 import ModeloDAO.SedesDAO;
 import java.sql.ResultSet;
@@ -15,10 +17,12 @@ public class Controladora {
     Acceso access;
     UsersDAO usersDao;
     SedesDAO sedesDao;
+    JefesDAO jefesDao;
     public Controladora(){
         access = new Acceso();
         this.usersDao = new UsersDAO(access);
         this.sedesDao = new SedesDAO(access);
+        this.jefesDao = new JefesDAO(access);
     }
     
     public String login(String user, String pass){
@@ -27,6 +31,10 @@ public class Controladora {
     
     public Users consultProfile(String userID){
         return usersDao.consultProfile(userID);
+    }
+    
+    public Jefes consultProfileJefe(String userID){
+        return jefesDao.consultProfile(userID);
     }
     
     public void alterComboJefeEditing(JComboBox combo, String[] firstPersonOnCombo){//NO C
