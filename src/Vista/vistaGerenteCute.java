@@ -1426,6 +1426,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         this.cityInputEdit.setText(aciudad);
         this.adressInputEdit.setText(adireccion);
         this.comboStateSedeEdit.setSelectedItem(aestado);
+        this.comboJefeEdit.removeAllItems(); //Borra todos los items primero
         this.comboJefeEdit.addItem(ajefe);
         String[] arregloJefeActual = ajefe.split(","); //Para hacer esplit
         arregloJefeActualNPI = ajefe.split(","); //porque si...

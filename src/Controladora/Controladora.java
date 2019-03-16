@@ -41,7 +41,7 @@ public class Controladora {
         
         System.err.println(firstPersonOnCombo);
         combo.removeAllItems();
-        combo.addItem(firstPersonOnCombo[0]+","+firstPersonOnCombo[1]); //JAMES JAMES
+        combo.addItem(firstPersonOnCombo[0]+","+firstPersonOnCombo[1]);
         try {
             ResultSet res = sedesDao.comboOptions();
             

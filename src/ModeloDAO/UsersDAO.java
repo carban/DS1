@@ -169,7 +169,7 @@ public class UsersDAO {
 
     public boolean updateUser(Users aUser) {
             String QuerySQL = "UPDATE Users SET first_name='"+aUser.getFname()+ "', last_name='"+aUser.getLname()
-                    +"', telefono='"+aUser.getTel()+"', direccion='"+aUser.getDir()+"', work_position='"+aUser.getPosition()+ "', stateuser='"+aUser.getState()+"' WHERE iduser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
+                    +"', telefono='"+aUser.getTel()+"', direccion='"+aUser.getDir()+"', work_position='"+aUser.getPosition()+"' WHERE iduser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
             
         String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
         System.out.println(QuerySQL);
