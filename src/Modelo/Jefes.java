@@ -22,17 +22,17 @@ public class Jefes {
     String ciudadSede;
     String dirSede;
 
-    public Jefes(String id, String fname, String lname, String pass, String position, String tel, String dir, String state, String idSede, String ciudadSede, String dirSede) {
+    public Jefes(String id, String fname, String lname, String tel, String dir, String wp, String pass, String state, String idSede, String ciudad, String dirSede) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
         this.pass = pass;
-        this.position = position;
+        this.position = wp;
         this.tel = tel;
         this.dir = dir;
         this.state = state;
         this.idSede = idSede;
-        this.ciudadSede = ciudadSede;
+        this.ciudadSede = ciudad;
         this.dirSede = dirSede;
     }
 

@@ -21,10 +21,10 @@ create table vendedoresSede (idSedes int, idUser int UNIQUE, PRIMARY KEY(idSedes
 
 /*PRODUCTO*/
 create table Producto (idProducto int PRIMARY KEY, nombre varchar(30), descripcion varchar(50) NOT NULL, color varchar(20) NOT NULL,
-largo numeric, ancho numeric, precio numeric );
+alto numeric, largo numeric, ancho numeric, precio numeric );
 /*INVENTARIO*/
 --INVENTARIO VA A ALMACENAR LOS PRODUCTOS DE CADA SEDE, CADA PRODUCTO TIENE EL ID de la sede a la que corresponde
-create table Inventario (idProducto int, idSedes int, PRIMARY KEY (idProducto, idSedes), FOREIGN KEY (idProducto) REFERENCES Producto (idProducto), FOREIGN KEY (idSedes) REFERENCES Sedes (idSedes));
+create table Inventario (idProducto int, idSedes int, cantidad int, PRIMARY KEY (idProducto, idSedes), FOREIGN KEY (idProducto) REFERENCES Producto (idProducto), FOREIGN KEY (idSedes) REFERENCES Sedes (idSedes));
 /*VENTA*/
 create table Venta (idVenta int PRIMARY KEY, idUser int, precioTotal decimal, fecha date, FOREIGN KEY (idUser) REFERENCES Users (idUser));
 /*COTIZACION*/
@@ -49,3 +49,19 @@ insert into Sedes (city, address, stateSede, idUser) values ('Palmira', 'Calle 1
 insert into vendedoresSede values (1, 444);
 insert into vendedoresSede values (2, 666);
 insert into vendedoresSede values (2, 777);
+
+/*Productos*/
+insert into producto values (401, 'Super sofa', 'sofa de 3 puestos', 'Cafe Claro', 80, 80, 296, 600000);
+insert into producto values (402, 'Mega sofa', 'sofa de 2 puestos', 'Blanco', 90, 90, 290, 500000);      
+insert into producto values (403, 'Sofa Normal', 'sofa de 2 puestos', 'Cafe Oscuro', 80, 80, 296, 200000);      
+insert into producto values (404, 'Super comedor', 'Comedor para 3 personas', 'Cafe Oscuro', 60, 50, 180, 400000);      
+insert into producto values (405, 'Mega Comedor', 'comedor para 6 personas', 'Negro', 70, 90, 150, 600000);
+
+/*Inventario*/
+insert into inventario values (401, 1, 30);
+insert into inventario values (402, 1, 30);
+insert into inventario values (403, 1, 15);
+
+insert into inventario values (401, 2, 15);
+insert into inventario values (404, 2, 10);
+insert into inventario values (405, 2, 30);

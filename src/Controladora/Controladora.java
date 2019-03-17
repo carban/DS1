@@ -73,34 +73,55 @@ public class Controladora {
         
     }
 
-    
+    //Funcion para crear usuarios desde el gerente
     public boolean createUser(String id, String fname, String lname, String telefono, String direccion, String position, String pass){
         Users aU = new Users(id, fname, lname, telefono, direccion, position, pass);
         aU.setState("Inactivo");
         return usersDao.createNewUser(aU);
     }
+    //Funcion para crear usuarios vendedor desde la vista del Jefe de taller
+    public boolean createUserVendedor(String id, String fname, String lname, String telefono, String direccion, String pass, String idSede){
+        Users aU = new Users(id, fname, lname, telefono, direccion, "Vendedor", pass);
+        aU.setState("Activo");
+        return jefesDao.createNewUser(aU, idSede);
+    }
     
+    //Funcion para actualizar usuarios desde el gerente
     public boolean updateUser(String id, String fname, String lname, String telefono, String direccion, String position){
         Users aU = new Users(id, fname, lname, telefono, direccion, position);
         return usersDao.updateUser(aU);
     }
     
+    //Funcion para actualizar usuarios desde el gerente
+    public boolean updateUserVendedor(String id, String fname, String lname, String telefono, String direccion){
+        Users aU = new Users(id, fname, lname, telefono, direccion, "Vendedor");
+        return jefesDao.updateUserVendedor(aU);
+    }
+    
+    //Funcion para actualizar sedes desde el gerente
     public boolean updateSede(String idSede, String city, String address,String state, String placeid, String jefeActual){
         Sedes aS = new Sedes(city, address, state, placeid);
         aS.setId(idSede);
         return sedesDao.updateSede(aS, jefeActual);
     }
     
+    //Funcion para consultar usuarios desde el gerente
     public ArrayList<String[]> consultUsers(){
         return  usersDao.consultUsers();
-
     }
     
+    //Funcion para consultar vendedores desde el Jefe de taller
+    public ArrayList<String[]> consultUsersVendedores(String idSede){
+        return  jefesDao.consultUsersVendedores(idSede);
+    }
+    
+    //Funcion para consultar sedes desde el gerente
     public ArrayList<String[]> consultSedes(){
         return  sedesDao.consultSede();
 
     }
     
+    //Funcion para crear sedes desde el gerente
     public boolean createSede(String ciudad, String direccion,String estado ,String jefe){
         Sedes sede = new Sedes(ciudad, direccion, estado,jefe);
         return sedesDao.createNewSede(sede);
