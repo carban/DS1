@@ -788,7 +788,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel1))))
-                        .addGap(81, 81, 81)
+                        .addGap(128, 128, 128)
                         .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(profileWP)
                             .addComponent(profileDir)
@@ -797,13 +797,14 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                             .addComponent(profileID)
                             .addComponent(profileFName)))
                     .addGroup(yellowLayout.createSequentialGroup()
+                        .addGap(354, 354, 354)
+                        .addComponent(jLabel14))
+                    .addGroup(yellowLayout.createSequentialGroup()
                         .addGap(404, 404, 404)
                         .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(SignOut)
-                                .addComponent(jLabel14)))))
-                .addContainerGap(282, Short.MAX_VALUE))
+                            .addComponent(SignOut)
+                            .addComponent(jLabel18))))
+                .addContainerGap(316, Short.MAX_VALUE))
         );
         yellowLayout.setVerticalGroup(
             yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -838,9 +839,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                     .addComponent(profileWP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addGap(124, 124, 124)
                 .addComponent(SignOut)
-                .addGap(33, 33, 33))
+                .addGap(28, 28, 28))
         );
 
         parent.add(yellow, "card6");
