@@ -5,9 +5,11 @@
         <group>
             <file>file:/home/carban/NetBeansProjects/DS3/DS1/src/Vista/login2.java</file>
             <file>file:/home/carban/NetBeansProjects/DS3/DS1/src/Controladora/Controladora.java</file>
+            <file>file:/home/carban/NetBeansProjects/DS3/DS1/src/Modelo/Jefes.java</file>
             <file>file:/home/carban/NetBeansProjects/DS3/DS1/src/ModeloDAO/Acceso.java</file>
             <file>file:/home/carban/NetBeansProjects/DS3/DS1/src/ModeloDAO/JefesDAO.java</file>
-            <file>file:/home/carban/NetBeansProjects/DS3/DS1/src/Vista/vistaJefeTaller.java</file>
+            <file>file:/home/carban/NetBeansProjects/DS3/DS1/src/Vista/vistaGerenteCute.java</file>
+            <file>file:/home/carban/NetBeansProjects/DS3/DS1/src/ModeloDAO/UsersDAO.java</file>
         </group>
     </open-files>
 </project-private>

@@ -3,8 +3,10 @@ package Controladora;
 import Modelo.Sedes;
 import Modelo.Users;
 import Modelo.Jefes;
+import Modelo.Producto;
 import ModeloDAO.Acceso;
 import ModeloDAO.JefesDAO;
+import ModeloDAO.ProductoDAO;
 import ModeloDAO.UsersDAO;
 import ModeloDAO.SedesDAO;
 import java.sql.ResultSet;
@@ -18,11 +20,13 @@ public class Controladora {
     UsersDAO usersDao;
     SedesDAO sedesDao;
     JefesDAO jefesDao;
+    ProductoDAO productoDao;
     public Controladora(){
         access = new Acceso();
         this.usersDao = new UsersDAO(access);
         this.sedesDao = new SedesDAO(access);
         this.jefesDao = new JefesDAO(access);
+        this.productoDao = new ProductoDAO(access);
     }
     
     public String login(String user, String pass){
@@ -125,5 +129,11 @@ public class Controladora {
     public boolean createSede(String ciudad, String direccion,String estado ,String jefe){
         Sedes sede = new Sedes(ciudad, direccion, estado,jefe);
         return sedesDao.createNewSede(sede);
+    }
+    
+    //Funcion para crear usuarios desde el gerente
+    public boolean crearProducto(String id, String nombre, String descripcion, String color, int alto, int largo, int ancho, int precio){
+        Producto prod = new Producto(id, nombre, descripcion, color, alto, largo, ancho, precio);
+        return productoDao.crearNuevoProducto(prod);
     }
 }

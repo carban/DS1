@@ -61,7 +61,51 @@ insert into producto values (405, 'Mega Comedor', 'comedor para 6 personas', 'Ne
 insert into inventario values (401, 1, 30);
 insert into inventario values (402, 1, 30);
 insert into inventario values (403, 1, 15);
+insert into inventario values (404, 1, 5);
+insert into inventario values (405, 1, 1);
 
 insert into inventario values (401, 2, 15);
+insert into inventario values (402, 2, 0);
+insert into inventario values (403, 2, 0);
 insert into inventario values (404, 2, 10);
 insert into inventario values (405, 2, 30);
+--select * from inventario order by idsedes, idproducto;
+
+--PRIMER PROCEDIMIENTO ALMACENADO
+CREATE OR REPLACE function productoNuevo() RETURNS TRIGGER AS $$
+       DECLARE
+       numeroDeSedes integer ;
+       BEGIN
+       IF (TG_OP = 'INSERT') THEN
+              SELECT COUNT(*) INTO numerodeSedes FROM SEDES;
+              FOR i IN 1..numeroDeSedes LOOP
+                     INSERT INTO inventario VALUES(new.idProducto, i, 0);
+              END LOOP;
+       END IF;
+       RETURN NULL;
+       END;
+$$ LANGUAGE plpgsql;
+
+--PRIMER TRIGGER
+CREATE TRIGGER insertarProductoNuevo AFTER INSERT ON producto FOR EACH ROW EXECUTE PROCEDURE productoNuevo();
+
+--SEGUNDO PROCEDIMIENTO ALMACENADO
+
+CREATE OR REPLACE function sedeNueva() RETURNS TRIGGER AS $$
+       DECLARE
+       numeroDeProductos integer;
+       id integer;
+       BEGIN
+       IF (TG_OP = 'INSERT') THEN
+              SELECT count(*) INTO numeroDeProductos FROM PRODUCTO;
+              FOR i IN 1..numeroDeProductos LOOP
+                     select idproducto INTO id from (select *, ROW_NUMBER() OVER () as pos from producto) as foo where foo.pos = i;
+                     INSERT INTO inventario VALUES(id, new.idSedes, 0);
+              END LOOP;
+       END IF;
+       RETURN NULL;
+       END;
+$$ LANGUAGE plpgsql;
+
+--SEGUNDO TRIGGER
+CREATE TRIGGER insertarInventarioNuevo AFTER INSERT ON Sedes FOR EACH ROW EXECUTE PROCEDURE sedeNueva();
