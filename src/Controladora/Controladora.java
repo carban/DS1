@@ -122,7 +122,6 @@ public class Controladora {
     //Funcion para consultar sedes desde el gerente
     public ArrayList<String[]> consultSedes(){
         return  sedesDao.consultSede();
-
     }
     
     //Funcion para crear sedes desde el gerente
@@ -136,4 +135,10 @@ public class Controladora {
         Producto prod = new Producto(id, nombre, descripcion, color, alto, largo, ancho, precio);
         return productoDao.crearNuevoProducto(prod);
     }
+    
+    //Funcion para consultar productos desde el gerente
+    public ArrayList<String[]> consultProductos(){
+        return  productoDao.consultProductos();
+    }
+    
 }

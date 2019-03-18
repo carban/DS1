@@ -28,6 +28,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     boolean editing = false;
     DefaultTableModel md;
     DefaultTableModel mdSede;
+    DefaultTableModel mdProducts;
     String JefeActualParaEditarXD;
     String[] arregloJefeActualNPI;
     
@@ -51,10 +52,16 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         md = new DefaultTableModel(data, columnNames);
         tablaDatos.setModel(md);
         tablaDatos.setDefaultEditor(Object.class, null); //Permite que las celdas no se modifiquen, pero si se seleccionen
+        
         String columnNamesSedes[]={"ID","Ciudad","Direccion","Estado","Jefe de Taller"};
         mdSede = new DefaultTableModel(data, columnNamesSedes);
         tablaSedes.setModel(mdSede);
         tablaSedes.setDefaultEditor(Object.class, null);
+        
+        String columnNamesProducts[]={"ID Producto","Id Sede","Nombre","Descripcion", "Color", "alto", "largo", "ancho", "precio"};
+        mdProducts = new DefaultTableModel(data, columnNamesProducts);
+        tablaProductos.setModel(mdProducts);
+        tablaProductos.setDefaultEditor(Object.class, null);
         
     }
 
@@ -202,6 +209,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         prodPrecio = new javax.swing.JTextField();
         crearProducto = new javax.swing.JButton();
         panelListarProductos = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaProductos = new javax.swing.JTable();
 
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -752,6 +761,9 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         btn_7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 btn_7MouseReleased(evt);
+            }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_7MouseClicked(evt);
             }
         });
 
@@ -1464,15 +1476,31 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         parent.add(PanelCrearProducto, "card7");
 
+        tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaProductos);
+
         javax.swing.GroupLayout panelListarProductosLayout = new javax.swing.GroupLayout(panelListarProductos);
         panelListarProductos.setLayout(panelListarProductosLayout);
         panelListarProductosLayout.setHorizontalGroup(
             panelListarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 915, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 915, Short.MAX_VALUE)
         );
         panelListarProductosLayout.setVerticalGroup(
             panelListarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 542, Short.MAX_VALUE)
+            .addGroup(panelListarProductosLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         parent.add(panelListarProductos, "card8");
@@ -1805,6 +1833,18 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         parent.revalidate();
     }//GEN-LAST:event_btn_7MouseReleased
 
+    public void cargarTableProducto(){
+        mdProducts.setRowCount(0); //Para limpiar la tabla
+        ArrayList<String[]> lista = control.consultProductos();  
+        for (int i = 0; i < lista.size(); i++) {
+            mdProducts.addRow(lista.get(i));
+        }      
+    }
+    
+    private void btn_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_7MouseClicked
+        this.cargarTableProducto();
+    }//GEN-LAST:event_btn_7MouseClicked
+
     private void cleanCreateSection() {
         idInput.setText("");
         fnameInput.setText("");
@@ -1952,6 +1992,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField lnameInput;
@@ -1979,6 +2020,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JButton saveButtonSede;
     private javax.swing.JPanel side_pane;
     private javax.swing.JTable tablaDatos;
+    private javax.swing.JTable tablaProductos;
     private javax.swing.JTable tablaSedes;
     private javax.swing.JTextField telInput;
     private javax.swing.JPanel yellow;
