@@ -791,7 +791,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         jLabel56.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel56.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel56.setText("Listar Productos");
+        jLabel56.setText("Catalogo Productos");
 
         javax.swing.GroupLayout btn_7Layout = new javax.swing.GroupLayout(btn_7);
         btn_7.setLayout(btn_7Layout);
@@ -946,7 +946,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                         .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(SignOut)
                             .addComponent(jLabel18))))
-                .addContainerGap(351, Short.MAX_VALUE))
+                .addContainerGap(316, Short.MAX_VALUE))
         );
         yellowLayout.setVerticalGroup(
             yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1035,7 +1035,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                     .addComponent(jLabel15))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
-                .addContainerGap(259, Short.MAX_VALUE)
+                .addContainerGap(224, Short.MAX_VALUE)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
                         .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1150,7 +1150,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         greenLayout.setHorizontalGroup(
             greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, greenLayout.createSequentialGroup()
-                .addContainerGap(349, Short.MAX_VALUE)
+                .addContainerGap(314, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addGap(362, 362, 362))
             .addGroup(greenLayout.createSequentialGroup()
@@ -1227,7 +1227,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         pink1Layout.setHorizontalGroup(
             pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pink1Layout.createSequentialGroup()
-                .addContainerGap(232, Short.MAX_VALUE)
+                .addContainerGap(197, Short.MAX_VALUE)
                 .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(pink1Layout.createSequentialGroup()
                         .addComponent(jLabel34)
@@ -1433,7 +1433,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                     .addGroup(PanelCrearProductoLayout.createSequentialGroup()
                         .addGap(405, 405, 405)
                         .addComponent(crearProducto)))
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         PanelCrearProductoLayout.setVerticalGroup(
             PanelCrearProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1496,25 +1496,26 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tablaProductos);
 
         jLabel57.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel57.setText("LISTA DE PRODUCTOS");
+        jLabel57.setText("CATALOGO DE PRODUCTOS");
 
         javax.swing.GroupLayout panelListarProductosLayout = new javax.swing.GroupLayout(panelListarProductos);
         panelListarProductos.setLayout(panelListarProductosLayout);
         panelListarProductosLayout.setHorizontalGroup(
             panelListarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
             .addGroup(panelListarProductosLayout.createSequentialGroup()
-                .addGap(338, 338, 338)
+                .addGap(289, 289, 289)
                 .addComponent(jLabel57)
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelListarProductosLayout.setVerticalGroup(
             panelListarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelListarProductosLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel57)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         parent.add(panelListarProductos, "card8");
