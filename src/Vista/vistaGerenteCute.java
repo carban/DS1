@@ -211,6 +211,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         panelListarProductos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
+        jLabel57 = new javax.swing.JLabel();
 
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1489,18 +1490,26 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaProductos);
 
+        jLabel57.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel57.setText("LISTA DE PRODUCTOS");
+
         javax.swing.GroupLayout panelListarProductosLayout = new javax.swing.GroupLayout(panelListarProductos);
         panelListarProductos.setLayout(panelListarProductosLayout);
         panelListarProductosLayout.setHorizontalGroup(
             panelListarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 915, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
+            .addGroup(panelListarProductosLayout.createSequentialGroup()
+                .addGap(338, 338, 338)
+                .addComponent(jLabel57)
+                .addContainerGap(355, Short.MAX_VALUE))
         );
         panelListarProductosLayout.setVerticalGroup(
             panelListarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelListarProductosLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addComponent(jLabel57)
+                .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         parent.add(panelListarProductos, "card8");
@@ -1987,6 +1996,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
