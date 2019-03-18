@@ -3,9 +3,11 @@ package Controladora;
 import Modelo.Sedes;
 import Modelo.Users;
 import Modelo.Jefes;
+import Modelo.Orden;
 import Modelo.Producto;
 import ModeloDAO.Acceso;
 import ModeloDAO.JefesDAO;
+import ModeloDAO.OrdenDAO;
 import ModeloDAO.ProductoDAO;
 import ModeloDAO.UsersDAO;
 import ModeloDAO.SedesDAO;
@@ -21,12 +23,14 @@ public class Controladora {
     SedesDAO sedesDao;
     JefesDAO jefesDao;
     ProductoDAO productoDao;
+    OrdenDAO ordenDao;
     public Controladora(){
         access = new Acceso();
         this.usersDao = new UsersDAO(access);
         this.sedesDao = new SedesDAO(access);
         this.jefesDao = new JefesDAO(access);
         this.productoDao = new ProductoDAO(access);
+        this.ordenDao = new OrdenDAO(access);
     }
     
     public String login(String user, String pass){
@@ -165,6 +169,15 @@ public class Controladora {
 
     public ArrayList<String[]> consultProductosDelJefe(String sedeid) {
         return  productoDao.consultProductosDelJefe(sedeid);
+    }
+
+    public boolean crearOrden(String cantidad, boolean estado, String idProducto, String idSede) {
+        Orden ao = new Orden(cantidad, estado, idProducto, idSede);
+        return ordenDao.crearOrden(ao);
+    }
+
+    public ArrayList<String[]> consultOrders(String sedeid) {
+        return  ordenDao.consultOrders(sedeid);
     }
     
 }

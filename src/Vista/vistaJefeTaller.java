@@ -29,9 +29,10 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     boolean editing = false;
     DefaultTableModel md;
     DefaultTableModel mdSede;
+    DefaultTableModel mdProducts;
+    DefaultTableModel mdOrdenes;
     String JefeActualParaEditarXD;
     String[] arregloJefeActualNPI;
-    DefaultTableModel mdProducts;
     Jefes profileInfo;
     
     public vistaJefeTaller(String userID) {
@@ -70,7 +71,19 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         tablaProductosJefe.getColumnModel().getColumn(4).setMinWidth(100);
         tablaProductosJefe.getColumnModel().getColumn(5).setMinWidth(15);
         tablaProductosJefe.getColumnModel().getColumn(6).setMinWidth(15);
-        tablaProductosJefe.getColumnModel().getColumn(7).setMinWidth(15);        
+        tablaProductosJefe.getColumnModel().getColumn(7).setMinWidth(15);
+
+        String columnNamesOrders[]={"ID Orden","Cant. a Fabricar","ID Producto","Nombre","Descripcion", "Color", "alto", "largo", "ancho", "precio"};
+        mdOrdenes = new DefaultTableModel(data, columnNamesOrders);
+        tablaOrdenesJefe.setModel(mdOrdenes);
+        tablaOrdenesJefe.setDefaultEditor(Object.class, null);
+        tablaOrdenesJefe.getColumnModel().getColumn(1).setMinWidth(60);
+        tablaOrdenesJefe.getColumnModel().getColumn(2).setMinWidth(100);
+        tablaOrdenesJefe.getColumnModel().getColumn(3).setMinWidth(110);
+        tablaOrdenesJefe.getColumnModel().getColumn(4).setMinWidth(160);
+        tablaOrdenesJefe.getColumnModel().getColumn(5).setMinWidth(15);
+        tablaOrdenesJefe.getColumnModel().getColumn(6).setMinWidth(15);
+        tablaOrdenesJefe.getColumnModel().getColumn(7).setMinWidth(15);          
     }
 
     /**
@@ -185,10 +198,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         purple = new javax.swing.JPanel();
         pink1 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablaOrdenesJefe = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         red = new javax.swing.JPanel();
@@ -486,6 +497,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 btn_2MouseReleased(evt);
             }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_2MouseClicked(evt);
+            }
         });
 
         ind_2.setOpaque(false);
@@ -504,7 +518,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Create S");
+        jLabel9.setText("Ordenes de Trabajo");
 
         javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);
         btn_2.setLayout(btn_2Layout);
@@ -514,7 +528,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel9)
-                .addGap(0, 98, Short.MAX_VALUE))
+                .addGap(0, 28, Short.MAX_VALUE))
         );
         btn_2Layout.setVerticalGroup(
             btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -527,7 +541,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        side_pane.add(btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 190, -1));
+        side_pane.add(btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 190, -1));
 
         btn_3.setBackground(new java.awt.Color(0, 51, 51));
         btn_3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -651,7 +665,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel35.setText("Consult S");
+        jLabel35.setText("Inventario");
 
         javax.swing.GroupLayout btn_5Layout = new javax.swing.GroupLayout(btn_5);
         btn_5.setLayout(btn_5Layout);
@@ -661,7 +675,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(ind_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel35)
-                .addGap(0, 93, Short.MAX_VALUE))
+                .addGap(0, 90, Short.MAX_VALUE))
         );
         btn_5Layout.setVerticalGroup(
             btn_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -674,7 +688,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        side_pane.add(btn_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 190, -1));
+        side_pane.add(btn_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 190, -1));
 
         getContentPane().add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 590));
 
@@ -921,7 +935,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         pinkLayout.setHorizontalGroup(
             pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
-                .addContainerGap(224, Short.MAX_VALUE)
+                .addContainerGap(219, Short.MAX_VALUE)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
                         .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1011,7 +1025,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(273, Short.MAX_VALUE)
+                .addContainerGap(268, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(comboVendedoresDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
@@ -1028,7 +1042,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(jLabel24)
                 .addGap(42, 42, 42)
                 .addComponent(comboVendedoresDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
                 .addComponent(AsignarUnVendedor)
                 .addGap(176, 176, 176))
         );
@@ -1108,7 +1122,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(cargarButton)
                 .addGap(57, 57, 57)
                 .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, greenLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel13)
@@ -1142,52 +1156,43 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         pink1.setForeground(new java.awt.Color(255, 153, 51));
 
         jLabel33.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel33.setText("CREAR ORDEN DE TRABAJO");
+        jLabel33.setText("ORDENES DE TRABAJO");
 
-        jLabel34.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        jLabel34.setText("Ciudad:");
-
-        jLabel38.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        jLabel38.setText("Direccion:");
-
-        jLabel39.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        jLabel39.setText("Estado:");
-
-        jLabel40.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        jLabel40.setText("Jefe de Taller:");
+        tablaOrdenesJefe.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(tablaOrdenesJefe);
 
         javax.swing.GroupLayout pink1Layout = new javax.swing.GroupLayout(pink1);
         pink1.setLayout(pink1Layout);
         pink1Layout.setHorizontalGroup(
             pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pink1Layout.createSequentialGroup()
-                .addContainerGap(197, Short.MAX_VALUE)
+            .addGroup(pink1Layout.createSequentialGroup()
                 .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pink1Layout.createSequentialGroup()
-                        .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel40)
-                            .addComponent(jLabel34))
-                        .addGap(573, 573, 573))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pink1Layout.createSequentialGroup()
-                        .addComponent(jLabel33)
-                        .addGap(297, 297, 297))))
+                    .addGroup(pink1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 841, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pink1Layout.createSequentialGroup()
+                        .addGap(321, 321, 321)
+                        .addComponent(jLabel33)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         pink1Layout.setVerticalGroup(
             pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pink1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel33)
-                .addGap(47, 47, 47)
-                .addComponent(jLabel34)
-                .addGap(61, 61, 61)
-                .addComponent(jLabel38)
-                .addGap(54, 54, 54)
-                .addComponent(jLabel39)
-                .addGap(48, 48, 48)
-                .addComponent(jLabel40)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout purpleLayout = new javax.swing.GroupLayout(purple);
@@ -1433,7 +1438,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_saveButtonActionPerformed
 
-    
+
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
         this.editPopUp.dispose();
@@ -1493,12 +1498,29 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     }//GEN-LAST:event_crearOrdenActionPerformed
 
     private void saveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButton1ActionPerformed
-        
+        if(this.control.crearOrden(this.ordenCantF.getText(), true,  this.ordenID.getText(), this.profileInfo.getIdSede())){
+            JOptionPane.showMessageDialog(null, "Orden creada exitosamente");
+            this.ordenPopUp.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Error al crear la orden");
+        }
     }//GEN-LAST:event_saveButton1ActionPerformed
 
     private void exitBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtn1ActionPerformed
         this.ordenPopUp.dispose();
     }//GEN-LAST:event_exitBtn1ActionPerformed
+
+    public void cargarTableOrden(){
+        mdOrdenes.setRowCount(0); //Para limpiar la tabla
+        ArrayList<String[]> lista = control.consultOrders(this.profileInfo.getIdSede());
+        for (int i = 0; i < lista.size(); i++) {
+            mdOrdenes.addRow(lista.get(i));
+        }      
+    }
+    
+    private void btn_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseClicked
+        this.cargarTableOrden();
+    }//GEN-LAST:event_btn_2MouseClicked
     public void cargarTableProducto(){
         mdProducts.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());  
@@ -1598,14 +1620,10 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
@@ -1624,6 +1642,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField lnameInput;
@@ -1653,6 +1672,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JButton saveButton1;
     private javax.swing.JPanel side_pane;
     private javax.swing.JTable tablaDatos;
+    private javax.swing.JTable tablaOrdenesJefe;
     private javax.swing.JTable tablaProductosJefe;
     private javax.swing.JTextField telInput;
     private javax.swing.JPanel yellow;
