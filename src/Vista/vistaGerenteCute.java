@@ -58,7 +58,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         tablaSedes.setModel(mdSede);
         tablaSedes.setDefaultEditor(Object.class, null);
         
-        String columnNamesProducts[]={"ID Producto","Id Sede","Nombre","Descripcion", "Color", "alto", "largo", "ancho", "precio"};
+        String columnNamesProducts[]={"ID Producto","Id Sede","Nombre","Descripcion", "Color", "alto", "largo", "ancho", "precio", "cantidad"};
         mdProducts = new DefaultTableModel(data, columnNamesProducts);
         tablaProductos.setModel(mdProducts);
         tablaProductos.setDefaultEditor(Object.class, null);
@@ -927,11 +927,10 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                         .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(profileWP)
                             .addComponent(profileDir)
-                            .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(profileTel)
-                                .addComponent(profileLName)
-                                .addComponent(profileID)
-                                .addComponent(profileFName))))
+                            .addComponent(profileTel)
+                            .addComponent(profileLName)
+                            .addComponent(profileID)
+                            .addComponent(profileFName)))
                     .addGroup(yellowLayout.createSequentialGroup()
                         .addGap(354, 354, 354)
                         .addComponent(jLabel14))
@@ -1422,9 +1421,8 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                             .addComponent(ProdAlto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(prodColor, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(prodDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(PanelCrearProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(prodNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(prodID, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(prodNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(prodID, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PanelCrearProductoLayout.createSequentialGroup()
                         .addGap(405, 405, 405)
                         .addComponent(crearProducto)))
@@ -1479,13 +1477,13 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID Producto", "ID Sede", "Nombre", "Descripcion", "Color", "Alto", "Largo", "Ancho", "Precio", "Cantidad"
             }
         ));
         jScrollPane1.setViewportView(tablaProductos);

@@ -140,5 +140,27 @@ public class Controladora {
     public ArrayList<String[]> consultProductos(){
         return  productoDao.consultProductos();
     }
+
+    public void AlterComboVendedoresDisponibles(JComboBox<String> comboVendedoresDisponibles) {
+        comboVendedoresDisponibles.removeAllItems();
+        try {
+            ResultSet res = productoDao.comboOptions();
+            int c = 0;
+            while(res.next()){
+                c++;
+                comboVendedoresDisponibles.addItem(res.getString("idUser")+", "+res.getString("first_name")+" "+res.getString("last_name"));
+            }
+            if(c==0){
+                comboVendedoresDisponibles.addItem("Seleccione");
+            }
+        } catch (Exception e) {
+            System.out.println("---- Problema en la ejecucion.");
+             e.printStackTrace();
+        }
+    }
+
+    public boolean AsignarUnVendedor(String id, String sedeid) {
+        return jefesDao.asignarUnVendedor(id, sedeid);
+    }
     
 }

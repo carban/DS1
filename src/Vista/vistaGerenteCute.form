@@ -180,7 +180,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="GUARDAR"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
           <Events>
@@ -341,7 +341,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="GUARDAR"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
           <Events>
@@ -1113,12 +1113,10 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="profileWP" min="-2" max="-2" attributes="0"/>
                                   <Component id="profileDir" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                      <Component id="profileTel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="profileLName" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="profileID" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="profileFName" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="profileTel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="profileLName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="profileID" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="profileFName" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -1649,7 +1647,7 @@
                       </TableColumnModel>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                     <Property name="selectionModel" type="javax.swing.ListSelectionModel" editor="org.netbeans.modules.form.editors2.JTableSelectionModelEditor">
                       <JTableSelectionModel selectionMode="0"/>
@@ -2045,10 +2043,8 @@
                                   <Component id="ProdAlto" min="-2" pref="180" max="-2" attributes="0"/>
                                   <Component id="prodColor" min="-2" pref="180" max="-2" attributes="0"/>
                                   <Component id="prodDesc" min="-2" pref="180" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                      <Component id="prodNombre" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                                      <Component id="prodID" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="prodNombre" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <Component id="prodID" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -2256,11 +2252,17 @@
                 <Component class="javax.swing.JTable" name="tablaProductos">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
-                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                      <Table columnCount="10" rowCount="4">
+                        <Column editable="true" title="ID Producto" type="java.lang.Object"/>
+                        <Column editable="true" title="ID Sede" type="java.lang.Object"/>
+                        <Column editable="true" title="Nombre" type="java.lang.Object"/>
+                        <Column editable="true" title="Descripcion" type="java.lang.Object"/>
+                        <Column editable="true" title="Color" type="java.lang.Object"/>
+                        <Column editable="true" title="Alto" type="java.lang.Object"/>
+                        <Column editable="true" title="Largo" type="java.lang.Object"/>
+                        <Column editable="true" title="Ancho" type="java.lang.Object"/>
+                        <Column editable="true" title="Precio" type="java.lang.Object"/>
+                        <Column editable="true" title="Cantidad" type="java.lang.Object"/>
                       </Table>
                     </Property>
                   </Properties>

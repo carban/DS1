@@ -90,5 +90,25 @@ public class ProductoDAO {
         }
         return null;
     }
+
+    public ResultSet comboOptions() {
+        String QuerySQL = "select * from users where work_position='Vendedor' and stateuser='Inactivo';";
+        System.out.println(QuerySQL);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+            System.out.println("resultado: "+resultado);
+            return resultado;
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return null;
+    }
     
 }

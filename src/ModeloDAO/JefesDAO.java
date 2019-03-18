@@ -166,6 +166,37 @@ public Jefes consultProfile(String userID){
         return false;    
         
     }
+
+    public boolean asignarUnVendedor(String id, String sedeid) {
+        String QuerySQL = "UPDATE Users SET stateuser='Activo' WHERE iduser='"+id+"'";    
+        String QuerySQLaux = "INSERT INTO vendedoressede VALUES ('"+sedeid+"', '"+id+"')";
+        System.out.println(QuerySQL);
+        System.out.println(QuerySQLaux);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            int res = sentencia.executeUpdate(QuerySQL);
+            if(res==1){
+                int res2 = sentencia.executeUpdate(QuerySQLaux);
+                if (res2==1) {
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return false;  
+    }
     
     
 }

@@ -144,8 +144,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         createUser = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        comboVendedoresDisponibles = new javax.swing.JComboBox<>();
+        AsignarUnVendedor = new javax.swing.JButton();
         green = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -836,9 +836,19 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel24.setText("ASIGNAR VENDEDOR DISPONIBLE");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboVendedoresDisponibles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboVendedoresDisponibles.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                comboVendedoresDisponiblesMouseEntered(evt);
+            }
+        });
 
-        jButton1.setText("Asignar");
+        AsignarUnVendedor.setText("Asignar");
+        AsignarUnVendedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AsignarUnVendedorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -847,12 +857,12 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(273, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboVendedoresDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
                 .addGap(260, 260, 260))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(383, 383, 383)
-                .addComponent(jButton1)
+                .addComponent(AsignarUnVendedor)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -861,9 +871,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel24)
                 .addGap(42, 42, 42)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboVendedoresDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(AsignarUnVendedor)
                 .addGap(176, 176, 176))
         );
 
@@ -1256,6 +1266,20 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         parent.revalidate();
     }//GEN-LAST:event_btn_5MouseReleased
 
+    private void comboVendedoresDisponiblesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboVendedoresDisponiblesMouseEntered
+        control.AlterComboVendedoresDisponibles(comboVendedoresDisponibles);
+    }//GEN-LAST:event_comboVendedoresDisponiblesMouseEntered
+
+    private void AsignarUnVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarUnVendedorActionPerformed
+        // TODO add your handling code here:
+        String vendedorSeleccionado = comboVendedoresDisponibles.getItemAt(comboVendedoresDisponibles.getSelectedIndex());
+        String[] splitter = vendedorSeleccionado.split(",");
+        if(control.AsignarUnVendedor(splitter[0],profileInfo.getIdSede())){
+            JOptionPane.showConfirmDialog(null, "Asignado");
+        }
+        
+    }//GEN-LAST:event_AsignarUnVendedorActionPerformed
+
     public void cargarTableSede(){
         mdSede.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultSedes();
@@ -1291,6 +1315,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AsignarUnVendedor;
     private javax.swing.JButton SignOut;
     private javax.swing.JPanel btn_1;
     private javax.swing.JPanel btn_2;
@@ -1298,6 +1323,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JPanel btn_4;
     private javax.swing.JPanel btn_5;
     private javax.swing.JButton cargarButton;
+    private javax.swing.JComboBox<String> comboVendedoresDisponibles;
     private javax.swing.JButton createUser;
     private javax.swing.JTextField dirInput;
     private javax.swing.JFrame editPopUp;
@@ -1316,8 +1342,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JTextField inputID;
     private javax.swing.JTextField inputLN;
     private javax.swing.JTextField inputTel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
