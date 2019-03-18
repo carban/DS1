@@ -30,7 +30,7 @@ create table Venta (idVenta int PRIMARY KEY, idUser int, precioTotal decimal, fe
 /*COTIZACION*/
 create table Cotiza (idUser int, idProducto int, fechaCot date, precioCot numeric, PRIMARY KEY (idUser, idProducto), FOREIGN KEY (idUser) REFERENCES Users (idUser), FOREIGN KEY (idProducto) REFERENCES Producto (idProducto));
 /*ORDENES*/
-create table Orden (idOrden int PRIMARY KEY, descripcion varchar(50), cantidad_pedido int, precioPedido numeric);
+create table Orden (idOrden SERIAL PRIMARY KEY, cantidad_pedido int, estado_pedido boolean, idProducto int, idSedes int, FOREIGN KEY (idProducto) REFERENCES Producto (idProducto), FOREIGN KEY (idSedes) REFERENCES Sedes (idSedes));
 /* Inserting our data */
 insert into Users values(100, 'admin', 'admin', '5513222','casa 4','admin', 'ADMIN', 'Activo');
 insert into Users values(111, 'Charles', 'Xavier', '1111','casa 1', 'Gerente', 'gorillaz', 'Activo');

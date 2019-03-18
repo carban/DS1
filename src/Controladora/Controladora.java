@@ -162,5 +162,9 @@ public class Controladora {
     public boolean AsignarUnVendedor(String id, String sedeid) {
         return jefesDao.asignarUnVendedor(id, sedeid);
     }
+
+    public ArrayList<String[]> consultProductosDelJefe(String sedeid) {
+        return  productoDao.consultProductosDelJefe(sedeid);
+    }
     
 }

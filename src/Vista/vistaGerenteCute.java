@@ -62,6 +62,13 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         mdProducts = new DefaultTableModel(data, columnNamesProducts);
         tablaProductos.setModel(mdProducts);
         tablaProductos.setDefaultEditor(Object.class, null);
+        tablaProductos.getColumnModel().getColumn(1).setMinWidth(15);
+        tablaProductos.getColumnModel().getColumn(2).setMinWidth(120);
+        tablaProductos.getColumnModel().getColumn(3).setMinWidth(200);
+        tablaProductos.getColumnModel().getColumn(4).setMinWidth(100);
+        tablaProductos.getColumnModel().getColumn(5).setMinWidth(15);
+        tablaProductos.getColumnModel().getColumn(6).setMinWidth(15);
+        tablaProductos.getColumnModel().getColumn(7).setMinWidth(15);
         
     }
 

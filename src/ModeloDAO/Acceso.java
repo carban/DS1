@@ -9,9 +9,9 @@ public class Acceso {
         //this.url = "jdbc:postgresql://otto.db.elephantsql.com:5432/vvpcnayj";
         //this.usuario = "vvpcnayj";
         //this.password = "LaDK1W0ZNGd-S-TQCRVRd0Z7F5Qm6DUY";
-        this.url = "jdbc:postgresql://localhost:5440/ds1";
+        this.url = "jdbc:postgresql://localhost:5436/ds1";
         this.usuario = "postgres";
-        this.password = "secret";
+        this.password = "";
     }
     
     public Connection conectar(){
