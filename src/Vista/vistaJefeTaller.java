@@ -195,11 +195,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         cargarButton = new javax.swing.JButton();
         editarUser = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
-        purple = new javax.swing.JPanel();
-        pink1 = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tablaOrdenesJefe = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         red = new javax.swing.JPanel();
@@ -207,6 +202,12 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaProductosJefe = new javax.swing.JTable();
         crearOrden = new javax.swing.JButton();
+        purple = new javax.swing.JPanel();
+        pink1 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablaOrdenesJefe = new javax.swing.JTable();
+        finalizarOrden = new javax.swing.JButton();
 
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1150,64 +1151,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         parent.add(green, "card4");
 
-        purple.setBackground(new java.awt.Color(204, 204, 204));
-
-        pink1.setBackground(new java.awt.Color(204, 204, 204));
-        pink1.setForeground(new java.awt.Color(255, 153, 51));
-
-        jLabel33.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel33.setText("ORDENES DE TRABAJO");
-
-        tablaOrdenesJefe.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane4.setViewportView(tablaOrdenesJefe);
-
-        javax.swing.GroupLayout pink1Layout = new javax.swing.GroupLayout(pink1);
-        pink1.setLayout(pink1Layout);
-        pink1Layout.setHorizontalGroup(
-            pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pink1Layout.createSequentialGroup()
-                .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pink1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 841, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pink1Layout.createSequentialGroup()
-                        .addGap(321, 321, 321)
-                        .addComponent(jLabel33)))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        pink1Layout.setVerticalGroup(
-            pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pink1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel33)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout purpleLayout = new javax.swing.GroupLayout(purple);
-        purple.setLayout(purpleLayout);
-        purpleLayout.setHorizontalGroup(
-            purpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pink1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        purpleLayout.setVerticalGroup(
-            purpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pink1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        parent.add(purple, "card2");
-
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -1292,6 +1235,74 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         );
 
         parent.add(red, "card7");
+
+        purple.setBackground(new java.awt.Color(204, 204, 204));
+
+        pink1.setBackground(new java.awt.Color(204, 204, 204));
+        pink1.setForeground(new java.awt.Color(255, 153, 51));
+
+        jLabel33.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel33.setText("ORDENES DE TRABAJO");
+
+        tablaOrdenesJefe.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(tablaOrdenesJefe);
+
+        finalizarOrden.setText("FINALIZAR");
+        finalizarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finalizarOrdenActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pink1Layout = new javax.swing.GroupLayout(pink1);
+        pink1.setLayout(pink1Layout);
+        pink1Layout.setHorizontalGroup(
+            pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pink1Layout.createSequentialGroup()
+                .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pink1Layout.createSequentialGroup()
+                        .addGap(321, 321, 321)
+                        .addComponent(jLabel33))
+                    .addGroup(pink1Layout.createSequentialGroup()
+                        .addGap(395, 395, 395)
+                        .addComponent(finalizarOrden)))
+                .addContainerGap(334, Short.MAX_VALUE))
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        pink1Layout.setVerticalGroup(
+            pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pink1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel33)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(finalizarOrden)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout purpleLayout = new javax.swing.GroupLayout(purple);
+        purple.setLayout(purpleLayout);
+        purpleLayout.setHorizontalGroup(
+            purpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pink1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        purpleLayout.setVerticalGroup(
+            purpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pink1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        parent.add(purple, "card2");
 
         getContentPane().add(parent, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 880, 540));
 
@@ -1521,6 +1532,16 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private void btn_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseClicked
         this.cargarTableOrden();
     }//GEN-LAST:event_btn_2MouseClicked
+
+    private void finalizarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarOrdenActionPerformed
+        int index = tablaOrdenesJefe.getSelectedRow();
+        if(this.control.finalizarOrden(tablaOrdenesJefe.getModel().getValueAt(index, 0).toString(), tablaOrdenesJefe.getModel().getValueAt(index, 2).toString(), this.profileInfo.getIdSede())){
+            JOptionPane.showMessageDialog(null, "Orden finalizada con exito");
+            this.cargarTableOrden();
+        }else{
+            JOptionPane.showMessageDialog(null, "Error al finalizar la orden");
+        }
+    }//GEN-LAST:event_finalizarOrdenActionPerformed
     public void cargarTableProducto(){
         mdProducts.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());  
@@ -1580,6 +1601,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JButton editarUser;
     private javax.swing.JButton exitBtn;
     private javax.swing.JButton exitBtn1;
+    private javax.swing.JButton finalizarOrden;
     private javax.swing.JTextField fnameInput;
     private javax.swing.JPanel green;
     private javax.swing.JTextField idInput;

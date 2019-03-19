@@ -90,6 +90,35 @@ public class OrdenDAO {
         }
         return null;
     }
+
+    public boolean finalizarOrden(String idOrden, String idProd, String sedeid) {
+        String QuerySQL = "UPDATE orden set estado_pedido='f' where idorden='"+idOrden+"'";
+        String QueryTransaccion = "UPDATE inventario SET cantidad = (select cantidad from inventario where idproducto='"+idProd+"' and idsedes='"+sedeid+"') + (select cantidad_pedido from orden where idorden='"+idOrden+"') where idproducto='"+idProd+"' and idsedes='"+sedeid+"'";
+        System.out.println(QuerySQL);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            int res = sentencia.executeUpdate(QuerySQL);
+            System.out.println("resultado: "+res);
+            if(res==1){
+                int res2 = sentencia.executeUpdate(QueryTransaccion);
+                if (res2==1) {
+                    return true;   
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return false;
+    }
     
     
     

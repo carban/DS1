@@ -177,7 +177,11 @@ public class Controladora {
     }
 
     public ArrayList<String[]> consultOrders(String sedeid) {
-        return  ordenDao.consultOrders(sedeid);
+        return ordenDao.consultOrders(sedeid);
+    }
+
+    public boolean finalizarOrden(String idOrden, String idProd, String sedeid) {
+        return ordenDao.finalizarOrden(idOrden, idProd, sedeid);
     }
     
 }
