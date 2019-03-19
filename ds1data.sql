@@ -20,7 +20,9 @@ create table Sedes (idSedes SERIAL PRIMARY KEY, city varchar(30), address varcha
 create table vendedoresSede (idSedes int, idUser int UNIQUE, PRIMARY KEY(idSedes, idUser), FOREIGN KEY (idUser) REFERENCES Users (idUser), FOREIGN KEY (idSedes) REFERENCES Sedes (idSedes));
 
 /*PRODUCTO*/
-create table Producto (idProducto int PRIMARY KEY, nombre varchar(30), descripcion varchar(50) NOT NULL, color varchar(20) NOT NULL,
+drop sequence if exists producto_id_seq cascade;
+create sequence producto_id_seq MINVALUE 400 START 400;
+create table Producto (idProducto int PRIMARY KEY DEFAULT nextval('producto_id_seq'), nombre varchar(30), descripcion varchar(50) NOT NULL, color varchar(20) NOT NULL,
 alto numeric, largo numeric, ancho numeric, precio numeric );
 /*INVENTARIO*/
 --INVENTARIO VA A ALMACENAR LOS PRODUCTOS DE CADA SEDE, CADA PRODUCTO TIENE EL ID de la sede a la que corresponde
