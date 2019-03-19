@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import org.postgresql.util.PSQLException;
 
 /**
  *
@@ -191,6 +192,8 @@ public Jefes consultProfile(String userID){
                 return false;
             }
 
+        } catch (PSQLException e){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un vendedor");
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();

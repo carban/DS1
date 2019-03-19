@@ -1622,28 +1622,29 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     }//GEN-LAST:event_cargarButtonActionPerformed
 
     private void editarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarUserActionPerformed
-        int index = tablaDatos.getSelectedRow();
-        String aid = tablaDatos.getModel().getValueAt(index, 0).toString();
-        String anombre = tablaDatos.getModel().getValueAt(index, 1).toString();
-        String aapellido = tablaDatos.getModel().getValueAt(index, 2).toString();
-        String atel = tablaDatos.getModel().getValueAt(index, 3).toString();
-        String adir = tablaDatos.getModel().getValueAt(index, 4).toString();
-        String aposicion = tablaDatos.getModel().getValueAt(index, 5).toString();
+        try{
+            int index = tablaDatos.getSelectedRow();
+            String aid = tablaDatos.getModel().getValueAt(index, 0).toString();
+            String anombre = tablaDatos.getModel().getValueAt(index, 1).toString();
+            String aapellido = tablaDatos.getModel().getValueAt(index, 2).toString();
+            String atel = tablaDatos.getModel().getValueAt(index, 3).toString();
+            String adir = tablaDatos.getModel().getValueAt(index, 4).toString();
+            String aposicion = tablaDatos.getModel().getValueAt(index, 5).toString();
 //        
 //        consultEdit ce = new consultEdit(new Users(aid, anombre, aapellido, atel, adir, aposicion, aestado));
 //        ce.setVisible(true);
-        this.inputID.setText(aid);
-        this.inputFN.setText(anombre);
-        this.inputLN.setText(aapellido);
-        this.inputTel.setText(atel);
-        this.inputDir.setText(adir);
+            this.inputID.setText(aid);
+            this.inputFN.setText(anombre);
+            this.inputLN.setText(aapellido);
+            this.inputTel.setText(atel);
+            this.inputDir.setText(adir);
         //this.comboWP.addItem(aposicion);
         //this.comboS.addItem(aestado);
-        if(aposicion.equals("Jefe de Taller")){
-            this.comboWP.setSelectedIndex(0);
-        }else{
-            this.comboWP.setSelectedIndex(1);
-        }
+            if(aposicion.equals("Jefe de Taller")){
+                this.comboWP.setSelectedIndex(0);
+            }else{
+                this.comboWP.setSelectedIndex(1);
+            }
         //this.comboWP.setEditable(true);
         //this.comboWP.setEnabled(false);
         /*
@@ -1656,9 +1657,12 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         //this.comboS.setEnabled(false);
         
         
-        this.editPopUp.setSize(527, 531);
-        this.editPopUp.setLocationRelativeTo(null);
-        this.editPopUp.setVisible(true);
+            this.editPopUp.setSize(527, 531);
+            this.editPopUp.setLocationRelativeTo(null);
+            this.editPopUp.setVisible(true);
+        }catch(ArrayIndexOutOfBoundsException ex){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un usuario de la tabla");
+        }
     }//GEN-LAST:event_editarUserActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
@@ -1722,26 +1726,29 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     }
     
     private void editarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarSedeActionPerformed
-        // TODO add your handling code here:
-        int index = tablaSedes.getSelectedRow();
-        String aid = tablaSedes.getModel().getValueAt(index, 0).toString();
-        String aciudad = tablaSedes.getModel().getValueAt(index, 1).toString();
-        String adireccion = tablaSedes.getModel().getValueAt(index, 2).toString();
-        String aestado = tablaSedes.getModel().getValueAt(index, 3).toString();
-        String ajefe = tablaSedes.getModel().getValueAt(index, 4).toString();
-        this.inputIDSede.setText(aid);
-        this.cityInputEdit.setText(aciudad);
-        this.adressInputEdit.setText(adireccion);
-        this.comboStateSedeEdit.setSelectedItem(aestado);
-        this.comboJefeEdit.removeAllItems(); //Borra todos los items primero
-        this.comboJefeEdit.addItem(ajefe);
-        String[] arregloJefeActual = ajefe.split(","); //Para hacer esplit
-        arregloJefeActualNPI = ajefe.split(","); //porque si...
-        JefeActualParaEditarXD = arregloJefeActual[0];
-        System.err.println(JefeActualParaEditarXD);
-        this.editSedePopUp.setSize(527, 531);
-        this.editSedePopUp.setLocationRelativeTo(null);
-        this.editSedePopUp.setVisible(true);
+        try{
+            int index = tablaSedes.getSelectedRow();
+            String aid = tablaSedes.getModel().getValueAt(index, 0).toString();
+            String aciudad = tablaSedes.getModel().getValueAt(index, 1).toString();
+            String adireccion = tablaSedes.getModel().getValueAt(index, 2).toString();
+            String aestado = tablaSedes.getModel().getValueAt(index, 3).toString();
+            String ajefe = tablaSedes.getModel().getValueAt(index, 4).toString();
+            this.inputIDSede.setText(aid);
+            this.cityInputEdit.setText(aciudad);
+            this.adressInputEdit.setText(adireccion);
+            this.comboStateSedeEdit.setSelectedItem(aestado);
+            this.comboJefeEdit.removeAllItems(); //Borra todos los items primero
+            this.comboJefeEdit.addItem(ajefe);
+            String[] arregloJefeActual = ajefe.split(","); //Para hacer esplit
+            arregloJefeActualNPI = ajefe.split(","); //porque si...
+            JefeActualParaEditarXD = arregloJefeActual[0];
+            System.err.println(JefeActualParaEditarXD);
+            this.editSedePopUp.setSize(527, 531);
+            this.editSedePopUp.setLocationRelativeTo(null);
+            this.editSedePopUp.setVisible(true);
+        }catch(ArrayIndexOutOfBoundsException ex){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una sede de la tabla");
+        }
     }//GEN-LAST:event_editarSedeActionPerformed
 
     private void exitBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtn1ActionPerformed

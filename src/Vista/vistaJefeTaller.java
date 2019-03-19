@@ -597,6 +597,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_4MousePressed(evt);
             }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_4MouseClicked(evt);
+            }
         });
 
         ind_4.setOpaque(false);
@@ -1407,23 +1410,26 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     }//GEN-LAST:event_cargarButtonActionPerformed
 
     private void editarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarUserActionPerformed
-        int index = tablaDatos.getSelectedRow();
-        String aid = tablaDatos.getModel().getValueAt(index, 0).toString();
-        String anombre = tablaDatos.getModel().getValueAt(index, 1).toString();
-        String aapellido = tablaDatos.getModel().getValueAt(index, 2).toString();
-        String atel = tablaDatos.getModel().getValueAt(index, 3).toString();
-        String adir = tablaDatos.getModel().getValueAt(index, 4).toString();
-        String aposicion = tablaDatos.getModel().getValueAt(index, 5).toString();
+        try{
+            int index = tablaDatos.getSelectedRow();
+            String aid = tablaDatos.getModel().getValueAt(index, 0).toString();
+            String anombre = tablaDatos.getModel().getValueAt(index, 1).toString();
+            String aapellido = tablaDatos.getModel().getValueAt(index, 2).toString();
+            String atel = tablaDatos.getModel().getValueAt(index, 3).toString();
+            String adir = tablaDatos.getModel().getValueAt(index, 4).toString();
+            String aposicion = tablaDatos.getModel().getValueAt(index, 5).toString();
 
-        this.inputID.setText(aid);
-        this.inputFN.setText(anombre);
-        this.inputLN.setText(aapellido);
-        this.inputTel.setText(atel);
-        this.inputDir.setText(adir);        
-        
-        this.editPopUp.setSize(527, 531);
-        this.editPopUp.setLocationRelativeTo(null);
-        this.editPopUp.setVisible(true);
+            this.inputID.setText(aid);
+            this.inputFN.setText(anombre);
+            this.inputLN.setText(aapellido);
+            this.inputTel.setText(atel);
+            this.inputDir.setText(adir);
+            this.editPopUp.setSize(527, 531);
+            this.editPopUp.setLocationRelativeTo(null);
+            this.editPopUp.setVisible(true);
+        }catch(ArrayIndexOutOfBoundsException ex){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un vendedor de la tabla");
+        }
     }//GEN-LAST:event_editarUserActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
@@ -1478,7 +1484,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     }//GEN-LAST:event_comboVendedoresDisponiblesMouseEntered
 
     private void AsignarUnVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarUnVendedorActionPerformed
-        // TODO add your handling code here:
+        
         String vendedorSeleccionado = comboVendedoresDisponibles.getItemAt(comboVendedoresDisponibles.getSelectedIndex());
         String[] splitter = vendedorSeleccionado.split(",");
         if(control.AsignarUnVendedor(splitter[0],profileInfo.getIdSede())){
@@ -1492,20 +1498,24 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_5MouseClicked
 
     private void crearOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearOrdenActionPerformed
-        int index = tablaProductosJefe.getSelectedRow();
-        String aid = tablaProductosJefe.getModel().getValueAt(index, 0).toString();
-        String anombre = tablaProductosJefe.getModel().getValueAt(index, 2).toString();
-        String adesc = tablaProductosJefe.getModel().getValueAt(index, 3).toString();
-        String acolor = tablaProductosJefe.getModel().getValueAt(index, 4).toString();
-        String acantd = tablaProductosJefe.getModel().getValueAt(index, 9).toString();
-        this.ordenID.setText(aid);
-        this.ordenNombre.setText(anombre);
-        this.ordenDesc.setText(adesc);
-        this.ordenColor.setText(acolor);
-        this.ordenCantD.setText(acantd);
-        this.ordenPopUp.setSize(527, 531);
-        this.ordenPopUp.setLocationRelativeTo(null);
-        this.ordenPopUp.setVisible(true);
+        try{
+            int index = tablaProductosJefe.getSelectedRow();
+            String aid = tablaProductosJefe.getModel().getValueAt(index, 0).toString();
+            String anombre = tablaProductosJefe.getModel().getValueAt(index, 2).toString();
+            String adesc = tablaProductosJefe.getModel().getValueAt(index, 3).toString();
+            String acolor = tablaProductosJefe.getModel().getValueAt(index, 4).toString();
+            String acantd = tablaProductosJefe.getModel().getValueAt(index, 9).toString();
+            this.ordenID.setText(aid);
+            this.ordenNombre.setText(anombre);
+            this.ordenDesc.setText(adesc);
+            this.ordenColor.setText(acolor);
+            this.ordenCantD.setText(acantd);
+            this.ordenPopUp.setSize(527, 531);
+            this.ordenPopUp.setLocationRelativeTo(null);
+            this.ordenPopUp.setVisible(true);
+        }catch(ArrayIndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un producto del inventario");
+        }
     }//GEN-LAST:event_crearOrdenActionPerformed
 
     private void saveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButton1ActionPerformed
@@ -1534,14 +1544,22 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_2MouseClicked
 
     private void finalizarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarOrdenActionPerformed
-        int index = tablaOrdenesJefe.getSelectedRow();
-        if(this.control.finalizarOrden(tablaOrdenesJefe.getModel().getValueAt(index, 0).toString(), tablaOrdenesJefe.getModel().getValueAt(index, 2).toString(), this.profileInfo.getIdSede())){
-            JOptionPane.showMessageDialog(null, "Orden finalizada con exito");
-            this.cargarTableOrden();
-        }else{
-            JOptionPane.showMessageDialog(null, "Error al finalizar la orden");
+        try{
+            int index = tablaOrdenesJefe.getSelectedRow();
+            if(this.control.finalizarOrden(tablaOrdenesJefe.getModel().getValueAt(index, 0).toString(), tablaOrdenesJefe.getModel().getValueAt(index, 2).toString(), this.profileInfo.getIdSede())){
+                JOptionPane.showMessageDialog(null, "Orden finalizada con exito");
+                this.cargarTableOrden();
+            }else{
+                JOptionPane.showMessageDialog(null, "Error al finalizar la orden");
+            }
+        }catch(ArrayIndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una orden de la tabla");
         }
     }//GEN-LAST:event_finalizarOrdenActionPerformed
+
+    private void btn_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MouseClicked
+        this.cargarTable();
+    }//GEN-LAST:event_btn_4MouseClicked
     public void cargarTableProducto(){
         mdProducts.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());  
