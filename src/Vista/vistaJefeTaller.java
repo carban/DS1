@@ -194,7 +194,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         tablaDatos = new javax.swing.JTable();
         cargarButton = new javax.swing.JButton();
         editarUser = new javax.swing.JButton();
-        jLabel32 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         red = new javax.swing.JPanel();
@@ -214,10 +213,13 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel19.setText("Editar Usuario");
 
+        jLabel21.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel21.setText("ID user: ");
 
+        jLabel26.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel26.setText("Nombre:");
 
+        jLabel27.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel27.setText("Apellido:");
 
         inputID.setBackground(new java.awt.Color(204, 255, 255));
@@ -240,15 +242,19 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
-        exitBtn.setText("SALIR");
+        exitBtn.setBackground(new java.awt.Color(255, 204, 204));
+        exitBtn.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        exitBtn.setText("CERRAR");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitBtnActionPerformed(evt);
             }
         });
 
+        jLabel30.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel30.setText("Telefono:");
 
+        jLabel31.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel31.setText("Direccion:");
 
         javax.swing.GroupLayout editPopUpLayout = new javax.swing.GroupLayout(editPopUp.getContentPane());
@@ -263,7 +269,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(jLabel30)
                     .addComponent(jLabel31))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addGroup(editPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(inputFN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -320,10 +326,13 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel28.setText("ORDEN DE TRABAJO");
 
+        jLabel41.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel41.setText("ID Producto: ");
 
+        jLabel43.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel43.setText("Nombre:");
 
+        jLabel44.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel44.setText("Descripcion:");
 
         saveButton1.setBackground(new java.awt.Color(204, 255, 204));
@@ -337,75 +346,83 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
-        exitBtn1.setText("SALIR");
+        exitBtn1.setBackground(new java.awt.Color(255, 204, 204));
+        exitBtn1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        exitBtn1.setText("CERRAR");
         exitBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitBtn1ActionPerformed(evt);
             }
         });
 
+        jLabel45.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel45.setText("Color: ");
 
+        jLabel46.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel46.setText("Cantidad Disponible: ");
 
+        jLabel47.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel47.setText("Cantidad a Fabricar");
 
+        ordenID.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         ordenID.setText("jLabel48");
 
+        ordenNombre.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         ordenNombre.setText("jLabel48");
 
+        ordenDesc.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         ordenDesc.setText("jLabel48");
 
+        ordenColor.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         ordenColor.setText("jLabel48");
 
+        ordenCantD.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         ordenCantD.setText("jLabel48");
+
+        ordenCantF.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout ordenPopUpLayout = new javax.swing.GroupLayout(ordenPopUp.getContentPane());
         ordenPopUp.getContentPane().setLayout(ordenPopUpLayout);
         ordenPopUpLayout.setHorizontalGroup(
             ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ordenPopUpLayout.createSequentialGroup()
-                .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ordenPopUpLayout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jLabel47))
-                    .addGroup(ordenPopUpLayout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ordenCantF, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(ordenPopUpLayout.createSequentialGroup()
-                                .addComponent(saveButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ordenPopUpLayout.createSequentialGroup()
-                .addContainerGap(119, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ordenPopUpLayout.createSequentialGroup()
-                        .addComponent(jLabel28)
-                        .addGap(131, 131, 131))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ordenPopUpLayout.createSequentialGroup()
-                        .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel43)
-                            .addComponent(jLabel41)
-                            .addComponent(jLabel46)
-                            .addComponent(jLabel44)
-                            .addComponent(jLabel45))
-                        .addGap(46, 46, 46)
-                        .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ordenNombre)
-                            .addComponent(ordenID)
-                            .addComponent(ordenCantD)
-                            .addComponent(ordenDesc)
-                            .addComponent(ordenColor))
-                        .addGap(159, 159, 159))))
+                    .addComponent(jLabel41)
+                    .addComponent(jLabel43)
+                    .addComponent(jLabel44)
+                    .addComponent(jLabel45)
+                    .addComponent(jLabel46))
+                .addGap(82, 82, 82)
+                .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ordenID, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ordenNombre, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ordenDesc, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ordenColor, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ordenCantD, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(95, 95, 95))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ordenPopUpLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel28)
+                .addGap(131, 131, 131))
+            .addGroup(ordenPopUpLayout.createSequentialGroup()
+                .addGap(158, 158, 158)
+                .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(jLabel47)
+                        .addComponent(ordenCantF, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ordenPopUpLayout.createSequentialGroup()
+                        .addComponent(saveButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ordenPopUpLayout.setVerticalGroup(
             ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ordenPopUpLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel28)
-                .addGap(50, 50, 50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel41)
                     .addComponent(ordenID))
@@ -425,11 +442,11 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
                     .addComponent(ordenCantD))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGap(71, 71, 71)
                 .addComponent(jLabel47)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ordenCantF, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addGap(49, 49, 49)
                 .addGroup(ordenPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -737,49 +754,50 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         parent.setBackground(new java.awt.Color(255, 255, 255));
         parent.setLayout(new java.awt.CardLayout());
 
-        yellow.setBackground(new java.awt.Color(204, 204, 204));
-
         jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel14.setText("PERFIL JEFE DE TALLER");
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel1.setText("ID :");
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel2.setText("Nombre");
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel4.setText("Apellido: ");
 
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel5.setText("Telefono:");
 
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel6.setText("Cargo:");
 
-        jLabel12.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel12.setText("Direccion:");
 
-        profileFName.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileFName.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileFName.setText("jLabel15");
 
-        profileID.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileID.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileID.setText("jLabel15");
 
-        profileLName.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileLName.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileLName.setText("jLabel15");
 
-        profileTel.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileTel.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileTel.setText("jLabel15");
 
-        profileDir.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileDir.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileDir.setText("jLabel15");
 
-        profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileWP.setText("jLabel15");
 
+        SignOut.setBackground(new java.awt.Color(255, 0, 51));
+        SignOut.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        SignOut.setForeground(new java.awt.Color(255, 255, 255));
         SignOut.setText("SALIR");
         SignOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -789,16 +807,22 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/profile.png"))); // NOI18N
 
+        jLabel29.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel29.setText("ID Sede:");
 
+        jLabel37.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel37.setText("Ciudad Sede:");
 
+        profileIdSede.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileIdSede.setText("jLabel41");
 
+        jLabel42.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel42.setText("Direccion Sede:");
 
+        profileCiudadSede.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileCiudadSede.setText("jLabel43");
 
+        profileDirSede.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileDirSede.setText("jLabel44");
 
         javax.swing.GroupLayout yellowLayout = new javax.swing.GroupLayout(yellow);
@@ -807,49 +831,49 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(yellowLayout.createSequentialGroup()
                 .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(yellowLayout.createSequentialGroup()
-                        .addGap(272, 272, 272)
-                        .addComponent(jLabel3))
-                    .addGroup(yellowLayout.createSequentialGroup()
-                        .addGap(121, 121, 121)
+                    .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel29)
                         .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(yellowLayout.createSequentialGroup()
-                                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel5))
-                                .addGap(72, 72, 72)
-                                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(profileWP, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(profileDir, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(profileTel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(profileLName, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(profileFName, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(profileID, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(178, 178, 178)
-                                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel29)
-                                    .addComponent(jLabel42)))
+                                .addGap(272, 272, 272)
+                                .addComponent(jLabel3))
                             .addGroup(yellowLayout.createSequentialGroup()
-                                .addGap(387, 387, 387)
-                                .addComponent(jLabel37))
+                                .addGap(318, 318, 318)
+                                .addComponent(jLabel14))
                             .addGroup(yellowLayout.createSequentialGroup()
-                                .addGap(197, 197, 197)
-                                .addComponent(jLabel14)))
-                        .addGap(76, 76, 76)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(profileCiudadSede, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(profileIdSede, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(profileDirSede, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addGap(404, 404, 404)
+                                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(SignOut)
+                                    .addComponent(jLabel18)))))
                     .addGroup(yellowLayout.createSequentialGroup()
-                        .addGap(404, 404, 404)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(SignOut)
-                            .addComponent(jLabel18))))
-                .addContainerGap(146, Short.MAX_VALUE))
+                        .addGap(474, 474, 474)
+                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel42)
+                            .addComponent(jLabel37)))
+                    .addGroup(yellowLayout.createSequentialGroup()
+                        .addGap(0, 90, Short.MAX_VALUE)
+                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel5))
+                        .addGap(72, 72, 72)
+                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(profileWP, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(profileDir, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(profileTel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(profileLName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(profileFName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(profileID, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(329, 329, 329)))
+                .addGap(60, 60, 60)
+                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(profileCiudadSede)
+                    .addComponent(profileIdSede)
+                    .addComponent(profileDirSede))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         yellowLayout.setVerticalGroup(
             yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -858,43 +882,39 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addGap(43, 43, 43)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(profileID)
+                    .addComponent(jLabel29)
+                    .addComponent(profileIdSede))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(yellowLayout.createSequentialGroup()
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(profileID)
-                            .addComponent(jLabel29))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(profileFName)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel37))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel42)
-                            .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel4)
-                                .addComponent(profileLName)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(profileTel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(profileDir))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(profileWP)))
-                    .addGroup(yellowLayout.createSequentialGroup()
-                        .addComponent(profileIdSede)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(profileCiudadSede)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(profileDirSede)))
-                .addGap(33, 33, 33)
+                    .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(profileFName)
+                        .addComponent(jLabel37)
+                        .addComponent(profileCiudadSede))
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel42)
+                    .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(profileLName))
+                    .addComponent(profileDirSede))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(profileTel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(profileDir))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(profileWP))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addGap(119, 119, 119)
                 .addComponent(SignOut)
@@ -903,7 +923,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         parent.add(yellow, "card6");
 
-        pink.setBackground(new java.awt.Color(204, 204, 204));
         pink.setForeground(new java.awt.Color(255, 153, 51));
 
         jLabel15.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
@@ -927,6 +946,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel25.setText("Contrasena:");
 
+        createUser.setBackground(new java.awt.Color(153, 255, 153));
+        createUser.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         createUser.setText("GUARDAR");
         createUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -938,8 +959,17 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         pink.setLayout(pinkLayout);
         pinkLayout.setHorizontalGroup(
             pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pinkLayout.createSequentialGroup()
+                .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pinkLayout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(jLabel15))
+                    .addGroup(pinkLayout.createSequentialGroup()
+                        .addGap(370, 370, 370)
+                        .addComponent(createUser, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(350, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
-                .addContainerGap(219, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
                         .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -954,29 +984,20 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                             .addComponent(jLabel23))
                         .addGap(100, 100, 100)))
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(telInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                    .addComponent(fnameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                    .addComponent(telInput)
+                    .addComponent(fnameInput)
                     .addComponent(idInput)
-                    .addComponent(lnameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                    .addComponent(dirInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                    .addComponent(passInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
-                .addGap(282, 282, 282))
-            .addGroup(pinkLayout.createSequentialGroup()
-                .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pinkLayout.createSequentialGroup()
-                        .addGap(345, 345, 345)
-                        .addComponent(jLabel15))
-                    .addGroup(pinkLayout.createSequentialGroup()
-                        .addGap(370, 370, 370)
-                        .addComponent(createUser, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lnameInput)
+                    .addComponent(dirInput)
+                    .addComponent(passInput, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(238, 238, 238))
         );
         pinkLayout.setVerticalGroup(
             pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pinkLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel20)
                     .addComponent(idInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1000,7 +1021,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
                     .addComponent(passInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(createUser, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
@@ -1017,7 +1038,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
-        AsignarUnVendedor.setText("Asignar");
+        AsignarUnVendedor.setBackground(new java.awt.Color(153, 255, 153));
+        AsignarUnVendedor.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        AsignarUnVendedor.setText("ASIGNAR");
         AsignarUnVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AsignarUnVendedorActionPerformed(evt);
@@ -1045,8 +1068,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel24)
                 .addGap(42, 42, 42)
-                .addComponent(comboVendedoresDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addComponent(comboVendedoresDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
                 .addComponent(AsignarUnVendedor)
                 .addGap(176, 176, 176))
         );
@@ -1065,8 +1088,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         );
 
         parent.add(jPanel1, "card8");
-
-        green.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel13.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel13.setText("LISTA DE VENDEDORES");
@@ -1093,9 +1114,12 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         });
         tablaDatos.setAlignmentY(1.0F);
         tablaDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tablaDatos.setSelectionBackground(new java.awt.Color(153, 255, 153));
         tablaDatos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(tablaDatos);
 
+        cargarButton.setBackground(new java.awt.Color(153, 204, 255));
+        cargarButton.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         cargarButton.setText("CARGAR");
         cargarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1103,6 +1127,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
+        editarUser.setBackground(new java.awt.Color(255, 255, 0));
+        editarUser.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         editarUser.setText("EDITAR");
         editarUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1110,46 +1136,34 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/notebook.png"))); // NOI18N
-
         javax.swing.GroupLayout greenLayout = new javax.swing.GroupLayout(green);
         green.setLayout(greenLayout);
         greenLayout.setHorizontalGroup(
             greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(greenLayout.createSequentialGroup()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
-            .addGroup(greenLayout.createSequentialGroup()
-                .addGap(299, 299, 299)
-                .addComponent(jLabel32)
-                .addGap(75, 75, 75)
-                .addComponent(cargarButton)
-                .addGap(57, 57, 57)
-                .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(207, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, greenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(329, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addGap(318, 318, 318))
+            .addGroup(greenLayout.createSequentialGroup()
+                .addGap(290, 290, 290)
+                .addComponent(cargarButton)
+                .addGap(89, 89, 89)
+                .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane2)
         );
         greenLayout.setVerticalGroup(
             greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(greenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel13)
-                .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(greenLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel32)
-                        .addGap(74, 74, 74))
-                    .addGroup(greenLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(editarUser)
-                            .addComponent(cargarButton))
-                        .addGap(89, 89, 89)))
+                .addGap(34, 34, 34)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cargarButton)
+                    .addComponent(editarUser))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         parent.add(green, "card4");
@@ -1196,8 +1210,11 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaProductosJefe.setSelectionBackground(new java.awt.Color(153, 255, 153));
         jScrollPane3.setViewportView(tablaProductosJefe);
 
+        crearOrden.setBackground(new java.awt.Color(153, 204, 255));
+        crearOrden.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         crearOrden.setText("CREAR ORDEN DE TRABAJO");
         crearOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1210,20 +1227,15 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         redLayout.setHorizontalGroup(
             redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(redLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(279, Short.MAX_VALUE)
                 .addGroup(redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(redLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3)
-                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, redLayout.createSequentialGroup()
-                        .addGap(0, 267, Short.MAX_VALUE)
-                        .addGroup(redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, redLayout.createSequentialGroup()
-                                .addComponent(jLabel36)
-                                .addGap(300, 300, 300))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, redLayout.createSequentialGroup()
-                                .addComponent(crearOrden)
-                                .addGap(319, 319, 319))))))
+                        .addComponent(jLabel36)
+                        .addGap(300, 300, 300))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, redLayout.createSequentialGroup()
+                        .addComponent(crearOrden)
+                        .addGap(319, 319, 319))))
+            .addComponent(jScrollPane3)
         );
         redLayout.setVerticalGroup(
             redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1234,14 +1246,13 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66)
                 .addComponent(crearOrden)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         parent.add(red, "card7");
 
         purple.setBackground(new java.awt.Color(204, 204, 204));
 
-        pink1.setBackground(new java.awt.Color(204, 204, 204));
         pink1.setForeground(new java.awt.Color(255, 153, 51));
 
         jLabel33.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
@@ -1258,8 +1269,11 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaOrdenesJefe.setSelectionBackground(new java.awt.Color(153, 255, 153));
         jScrollPane4.setViewportView(tablaOrdenesJefe);
 
+        finalizarOrden.setBackground(new java.awt.Color(153, 204, 255));
+        finalizarOrden.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         finalizarOrden.setText("FINALIZAR");
         finalizarOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1280,7 +1294,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                         .addGap(395, 395, 395)
                         .addComponent(finalizarOrden)))
                 .addContainerGap(334, Short.MAX_VALUE))
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jScrollPane4)
         );
         pink1Layout.setVerticalGroup(
             pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1291,7 +1305,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(finalizarOrden)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout purpleLayout = new javax.swing.GroupLayout(purple);
@@ -1658,7 +1672,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;

@@ -5,6 +5,7 @@ import Modelo.Users;
 import Modelo.Jefes;
 import Modelo.Orden;
 import Modelo.Producto;
+import Modelo.Vendedor;
 import ModeloDAO.Acceso;
 import ModeloDAO.JefesDAO;
 import ModeloDAO.OrdenDAO;
@@ -43,6 +44,11 @@ public class Controladora {
     
     public Jefes consultProfileJefe(String userID){
         return jefesDao.consultProfile(userID);
+    }
+    
+    public Vendedor consultProfileVENDEDOR(String userID){
+        //CAMBIAR A VENDEDOR DAO
+        return jefesDao.consultProfileVENDEDOR(userID);
     }
     
     public void alterComboJefeEditing(JComboBox combo, String[] firstPersonOnCombo){//NO C

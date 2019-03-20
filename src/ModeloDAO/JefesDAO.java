@@ -7,6 +7,7 @@ package ModeloDAO;
 
 import Modelo.Users;
 import Modelo.Jefes;
+import Modelo.Vendedor;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -199,6 +200,39 @@ public Jefes consultProfile(String userID){
             ex.printStackTrace();
         }
         return false;  
+    }
+
+    public Vendedor consultProfileVENDEDOR(String userID) {
+        String QuerySQL = "SELECT * FROM Users WHERE idUser = '"+userID+"'";
+        System.out.println(QuerySQL);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+            System.out.println("resultado: "+resultado);
+            if(resultado.next()){
+                String iduser = resultado.getString("iduser");
+                String fname = resultado.getString("first_name");
+                String lname = resultado.getString("last_name");
+                String tel = resultado.getString("telefono");
+                String dir = resultado.getString("direccion");
+                String wp = resultado.getString("work_position");
+                String pass = resultado.getString("password");
+                String state = resultado.getString("stateuser");
+                
+                return new Vendedor(iduser, fname, lname, tel, dir, wp, pass, state);
+            }else{
+                return new Vendedor(null, null, null, null, null, null, null,null);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return new Vendedor(null, null, null, null, null, null, null,null);
     }
     
     
