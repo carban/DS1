@@ -21,7 +21,7 @@ create table vendedoresSede (idSedes int, idUser int UNIQUE, PRIMARY KEY(idSedes
 
 /*PRODUCTO*/
 drop sequence if exists producto_id_seq cascade;
-create sequence producto_id_seq MINVALUE 400 START 400;
+create sequence producto_id_seq MINVALUE 400 START 401;
 create table Producto (idProducto int PRIMARY KEY DEFAULT nextval('producto_id_seq'), nombre varchar(30), descripcion varchar(50) NOT NULL, color varchar(20) NOT NULL,
 alto numeric, largo numeric, ancho numeric, precio numeric );
 /*INVENTARIO*/
@@ -53,11 +53,11 @@ insert into vendedoresSede values (2, 666);
 insert into vendedoresSede values (2, 777);
 
 /*Productos*/
-insert into producto values (401, 'Super sofa', 'sofa de 3 puestos', 'Cafe Claro', 80, 80, 296, 600000);
-insert into producto values (402, 'Mega sofa', 'sofa de 2 puestos', 'Blanco', 90, 90, 290, 500000);      
-insert into producto values (403, 'Sofa Normal', 'sofa de 2 puestos', 'Cafe Oscuro', 80, 80, 296, 200000);      
-insert into producto values (404, 'Super comedor', 'Comedor para 3 personas', 'Cafe Oscuro', 60, 50, 180, 400000);      
-insert into producto values (405, 'Mega Comedor', 'comedor para 6 personas', 'Negro', 70, 90, 150, 600000);
+insert into producto (nombre, descripcion, color, alto, largo, ancho, precio) values ('Super sofa', 'sofa de 3 puestos', 'Cafe Claro', 80, 80, 296, 600000);
+insert into producto (nombre, descripcion, color, alto, largo, ancho, precio) values ('Mega sofa', 'sofa de 2 puestos', 'Blanco', 90, 90, 290, 500000);      
+insert into producto (nombre, descripcion, color, alto, largo, ancho, precio) values ('Sofa Normal', 'sofa de 2 puestos', 'Cafe Oscuro', 80, 80, 296, 200000);      
+insert into producto (nombre, descripcion, color, alto, largo, ancho, precio) values ('Super comedor', 'Comedor para 3 personas', 'Cafe Oscuro', 60, 50, 180, 400000);      
+insert into producto (nombre, descripcion, color, alto, largo, ancho, precio) values ('Mega Comedor', 'comedor para 6 personas', 'Negro', 70, 90, 150, 600000);
 
 /*Inventario*/
 insert into inventario values (401, 1, 30);

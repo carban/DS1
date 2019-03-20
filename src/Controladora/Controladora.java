@@ -135,8 +135,8 @@ public class Controladora {
     }
     
     //Funcion para crear usuarios desde el gerente
-    public boolean crearProducto(String id, String nombre, String descripcion, String color, int alto, int largo, int ancho, int precio){
-        Producto prod = new Producto(id, nombre, descripcion, color, alto, largo, ancho, precio);
+    public boolean crearProducto(String nombre, String descripcion, String color, int alto, int largo, int ancho, int precio){
+        Producto prod = new Producto("TEMPORAL", nombre, descripcion, color, alto, largo, ancho, precio);
         return productoDao.crearNuevoProducto(prod);
     }
     

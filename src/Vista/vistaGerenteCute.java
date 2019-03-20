@@ -112,7 +112,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         comboJefeEdit = new javax.swing.JComboBox<>();
         jLabel51 = new javax.swing.JLabel();
         side_pane = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
         btn_1 = new javax.swing.JPanel();
         ind_1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -198,7 +197,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         editarSede = new javax.swing.JButton();
         PanelCrearProducto = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
@@ -206,7 +204,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
-        prodID = new javax.swing.JTextField();
         prodNombre = new javax.swing.JTextField();
         prodDesc = new javax.swing.JTextField();
         prodColor = new javax.swing.JTextField();
@@ -465,9 +462,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
 
         side_pane.setBackground(new java.awt.Color(23, 35, 51));
         side_pane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/xyz_1.png"))); // NOI18N
-        side_pane.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         btn_1.setBackground(new java.awt.Color(23, 35, 51));
         btn_1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -864,44 +858,47 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel14.setText("PERFIL GERENTE");
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel1.setText("ID :");
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel2.setText("Nombre");
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel4.setText("Apellido: ");
 
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel5.setText("Telefono:");
 
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel6.setText("Cargo:");
 
-        jLabel12.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
         jLabel12.setText("Direccion:");
 
-        profileFName.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileFName.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileFName.setText("jLabel15");
 
-        profileID.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileID.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileID.setText("jLabel15");
 
-        profileLName.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileLName.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileLName.setText("jLabel15");
 
-        profileTel.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileTel.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileTel.setText("jLabel15");
 
-        profileDir.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileDir.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileDir.setText("jLabel15");
 
-        profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileWP.setText("jLabel15");
 
+        SignOut.setBackground(new java.awt.Color(255, 0, 51));
+        SignOut.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        SignOut.setForeground(new java.awt.Color(255, 255, 255));
         SignOut.setText("SALIR");
         SignOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -946,7 +943,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                         .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(SignOut)
                             .addComponent(jLabel18))))
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
         yellowLayout.setVerticalGroup(
             yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -955,7 +952,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addGap(36, 36, 36)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(profileID))
@@ -1369,9 +1366,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
         jLabel41.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel41.setText("CREAR PRODUCTO");
 
-        jLabel42.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
-        jLabel42.setText("ID Producto: ");
-
         jLabel43.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
         jLabel43.setText("Nombre: ");
 
@@ -1412,7 +1406,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                     .addGroup(PanelCrearProductoLayout.createSequentialGroup()
                         .addGap(263, 263, 263)
                         .addGroup(PanelCrearProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel42)
                             .addComponent(jLabel43)
                             .addComponent(jLabel44)
                             .addComponent(jLabel52)
@@ -1428,8 +1421,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
                             .addComponent(ProdAlto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(prodColor, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(prodDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(prodNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(prodID, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(prodNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PanelCrearProductoLayout.createSequentialGroup()
                         .addGap(405, 405, 405)
                         .addComponent(crearProducto)))
@@ -1440,14 +1432,7 @@ public class vistaGerenteCute extends javax.swing.JFrame {
             .addGroup(PanelCrearProductoLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel41)
-                .addGroup(PanelCrearProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelCrearProductoLayout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(jLabel42))
-                    .addGroup(PanelCrearProductoLayout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(prodID, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                 .addGroup(PanelCrearProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
                     .addComponent(prodNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1822,23 +1807,21 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_6MouseReleased
 
     private void crearProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearProductoActionPerformed
-        if(prodID.getText().equals("") || prodNombre.getText().equals("") || prodDesc.getText().equals("") || prodColor.getText().equals("") || ProdAlto.getText().equals("") || prodLargo.getText().equals("") || prodAncho.getText().equals("") || prodPrecio.getText().equals("")){
+        if(prodNombre.getText().equals("") || prodDesc.getText().equals("") || prodColor.getText().equals("") || ProdAlto.getText().equals("") || prodLargo.getText().equals("") || prodAncho.getText().equals("") || prodPrecio.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Error, tienes elementos vacios");
         }else{
             try{
-                int identification = Integer.parseInt(prodID.getText());
                 int precio = Integer.parseInt(prodPrecio.getText());
                 int alto = Integer.parseInt(ProdAlto.getText());
                 int largo = Integer.parseInt(prodLargo.getText());
                 int ancho = Integer.parseInt(prodAncho.getText());
-                if(identification<0){
-                    JOptionPane.showMessageDialog(null, "Datos Incorrectos \nIntentalo Nuevamente");
-                }else if(control.crearProducto(prodID.getText(), prodNombre.getText(), prodDesc.getText(), prodColor.getText(), alto, largo, ancho, precio)){
+                if(control.crearProducto(prodNombre.getText(), prodDesc.getText(), prodColor.getText(), alto, largo, ancho, precio)){
                     this.cleanProductSection();
                     JOptionPane.showMessageDialog(null, "Producto creado exitosamente");
                 }else{
                     JOptionPane.showMessageDialog(null, "Datos Incorrectos \nIntentalo Nuevamente");
                 }
+
             }catch (NumberFormatException e){
                 JOptionPane.showMessageDialog(null, "La ID debe ser un entero");
             }
@@ -1882,7 +1865,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     }
     
     private void cleanProductSection(){
-        prodID.setText("");
         prodNombre.setText("");
         prodDesc.setText("");
         ProdAlto.setText("");
@@ -1978,7 +1960,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -1993,7 +1974,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -2027,7 +2007,6 @@ public class vistaGerenteCute extends javax.swing.JFrame {
     private javax.swing.JTextField prodAncho;
     private javax.swing.JTextField prodColor;
     private javax.swing.JTextField prodDesc;
-    private javax.swing.JTextField prodID;
     private javax.swing.JTextField prodLargo;
     private javax.swing.JTextField prodNombre;
     private javax.swing.JTextField prodPrecio;

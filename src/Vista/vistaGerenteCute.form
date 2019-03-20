@@ -180,7 +180,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="GUARDAR"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Por defecto"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
           <Events>
@@ -341,7 +341,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="GUARDAR"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Por defecto"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
           <Events>
@@ -471,18 +471,6 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel29">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Recursos/xyz_1.png"/>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="0" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
         <Container class="javax.swing.JPanel" name="btn_1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1131,7 +1119,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="316" max="32767" attributes="0"/>
+                      <EmptySpace pref="302" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1142,7 +1130,7 @@
                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="48" max="32767" attributes="0"/>
+                      <EmptySpace pref="32" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="profileID" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1193,7 +1181,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="1"/>
+                  <Font name="DejaVu Sans" size="16" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="ID :"/>
               </Properties>
@@ -1201,7 +1189,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="1"/>
+                  <Font name="DejaVu Sans" size="16" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nombre"/>
               </Properties>
@@ -1216,7 +1204,7 @@
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="1"/>
+                  <Font name="DejaVu Sans" size="16" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Apellido: "/>
               </Properties>
@@ -1224,7 +1212,7 @@
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="1"/>
+                  <Font name="DejaVu Sans" size="16" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Telefono:"/>
               </Properties>
@@ -1232,7 +1220,7 @@
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="1"/>
+                  <Font name="DejaVu Sans" size="16" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cargo:"/>
               </Properties>
@@ -1240,7 +1228,7 @@
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="1"/>
+                  <Font name="DejaVu Sans" size="16" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Direccion:"/>
               </Properties>
@@ -1248,7 +1236,7 @@
             <Component class="javax.swing.JLabel" name="profileFName">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
+                  <Font name="DejaVu Sans" size="16" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel15"/>
               </Properties>
@@ -1256,7 +1244,7 @@
             <Component class="javax.swing.JLabel" name="profileID">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
+                  <Font name="DejaVu Sans" size="16" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel15"/>
               </Properties>
@@ -1264,7 +1252,7 @@
             <Component class="javax.swing.JLabel" name="profileLName">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
+                  <Font name="DejaVu Sans" size="16" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel15"/>
               </Properties>
@@ -1272,7 +1260,7 @@
             <Component class="javax.swing.JLabel" name="profileTel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
+                  <Font name="DejaVu Sans" size="16" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel15"/>
               </Properties>
@@ -1280,7 +1268,7 @@
             <Component class="javax.swing.JLabel" name="profileDir">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
+                  <Font name="DejaVu Sans" size="16" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel15"/>
               </Properties>
@@ -1288,13 +1276,22 @@
             <Component class="javax.swing.JLabel" name="profileWP">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
+                  <Font name="DejaVu Sans" size="16" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel15"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="SignOut">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="0" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="DejaVu Sans" size="14" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="SALIR"/>
               </Properties>
               <Events>
@@ -1647,7 +1644,7 @@
                       </TableColumnModel>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Por defecto"/>
+                      <Color id="Default Cursor"/>
                     </Property>
                     <Property name="selectionModel" type="javax.swing.ListSelectionModel" editor="org.netbeans.modules.form.editors2.JTableSelectionModelEditor">
                       <JTableSelectionModel selectionMode="0"/>
@@ -2026,7 +2023,6 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -2044,7 +2040,6 @@
                                   <Component id="prodColor" min="-2" pref="180" max="-2" attributes="0"/>
                                   <Component id="prodDesc" min="-2" pref="180" max="-2" attributes="0"/>
                                   <Component id="prodNombre" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                                  <Component id="prodID" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -2061,17 +2056,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                              <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="prodID" min="-2" pref="27" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <EmptySpace pref="114" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="prodNombre" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2120,14 +2105,6 @@
                   <Font name="DejaVu Sans" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="CREAR PRODUCTO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel42">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="ID Producto: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel43">
@@ -2185,8 +2162,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Precio: "/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="prodID">
             </Component>
             <Component class="javax.swing.JTextField" name="prodNombre">
             </Component>
