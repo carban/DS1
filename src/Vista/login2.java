@@ -4,7 +4,11 @@ import Controladora.*;
 import ModeloDAO.Acceso;
 import ModeloDAO.UsersDAO;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import org.postgresql.util.PSQLException;
@@ -12,11 +16,18 @@ import org.postgresql.util.PSQLException;
 public class login2 extends javax.swing.JFrame {
 
     Controladora control = new Controladora();
+    
 
     public login2() {
         this.setResizable(false);
         initComponents();
-        System.out.println(signIn.getWidth() + "   " + signIn.getHeight());
+
+        Image icon = new ImageIcon(getClass().getResource("/Recursos/xyzicon.png")).getImage();
+        super.setIconImage(icon);
+        Ingresar ingresar = new Ingresar();
+        passwordInput.addActionListener(ingresar);
+        signIn.addActionListener(ingresar);
+        
 
     }
 
@@ -42,7 +53,7 @@ public class login2 extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/users.png"))); // NOI18N
 
         userInput.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        userInput.setForeground(new java.awt.Color(102, 102, 102));
+        userInput.setForeground(new java.awt.Color(204, 204, 204));
         userInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         userInput.setText("USUARIO");
         userInput.setToolTipText("");
@@ -61,7 +72,7 @@ public class login2 extends javax.swing.JFrame {
             }
         });
 
-        passwordInput.setForeground(new java.awt.Color(102, 102, 102));
+        passwordInput.setForeground(new java.awt.Color(204, 204, 204));
         passwordInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passwordInput.setText("•••••••••••••••");
         passwordInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -180,40 +191,6 @@ public class login2 extends javax.swing.JFrame {
 
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
 
-        String user = userInput.getText();
-        String pass = passwordInput.getText();
-        String aux = control.login(user, pass); //esto lo hago para que no se ejecute varias veces el llamado a este metodo
-        if (user.equals("USUARIO") || pass.equals("•••••••••••••••") || user.length() == 0 || pass.length() == 0) {
-            JOptionPane.showMessageDialog(null, "Error, campos por llenar.", "Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            try {
-                int userint = Integer.parseInt(user);
-                if (userint < 0) {
-                    JOptionPane.showMessageDialog(null, "Informacion incorrecta, prueba otra vez", "Error", JOptionPane.ERROR_MESSAGE);
-                } else if (aux == "Gerente") {
-                    vistaGerenteCute viGerente = new vistaGerenteCute(user);
-                    viGerente.setLocationRelativeTo(null);
-                    viGerente.setVisible(true);
-                    this.dispose();
-                } else if (aux == "Vendedor") {
-                    vistaVendedor viVendedor = new vistaVendedor(user);
-                    viVendedor.setLocationRelativeTo(null);
-                    viVendedor.setVisible(true);
-                    this.dispose();
-                } else if (aux == "Jefe de Taller") {
-                    vistaJefeTaller viJefeTaller = new vistaJefeTaller(user);
-                    viJefeTaller.setLocationRelativeTo(null);
-                    viJefeTaller.setVisible(true);
-                    this.dispose();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Informacion incorrecta, prueba otra vez", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "El usuario tiene que ser numerico", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-             
-        }
-       
 
     }//GEN-LAST:event_signInActionPerformed
 
@@ -329,6 +306,49 @@ public class login2 extends javax.swing.JFrame {
             }
 
         });
+    }
+
+    public class Ingresar implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            String user = userInput.getText();
+            String pass = passwordInput.getText();
+            String aux = control.login(user, pass); //esto lo hago para que no se ejecute varias veces el llamado a este metodo//esto lo hago para que no se ejecute varias veces el llamado a este metodo
+            if (user.equals("USUARIO") || pass.equals("•••••••••••••••") || user.length() == 0 || pass.length() == 0) {
+                JOptionPane.showMessageDialog(null, "Error, campos por llenar.", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                try {
+                    int userint = Integer.parseInt(user);
+                    if (userint < 0) {
+                        JOptionPane.showMessageDialog(null, "Informacion incorrecta, prueba otra vez", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else if (aux == "Gerente") {
+                        vistaGerenteCute viGerente = new vistaGerenteCute(user);
+                        viGerente.setLocationRelativeTo(null);
+                        viGerente.setVisible(true);
+                        dispose();
+                    } else if (aux == "Vendedor") {
+                        vistaVendedor viVendedor = new vistaVendedor(user);
+                        viVendedor.setLocationRelativeTo(null);
+                        viVendedor.setVisible(true);
+                        viVendedor.idusuario = userInput.getText();
+                        dispose();
+                    } else if (aux == "Jefe de Taller") {
+                        vistaJefeTaller viJefeTaller = new vistaJefeTaller(user);
+                        viJefeTaller.setLocationRelativeTo(null);
+                        viJefeTaller.setVisible(true);
+                        dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Informacion incorrecta, prueba otra vez", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "El usuario tiene que ser numerico", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+
+            }
+
+        }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

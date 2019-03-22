@@ -1,4 +1,3 @@
-
 package ModeloDAO;
 
 import Modelo.Producto;
@@ -8,32 +7,34 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import org.postgresql.util.PSQLException;
 
 /**
  *
  * @author carban
  */
 public class ProductoDAO {
-        Acceso access;
-    
-    public ProductoDAO(Acceso access){
-        this.access =  access;
+
+    Acceso access;
+
+    public ProductoDAO(Acceso access) {
+        this.access = access;
     }
 
     public boolean crearNuevoProducto(Producto prod) {
-        String QuerySQL = "INSERT INTO producto (nombre, descripcion, color, alto, largo, ancho, precio) VALUES ('"+prod.getNombre()+ "', '"+prod.getDescripcion()+ "', '"+prod.getColor()+"', '"+prod.getAlto()+"', '"+prod.getLargo()+ "', '"+prod.getAncho()+ "', '"+prod.getPrecio()+ "')";
+        String QuerySQL = "INSERT INTO producto (nombre, descripcion, color, alto, largo, ancho, precio) VALUES ('" + prod.getNombre() + "', '" + prod.getDescripcion() + "', '" + prod.getColor() + "', '" + prod.getAlto() + "', '" + prod.getLargo() + "', '" + prod.getAncho() + "', '" + prod.getPrecio() + "')";
         System.out.println(QuerySQL);
-        Connection coneccion= this.access.getConnetion();
-        System.out.println("Connection: "+coneccion);
-        
+        Connection coneccion = this.access.getConnetion();
+        System.out.println("Connection: " + coneccion);
+
         try {
             Statement sentencia = coneccion.createStatement();
-            System.out.println("sentencia: "+sentencia);
+            System.out.println("sentencia: " + sentencia);
             int resultado = sentencia.executeUpdate(QuerySQL);
-            System.out.println("resultado: "+resultado);
-            if (resultado==1) {
+            System.out.println("resultado: " + resultado);
+            if (resultado == 1) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
 
@@ -47,20 +48,19 @@ public class ProductoDAO {
     public ArrayList<String[]> consultProductos() {
         String QuerySQL = "Select idproducto, idsedes, nombre, descripcion, color, alto, largo, ancho, precio, cantidad from (select * from inventario order by idsedes, idproducto) as foo natural join (select * from producto) as goo";
         System.out.println(QuerySQL);
-        Connection coneccion= this.access.getConnetion();
-        System.out.println("Connection: "+coneccion);
-        
+        Connection coneccion = this.access.getConnetion();
+        System.out.println("Connection: " + coneccion);
+
         try {
             Statement sentencia = coneccion.createStatement();
-            System.out.println("sentencia: "+sentencia);
+            System.out.println("sentencia: " + sentencia);
             ResultSet resultado = sentencia.executeQuery(QuerySQL);
-            System.out.println("resultado: "+resultado);
-            
+            System.out.println("resultado: " + resultado);
 
             ArrayList<String[]> matrixList = new ArrayList<String[]>();
             int cont = 0;
             while (resultado.next()) {
-                
+
                 String a1 = resultado.getString("idproducto");
                 String a2 = resultado.getString("idsedes");
                 String a3 = resultado.getString("nombre");
@@ -84,17 +84,49 @@ public class ProductoDAO {
         return null;
     }
 
+    public Producto consultProducto(String codigoProdu) {
+        String QuerySQL = "SELECT * FROM Producto WHERE idproducto = '" + codigoProdu + "'";
+        System.out.println(QuerySQL);
+        Connection coneccion = this.access.getConnetion();
+        System.out.println("Connection: " + coneccion);
+
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: " + sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+            System.out.println("resultado: " + resultado);
+            if (resultado.next()) {
+                String idproducto = resultado.getString("idproducto");
+                String nombreprodu = resultado.getString("nombre");
+                String colorprodu = resultado.getString("color");
+                int altoprodu = Integer.parseInt(resultado.getString("alto"));
+                int largoprodu = Integer.parseInt(resultado.getString("largo"));
+                int anchoprodu = Integer.parseInt(resultado.getString("ancho"));
+                int precioprodu = Integer.parseInt(resultado.getString("precio"));
+
+                return new Producto(idproducto, nombreprodu, "", colorprodu, altoprodu, largoprodu, anchoprodu, precioprodu);
+            } else {
+                return new Producto(null, null, null, null, 0, 0, 0, 0);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return new Producto(null, null, null, null, 0, 0, 0, 0);
+    }
+
     public ResultSet comboOptions() {
         String QuerySQL = "select * from users where work_position='Vendedor' and stateuser='Inactivo';";
         System.out.println(QuerySQL);
-        Connection coneccion= this.access.getConnetion();
-        System.out.println("Connection: "+coneccion);
-        
+        Connection coneccion = this.access.getConnetion();
+        System.out.println("Connection: " + coneccion);
+
         try {
             Statement sentencia = coneccion.createStatement();
-            System.out.println("sentencia: "+sentencia);
+            System.out.println("sentencia: " + sentencia);
             ResultSet resultado = sentencia.executeQuery(QuerySQL);
-            System.out.println("resultado: "+resultado);
+            System.out.println("resultado: " + resultado);
             return resultado;
 
         } catch (SQLException ex) {
@@ -105,22 +137,21 @@ public class ProductoDAO {
     }
 
     public ArrayList<String[]> consultProductosDelJefe(String sedeid) {
-        String QuerySQL = "Select idproducto, idsedes, nombre, descripcion, color, alto, largo, ancho, precio, cantidad from (select * from inventario order by idsedes, idproducto) as foo natural join (select * from producto) as goo WHERE idsedes = '"+sedeid+"'";
+        String QuerySQL = "Select idproducto, idsedes, nombre, descripcion, color, alto, largo, ancho, precio, cantidad from (select * from inventario order by idsedes, idproducto) as foo natural join (select * from producto) as goo WHERE idsedes = '" + sedeid + "'";
         System.out.println(QuerySQL);
-        Connection coneccion= this.access.getConnetion();
-        System.out.println("Connection: "+coneccion);
-        
+        Connection coneccion = this.access.getConnetion();
+        System.out.println("Connection: " + coneccion);
+
         try {
             Statement sentencia = coneccion.createStatement();
-            System.out.println("sentencia: "+sentencia);
+            System.out.println("sentencia: " + sentencia);
             ResultSet resultado = sentencia.executeQuery(QuerySQL);
-            System.out.println("resultado: "+resultado);
-            
+            System.out.println("resultado: " + resultado);
 
             ArrayList<String[]> matrixList = new ArrayList<String[]>();
             int cont = 0;
             while (resultado.next()) {
-                
+
                 String a1 = resultado.getString("idproducto");
                 String a2 = resultado.getString("idsedes");
                 String a3 = resultado.getString("nombre");
@@ -143,5 +174,50 @@ public class ProductoDAO {
         }
         return null;
     }
-    
+
+    public Producto consultProductosCoincidencia(String nombre) {
+        String QuerySQL = "SELECT * FROM producto WHERE LOWER (nombre)  LIKE LOWER ( '" + nombre + "%') OR "
+                + "CAST(idProducto AS TEXT) LIKE '" + nombre + "%' ";
+        Connection coneccion = this.access.getConnetion();
+
+        try {
+            Statement sentencia = coneccion.createStatement();
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+            String idproducto = "";
+            String nombreprodu = "";
+            String colorprodu = "";
+            int altoprodu = 0;
+            int largoprodu = 0;
+            int anchoprodu = 0;
+            int precioprodu = 0;
+
+            if (nombre.length() != 0) {
+
+                if (resultado.next()) {
+
+                    idproducto = resultado.getString("idproducto");
+                    nombreprodu = resultado.getString("nombre");
+                    colorprodu = resultado.getString("color");
+                    altoprodu = resultado.getInt("alto");
+                    largoprodu = resultado.getInt("largo");
+                    anchoprodu = resultado.getInt("ancho");
+                    precioprodu = resultado.getInt("precio");
+
+                    return new Producto(idproducto, nombreprodu, "", colorprodu, altoprodu, largoprodu, anchoprodu, precioprodu);
+
+                } else {
+                    return new Producto("", "Sin resultados...", null, null, 0, 0, 0, 0);
+                }
+            } else {
+                return new Producto("", null, null, null, 0, 0, 0, 0);
+            }
+        } catch (PSQLException psqe) {
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return new Producto("", "Sin resultados...", null, null, 0, 0, 0, 0);
+    }
+
 }

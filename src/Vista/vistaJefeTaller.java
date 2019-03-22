@@ -9,13 +9,16 @@ import Controladora.Controladora;
 import Modelo.Users;
 import Modelo.Jefes;
 import java.awt.Color;
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Admin
@@ -34,13 +37,16 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     String JefeActualParaEditarXD;
     String[] arregloJefeActualNPI;
     Jefes profileInfo;
-    
+
     public vistaJefeTaller(String userID) {
         initComponents();
-        setColor(btn_1); 
+        setColor(btn_1);
         ind_1.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_3,btn_4, btn_5}, new JPanel[]{ind_2,ind_3, ind_4, ind_5});
-        
+        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_5}, new JPanel[]{ind_2, ind_3, ind_4, ind_5});
+
+        Image icon = new ImageIcon(getClass().getResource("/Recursos/xyzicon.png")).getImage();
+        super.setIconImage(icon);
+
         System.out.println("------------->");
         this.profileInfo = control.consultProfileJefe(userID);
         this.profileID.setText(profileInfo.getId());
@@ -52,16 +58,16 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         this.profileIdSede.setText(profileInfo.getIdSede());
         this.profileCiudadSede.setText(profileInfo.getCiudadSede());
         this.profileDirSede.setText(profileInfo.getDirSede());
-        
+
         String data[][] = {};
-        String columnNames[]={"Id","Nombre","Apellido","Telefono","Direccion","Posicion"};
+        String columnNames[] = {"Id", "Nombre", "Apellido", "Telefono", "Direccion", "Posicion"};
         md = new DefaultTableModel(data, columnNames);
         tablaDatos.setModel(md);
         tablaDatos.setDefaultEditor(Object.class, null); //Permite que las celdas no se modifiquen, pero si se seleccionen
-        String columnNamesSedes[]={"ID","Ciudad","Direccion","Estado","Jefe de Taller"};
+        String columnNamesSedes[] = {"ID", "Ciudad", "Direccion", "Estado", "Jefe de Taller"};
         mdSede = new DefaultTableModel(data, columnNamesSedes);
 
-        String columnNamesProducts[]={"ID Producto","Id Sede","Nombre","Descripcion", "Color", "alto", "largo", "ancho", "precio", "cantidad"};
+        String columnNamesProducts[] = {"ID Producto", "Id Sede", "Nombre", "Descripcion", "Color", "alto", "largo", "ancho", "precio", "cantidad"};
         mdProducts = new DefaultTableModel(data, columnNamesProducts);
         tablaProductosJefe.setModel(mdProducts);
         tablaProductosJefe.setDefaultEditor(Object.class, null);
@@ -73,7 +79,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         tablaProductosJefe.getColumnModel().getColumn(6).setMinWidth(15);
         tablaProductosJefe.getColumnModel().getColumn(7).setMinWidth(15);
 
-        String columnNamesOrders[]={"ID Orden","Cant. a Fabricar","ID Producto","Nombre","Descripcion", "Color", "alto", "largo", "ancho", "precio"};
+        String columnNamesOrders[] = {"ID Orden", "Cant. a Fabricar", "ID Producto", "Nombre", "Descripcion", "Color", "alto", "largo", "ancho", "precio"};
         mdOrdenes = new DefaultTableModel(data, columnNamesOrders);
         tablaOrdenesJefe.setModel(mdOrdenes);
         tablaOrdenesJefe.setDefaultEditor(Object.class, null);
@@ -83,7 +89,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         tablaOrdenesJefe.getColumnModel().getColumn(4).setMinWidth(160);
         tablaOrdenesJefe.getColumnModel().getColumn(5).setMinWidth(15);
         tablaOrdenesJefe.getColumnModel().getColumn(6).setMinWidth(15);
-        tablaOrdenesJefe.getColumnModel().getColumn(7).setMinWidth(15);          
+        tablaOrdenesJefe.getColumnModel().getColumn(7).setMinWidth(15);
     }
 
     /**
@@ -1328,21 +1334,21 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
     private void btn_1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MousePressed
         // TODO add your handling code here:
-        setColor(btn_1); 
+        setColor(btn_1);
         ind_1.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_3,btn_4,btn_5}, new JPanel[]{ind_2,ind_3, ind_4,ind_5});
+        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_5}, new JPanel[]{ind_2, ind_3, ind_4, ind_5});
         parent.removeAll();
         parent.add(yellow);
         parent.repaint();
         parent.revalidate();
-        
+
     }//GEN-LAST:event_btn_1MousePressed
 
     private void btn_3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MousePressed
         // TODO add your handling code here:
-         setColor(btn_3); 
+        setColor(btn_3);
         ind_3.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_1,btn_4,btn_5}, new JPanel[]{ind_2,ind_1, ind_4,ind_5});
+        resetColor(new JPanel[]{btn_2, btn_1, btn_4, btn_5}, new JPanel[]{ind_2, ind_1, ind_4, ind_5});
         parent.removeAll();
         parent.add(jPanel1);
         parent.repaint();
@@ -1351,9 +1357,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
     private void btn_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MousePressed
         // TODO add your handling code here:
-          setColor(btn_4); 
+        setColor(btn_4);
         ind_4.setOpaque(true);
-        resetColor(new JPanel[]{btn_2,btn_3,btn_1,btn_5}, new JPanel[]{ind_2,ind_3, ind_1,ind_5});
+        resetColor(new JPanel[]{btn_2, btn_3, btn_1, btn_5}, new JPanel[]{ind_2, ind_3, ind_1, ind_5});
         parent.removeAll();
         parent.add(green);
         parent.repaint();
@@ -1362,16 +1368,16 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
     private void btn_2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseReleased
         // TODO add your handling code here:
-          setColor(btn_2); 
+        setColor(btn_2);
         ind_2.setOpaque(true);
-        resetColor(new JPanel[]{btn_1,btn_3,btn_4, btn_5}, new JPanel[]{ind_1,ind_3, ind_4, ind_5});
+        resetColor(new JPanel[]{btn_1, btn_3, btn_4, btn_5}, new JPanel[]{ind_1, ind_3, ind_4, ind_5});
         parent.removeAll();
         parent.add(purple);
         parent.repaint();
         parent.revalidate();
     }//GEN-LAST:event_btn_2MouseReleased
 
-    int xx,xy;
+    int xx, xy;
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
         // TODO add your handling code here:
         //drag this pane
@@ -1381,11 +1387,11 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
         // TODO add your handling code here:
-        
+
         //source to drag
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xx,y-xy);
+        this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -1393,38 +1399,38 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void createUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserActionPerformed
-        if(idInput.getText().equals("") || fnameInput.getText().equals("") || lnameInput.getText().equals("") || telInput.getText().equals("") || dirInput.getText().equals("") || passInput.getText().equals("")){
+        if (idInput.getText().equals("") || fnameInput.getText().equals("") || lnameInput.getText().equals("") || telInput.getText().equals("") || dirInput.getText().equals("") || passInput.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Error, tienes elementos vacios");
-        }else{
-            try{
+        } else {
+            try {
                 int identification = Integer.parseInt(idInput.getText());
-                if(identification<0){
+                if (identification < 0) {
                     JOptionPane.showMessageDialog(null, "Datos Incorrectos \nIntentalo Nuevamente");
                     //NUEVO METODO PARA CREAR SOLO VENDEDORES Y ASIGNARLOS A LA SEDE DEL JEFE EN PARTICULAR
-                }else if(control.createUserVendedor(idInput.getText(), fnameInput.getText(), lnameInput.getText(), telInput.getText(), dirInput.getText(), passInput.getText(), this.profileInfo.getIdSede())){
+                } else if (control.createUserVendedor(idInput.getText(), fnameInput.getText(), lnameInput.getText(), telInput.getText(), dirInput.getText(), passInput.getText(), this.profileInfo.getIdSede())) {
                     this.cleanCreateSection();
                     JOptionPane.showMessageDialog(null, "Vendedor creado exitosamente");
-                }else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Datos Incorrectos \nIntentalo Nuevamente");
                 }
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "La ID debe ser un entero");
             }
         }
     }//GEN-LAST:event_createUserActionPerformed
-    public void cargarTable(){
+    public void cargarTable() {
         md.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultUsersVendedores(this.profileInfo.getIdSede());//NUEVO METODO PARA CREAR SOLO VENDEDORES Y ASIGNARLOS A LA SEDE DEL JEFE EN PARTICULAR
         for (int i = 0; i < lista.size(); i++) {
             md.addRow(lista.get(i));
-        }      
+        }
     }
     private void cargarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarButtonActionPerformed
         this.cargarTable();
     }//GEN-LAST:event_cargarButtonActionPerformed
 
     private void editarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarUserActionPerformed
-        try{
+        try {
             int index = tablaDatos.getSelectedRow();
             String aid = tablaDatos.getModel().getValueAt(index, 0).toString();
             String anombre = tablaDatos.getModel().getValueAt(index, 1).toString();
@@ -1441,29 +1447,29 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             this.editPopUp.setSize(527, 531);
             this.editPopUp.setLocationRelativeTo(null);
             this.editPopUp.setVisible(true);
-        }catch(ArrayIndexOutOfBoundsException ex){
+        } catch (ArrayIndexOutOfBoundsException ex) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un vendedor de la tabla");
         }
     }//GEN-LAST:event_editarUserActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        
-        if(inputID.getText().equals("") || inputFN.equals("") || inputLN.getText().equals("") || inputTel.getText().equals("") || inputDir.getText().equals("")){
+
+        if (inputID.getText().equals("") || inputFN.equals("") || inputLN.getText().equals("") || inputTel.getText().equals("") || inputDir.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Error, tienes elementos vacios");
-        }else{
-            try{
+        } else {
+            try {
                 int identification = Integer.parseInt(inputID.getText());
-                if(identification<0){
+                if (identification < 0) {
                     JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente1");
-                }else if(control.updateUserVendedor(inputID.getText(), inputFN.getText(), inputLN.getText(), inputTel.getText(), inputDir.getText())){
+                } else if (control.updateUserVendedor(inputID.getText(), inputFN.getText(), inputLN.getText(), inputTel.getText(), inputDir.getText())) {
                     JOptionPane.showMessageDialog(null, "Usuario actualizado exitosamente");
                     //this.editingState(false);
                     cargarTable();
                     this.editPopUp.dispose();
-                }else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Datos incorrectos \nintentelo nuevamente2");
                 }
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "La ID debe ser un entero");
             }
         }
@@ -1484,9 +1490,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
     private void btn_5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseReleased
         // TODO add your handling code here:
-        setColor(btn_5); 
+        setColor(btn_5);
         ind_5.setOpaque(true);
-        resetColor(new JPanel[]{btn_1,btn_2,btn_3,btn_4}, new JPanel[]{ind_1,ind_2,ind_3, ind_4});
+        resetColor(new JPanel[]{btn_1, btn_2, btn_3, btn_4}, new JPanel[]{ind_1, ind_2, ind_3, ind_4});
         parent.removeAll();
         parent.add(red);
         parent.repaint();
@@ -1498,13 +1504,13 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     }//GEN-LAST:event_comboVendedoresDisponiblesMouseEntered
 
     private void AsignarUnVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarUnVendedorActionPerformed
-        
+
         String vendedorSeleccionado = comboVendedoresDisponibles.getItemAt(comboVendedoresDisponibles.getSelectedIndex());
         String[] splitter = vendedorSeleccionado.split(",");
-        if(control.AsignarUnVendedor(splitter[0],profileInfo.getIdSede())){
+        if (control.AsignarUnVendedor(splitter[0], profileInfo.getIdSede())) {
             JOptionPane.showConfirmDialog(null, "Asignado");
         }
-        
+
     }//GEN-LAST:event_AsignarUnVendedorActionPerformed
 
     private void btn_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseClicked
@@ -1512,7 +1518,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_5MouseClicked
 
     private void crearOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearOrdenActionPerformed
-        try{
+        try {
             int index = tablaProductosJefe.getSelectedRow();
             String aid = tablaProductosJefe.getModel().getValueAt(index, 0).toString();
             String anombre = tablaProductosJefe.getModel().getValueAt(index, 2).toString();
@@ -1527,16 +1533,16 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             this.ordenPopUp.setSize(527, 531);
             this.ordenPopUp.setLocationRelativeTo(null);
             this.ordenPopUp.setVisible(true);
-        }catch(ArrayIndexOutOfBoundsException e){
+        } catch (ArrayIndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un producto del inventario");
         }
     }//GEN-LAST:event_crearOrdenActionPerformed
 
     private void saveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButton1ActionPerformed
-        if(this.control.crearOrden(this.ordenCantF.getText(), true,  this.ordenID.getText(), this.profileInfo.getIdSede())){
+        if (this.control.crearOrden(this.ordenCantF.getText(), true, this.ordenID.getText(), this.profileInfo.getIdSede())) {
             JOptionPane.showMessageDialog(null, "Orden creada exitosamente");
             this.ordenPopUp.dispose();
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Error al crear la orden");
         }
     }//GEN-LAST:event_saveButton1ActionPerformed
@@ -1545,28 +1551,28 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         this.ordenPopUp.dispose();
     }//GEN-LAST:event_exitBtn1ActionPerformed
 
-    public void cargarTableOrden(){
+    public void cargarTableOrden() {
         mdOrdenes.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultOrders(this.profileInfo.getIdSede());
         for (int i = 0; i < lista.size(); i++) {
             mdOrdenes.addRow(lista.get(i));
-        }      
+        }
     }
-    
+
     private void btn_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseClicked
         this.cargarTableOrden();
     }//GEN-LAST:event_btn_2MouseClicked
 
     private void finalizarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarOrdenActionPerformed
-        try{
+        try {
             int index = tablaOrdenesJefe.getSelectedRow();
-            if(this.control.finalizarOrden(tablaOrdenesJefe.getModel().getValueAt(index, 0).toString(), tablaOrdenesJefe.getModel().getValueAt(index, 2).toString(), this.profileInfo.getIdSede())){
+            if (this.control.finalizarOrden(tablaOrdenesJefe.getModel().getValueAt(index, 0).toString(), tablaOrdenesJefe.getModel().getValueAt(index, 2).toString(), this.profileInfo.getIdSede())) {
                 JOptionPane.showMessageDialog(null, "Orden finalizada con exito");
                 this.cargarTableOrden();
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Error al finalizar la orden");
             }
-        }catch(ArrayIndexOutOfBoundsException e){
+        } catch (ArrayIndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una orden de la tabla");
         }
     }//GEN-LAST:event_finalizarOrdenActionPerformed
@@ -1574,22 +1580,22 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private void btn_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MouseClicked
         this.cargarTable();
     }//GEN-LAST:event_btn_4MouseClicked
-    public void cargarTableProducto(){
+    public void cargarTableProducto() {
         mdProducts.setRowCount(0); //Para limpiar la tabla
-        ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());  
+        ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());
         for (int i = 0; i < lista.size(); i++) {
             mdProducts.addRow(lista.get(i));
-        }      
+        }
     }
-    
-    public void cargarTableSede(){
+
+    public void cargarTableSede() {
         mdSede.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultSedes();
         for (int i = 0; i < lista.size(); i++) {
             mdSede.addRow(lista.get(i));
-        }      
+        }
     }
-    
+
     private void cleanCreateSection() {
         idInput.setText("");
         fnameInput.setText("");
@@ -1598,23 +1604,22 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         dirInput.setText("");
         passInput.setText("");
     }
-       
-    private void setColor(JPanel pane)
-    {
-        pane.setBackground(new Color(0,102,51));
+
+    private void setColor(JPanel pane) {
+        pane.setBackground(new Color(0, 102, 51));
     }
-    
-    private void resetColor(JPanel [] pane, JPanel [] indicators)
-    {
-        for(int i=0;i<pane.length;i++){
-           pane[i].setBackground(new Color(0,51,51));
-           
-        } for(int i=0;i<indicators.length;i++){
-           indicators[i].setOpaque(false);           
+
+    private void resetColor(JPanel[] pane, JPanel[] indicators) {
+        for (int i = 0; i < pane.length; i++) {
+            pane[i].setBackground(new Color(0, 51, 51));
+
         }
-        
+        for (int i = 0; i < indicators.length; i++) {
+            indicators[i].setOpaque(false);
+        }
+
     }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AsignarUnVendedor;
