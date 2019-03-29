@@ -220,4 +220,23 @@ public class ProductoDAO {
         return new Producto("", "Sin resultados...", null, null, 0, 0, 0, 0);
     }
 
+    public Producto productosDisponibles() {
+        String QuerySQL = "SELECT p.nombre, p.precio, p.color, i.cantidad\n"
+                + "FROM PRODUCTO p, INVENTARIO i WHERE i.cantidad > 0;";
+        Connection coneccion = this.access.getConnetion();
+        try {
+            Statement sentencia = coneccion.createStatement();
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+         
+
+        } catch (PSQLException psqe) {
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return new Producto("", "Sin resultados...", null, null, 0, 0, 0, 0);
+
+    }
+
 }
