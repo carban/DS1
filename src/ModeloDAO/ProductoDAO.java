@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import org.postgresql.util.PSQLException;
 
 /**
@@ -16,6 +17,7 @@ import org.postgresql.util.PSQLException;
 public class ProductoDAO {
 
     Acceso access;
+    String sSql = "";
 
     public ProductoDAO(Acceso access) {
         this.access = access;
@@ -108,6 +110,8 @@ public class ProductoDAO {
             } else {
                 return new Producto(null, null, null, null, 0, 0, 0, 0);
             }
+
+        } catch (PSQLException ps) {
 
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
@@ -227,7 +231,6 @@ public class ProductoDAO {
         try {
             Statement sentencia = coneccion.createStatement();
             ResultSet resultado = sentencia.executeQuery(QuerySQL);
-         
 
         } catch (PSQLException psqe) {
 
@@ -237,6 +240,41 @@ public class ProductoDAO {
         }
         return new Producto("", "Sin resultados...", null, null, 0, 0, 0, 0);
 
+    }
+
+    public DefaultTableModel mostrarACTIVOS(String sede) {
+        DefaultTableModel modelo;
+        Connection coneccion = this.access.getConnetion();
+        String[] titulos = {"Codigo", "Nombre", "Color", "Cantidad", "Precio"};
+
+        String[] registro = new String[5];
+
+        modelo = new DefaultTableModel(null, titulos);
+
+        sSql = "SELECT p.idproducto, p.nombre, p.precio, p.color, i.cantidad "
+                + "FROM PRODUCTO p, INVENTARIO i  WHERE i.cantidad > 0 AND i.idsedes = '" + sede + "' AND p.idproducto = i.idproducto ";
+
+        try {
+
+            Statement st = coneccion.createStatement();
+            ResultSet rs = st.executeQuery(sSql);
+
+            while (rs.next()) {
+                registro[0] = rs.getString("idproducto");
+                registro[1] = rs.getString("nombre");
+                registro[2] = rs.getString("color");
+                registro[3] = rs.getString("cantidad");
+                registro[4] = rs.getString("precio");
+
+                modelo.addRow(registro);
+
+            }
+            return modelo;
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
     }
 
 }

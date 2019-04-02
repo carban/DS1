@@ -203,7 +203,10 @@ public Jefes consultProfile(String userID){
     }
 
     public Vendedor consultProfileVENDEDOR(String userID) {
-        String QuerySQL = "SELECT * FROM Users WHERE idUser = '"+userID+"'";
+        String QuerySQL = "SELECT u.stateuser, u.password, u.idUser, u.first_name, u.last_name, u.telefono, u.direccion, u.work_position, s.city, s.idsedes"
+                + " FROM Users u,vendedoresSede v, sedes s WHERE u.idUser = '"+userID+"'  AND u.idUser = v.idUser "
+                + "AND v.idsedes = s.idsedes";
+        
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
         System.out.println("Connection: "+coneccion);
@@ -222,17 +225,19 @@ public Jefes consultProfile(String userID){
                 String wp = resultado.getString("work_position");
                 String pass = resultado.getString("password");
                 String state = resultado.getString("stateuser");
+                String sede = resultado.getString("city");
+                String idsede = resultado.getString("idsedes");
                 
-                return new Vendedor(iduser, fname, lname, tel, dir, wp, pass, state);
+                return new Vendedor(iduser, fname, lname, tel, dir, wp, pass, state, sede, idsede);
             }else{
-                return new Vendedor(null, null, null, null, null, null, null,null);
+                return new Vendedor(null, null, null, null, null, null, null,null, null, null);
             }
             
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();
         }
-        return new Vendedor(null, null, null, null, null, null, null,null);
+        return new Vendedor(null, null, null, null, null, null, null,null, null, null);
     }
     
     

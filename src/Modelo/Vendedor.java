@@ -1,4 +1,3 @@
-
 package Modelo;
 
 /**
@@ -6,6 +5,7 @@ package Modelo;
  * @author carban
  */
 public class Vendedor {
+
     String id;
     String fname;
     String lname;
@@ -14,9 +14,10 @@ public class Vendedor {
     String tel;
     String dir;
     String state;
+    String sede;
+    String idsede;
 
-    
-    public Vendedor(String id, String fname, String lname, String tel, String dir, String wp, String pass, String state) {
+    public Vendedor(String id, String fname, String lname, String tel, String dir, String wp, String pass, String state, String sede, String idsede) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
@@ -25,6 +26,8 @@ public class Vendedor {
         this.tel = tel;
         this.dir = dir;
         this.state = state;
+        this.sede = sede;
+        this.idsede = idsede;
 
     }
 
@@ -91,6 +94,21 @@ public class Vendedor {
     public void setState(String state) {
         this.state = state;
     }
-    
-    
+
+    public String getSede() {
+        return sede;
+    }
+
+    public void setSede(String sede) {
+        this.sede = sede;
+    }
+
+    public String getIdsede() {
+        return idsede;
+    }
+
+    public void setIdsede(String idsede) {
+        this.idsede = idsede;
+    }
+
 }

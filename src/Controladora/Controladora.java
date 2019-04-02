@@ -16,6 +16,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Controladora {
 
@@ -59,6 +60,9 @@ public class Controladora {
     public Producto consultProductCoincidencia(String valor) {
 
         return productoDao.consultProductosCoincidencia(valor);
+    }
+    public DefaultTableModel mostrarActivos (String sede) {  
+        return productoDao.mostrarACTIVOS(sede);
     }
 
     public void alterComboJefeEditing(JComboBox combo, String[] firstPersonOnCombo) {//NO C
