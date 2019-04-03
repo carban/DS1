@@ -61,7 +61,8 @@ public class Controladora {
 
         return productoDao.consultProductosCoincidencia(valor);
     }
-    public DefaultTableModel mostrarActivos (String sede) {  
+
+    public DefaultTableModel mostrarActivos(String sede) {
         return productoDao.mostrarACTIVOS(sede);
     }
 
@@ -205,4 +206,11 @@ public class Controladora {
         return ordenDao.finalizarOrden(idOrden, idProd, sedeid);
     }
 
+    public boolean updateCantidadResta(String codigo, String cantidad, String idsede) {
+        return productoDao.RestarCantidadProductos(codigo, cantidad, idsede);
+    }
+
+    public boolean updateCantidadSuma(String codigo, String cantidad, String idsede) {
+        return productoDao.SumarCantidadProductos(codigo, cantidad, idsede);
+    }
 }

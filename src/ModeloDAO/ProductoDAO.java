@@ -277,4 +277,45 @@ public class ProductoDAO {
         }
     }
 
+    public boolean RestarCantidadProductos(String codigo, String cantidad, String idsede) {
+        String QuerySQL = "UPDATE inventario  "
+                + "SET cantidad = cantidad - '" + cantidad + "' "
+                + "WHERE  idproducto = '" + codigo + "' and idsedes = '" + idsede + "'";
+        Connection coneccion = this.access.getConnetion();
+
+        try {
+            Statement sentencia = coneccion.createStatement();
+            int res = sentencia.executeUpdate(QuerySQL);
+
+            if (res == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        return false;
+    }
+
+    public boolean  SumarCantidadProductos(String codigo, String cantidad, String idsede) {
+        String QuerySQL = "UPDATE inventario  "
+                + "SET cantidad = cantidad + '" + cantidad + "' "
+                + "WHERE  idproducto = '" + codigo + "' and idsedes = '" + idsede + "'";
+        Connection coneccion = this.access.getConnetion();
+
+        try {
+            Statement sentencia = coneccion.createStatement();
+            int res = sentencia.executeUpdate(QuerySQL);
+
+            if (res == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        return false;
+    }
 }

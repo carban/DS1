@@ -13,7 +13,11 @@ import Modelo.Vendedor;
 import ModeloDAO.UsersDAO;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import javax.swing.ImageIcon;
@@ -28,7 +32,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Admin
  */
-public class vistaVendedor extends javax.swing.JFrame {
+public class vistaVendedor extends javax.swing.JFrame implements WindowListener {
 
     /**
      * Creates new form Home
@@ -43,12 +47,12 @@ public class vistaVendedor extends javax.swing.JFrame {
     public static String idusuario;
     private Producto coincidencia;
     ProductosDisponibles productos;
-
+    
     public vistaVendedor(String userID) {
         initComponents();
         setColor(btnPerfil);
         ind_1.setOpaque(true);
-
+        
         System.out.println("------------->");
         this.elVendedor = control.consultProfileVENDEDOR(userID);
         this.profileID.setText(elVendedor.getId());
@@ -59,10 +63,12 @@ public class vistaVendedor extends javax.swing.JFrame {
         this.profileWP.setText(elVendedor.getPosition());
         this.profileSede.setText(elVendedor.getSede());
         this.profileidSede.setText(elVendedor.getIdsede());
-
+        
         Image icon = new ImageIcon(getClass().getResource("/Recursos/xyzicon.png")).getImage();
         super.setIconImage(icon);
-
+        this.addWindowListener(this);
+        this.lblFecha.setText(fechaActual());
+        
     }
 
     /**
@@ -151,6 +157,10 @@ public class vistaVendedor extends javax.swing.JFrame {
         btnProductos = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
         jtTotal = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        JTidVenta = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
 
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -840,6 +850,21 @@ public class vistaVendedor extends javax.swing.JFrame {
 
         jtTotal.setEditable(false);
 
+        jButton1.setText("Eliminar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        JTidVenta.setEditable(false);
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel23.setText("ID Venta");
+
+        lblFecha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblFecha.setText("jLabel24");
+
         javax.swing.GroupLayout ProductosDisponiblesLayout = new javax.swing.GroupLayout(ProductosDisponibles);
         ProductosDisponibles.setLayout(ProductosDisponiblesLayout);
         ProductosDisponiblesLayout.setHorizontalGroup(
@@ -860,24 +885,36 @@ public class vistaVendedor extends javax.swing.JFrame {
                                     .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
                                         .addComponent(jtfNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnProductos))))
+                                        .addComponent(btnProductos)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton1))))
                             .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
-                                .addGap(338, 338, 338)
-                                .addComponent(jLabel22))
-                            .addComponent(jLabel29))
-                        .addContainerGap(268, Short.MAX_VALUE))
+                                .addComponent(jLabel29)
+                                .addGap(134, 134, 134)
+                                .addComponent(jLabel23)))
+                        .addContainerGap(381, Short.MAX_VALUE))
                     .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
                         .addComponent(jtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(JTidVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnVenta)
                         .addGap(21, 21, 21))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProductosDisponiblesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel22)
+                .addGap(117, 117, 117)
+                .addComponent(lblFecha)
+                .addGap(131, 131, 131))
         );
         ProductosDisponiblesLayout.setVerticalGroup(
             ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel22)
-                .addGap(65, 65, 65)
+                .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(lblFecha))
+                .addGap(92, 92, 92)
                 .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(jLabel25))
@@ -885,17 +922,22 @@ public class vistaVendedor extends javax.swing.JFrame {
                 .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfIDUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
-                        .addComponent(jLabel29)
+                        .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel23))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTidVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66))
+                .addGap(64, 64, 64))
         );
 
         parent.add(ProductosDisponibles, "card4");
@@ -916,7 +958,7 @@ public class vistaVendedor extends javax.swing.JFrame {
         parent.revalidate();
 
     }//GEN-LAST:event_btnPerfilMousePressed
-
+    
     int xx, xy;
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
         // TODO add your handling code here:
@@ -941,7 +983,7 @@ public class vistaVendedor extends javax.swing.JFrame {
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
 
     }//GEN-LAST:event_saveButtonActionPerformed
-
+    
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
@@ -967,7 +1009,7 @@ public class vistaVendedor extends javax.swing.JFrame {
         Users usuario = control.consultProfile(idusuario);
         jtfIDUsuario.setText(usuario.getId());
         jtfNombre.setText(usuario.getFname() + " " + usuario.getLname());
-
+        
 
     }//GEN-LAST:event_btnCotizacionMousePressed
 
@@ -976,7 +1018,7 @@ public class vistaVendedor extends javax.swing.JFrame {
 
         coincidencia = control.consultProductCoincidencia(jtfIDproducto.getText());
         jtfproducto.setText(coincidencia.getNombre());
-
+        
 
     }//GEN-LAST:event_jtfIDproductoKeyReleased
 
@@ -986,11 +1028,11 @@ public class vistaVendedor extends javax.swing.JFrame {
         modelo = null;
         int cantidad = 0;
         String[] titulos = {"Código", "Nombre", "Color", "Alto", "Largo", "Ancho", "Precio", "Cantidad"};
-
+        
         if (jtfproducto.getText().length() == 0 || jtfproducto.getText().equalsIgnoreCase("Sin resultados...")) {
-
+            
             JOptionPane.showMessageDialog(null, "El producto no existe ");
-
+            
         } else {
             try {
                 cantidad = Integer.parseInt(JOptionPane.showInputDialog("Inserte la cantidad"));
@@ -999,18 +1041,18 @@ public class vistaVendedor extends javax.swing.JFrame {
             }
             String[] registro = new String[8];
             if (cantidad > 0 || cantidad <= 1000) {
-
+                
                 if (jTCotizacion.getRowCount() == 0) {
-
+                    
                     modelo = new DefaultTableModel(null, titulos);
                 } else {
-
+                    
                     modelo = (DefaultTableModel) jTCotizacion.getModel();
                 }
             }
-
+            
             try {
-
+                
                 registro[0] = coincidencia.getId();
                 registro[1] = coincidencia.getNombre();
                 registro[2] = coincidencia.getColor();
@@ -1019,20 +1061,20 @@ public class vistaVendedor extends javax.swing.JFrame {
                 registro[5] = Integer.toString(coincidencia.getAncho());
                 registro[6] = Integer.toString(coincidencia.getPrecio());
                 registro[7] = Integer.toString(cantidad);
-
+                
                 modelo.addRow(registro);
                 jTCotizacion.setModel(modelo);
-
+                
                 for (int c = 0; c < jTCotizacion.getColumnCount(); c++) {
                     Class<?> col_class = jTCotizacion.getColumnClass(c);
                     jTCotizacion.setDefaultEditor(col_class, null); // remove editor
                 }
                 total();
-
+                
             } catch (Exception e) {
-
+                
             }
-
+            
         }
     }//GEN-LAST:event_JBagregarproduActionPerformed
 
@@ -1074,6 +1116,10 @@ public class vistaVendedor extends javax.swing.JFrame {
         parent.add(ProductosDisponibles);
         parent.repaint();
         parent.revalidate();
+        Users usuario = control.consultProfile(idusuario);
+        jtfIDUsuario1.setText(usuario.getId());
+        jtfNombre1.setText(usuario.getFname() + " " + usuario.getLname());
+
     }//GEN-LAST:event_btnProductosDisponiblesMousePressed
 
     private void btnProductosDisponiblesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductosDisponiblesMouseClicked
@@ -1092,7 +1138,7 @@ public class vistaVendedor extends javax.swing.JFrame {
         DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
         tcr.setHorizontalAlignment(SwingConstants.LEFT);
         productos.jTproductosDis.getColumnModel().getColumn(1).setCellRenderer(tcr);
-
+        
 
     }//GEN-LAST:event_btnProductosActionPerformed
 
@@ -1100,51 +1146,68 @@ public class vistaVendedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfIDproductoActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        eliminarProductoVenta();
+        
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
+    public void mostrarProductosDispo() {
+        DefaultTableModel modelo;
+        String sede = profileidSede.getText();
+        modelo = control.mostrarActivos(sede);
+        productos.jTproductosDis.setModel(modelo);
+        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
+        tcr.setHorizontalAlignment(SwingConstants.LEFT);
+        productos.jTproductosDis.getColumnModel().getColumn(1).setCellRenderer(tcr);
+    }
+    
     public void cargarTableSede() {
         mdSede.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultSedes();
         for (int i = 0; i < lista.size(); i++) {
             mdSede.addRow(lista.get(i));
         }
-
+        
     }
-
+    
     private void setColor(JPanel pane) {
         pane.setBackground(new Color(153, 0, 0));
     }
-
+    
     private void resetColor(JPanel[] pane, JPanel[] indicators) {
         for (int i = 0; i < pane.length; i++) {
             pane[i].setBackground(new Color(0, 0, 0));
-
+            
         }
         for (int i = 0; i < indicators.length; i++) {
             indicators[i].setOpaque(false);
         }
-
+        
     }
-
+    
     public void total() {
         int resultado = 0;
         for (int i = 0; i < jTCotizacion.getRowCount(); i++) {
             resultado = Integer.parseInt(jTCotizacion.getValueAt(i, 6).toString()) * Integer.parseInt(jTCotizacion.getValueAt(i, 7).toString()) + resultado;
             jtfTotal.setText(Integer.toString(resultado));
-
+            
         }
-
+        
     }
-
+    
     public void limpiar() {
         DefaultTableModel tb = (DefaultTableModel) jTCotizacion.getModel();
         int a = jTCotizacion.getRowCount() - 1;
         for (int i = a; i >= 0; i--) {
             tb.removeRow(tb.getRowCount() - 1);
         }
-
+        
     }
-
+    
     public void eliminar() {
-
+        
         try {
             DefaultTableModel modelo = (DefaultTableModel) jTCotizacion.getModel();
             int select = jTCotizacion.getSelectedRow();
@@ -1157,13 +1220,61 @@ public class vistaVendedor extends javax.swing.JFrame {
         } catch (ArrayIndexOutOfBoundsException array) {
             JOptionPane.showMessageDialog(null, " Seleccione un producto ");
         }
-
+        
     }
+    
+    public void eliminarProductoVenta() {
+        
+        try {
+            DefaultTableModel modelo = (DefaultTableModel) jtDispoVen.getModel();
+            int select = jtDispoVen.getSelectedRow();
+            String codigo = jtDispoVen.getValueAt(jtDispoVen.getSelectedRow(), 0).toString();
+            String cantidad = jtDispoVen.getValueAt(jtDispoVen.getSelectedRow(), 3).toString();
+            String sede = elVendedor.getIdsede();
+            control.updateCantidadSuma(codigo, cantidad, sede);
+            modelo.removeRow(select);
+            
+            if (jtDispoVen.getRowCount() == 0) {
+                jtTotal.setText("");
+            } else {
+                totalProductoVenta();
+            }
+        } catch (ArrayIndexOutOfBoundsException array) {
+            JOptionPane.showMessageDialog(null, " Seleccione un producto ");
+        }
+        
+    }
+    
+    public void totalProductoVenta() {
+        
+        int tamanio = vistaVendedor.jtDispoVen.getRowCount();
+        int resultado = 0;
+        
+        for (int i = 0; i < tamanio; i++) {
+            
+            resultado += Integer.parseInt(vistaVendedor.jtDispoVen.getValueAt(i, 4).toString()) * Integer.parseInt(vistaVendedor.jtDispoVen.getValueAt(i, 3).toString());
+            
+        }
+        
+        vistaVendedor.jtTotal.setText(Integer.toString(resultado));
+        
+    }
+    
+    public String fechaActual() {
+        
+        SimpleDateFormat formato = new SimpleDateFormat("YYYY-MM-dd");
+        Date fecha = new Date();
+        String fechaActual = formato.format(fecha);
+        
+        return fechaActual;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBagregarprodu;
     private javax.swing.JButton JBeliminar;
     private javax.swing.JButton JBlimpiar;
+    private javax.swing.JTextField JTidVenta;
     private javax.swing.JPanel JpCotizacion;
     private javax.swing.JPanel PerfilVendedor;
     private javax.swing.JPanel ProductosDisponibles;
@@ -1183,6 +1294,7 @@ public class vistaVendedor extends javax.swing.JFrame {
     private javax.swing.JTextField inputID;
     private javax.swing.JTextField inputLN;
     private javax.swing.JTextField inputTel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1198,6 +1310,7 @@ public class vistaVendedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -1227,6 +1340,7 @@ public class vistaVendedor extends javax.swing.JFrame {
     private javax.swing.JTextField jtfNombre1;
     private javax.swing.JTextField jtfTotal;
     private javax.swing.JTextField jtfproducto;
+    private javax.swing.JLabel lblFecha;
     private javax.swing.JPanel parent;
     private javax.swing.JLabel profileDir;
     private javax.swing.JLabel profileFName;
@@ -1239,4 +1353,51 @@ public class vistaVendedor extends javax.swing.JFrame {
     private javax.swing.JButton saveButton;
     private javax.swing.JPanel side_pane;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+    }
+    
+    @Override
+    public void windowClosing(WindowEvent e) {
+    }
+    
+    @Override
+    public void windowClosed(WindowEvent e) {
+        
+        try {
+            
+            if (jtDispoVen.getRowCount() > 0) {
+                
+                String sede = elVendedor.getIdsede();
+                
+                for (int i = 0; i <= jtDispoVen.getRowCount(); i++) {
+                    
+                    String codigo = jtDispoVen.getValueAt(i, 0).toString();
+                    String cantidad = jtDispoVen.getValueAt(i, 3).toString();
+                    control.updateCantidadSuma(codigo, cantidad, sede);
+                    
+                }
+            }
+        } catch (Exception ex) {
+            
+        }
+    }
+    
+    @Override
+    public void windowIconified(WindowEvent e) {
+    }
+    
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+    }
+    
+    @Override
+    public void windowActivated(WindowEvent e) {
+    }
+    
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+    }
+    
 }

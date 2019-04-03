@@ -7,6 +7,8 @@ package Vista;
 
 import Controladora.Controladora;
 import Modelo.Producto;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -17,7 +19,7 @@ import org.postgresql.util.PSQLException;
  *
  * @author Santiago
  */
-public class ProductosDisponibles extends javax.swing.JFrame {
+public class ProductosDisponibles extends javax.swing.JFrame implements WindowFocusListener {
 
     Controladora control = new Controladora();
     private Producto coincidencia;
@@ -26,6 +28,7 @@ public class ProductosDisponibles extends javax.swing.JFrame {
         initComponents();
 
         this.setLocationRelativeTo(null);
+        this.addWindowFocusListener(this);
     }
 
     /**
@@ -238,6 +241,7 @@ public class ProductosDisponibles extends javax.swing.JFrame {
                     Class<?> col_class = vistaVendedor.jtDispoVen.getColumnClass(c);
                     vistaVendedor.jtDispoVen.setDefaultEditor(col_class, null); // remove editor
                 }
+                control.updateCantidadResta(jtfIDproducto1.getText(), Integer.toString(cantidad), vistaVendedor.elVendedor.getIdsede());
 
                 total();
                 reiniciar();
@@ -313,4 +317,14 @@ public class ProductosDisponibles extends javax.swing.JFrame {
     private javax.swing.JTextField jtfIDproducto1;
     private javax.swing.JTextField jtfproducto1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void windowGainedFocus(WindowEvent e) {
+        mostrarPdtos();
+    }
+
+    @Override
+    public void windowLostFocus(WindowEvent e) {
+        mostrarPdtos();
+    }
 }
