@@ -28,7 +28,7 @@ alto numeric, largo numeric, ancho numeric, precio numeric );
 --INVENTARIO VA A ALMACENAR LOS PRODUCTOS DE CADA SEDE, CADA PRODUCTO TIENE EL ID de la sede a la que corresponde
 create table Inventario (idProducto int, idSedes int, cantidad int, PRIMARY KEY (idProducto, idSedes), FOREIGN KEY (idProducto) REFERENCES Producto (idProducto), FOREIGN KEY (idSedes) REFERENCES Sedes (idSedes));
 /*VENTA*/
-create table Venta (idVenta int PRIMARY KEY, idUser int, precioTotal decimal, fecha date, FOREIGN KEY (idUser) REFERENCES Users (idUser));
+create table Venta (idVenta int PRIMARY KEY, idUser int, precioTotal decimal, fecha date,idsedes int, FOREIGN KEY (idUser) REFERENCES Users (idUser), FOREIGN KEY (idsedes) REFERENCES sedes (idsedes) );
 /*COTIZACION*/
 create table Cotiza (idUser int, idProducto int, fechaCot date, precioCot numeric, PRIMARY KEY (idUser, idProducto), FOREIGN KEY (idUser) REFERENCES Users (idUser), FOREIGN KEY (idProducto) REFERENCES Producto (idProducto));
 /*ORDENES*/
