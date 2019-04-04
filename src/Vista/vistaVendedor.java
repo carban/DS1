@@ -15,11 +15,15 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -27,12 +31,13 @@ import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import org.postgresql.util.PSQLException;
 
 /**
  *
  * @author Admin
  */
-public class vistaVendedor extends javax.swing.JFrame implements WindowListener {
+public class vistaVendedor extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
@@ -47,12 +52,12 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
     public static String idusuario;
     private Producto coincidencia;
     ProductosDisponibles productos;
-    
+
     public vistaVendedor(String userID) {
         initComponents();
         setColor(btnPerfil);
         ind_1.setOpaque(true);
-        
+
         System.out.println("------------->");
         this.elVendedor = control.consultProfileVENDEDOR(userID);
         this.profileID.setText(elVendedor.getId());
@@ -63,12 +68,21 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         this.profileWP.setText(elVendedor.getPosition());
         this.profileSede.setText(elVendedor.getSede());
         this.profileidSede.setText(elVendedor.getIdsede());
-        
+
         Image icon = new ImageIcon(getClass().getResource("/Recursos/xyzicon.png")).getImage();
         super.setIconImage(icon);
-        this.addWindowListener(this);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+
+                cerrar();
+
+            }
+        });
         this.lblFecha.setText(fechaActual());
-        
+
     }
 
     /**
@@ -268,7 +282,7 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
                 .addContainerGap())
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
         setUndecorated(true);
@@ -827,6 +841,11 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         jScrollPane2.setViewportView(jtDispoVen);
 
         btnVenta.setText("Realizar Venta");
+        btnVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentaActionPerformed(evt);
+            }
+        });
 
         jtfIDUsuario1.setEditable(false);
 
@@ -858,6 +877,7 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         });
 
         JTidVenta.setEditable(false);
+        JTidVenta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel23.setText("ID Venta");
@@ -958,7 +978,7 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         parent.revalidate();
 
     }//GEN-LAST:event_btnPerfilMousePressed
-    
+
     int xx, xy;
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
         // TODO add your handling code here:
@@ -977,13 +997,13 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        this.dispose();
+        cerrar();
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
 
     }//GEN-LAST:event_saveButtonActionPerformed
-    
+
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
@@ -1009,7 +1029,7 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         Users usuario = control.consultProfile(idusuario);
         jtfIDUsuario.setText(usuario.getId());
         jtfNombre.setText(usuario.getFname() + " " + usuario.getLname());
-        
+
 
     }//GEN-LAST:event_btnCotizacionMousePressed
 
@@ -1018,7 +1038,7 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
 
         coincidencia = control.consultProductCoincidencia(jtfIDproducto.getText());
         jtfproducto.setText(coincidencia.getNombre());
-        
+
 
     }//GEN-LAST:event_jtfIDproductoKeyReleased
 
@@ -1028,11 +1048,11 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         modelo = null;
         int cantidad = 0;
         String[] titulos = {"Código", "Nombre", "Color", "Alto", "Largo", "Ancho", "Precio", "Cantidad"};
-        
+
         if (jtfproducto.getText().length() == 0 || jtfproducto.getText().equalsIgnoreCase("Sin resultados...")) {
-            
+
             JOptionPane.showMessageDialog(null, "El producto no existe ");
-            
+
         } else {
             try {
                 cantidad = Integer.parseInt(JOptionPane.showInputDialog("Inserte la cantidad"));
@@ -1041,18 +1061,18 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
             }
             String[] registro = new String[8];
             if (cantidad > 0 || cantidad <= 1000) {
-                
+
                 if (jTCotizacion.getRowCount() == 0) {
-                    
+
                     modelo = new DefaultTableModel(null, titulos);
                 } else {
-                    
+
                     modelo = (DefaultTableModel) jTCotizacion.getModel();
                 }
             }
-            
+
             try {
-                
+
                 registro[0] = coincidencia.getId();
                 registro[1] = coincidencia.getNombre();
                 registro[2] = coincidencia.getColor();
@@ -1061,20 +1081,20 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
                 registro[5] = Integer.toString(coincidencia.getAncho());
                 registro[6] = Integer.toString(coincidencia.getPrecio());
                 registro[7] = Integer.toString(cantidad);
-                
+
                 modelo.addRow(registro);
                 jTCotizacion.setModel(modelo);
-                
+
                 for (int c = 0; c < jTCotizacion.getColumnCount(); c++) {
                     Class<?> col_class = jTCotizacion.getColumnClass(c);
                     jTCotizacion.setDefaultEditor(col_class, null); // remove editor
                 }
                 total();
-                
+
             } catch (Exception e) {
-                
+
             }
-            
+
         }
     }//GEN-LAST:event_JBagregarproduActionPerformed
 
@@ -1119,6 +1139,7 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         Users usuario = control.consultProfile(idusuario);
         jtfIDUsuario1.setText(usuario.getId());
         jtfNombre1.setText(usuario.getFname() + " " + usuario.getLname());
+        MAXVEN();
 
     }//GEN-LAST:event_btnProductosDisponiblesMousePressed
 
@@ -1138,7 +1159,7 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
         tcr.setHorizontalAlignment(SwingConstants.LEFT);
         productos.jTproductosDis.getColumnModel().getColumn(1).setCellRenderer(tcr);
-        
+
 
     }//GEN-LAST:event_btnProductosActionPerformed
 
@@ -1149,10 +1170,32 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         eliminarProductoVenta();
-        
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
-    
+
+    private void btnVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentaActionPerformed
+        // TODO add your handling code here:
+
+        String iduser = jtfIDUsuario1.getText();
+        String idventa = JTidVenta.getText();
+        String preciototal = jtTotal.getText();
+        String fecha = lblFecha.getText();
+        String idsedes = profileidSede.getText();
+
+        if (control.agregarVenta(idventa, iduser, preciototal, fecha, idsedes)) {
+            MAXVEN();
+            limpiarventa();
+            jtTotal.setText("");
+            JOptionPane.showMessageDialog(null, " Venta realizada con exito ");
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo realizar la compra. ", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
+
+
+    }//GEN-LAST:event_btnVentaActionPerformed
+
     public void mostrarProductosDispo() {
         DefaultTableModel modelo;
         String sede = profileidSede.getText();
@@ -1162,52 +1205,61 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         tcr.setHorizontalAlignment(SwingConstants.LEFT);
         productos.jTproductosDis.getColumnModel().getColumn(1).setCellRenderer(tcr);
     }
-    
+
     public void cargarTableSede() {
         mdSede.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultSedes();
         for (int i = 0; i < lista.size(); i++) {
             mdSede.addRow(lista.get(i));
         }
-        
+
     }
-    
+
     private void setColor(JPanel pane) {
         pane.setBackground(new Color(153, 0, 0));
     }
-    
+
     private void resetColor(JPanel[] pane, JPanel[] indicators) {
         for (int i = 0; i < pane.length; i++) {
             pane[i].setBackground(new Color(0, 0, 0));
-            
+
         }
         for (int i = 0; i < indicators.length; i++) {
             indicators[i].setOpaque(false);
         }
-        
+
     }
-    
+
     public void total() {
         int resultado = 0;
         for (int i = 0; i < jTCotizacion.getRowCount(); i++) {
             resultado = Integer.parseInt(jTCotizacion.getValueAt(i, 6).toString()) * Integer.parseInt(jTCotizacion.getValueAt(i, 7).toString()) + resultado;
             jtfTotal.setText(Integer.toString(resultado));
-            
+
         }
-        
+
     }
-    
+
     public void limpiar() {
         DefaultTableModel tb = (DefaultTableModel) jTCotizacion.getModel();
         int a = jTCotizacion.getRowCount() - 1;
         for (int i = a; i >= 0; i--) {
             tb.removeRow(tb.getRowCount() - 1);
         }
-        
+
     }
-    
+
+    public void limpiarventa() {
+        DefaultTableModel tb = (DefaultTableModel) jtDispoVen.getModel();
+        int a = jtDispoVen.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            tb.removeRow(tb.getRowCount() - 1);
+        }
+
+    }
+
     public void eliminar() {
-        
+
         try {
             DefaultTableModel modelo = (DefaultTableModel) jTCotizacion.getModel();
             int select = jTCotizacion.getSelectedRow();
@@ -1220,11 +1272,11 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         } catch (ArrayIndexOutOfBoundsException array) {
             JOptionPane.showMessageDialog(null, " Seleccione un producto ");
         }
-        
+
     }
-    
+
     public void eliminarProductoVenta() {
-        
+
         try {
             DefaultTableModel modelo = (DefaultTableModel) jtDispoVen.getModel();
             int select = jtDispoVen.getSelectedRow();
@@ -1233,7 +1285,7 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
             String sede = elVendedor.getIdsede();
             control.updateCantidadSuma(codigo, cantidad, sede);
             modelo.removeRow(select);
-            
+
             if (jtDispoVen.getRowCount() == 0) {
                 jtTotal.setText("");
             } else {
@@ -1242,31 +1294,81 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
         } catch (ArrayIndexOutOfBoundsException array) {
             JOptionPane.showMessageDialog(null, " Seleccione un producto ");
         }
-        
+
     }
-    
+
     public void totalProductoVenta() {
-        
+
         int tamanio = vistaVendedor.jtDispoVen.getRowCount();
         int resultado = 0;
-        
+
         for (int i = 0; i < tamanio; i++) {
-            
+
             resultado += Integer.parseInt(vistaVendedor.jtDispoVen.getValueAt(i, 4).toString()) * Integer.parseInt(vistaVendedor.jtDispoVen.getValueAt(i, 3).toString());
-            
+
         }
-        
+
         vistaVendedor.jtTotal.setText(Integer.toString(resultado));
-        
+
     }
-    
+
     public String fechaActual() {
-        
+
         SimpleDateFormat formato = new SimpleDateFormat("YYYY-MM-dd");
         Date fecha = new Date();
         String fechaActual = formato.format(fecha);
-        
+
         return fechaActual;
+    }
+
+    public void MAXVEN() {
+
+        try {
+            ResultSet rs;
+            rs = control.maxVenta();
+            if (rs.next()) {
+                int idven = rs.getInt(1) + 1;
+                JTidVenta.setText(Integer.toString(idven));
+
+            } else {
+
+            }
+
+        } catch (PSQLException psql) {
+        } catch (SQLException ex) {
+        }
+    }
+
+    public void cerrar() {
+
+        try {
+
+            if (jtDispoVen.getRowCount() > 0) {
+
+                int resultado = JOptionPane.showConfirmDialog(null, "¿Desea salir ? " + " \n " + "Los cambios no serán guardados.", "Confirmación", JOptionPane.YES_NO_OPTION);
+
+                if (resultado == 0) {
+                    String sede = elVendedor.getIdsede();
+
+                    for (int i = 0; i <= jtDispoVen.getRowCount(); i++) {
+
+                        String codigo = jtDispoVen.getValueAt(i, 0).toString();
+                        String cantidad = jtDispoVen.getValueAt(i, 3).toString();
+                        control.updateCantidadSuma(codigo, cantidad, sede);
+                        System.exit(0);
+                    }
+                } else {
+
+                }
+
+            } else {
+                dispose();
+            }
+        } catch (Exception ex) {
+
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+
     }
 
 
@@ -1354,50 +1456,4 @@ public class vistaVendedor extends javax.swing.JFrame implements WindowListener 
     private javax.swing.JPanel side_pane;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void windowOpened(WindowEvent e) {
-    }
-    
-    @Override
-    public void windowClosing(WindowEvent e) {
-    }
-    
-    @Override
-    public void windowClosed(WindowEvent e) {
-        
-        try {
-            
-            if (jtDispoVen.getRowCount() > 0) {
-                
-                String sede = elVendedor.getIdsede();
-                
-                for (int i = 0; i <= jtDispoVen.getRowCount(); i++) {
-                    
-                    String codigo = jtDispoVen.getValueAt(i, 0).toString();
-                    String cantidad = jtDispoVen.getValueAt(i, 3).toString();
-                    control.updateCantidadSuma(codigo, cantidad, sede);
-                    
-                }
-            }
-        } catch (Exception ex) {
-            
-        }
-    }
-    
-    @Override
-    public void windowIconified(WindowEvent e) {
-    }
-    
-    @Override
-    public void windowDeiconified(WindowEvent e) {
-    }
-    
-    @Override
-    public void windowActivated(WindowEvent e) {
-    }
-    
-    @Override
-    public void windowDeactivated(WindowEvent e) {
-    }
-    
 }

@@ -298,7 +298,7 @@ public class ProductoDAO {
         return false;
     }
 
-    public boolean  SumarCantidadProductos(String codigo, String cantidad, String idsede) {
+    public boolean SumarCantidadProductos(String codigo, String cantidad, String idsede) {
         String QuerySQL = "UPDATE inventario  "
                 + "SET cantidad = cantidad + '" + cantidad + "' "
                 + "WHERE  idproducto = '" + codigo + "' and idsedes = '" + idsede + "'";
@@ -318,4 +318,36 @@ public class ProductoDAO {
         }
         return false;
     }
+
+    public ResultSet maxIDventa() throws PSQLException, SQLException {
+        ResultSet rs;
+        String SQL = "SELECT MAX(idventa) FROM venta ";
+        Connection coneccion = this.access.getConnetion();
+        Statement sentencia = coneccion.createStatement();
+        rs = sentencia.executeQuery(SQL);
+
+        return rs;
+    }
+
+    public boolean agregarVenta(String idventa, String iduser, String preciototal, String fecha, String idsedes) {
+        String QuerySQL = "INSERT INTO venta (idventa,iduser,preciototal,fecha,idsedes) "
+                + "VALUES ('" + idventa + "', '" + iduser + "', '" + preciototal + "', '" + fecha + "', '" + idsedes + "')";
+        Connection coneccion = this.access.getConnetion();
+
+        try {
+            Statement sentencia = coneccion.createStatement();
+            int resultado = sentencia.executeUpdate(QuerySQL);
+            if (resultado == 1) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
 }

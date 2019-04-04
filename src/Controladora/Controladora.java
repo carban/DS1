@@ -13,6 +13,7 @@ import ModeloDAO.ProductoDAO;
 import ModeloDAO.UsersDAO;
 import ModeloDAO.SedesDAO;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -64,6 +65,10 @@ public class Controladora {
 
     public DefaultTableModel mostrarActivos(String sede) {
         return productoDao.mostrarACTIVOS(sede);
+    }
+
+    public ResultSet maxVenta() throws SQLException {
+        return productoDao.maxIDventa();
     }
 
     public void alterComboJefeEditing(JComboBox combo, String[] firstPersonOnCombo) {//NO C
@@ -212,5 +217,9 @@ public class Controladora {
 
     public boolean updateCantidadSuma(String codigo, String cantidad, String idsede) {
         return productoDao.SumarCantidadProductos(codigo, cantidad, idsede);
+    }
+
+    public boolean agregarVenta(String idventa, String iduser, String preciototal, String fecha, String idsedes) {
+        return productoDao.agregarVenta(idventa, iduser, preciototal, fecha, idsedes);
     }
 }
