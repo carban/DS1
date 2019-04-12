@@ -175,6 +175,7 @@ public class vistaVendedor extends javax.swing.JFrame {
         JTidVenta = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
+        jbtRegistroDeVentas = new javax.swing.JButton();
 
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -885,6 +886,8 @@ public class vistaVendedor extends javax.swing.JFrame {
         lblFecha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblFecha.setText("jLabel24");
 
+        jbtRegistroDeVentas.setText("Registro De Ventas");
+
         javax.swing.GroupLayout ProductosDisponiblesLayout = new javax.swing.GroupLayout(ProductosDisponibles);
         ProductosDisponibles.setLayout(ProductosDisponiblesLayout);
         ProductosDisponiblesLayout.setHorizontalGroup(
@@ -907,12 +910,14 @@ public class vistaVendedor extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(btnProductos)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton1))))
+                                        .addComponent(jButton1)
+                                        .addGap(45, 45, 45)
+                                        .addComponent(jbtRegistroDeVentas))))
                             .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
                                 .addComponent(jLabel29)
                                 .addGap(134, 134, 134)
                                 .addComponent(jLabel23)))
-                        .addContainerGap(381, Short.MAX_VALUE))
+                        .addContainerGap(211, Short.MAX_VALUE))
                     .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
                         .addComponent(jtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
@@ -943,7 +948,8 @@ public class vistaVendedor extends javax.swing.JFrame {
                     .addComponent(jtfNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfIDUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtRegistroDeVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
@@ -1433,6 +1439,7 @@ public class vistaVendedor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTCotizacion;
+    private javax.swing.JButton jbtRegistroDeVentas;
     public static javax.swing.JTable jtDispoVen;
     public static javax.swing.JTextField jtTotal;
     private javax.swing.JTextField jtfIDUsuario;
