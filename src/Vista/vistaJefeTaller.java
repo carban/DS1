@@ -40,9 +40,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
     public vistaJefeTaller(String userID) {
         initComponents();
-        setColor(btn_1);
+        setColor(btnPerfil);
         ind_1.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_5}, new JPanel[]{ind_2, ind_3, ind_4, ind_5});
+        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnAsignarEmpleados, btnConsultarEmpleados, btnInventario}, new JPanel[]{ind_2, ind_3, ind_4, ind_5});
 
         Image icon = new ImageIcon(getClass().getResource("/Recursos/xyzicon.png")).getImage();
         super.setIconImage(icon);
@@ -132,25 +132,25 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         ordenCantD = new javax.swing.JLabel();
         ordenCantF = new javax.swing.JTextField();
         side_pane = new javax.swing.JPanel();
-        btn_1 = new javax.swing.JPanel();
+        btnPerfil = new javax.swing.JPanel();
         ind_1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        btn_2 = new javax.swing.JPanel();
+        btnOrdenesDeTrabajo = new javax.swing.JPanel();
         ind_2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        btn_3 = new javax.swing.JPanel();
+        btnAsignarEmpleados = new javax.swing.JPanel();
         ind_3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        btn_4 = new javax.swing.JPanel();
+        btnConsultarEmpleados = new javax.swing.JPanel();
         ind_4 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        btn_5 = new javax.swing.JPanel();
+        btnInventario = new javax.swing.JPanel();
         ind_5 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         parent = new javax.swing.JPanel();
-        yellow = new javax.swing.JPanel();
+        PerfilJefeTaller = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -173,7 +173,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         profileCiudadSede = new javax.swing.JLabel();
         profileDirSede = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        CrearVendedor = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         pink = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -194,7 +194,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         comboVendedoresDisponibles = new javax.swing.JComboBox<>();
         AsignarUnVendedor = new javax.swing.JButton();
-        green = new javax.swing.JPanel();
+        ListaVendedores = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaDatos = new javax.swing.JTable();
@@ -202,13 +202,13 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         editarUser = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        red = new javax.swing.JPanel();
+        Inventario = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaProductosJefe = new javax.swing.JTable();
         crearOrden = new javax.swing.JButton();
-        purple = new javax.swing.JPanel();
-        pink1 = new javax.swing.JPanel();
+        OrdenesDeTrabajo = new javax.swing.JPanel();
+        JTOrdenesDeTrabajo = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaOrdenesJefe = new javax.swing.JTable();
@@ -468,10 +468,10 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         side_pane.setBackground(new java.awt.Color(0, 51, 51));
         side_pane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_1.setBackground(new java.awt.Color(0, 51, 51));
-        btn_1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnPerfil.setBackground(new java.awt.Color(0, 51, 51));
+        btnPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_1MousePressed(evt);
+                btnPerfilMousePressed(evt);
             }
         });
 
@@ -493,36 +493,36 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Perfil");
 
-        javax.swing.GroupLayout btn_1Layout = new javax.swing.GroupLayout(btn_1);
-        btn_1.setLayout(btn_1Layout);
-        btn_1Layout.setHorizontalGroup(
-            btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_1Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnPerfilLayout = new javax.swing.GroupLayout(btnPerfil);
+        btnPerfil.setLayout(btnPerfilLayout);
+        btnPerfilLayout.setHorizontalGroup(
+            btnPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnPerfilLayout.createSequentialGroup()
                 .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel8)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        btn_1Layout.setVerticalGroup(
-            btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_1Layout.createSequentialGroup()
+        btnPerfilLayout.setVerticalGroup(
+            btnPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnPerfilLayout.createSequentialGroup()
                 .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(btn_1Layout.createSequentialGroup()
+            .addGroup(btnPerfilLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        side_pane.add(btn_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 190, -1));
+        side_pane.add(btnPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 190, -1));
 
-        btn_2.setBackground(new java.awt.Color(0, 51, 51));
-        btn_2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                btn_2MouseReleased(evt);
-            }
+        btnOrdenesDeTrabajo.setBackground(new java.awt.Color(0, 51, 51));
+        btnOrdenesDeTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_2MouseClicked(evt);
+                btnOrdenesDeTrabajoMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnOrdenesDeTrabajoMouseReleased(evt);
             }
         });
 
@@ -544,33 +544,33 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Ordenes de Trabajo");
 
-        javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);
-        btn_2.setLayout(btn_2Layout);
-        btn_2Layout.setHorizontalGroup(
-            btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_2Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnOrdenesDeTrabajoLayout = new javax.swing.GroupLayout(btnOrdenesDeTrabajo);
+        btnOrdenesDeTrabajo.setLayout(btnOrdenesDeTrabajoLayout);
+        btnOrdenesDeTrabajoLayout.setHorizontalGroup(
+            btnOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel9)
                 .addGap(0, 28, Short.MAX_VALUE))
         );
-        btn_2Layout.setVerticalGroup(
-            btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_2Layout.createSequentialGroup()
+        btnOrdenesDeTrabajoLayout.setVerticalGroup(
+            btnOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(btn_2Layout.createSequentialGroup()
+            .addGroup(btnOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        side_pane.add(btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 190, -1));
+        side_pane.add(btnOrdenesDeTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 190, -1));
 
-        btn_3.setBackground(new java.awt.Color(0, 51, 51));
-        btn_3.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAsignarEmpleados.setBackground(new java.awt.Color(0, 51, 51));
+        btnAsignarEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_3MousePressed(evt);
+                btnAsignarEmpleadosMousePressed(evt);
             }
         });
 
@@ -592,36 +592,36 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Asignar Empleados");
 
-        javax.swing.GroupLayout btn_3Layout = new javax.swing.GroupLayout(btn_3);
-        btn_3.setLayout(btn_3Layout);
-        btn_3Layout.setHorizontalGroup(
-            btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_3Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnAsignarEmpleadosLayout = new javax.swing.GroupLayout(btnAsignarEmpleados);
+        btnAsignarEmpleados.setLayout(btnAsignarEmpleadosLayout);
+        btnAsignarEmpleadosLayout.setHorizontalGroup(
+            btnAsignarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnAsignarEmpleadosLayout.createSequentialGroup()
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel10)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        btn_3Layout.setVerticalGroup(
-            btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_3Layout.createSequentialGroup()
+        btnAsignarEmpleadosLayout.setVerticalGroup(
+            btnAsignarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnAsignarEmpleadosLayout.createSequentialGroup()
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(btn_3Layout.createSequentialGroup()
+            .addGroup(btnAsignarEmpleadosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        side_pane.add(btn_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 190, -1));
+        side_pane.add(btnAsignarEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 190, -1));
 
-        btn_4.setBackground(new java.awt.Color(0, 51, 51));
-        btn_4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_4MousePressed(evt);
-            }
+        btnConsultarEmpleados.setBackground(new java.awt.Color(0, 51, 51));
+        btnConsultarEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_4MouseClicked(evt);
+                btnConsultarEmpleadosMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnConsultarEmpleadosMousePressed(evt);
             }
         });
 
@@ -643,36 +643,36 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Consultar Empleados");
 
-        javax.swing.GroupLayout btn_4Layout = new javax.swing.GroupLayout(btn_4);
-        btn_4.setLayout(btn_4Layout);
-        btn_4Layout.setHorizontalGroup(
-            btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_4Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnConsultarEmpleadosLayout = new javax.swing.GroupLayout(btnConsultarEmpleados);
+        btnConsultarEmpleados.setLayout(btnConsultarEmpleadosLayout);
+        btnConsultarEmpleadosLayout.setHorizontalGroup(
+            btnConsultarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnConsultarEmpleadosLayout.createSequentialGroup()
                 .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel11)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        btn_4Layout.setVerticalGroup(
-            btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_4Layout.createSequentialGroup()
+        btnConsultarEmpleadosLayout.setVerticalGroup(
+            btnConsultarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnConsultarEmpleadosLayout.createSequentialGroup()
                 .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(btn_4Layout.createSequentialGroup()
+            .addGroup(btnConsultarEmpleadosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        side_pane.add(btn_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 190, -1));
+        side_pane.add(btnConsultarEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 190, -1));
 
-        btn_5.setBackground(new java.awt.Color(0, 51, 51));
-        btn_5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                btn_5MouseReleased(evt);
-            }
+        btnInventario.setBackground(new java.awt.Color(0, 51, 51));
+        btnInventario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_5MouseClicked(evt);
+                btnInventarioMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnInventarioMouseReleased(evt);
             }
         });
 
@@ -694,28 +694,28 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("Inventario");
 
-        javax.swing.GroupLayout btn_5Layout = new javax.swing.GroupLayout(btn_5);
-        btn_5.setLayout(btn_5Layout);
-        btn_5Layout.setHorizontalGroup(
-            btn_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_5Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnInventarioLayout = new javax.swing.GroupLayout(btnInventario);
+        btnInventario.setLayout(btnInventarioLayout);
+        btnInventarioLayout.setHorizontalGroup(
+            btnInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnInventarioLayout.createSequentialGroup()
                 .addComponent(ind_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel35)
                 .addGap(0, 90, Short.MAX_VALUE))
         );
-        btn_5Layout.setVerticalGroup(
-            btn_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_5Layout.createSequentialGroup()
+        btnInventarioLayout.setVerticalGroup(
+            btnInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnInventarioLayout.createSequentialGroup()
                 .addComponent(ind_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(btn_5Layout.createSequentialGroup()
+            .addGroup(btnInventarioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        side_pane.add(btn_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 190, -1));
+        side_pane.add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 190, -1));
 
         getContentPane().add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 590));
 
@@ -759,6 +759,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         parent.setBackground(new java.awt.Color(255, 255, 255));
         parent.setLayout(new java.awt.CardLayout());
+
+        PerfilJefeTaller.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel14.setText("PERFIL JEFE DE TALLER");
@@ -831,34 +833,34 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         profileDirSede.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
         profileDirSede.setText("jLabel44");
 
-        javax.swing.GroupLayout yellowLayout = new javax.swing.GroupLayout(yellow);
-        yellow.setLayout(yellowLayout);
-        yellowLayout.setHorizontalGroup(
-            yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(yellowLayout.createSequentialGroup()
-                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        javax.swing.GroupLayout PerfilJefeTallerLayout = new javax.swing.GroupLayout(PerfilJefeTaller);
+        PerfilJefeTaller.setLayout(PerfilJefeTallerLayout);
+        PerfilJefeTallerLayout.setHorizontalGroup(
+            PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel29)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(yellowLayout.createSequentialGroup()
+                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
                                 .addGap(272, 272, 272)
                                 .addComponent(jLabel3))
-                            .addGroup(yellowLayout.createSequentialGroup()
+                            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
                                 .addGap(318, 318, 318)
                                 .addComponent(jLabel14))
-                            .addGroup(yellowLayout.createSequentialGroup()
+                            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
                                 .addGap(404, 404, 404)
-                                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(SignOut)
                                     .addComponent(jLabel18)))))
-                    .addGroup(yellowLayout.createSequentialGroup()
+                    .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
                         .addGap(474, 474, 474)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel42)
                             .addComponent(jLabel37)))
-                    .addGroup(yellowLayout.createSequentialGroup()
+                    .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
                         .addGap(0, 90, Short.MAX_VALUE)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
@@ -866,7 +868,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                             .addComponent(jLabel12)
                             .addComponent(jLabel5))
                         .addGap(72, 72, 72)
-                        .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(profileWP, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(profileDir, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(profileTel, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -875,49 +877,49 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                             .addComponent(profileID, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(329, 329, 329)))
                 .addGap(60, 60, 60)
-                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(profileCiudadSede)
                     .addComponent(profileIdSede)
                     .addComponent(profileDirSede))
                 .addContainerGap(115, Short.MAX_VALUE))
         );
-        yellowLayout.setVerticalGroup(
-            yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(yellowLayout.createSequentialGroup()
+        PerfilJefeTallerLayout.setVerticalGroup(
+            PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
                 .addGap(43, 43, 43)
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(profileID)
                     .addComponent(jLabel29)
                     .addComponent(profileIdSede))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(profileFName)
                         .addComponent(jLabel37)
                         .addComponent(profileCiudadSede))
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel42)
-                    .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
                         .addComponent(profileLName))
                     .addComponent(profileDirSede))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(profileTel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(profileDir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(yellowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(profileWP))
                 .addGap(18, 18, 18)
@@ -927,8 +929,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
-        parent.add(yellow, "card6");
+        parent.add(PerfilJefeTaller, "card6");
 
+        pink.setBackground(new java.awt.Color(255, 255, 255));
         pink.setForeground(new java.awt.Color(255, 153, 51));
 
         jLabel15.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
@@ -1034,6 +1037,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("CREAR", pink);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel24.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel24.setText("ASIGNAR VENDEDOR DISPONIBLE");
 
@@ -1082,18 +1087,20 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("ASIGNAR", jPanel3);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout CrearVendedorLayout = new javax.swing.GroupLayout(CrearVendedor);
+        CrearVendedor.setLayout(CrearVendedorLayout);
+        CrearVendedorLayout.setHorizontalGroup(
+            CrearVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane1)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        CrearVendedorLayout.setVerticalGroup(
+            CrearVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane1)
         );
 
-        parent.add(jPanel1, "card8");
+        parent.add(CrearVendedor, "card8");
+
+        ListaVendedores.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel13.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel13.setText("LISTA DE VENDEDORES");
@@ -1142,15 +1149,15 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout greenLayout = new javax.swing.GroupLayout(green);
-        green.setLayout(greenLayout);
-        greenLayout.setHorizontalGroup(
-            greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, greenLayout.createSequentialGroup()
+        javax.swing.GroupLayout ListaVendedoresLayout = new javax.swing.GroupLayout(ListaVendedores);
+        ListaVendedores.setLayout(ListaVendedoresLayout);
+        ListaVendedoresLayout.setHorizontalGroup(
+            ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListaVendedoresLayout.createSequentialGroup()
                 .addContainerGap(329, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addGap(318, 318, 318))
-            .addGroup(greenLayout.createSequentialGroup()
+            .addGroup(ListaVendedoresLayout.createSequentialGroup()
                 .addGap(290, 290, 290)
                 .addComponent(cargarButton)
                 .addGap(89, 89, 89)
@@ -1158,21 +1165,21 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane2)
         );
-        greenLayout.setVerticalGroup(
-            greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(greenLayout.createSequentialGroup()
+        ListaVendedoresLayout.setVerticalGroup(
+            ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListaVendedoresLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel13)
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                .addGroup(greenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cargarButton)
                     .addComponent(editarUser))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        parent.add(green, "card4");
+        parent.add(ListaVendedores, "card4");
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
@@ -1202,6 +1209,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         parent.add(jScrollPane1, "card3");
 
+        Inventario.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel36.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel36.setText("PRODUCTOS DEL INVENTARIO");
 
@@ -1228,24 +1237,24 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout redLayout = new javax.swing.GroupLayout(red);
-        red.setLayout(redLayout);
-        redLayout.setHorizontalGroup(
-            redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(redLayout.createSequentialGroup()
+        javax.swing.GroupLayout InventarioLayout = new javax.swing.GroupLayout(Inventario);
+        Inventario.setLayout(InventarioLayout);
+        InventarioLayout.setHorizontalGroup(
+            InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InventarioLayout.createSequentialGroup()
                 .addContainerGap(279, Short.MAX_VALUE)
-                .addGroup(redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, redLayout.createSequentialGroup()
+                .addGroup(InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
                         .addComponent(jLabel36)
                         .addGap(300, 300, 300))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, redLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
                         .addComponent(crearOrden)
                         .addGap(319, 319, 319))))
             .addComponent(jScrollPane3)
         );
-        redLayout.setVerticalGroup(
-            redLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(redLayout.createSequentialGroup()
+        InventarioLayout.setVerticalGroup(
+            InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InventarioLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel36)
                 .addGap(39, 39, 39)
@@ -1255,11 +1264,12 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addContainerGap(85, Short.MAX_VALUE))
         );
 
-        parent.add(red, "card7");
+        parent.add(Inventario, "card7");
 
-        purple.setBackground(new java.awt.Color(204, 204, 204));
+        OrdenesDeTrabajo.setBackground(new java.awt.Color(204, 204, 204));
 
-        pink1.setForeground(new java.awt.Color(255, 153, 51));
+        JTOrdenesDeTrabajo.setBackground(new java.awt.Color(255, 255, 255));
+        JTOrdenesDeTrabajo.setForeground(new java.awt.Color(255, 153, 51));
 
         jLabel33.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel33.setText("ORDENES DE TRABAJO");
@@ -1287,24 +1297,24 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout pink1Layout = new javax.swing.GroupLayout(pink1);
-        pink1.setLayout(pink1Layout);
-        pink1Layout.setHorizontalGroup(
-            pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pink1Layout.createSequentialGroup()
-                .addGroup(pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pink1Layout.createSequentialGroup()
+        javax.swing.GroupLayout JTOrdenesDeTrabajoLayout = new javax.swing.GroupLayout(JTOrdenesDeTrabajo);
+        JTOrdenesDeTrabajo.setLayout(JTOrdenesDeTrabajoLayout);
+        JTOrdenesDeTrabajoLayout.setHorizontalGroup(
+            JTOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
+                .addGroup(JTOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
                         .addGap(321, 321, 321)
                         .addComponent(jLabel33))
-                    .addGroup(pink1Layout.createSequentialGroup()
+                    .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
                         .addGap(395, 395, 395)
                         .addComponent(finalizarOrden)))
                 .addContainerGap(334, Short.MAX_VALUE))
             .addComponent(jScrollPane4)
         );
-        pink1Layout.setVerticalGroup(
-            pink1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pink1Layout.createSequentialGroup()
+        JTOrdenesDeTrabajoLayout.setVerticalGroup(
+            JTOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel33)
                 .addGap(18, 18, 18)
@@ -1314,68 +1324,68 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout purpleLayout = new javax.swing.GroupLayout(purple);
-        purple.setLayout(purpleLayout);
-        purpleLayout.setHorizontalGroup(
-            purpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pink1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout OrdenesDeTrabajoLayout = new javax.swing.GroupLayout(OrdenesDeTrabajo);
+        OrdenesDeTrabajo.setLayout(OrdenesDeTrabajoLayout);
+        OrdenesDeTrabajoLayout.setHorizontalGroup(
+            OrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(JTOrdenesDeTrabajo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        purpleLayout.setVerticalGroup(
-            purpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pink1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        OrdenesDeTrabajoLayout.setVerticalGroup(
+            OrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(JTOrdenesDeTrabajo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        parent.add(purple, "card2");
+        parent.add(OrdenesDeTrabajo, "card2");
 
         getContentPane().add(parent, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 880, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MousePressed
+    private void btnPerfilMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPerfilMousePressed
         // TODO add your handling code here:
-        setColor(btn_1);
+        setColor(btnPerfil);
         ind_1.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_5}, new JPanel[]{ind_2, ind_3, ind_4, ind_5});
+        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnAsignarEmpleados, btnConsultarEmpleados, btnInventario}, new JPanel[]{ind_2, ind_3, ind_4, ind_5});
         parent.removeAll();
-        parent.add(yellow);
+        parent.add(PerfilJefeTaller);
         parent.repaint();
         parent.revalidate();
 
-    }//GEN-LAST:event_btn_1MousePressed
+    }//GEN-LAST:event_btnPerfilMousePressed
 
-    private void btn_3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MousePressed
+    private void btnAsignarEmpleadosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsignarEmpleadosMousePressed
         // TODO add your handling code here:
-        setColor(btn_3);
+        setColor(btnAsignarEmpleados);
         ind_3.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_1, btn_4, btn_5}, new JPanel[]{ind_2, ind_1, ind_4, ind_5});
+        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnPerfil, btnConsultarEmpleados, btnInventario}, new JPanel[]{ind_2, ind_1, ind_4, ind_5});
         parent.removeAll();
-        parent.add(jPanel1);
+        parent.add(CrearVendedor);
         parent.repaint();
         parent.revalidate();
-    }//GEN-LAST:event_btn_3MousePressed
+    }//GEN-LAST:event_btnAsignarEmpleadosMousePressed
 
-    private void btn_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MousePressed
+    private void btnConsultarEmpleadosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarEmpleadosMousePressed
         // TODO add your handling code here:
-        setColor(btn_4);
+        setColor(btnConsultarEmpleados);
         ind_4.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_3, btn_1, btn_5}, new JPanel[]{ind_2, ind_3, ind_1, ind_5});
+        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnAsignarEmpleados, btnPerfil, btnInventario}, new JPanel[]{ind_2, ind_3, ind_1, ind_5});
         parent.removeAll();
-        parent.add(green);
+        parent.add(ListaVendedores);
         parent.repaint();
         parent.revalidate();
-    }//GEN-LAST:event_btn_4MousePressed
+    }//GEN-LAST:event_btnConsultarEmpleadosMousePressed
 
-    private void btn_2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseReleased
+    private void btnOrdenesDeTrabajoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrdenesDeTrabajoMouseReleased
         // TODO add your handling code here:
-        setColor(btn_2);
+        setColor(btnOrdenesDeTrabajo);
         ind_2.setOpaque(true);
-        resetColor(new JPanel[]{btn_1, btn_3, btn_4, btn_5}, new JPanel[]{ind_1, ind_3, ind_4, ind_5});
+        resetColor(new JPanel[]{btnPerfil, btnAsignarEmpleados, btnConsultarEmpleados, btnInventario}, new JPanel[]{ind_1, ind_3, ind_4, ind_5});
         parent.removeAll();
-        parent.add(purple);
+        parent.add(OrdenesDeTrabajo);
         parent.repaint();
-        parent.revalidate();
-    }//GEN-LAST:event_btn_2MouseReleased
+        parent.revalidate(); 
+    }//GEN-LAST:event_btnOrdenesDeTrabajoMouseReleased
 
     int xx, xy;
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
@@ -1488,16 +1498,16 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_SignOutActionPerformed
 
-    private void btn_5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseReleased
+    private void btnInventarioMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseReleased
         // TODO add your handling code here:
-        setColor(btn_5);
+        setColor(btnInventario);
         ind_5.setOpaque(true);
-        resetColor(new JPanel[]{btn_1, btn_2, btn_3, btn_4}, new JPanel[]{ind_1, ind_2, ind_3, ind_4});
+        resetColor(new JPanel[]{btnPerfil, btnOrdenesDeTrabajo, btnAsignarEmpleados, btnConsultarEmpleados}, new JPanel[]{ind_1, ind_2, ind_3, ind_4});
         parent.removeAll();
-        parent.add(red);
+        parent.add(Inventario);
         parent.repaint();
         parent.revalidate();
-    }//GEN-LAST:event_btn_5MouseReleased
+    }//GEN-LAST:event_btnInventarioMouseReleased
 
     private void comboVendedoresDisponiblesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboVendedoresDisponiblesMouseEntered
         control.AlterComboVendedoresDisponibles(comboVendedoresDisponibles);
@@ -1513,9 +1523,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
     }//GEN-LAST:event_AsignarUnVendedorActionPerformed
 
-    private void btn_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseClicked
+    private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
         this.cargarTableProducto();
-    }//GEN-LAST:event_btn_5MouseClicked
+    }//GEN-LAST:event_btnInventarioMouseClicked
 
     private void crearOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearOrdenActionPerformed
         try {
@@ -1559,9 +1569,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         }
     }
 
-    private void btn_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseClicked
+    private void btnOrdenesDeTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrdenesDeTrabajoMouseClicked
         this.cargarTableOrden();
-    }//GEN-LAST:event_btn_2MouseClicked
+    }//GEN-LAST:event_btnOrdenesDeTrabajoMouseClicked
 
     private void finalizarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarOrdenActionPerformed
         try {
@@ -1577,9 +1587,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_finalizarOrdenActionPerformed
 
-    private void btn_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MouseClicked
+    private void btnConsultarEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarEmpleadosMouseClicked
         this.cargarTable();
-    }//GEN-LAST:event_btn_4MouseClicked
+    }//GEN-LAST:event_btnConsultarEmpleadosMouseClicked
     public void cargarTableProducto() {
         mdProducts.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());
@@ -1623,12 +1633,18 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AsignarUnVendedor;
+    private javax.swing.JPanel CrearVendedor;
+    private javax.swing.JPanel Inventario;
+    private javax.swing.JPanel JTOrdenesDeTrabajo;
+    private javax.swing.JPanel ListaVendedores;
+    private javax.swing.JPanel OrdenesDeTrabajo;
+    private javax.swing.JPanel PerfilJefeTaller;
     private javax.swing.JButton SignOut;
-    private javax.swing.JPanel btn_1;
-    private javax.swing.JPanel btn_2;
-    private javax.swing.JPanel btn_3;
-    private javax.swing.JPanel btn_4;
-    private javax.swing.JPanel btn_5;
+    private javax.swing.JPanel btnAsignarEmpleados;
+    private javax.swing.JPanel btnConsultarEmpleados;
+    private javax.swing.JPanel btnInventario;
+    private javax.swing.JPanel btnOrdenesDeTrabajo;
+    private javax.swing.JPanel btnPerfil;
     private javax.swing.JButton cargarButton;
     private javax.swing.JComboBox<String> comboVendedoresDisponibles;
     private javax.swing.JButton crearOrden;
@@ -1640,7 +1656,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JButton exitBtn1;
     private javax.swing.JButton finalizarOrden;
     private javax.swing.JTextField fnameInput;
-    private javax.swing.JPanel green;
     private javax.swing.JTextField idInput;
     private javax.swing.JPanel ind_1;
     private javax.swing.JPanel ind_2;
@@ -1694,7 +1709,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1714,7 +1728,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JPanel parent;
     private javax.swing.JTextField passInput;
     private javax.swing.JPanel pink;
-    private javax.swing.JPanel pink1;
     private javax.swing.JLabel profileCiudadSede;
     private javax.swing.JLabel profileDir;
     private javax.swing.JLabel profileDirSede;
@@ -1724,8 +1737,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel profileLName;
     private javax.swing.JLabel profileTel;
     private javax.swing.JLabel profileWP;
-    private javax.swing.JPanel purple;
-    private javax.swing.JPanel red;
     private javax.swing.JButton saveButton;
     private javax.swing.JButton saveButton1;
     private javax.swing.JPanel side_pane;
@@ -1733,6 +1744,5 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JTable tablaOrdenesJefe;
     private javax.swing.JTable tablaProductosJefe;
     private javax.swing.JTextField telInput;
-    private javax.swing.JPanel yellow;
     // End of variables declaration//GEN-END:variables
 }
