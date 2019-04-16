@@ -222,4 +222,13 @@ public class Controladora {
     public boolean agregarVenta(String idventa, String iduser, String preciototal, String fecha, String idsedes) {
         return productoDao.agregarVenta(idventa, iduser, preciototal, fecha, idsedes);
     }
+
+    public DefaultTableModel agregarRegistroVenta(String iduser) {
+        return productoDao.mostrarRegistrosDeVenta(iduser);
+    }
+
+    public DefaultTableModel consultarRegistroVentas(String iduser, String fechaInicio, String fechaFinal) {
+        return productoDao.BuscarRegistrosDeVenta(iduser, fechaInicio, fechaFinal);
+    }
+
 }

@@ -350,4 +350,76 @@ public class ProductoDAO {
         return false;
     }
 
+    public DefaultTableModel mostrarRegistrosDeVenta(String iduser) {
+        DefaultTableModel modelo;
+        Connection coneccion = this.access.getConnetion();
+        String[] titulos = {"Código Venta", "Código Vendedor", "Sede ", "Fecha", "Precio Total"};
+
+        String[] registro = new String[5];
+
+        modelo = new DefaultTableModel(null, titulos);
+
+        sSql = " SELECT v.idventa, u.iduser ,s.city,v.fecha,v.preciototal "
+                + "FROM venta v ,users u, sedes s, vendedoressede ven "
+                + "WHERE u.iduser = '" + iduser + "' and u.iduser = ven.iduser  and s.idsedes = ven.idsedes;  ";
+
+        try {
+
+            Statement st = coneccion.createStatement();
+            ResultSet rs = st.executeQuery(sSql);
+
+            while (rs.next()) {
+                registro[0] = rs.getString("idventa");
+                registro[1] = rs.getString("iduser");
+                registro[2] = rs.getString("city");
+                registro[3] = rs.getString("fecha");
+                registro[4] = rs.getString("preciototal");
+
+                modelo.addRow(registro);
+
+            }
+            return modelo;
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
+    }
+
+    public DefaultTableModel BuscarRegistrosDeVenta(String iduser, String fechaInicio, String fechaFinal) {
+        DefaultTableModel modelo;
+        Connection coneccion = this.access.getConnetion();
+        String[] titulos = {"Código Venta", "Código Vendedor", "Sede ", "Fecha", "Precio Total"};
+
+        String[] registro = new String[5];
+
+        modelo = new DefaultTableModel(null, titulos);
+
+        sSql = " SELECT v.idventa, u.iduser ,s.city,v.fecha,v.preciototal "
+                + "FROM venta v ,users u, sedes s, vendedoressede ven "
+                + "WHERE u.iduser = '" + iduser + "' and u.iduser = ven.iduser  and s.idsedes = ven.idsedes and  v.fecha between '" + fechaInicio + "' and '" + fechaFinal + "';  ";
+
+        try {
+
+            Statement st = coneccion.createStatement();
+            ResultSet rs = st.executeQuery(sSql);
+
+            while (rs.next()) {
+                registro[0] = rs.getString("idventa");
+                registro[1] = rs.getString("iduser");
+                registro[2] = rs.getString("city");
+                registro[3] = rs.getString("fecha");
+                registro[4] = rs.getString("preciototal");
+
+                modelo.addRow(registro);
+
+            }
+            return modelo;
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
+    }
+
 }

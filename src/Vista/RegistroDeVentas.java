@@ -5,17 +5,29 @@
  */
 package Vista;
 
+import Controladora.Controladora;
+import static Vista.vistaVendedor.idusuario;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Santiago
  */
 public class RegistroDeVentas extends javax.swing.JFrame {
 
+    Controladora control = new Controladora();
+
     /**
      * Creates new form RegistroDeVentas
      */
     public RegistroDeVentas() {
         initComponents();
+
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -31,37 +43,38 @@ public class RegistroDeVentas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        dateChooserCombo2 = new datechooser.beans.DateChooserCombo();
+        JTRegistroVenta = new javax.swing.JTable();
+        DateChooserInicio = new datechooser.beans.DateChooserCombo();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        dateChooserCombo3 = new datechooser.beans.DateChooserCombo();
+        DateChooserFinal = new datechooser.beans.DateChooserCombo();
         JBBuscarVentas = new javax.swing.JButton();
+        JBresetear = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Registro de Ventas");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        JTRegistroVenta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Codigo de Venta", "Codigo Vendedor", "Nombre Vendedor", "Sede", "Fecha", "Precio Total"
+                "Codigo de Venta", "Codigo Vendedor", "Sede", "Fecha", "Precio Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(JTRegistroVenta);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Desde");
@@ -70,45 +83,61 @@ public class RegistroDeVentas extends javax.swing.JFrame {
         jLabel3.setText("Hasta");
 
         JBBuscarVentas.setText("Buscar ");
+        JBBuscarVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBBuscarVentasActionPerformed(evt);
+            }
+        });
+
+        JBresetear.setText("Resetear");
+        JBresetear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBresetearActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(dateChooserCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(73, 73, 73)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(dateChooserCombo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(48, 48, 48)
-                                .addComponent(JBBuscarVentas))
-                            .addComponent(jLabel3))))
-                .addContainerGap(69, Short.MAX_VALUE))
+                                .addComponent(JBBuscarVentas)
+                                .addGap(28, 28, 28)
+                                .addComponent(JBresetear))
+                            .addComponent(jLabel3)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(jLabel1)))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(dateChooserCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dateChooserCombo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBBuscarVentas))
+                    .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(JBBuscarVentas)
+                        .addComponent(JBresetear)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -117,15 +146,31 @@ public class RegistroDeVentas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBBuscarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarVentasActionPerformed
+        // TODO add your handling code here:
+
+        buscarRegistroVentas(fechaInicio(), fechaFinal());
+
+    }//GEN-LAST:event_JBBuscarVentasActionPerformed
+
+    private void JBresetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBresetearActionPerformed
+        // TODO add your handling code here
+        mostrarRegistroVentas();
+    }//GEN-LAST:event_JBresetearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,16 +207,50 @@ public class RegistroDeVentas extends javax.swing.JFrame {
         });
     }
 
+    public void buscarRegistroVentas(String fechainicio, String fechafinal) {
+        DefaultTableModel modelo;
+        modelo = control.consultarRegistroVentas(idusuario, fechainicio, fechafinal);
+        JTRegistroVenta.setModel(modelo);
+
+    }
+
+    public static String fechaInicio() {
+
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        DateChooserInicio.setDateFormat(formato);
+        String fechaInicio = DateChooserInicio.getText();
+
+        return fechaInicio;
+    }
+
+    public static String fechaFinal() {
+
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        DateChooserFinal.setDateFormat(formato);
+        String fechaFinal = DateChooserFinal.getText();
+
+        return fechaFinal;
+    }
+
+    public void mostrarRegistroVentas() {
+        DefaultTableModel modelo;
+        modelo = control.agregarRegistroVenta(idusuario);
+        JTRegistroVenta.setModel(modelo);
+
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private static datechooser.beans.DateChooserCombo DateChooserFinal;
+    private static datechooser.beans.DateChooserCombo DateChooserInicio;
     private javax.swing.JButton JBBuscarVentas;
+    private javax.swing.JButton JBresetear;
+    public static javax.swing.JTable JTRegistroVenta;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
-    private datechooser.beans.DateChooserCombo dateChooserCombo2;
-    private datechooser.beans.DateChooserCombo dateChooserCombo3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

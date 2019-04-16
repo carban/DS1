@@ -52,6 +52,7 @@ public class vistaVendedor extends javax.swing.JFrame {
     public static String idusuario;
     private Producto coincidencia;
     ProductosDisponibles productos;
+    RegistroDeVentas registro;
 
     public vistaVendedor(String userID) {
         initComponents();
@@ -887,6 +888,11 @@ public class vistaVendedor extends javax.swing.JFrame {
         lblFecha.setText("jLabel24");
 
         jbtRegistroDeVentas.setText("Registro De Ventas");
+        jbtRegistroDeVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtRegistroDeVentasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ProductosDisponiblesLayout = new javax.swing.GroupLayout(ProductosDisponibles);
         ProductosDisponibles.setLayout(ProductosDisponiblesLayout);
@@ -1202,6 +1208,15 @@ public class vistaVendedor extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnVentaActionPerformed
 
+    private void jbtRegistroDeVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtRegistroDeVentasActionPerformed
+        // TODO add your handling code here:
+        registro = new RegistroDeVentas();
+        mostrarRegistroVentas();
+
+        registro.setVisible(true);
+
+    }//GEN-LAST:event_jbtRegistroDeVentasActionPerformed
+
     public void mostrarProductosDispo() {
         DefaultTableModel modelo;
         String sede = profileidSede.getText();
@@ -1211,6 +1226,15 @@ public class vistaVendedor extends javax.swing.JFrame {
         tcr.setHorizontalAlignment(SwingConstants.LEFT);
         productos.jTproductosDis.getColumnModel().getColumn(1).setCellRenderer(tcr);
     }
+
+    public void mostrarRegistroVentas() {
+        DefaultTableModel modelo;
+        modelo = control.agregarRegistroVenta(idusuario);
+        registro.JTRegistroVenta.setModel(modelo);
+
+    }
+
+    
 
     public void cargarTableSede() {
         mdSede.setRowCount(0); //Para limpiar la tabla
