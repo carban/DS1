@@ -8,8 +8,11 @@ package Vista;
 import Controladora.Controladora;
 import Modelo.Users;
 import Modelo.Jefes;
+import static Vista.vistaGerente.JTRegistroVenta;
+import static Vista.vistaVendedor.idusuario;
 import java.awt.Color;
 import java.awt.Image;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -147,6 +150,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         btnInventario = new javax.swing.JPanel();
         ind_5 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
+        btnConsultarVentas = new javax.swing.JPanel();
+        ind_6 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         parent = new javax.swing.JPanel();
@@ -213,6 +219,16 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaOrdenesJefe = new javax.swing.JTable();
         finalizarOrden = new javax.swing.JButton();
+        RegistroDeVentasJefeTaller = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        JTRegistroVenta = new javax.swing.JTable();
+        DateChooserInicio = new datechooser.beans.DateChooserCombo();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        DateChooserFinal = new datechooser.beans.DateChooserCombo();
+        JBBuscarVentas = new javax.swing.JButton();
+        JBresetear = new javax.swing.JButton();
 
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -489,7 +505,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Perfil");
 
@@ -540,7 +556,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Ordenes de Trabajo");
 
@@ -550,22 +566,19 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jLabel9)
-                .addGap(0, 28, Short.MAX_VALUE))
+                .addContainerGap())
         );
         btnOrdenesDeTrabajoLayout.setVerticalGroup(
             btnOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(btnOrdenesDeTrabajoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        side_pane.add(btnOrdenesDeTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 190, -1));
+        side_pane.add(btnOrdenesDeTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 190, -1));
 
         btnAsignarEmpleados.setBackground(new java.awt.Color(0, 51, 51));
         btnAsignarEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -588,7 +601,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Asignar Empleados");
 
@@ -639,7 +652,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Consultar Empleados");
 
@@ -690,7 +703,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("Inventario");
 
@@ -702,7 +715,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(ind_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel35)
-                .addGap(0, 90, Short.MAX_VALUE))
+                .addGap(0, 79, Short.MAX_VALUE))
         );
         btnInventarioLayout.setVerticalGroup(
             btnInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -715,7 +728,55 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        side_pane.add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 190, -1));
+        side_pane.add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 190, -1));
+
+        btnConsultarVentas.setBackground(new java.awt.Color(0, 51, 51));
+        btnConsultarVentas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConsultarVentasMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnConsultarVentasMouseReleased(evt);
+            }
+        });
+
+        ind_6.setOpaque(false);
+        ind_6.setPreferredSize(new java.awt.Dimension(3, 43));
+
+        javax.swing.GroupLayout ind_6Layout = new javax.swing.GroupLayout(ind_6);
+        ind_6.setLayout(ind_6Layout);
+        ind_6Layout.setHorizontalGroup(
+            ind_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+        ind_6Layout.setVerticalGroup(
+            ind_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 43, Short.MAX_VALUE)
+        );
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("Consultar Ventas");
+
+        javax.swing.GroupLayout btnConsultarVentasLayout = new javax.swing.GroupLayout(btnConsultarVentas);
+        btnConsultarVentas.setLayout(btnConsultarVentasLayout);
+        btnConsultarVentasLayout.setHorizontalGroup(
+            btnConsultarVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnConsultarVentasLayout.createSequentialGroup()
+                .addComponent(ind_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jLabel32)
+                .addGap(32, 32, 32))
+        );
+        btnConsultarVentasLayout.setVerticalGroup(
+            btnConsultarVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnConsultarVentasLayout.createSequentialGroup()
+                .addComponent(ind_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        side_pane.add(btnConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 190, -1));
 
         getContentPane().add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 590));
 
@@ -859,7 +920,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                             .addComponent(jLabel42)
                             .addComponent(jLabel37)))
                     .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
-                        .addGap(0, 90, Short.MAX_VALUE)
+                        .addGap(0, 93, Short.MAX_VALUE)
                         .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(jLabel2)
@@ -881,7 +942,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                     .addComponent(profileCiudadSede)
                     .addComponent(profileIdSede)
                     .addComponent(profileDirSede))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         PerfilJefeTallerLayout.setVerticalGroup(
             PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1337,6 +1398,99 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         parent.add(OrdenesDeTrabajo, "card2");
 
+        RegistroDeVentasJefeTaller.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel34.setText("Registro de Ventas");
+
+        JTRegistroVenta.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo de Venta", "Codigo Vendedor", "Sede", "Fecha", "Precio Total"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(JTRegistroVenta);
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel38.setText("Desde");
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel48.setText("Hasta");
+
+        JBBuscarVentas.setText("Buscar ");
+        JBBuscarVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBBuscarVentasActionPerformed(evt);
+            }
+        });
+
+        JBresetear.setText("Resetear");
+        JBresetear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBresetearActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout RegistroDeVentasJefeTallerLayout = new javax.swing.GroupLayout(RegistroDeVentasJefeTaller);
+        RegistroDeVentasJefeTaller.setLayout(RegistroDeVentasJefeTallerLayout);
+        RegistroDeVentasJefeTallerLayout.setHorizontalGroup(
+            RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane5)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroDeVentasJefeTallerLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel34)
+                .addGap(353, 353, 353))
+            .addGroup(RegistroDeVentasJefeTallerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel38)
+                    .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(73, 73, 73)
+                .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistroDeVentasJefeTallerLayout.createSequentialGroup()
+                        .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(JBBuscarVentas)
+                        .addGap(28, 28, 28)
+                        .addComponent(JBresetear))
+                    .addComponent(jLabel48))
+                .addContainerGap(245, Short.MAX_VALUE))
+        );
+        RegistroDeVentasJefeTallerLayout.setVerticalGroup(
+            RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegistroDeVentasJefeTallerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel34)
+                .addGap(69, 69, 69)
+                .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel48))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistroDeVentasJefeTallerLayout.createSequentialGroup()
+                        .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(JBBuscarVentas)
+                        .addComponent(JBresetear)))
+                .addGap(0, 0, 0))
+        );
+
+        parent.add(RegistroDeVentasJefeTaller, "card9");
+
         getContentPane().add(parent, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 880, 540));
 
         pack();
@@ -1346,7 +1500,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btnPerfil);
         ind_1.setOpaque(true);
-        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnAsignarEmpleados, btnConsultarEmpleados, btnInventario}, new JPanel[]{ind_2, ind_3, ind_4, ind_5});
+        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnAsignarEmpleados, btnConsultarEmpleados, btnInventario, btnConsultarVentas}, new JPanel[]{ind_2, ind_3, ind_4, ind_5, ind_6});
         parent.removeAll();
         parent.add(PerfilJefeTaller);
         parent.repaint();
@@ -1358,7 +1512,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btnAsignarEmpleados);
         ind_3.setOpaque(true);
-        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnPerfil, btnConsultarEmpleados, btnInventario}, new JPanel[]{ind_2, ind_1, ind_4, ind_5});
+        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnPerfil, btnConsultarEmpleados, btnInventario, btnConsultarVentas}, new JPanel[]{ind_2, ind_1, ind_4, ind_5, ind_6});
         parent.removeAll();
         parent.add(CrearVendedor);
         parent.repaint();
@@ -1369,22 +1523,23 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btnConsultarEmpleados);
         ind_4.setOpaque(true);
-        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnAsignarEmpleados, btnPerfil, btnInventario}, new JPanel[]{ind_2, ind_3, ind_1, ind_5});
+        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnAsignarEmpleados, btnPerfil, btnInventario, btnConsultarVentas}, new JPanel[]{ind_2, ind_3, ind_1, ind_5, ind_6});
         parent.removeAll();
         parent.add(ListaVendedores);
         parent.repaint();
         parent.revalidate();
+
     }//GEN-LAST:event_btnConsultarEmpleadosMousePressed
 
     private void btnOrdenesDeTrabajoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrdenesDeTrabajoMouseReleased
         // TODO add your handling code here:
         setColor(btnOrdenesDeTrabajo);
         ind_2.setOpaque(true);
-        resetColor(new JPanel[]{btnPerfil, btnAsignarEmpleados, btnConsultarEmpleados, btnInventario}, new JPanel[]{ind_1, ind_3, ind_4, ind_5});
+        resetColor(new JPanel[]{btnPerfil, btnAsignarEmpleados, btnConsultarEmpleados, btnInventario, btnConsultarVentas}, new JPanel[]{ind_1, ind_3, ind_4, ind_5, ind_6});
         parent.removeAll();
         parent.add(OrdenesDeTrabajo);
         parent.repaint();
-        parent.revalidate(); 
+        parent.revalidate();
     }//GEN-LAST:event_btnOrdenesDeTrabajoMouseReleased
 
     int xx, xy;
@@ -1502,7 +1657,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btnInventario);
         ind_5.setOpaque(true);
-        resetColor(new JPanel[]{btnPerfil, btnOrdenesDeTrabajo, btnAsignarEmpleados, btnConsultarEmpleados}, new JPanel[]{ind_1, ind_2, ind_3, ind_4});
+        resetColor(new JPanel[]{btnPerfil, btnOrdenesDeTrabajo, btnAsignarEmpleados, btnConsultarEmpleados, btnConsultarVentas}, new JPanel[]{ind_1, ind_2, ind_3, ind_4, ind_6});
         parent.removeAll();
         parent.add(Inventario);
         parent.repaint();
@@ -1590,6 +1745,35 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private void btnConsultarEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarEmpleadosMouseClicked
         this.cargarTable();
     }//GEN-LAST:event_btnConsultarEmpleadosMouseClicked
+
+    private void btnConsultarVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarVentasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConsultarVentasMouseClicked
+
+    private void btnConsultarVentasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarVentasMouseReleased
+        // TODO add your handling code here:
+        setColor(btnConsultarVentas);
+        ind_6.setOpaque(true);
+        resetColor(new JPanel[]{btnPerfil, btnOrdenesDeTrabajo, btnAsignarEmpleados, btnConsultarEmpleados, btnInventario}, new JPanel[]{ind_1, ind_2, ind_3, ind_4, ind_5});
+        parent.removeAll();
+        parent.add(RegistroDeVentasJefeTaller);
+        mostrarRegistroVentasJefeTaller();
+        parent.repaint();
+        parent.revalidate();
+
+
+    }//GEN-LAST:event_btnConsultarVentasMouseReleased
+
+    private void JBBuscarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarVentasActionPerformed
+        // TODO add your handling code here:
+
+        buscarRegistroVentasJefeTaller(fechaInicio(), fechaFinal());
+    }//GEN-LAST:event_JBBuscarVentasActionPerformed
+
+    private void JBresetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBresetearActionPerformed
+        // TODO add your handling code here
+        mostrarRegistroVentasJefeTaller();
+    }//GEN-LAST:event_JBresetearActionPerformed
     public void cargarTableProducto() {
         mdProducts.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());
@@ -1630,18 +1814,60 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
     }
 
+    public void buscarRegistroVentasJefeTaller(String fechainicio, String fechafinal) {
+        String idsede = profileIdSede.getText();
+        DefaultTableModel modelo;
+        modelo = control.consultarRegistroVentasJefeTaller(idsede, fechainicio, fechafinal);
+        JTRegistroVenta.setModel(modelo);
+
+    }
+
+    public static String fechaInicio() {
+
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        DateChooserInicio.setDateFormat(formato);
+        String fechaInicio = DateChooserInicio.getText();
+
+        return fechaInicio;
+    }
+
+    public static String fechaFinal() {
+
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        DateChooserFinal.setDateFormat(formato);
+        String fechaFinal = DateChooserFinal.getText();
+
+        return fechaFinal;
+    }
+
+    public void mostrarRegistroVentasJefeTaller() {
+        String idsede = profileIdSede.getText();
+
+        DefaultTableModel modelo;
+        modelo = control.agregarRegistroVentaJefeTaller(idsede);
+        JTRegistroVenta.setModel(modelo);
+
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AsignarUnVendedor;
     private javax.swing.JPanel CrearVendedor;
+    private static datechooser.beans.DateChooserCombo DateChooserFinal;
+    private static datechooser.beans.DateChooserCombo DateChooserInicio;
     private javax.swing.JPanel Inventario;
+    private javax.swing.JButton JBBuscarVentas;
+    private javax.swing.JButton JBresetear;
     private javax.swing.JPanel JTOrdenesDeTrabajo;
+    public static javax.swing.JTable JTRegistroVenta;
     private javax.swing.JPanel ListaVendedores;
     private javax.swing.JPanel OrdenesDeTrabajo;
     private javax.swing.JPanel PerfilJefeTaller;
+    private javax.swing.JPanel RegistroDeVentasJefeTaller;
     private javax.swing.JButton SignOut;
     private javax.swing.JPanel btnAsignarEmpleados;
     private javax.swing.JPanel btnConsultarEmpleados;
+    private javax.swing.JPanel btnConsultarVentas;
     private javax.swing.JPanel btnInventario;
     private javax.swing.JPanel btnOrdenesDeTrabajo;
     private javax.swing.JPanel btnPerfil;
@@ -1662,6 +1888,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JPanel ind_3;
     private javax.swing.JPanel ind_4;
     private javax.swing.JPanel ind_5;
+    private javax.swing.JPanel ind_6;
     private javax.swing.JTextField inputDir;
     private javax.swing.JTextField inputFN;
     private javax.swing.JTextField inputID;
@@ -1692,10 +1919,13 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -1704,6 +1934,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1715,6 +1946,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField lnameInput;

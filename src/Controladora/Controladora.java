@@ -239,4 +239,11 @@ public class Controladora {
         return productoDao.BuscarRegistrosDeVentaGerente(fechaInicio, fechaFinal);
     }
 
+    public DefaultTableModel agregarRegistroVentaJefeTaller(String idsede) {
+        return productoDao.mostrarRegistrosDeVentaJefeTaller(idsede);
+    }
+
+    public DefaultTableModel consultarRegistroVentasJefeTaller(String idsede, String fechaInicio, String fechaFinal) {
+        return productoDao.BuscarRegistrosDeVentaJefeTaller(idsede, fechaInicio, fechaFinal);
+    }
 }
