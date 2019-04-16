@@ -223,12 +223,20 @@ public class Controladora {
         return productoDao.agregarVenta(idventa, iduser, preciototal, fecha, idsedes);
     }
 
-    public DefaultTableModel agregarRegistroVenta(String iduser) {
-        return productoDao.mostrarRegistrosDeVenta(iduser);
+    public DefaultTableModel agregarRegistroVentaVendedor(String iduser) {
+        return productoDao.mostrarRegistrosDeVentaVendedor(iduser);
     }
 
-    public DefaultTableModel consultarRegistroVentas(String iduser, String fechaInicio, String fechaFinal) {
-        return productoDao.BuscarRegistrosDeVenta(iduser, fechaInicio, fechaFinal);
+    public DefaultTableModel consultarRegistroVentasVendedor(String iduser, String fechaInicio, String fechaFinal) {
+        return productoDao.BuscarRegistrosDeVentaVendedor(iduser, fechaInicio, fechaFinal);
+    }
+
+    public DefaultTableModel agregarRegistroVentaGerente() {
+        return productoDao.mostrarRegistrosDeVentaGerente();
+    }
+
+    public DefaultTableModel consultarRegistroVentasGerente(String fechaInicio, String fechaFinal) {
+        return productoDao.BuscarRegistrosDeVentaGerente(fechaInicio, fechaFinal);
     }
 
 }

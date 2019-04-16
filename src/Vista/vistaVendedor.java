@@ -52,7 +52,7 @@ public class vistaVendedor extends javax.swing.JFrame {
     public static String idusuario;
     private Producto coincidencia;
     ProductosDisponibles productos;
-    RegistroDeVentas registro;
+    RegistroDeVentasVendedor registro;
 
     public vistaVendedor(String userID) {
         initComponents();
@@ -1210,7 +1210,7 @@ public class vistaVendedor extends javax.swing.JFrame {
 
     private void jbtRegistroDeVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtRegistroDeVentasActionPerformed
         // TODO add your handling code here:
-        registro = new RegistroDeVentas();
+        registro = new RegistroDeVentasVendedor();
         mostrarRegistroVentas();
 
         registro.setVisible(true);
@@ -1229,7 +1229,7 @@ public class vistaVendedor extends javax.swing.JFrame {
 
     public void mostrarRegistroVentas() {
         DefaultTableModel modelo;
-        modelo = control.agregarRegistroVenta(idusuario);
+        modelo = control.agregarRegistroVentaVendedor(idusuario);
         registro.JTRegistroVenta.setModel(modelo);
 
     }

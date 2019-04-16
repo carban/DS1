@@ -323,7 +323,7 @@ public class login2 extends javax.swing.JFrame {
                     if (userint < 0) {
                         JOptionPane.showMessageDialog(null, "Informacion incorrecta, prueba otra vez", "Error", JOptionPane.ERROR_MESSAGE);
                     } else if (aux == "Gerente") {
-                        vistaGerenteCute viGerente = new vistaGerenteCute(user);
+                        vistaGerente viGerente = new vistaGerente(user);
                         viGerente.setLocationRelativeTo(null);
                         viGerente.setVisible(true);
                         dispose();
