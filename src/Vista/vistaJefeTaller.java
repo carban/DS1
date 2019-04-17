@@ -206,6 +206,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         tablaDatos = new javax.swing.JTable();
         cargarButton = new javax.swing.JButton();
         editarUser = new javax.swing.JButton();
+        despedirBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         Inventario = new javax.swing.JPanel();
@@ -515,9 +516,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnPerfilLayout.createSequentialGroup()
                 .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 128, Short.MAX_VALUE))
         );
         btnPerfilLayout.setVerticalGroup(
             btnPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -566,9 +567,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addContainerGap())
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         btnOrdenesDeTrabajoLayout.setVerticalGroup(
             btnOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -611,19 +612,16 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnAsignarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnAsignarEmpleadosLayout.createSequentialGroup()
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 25, Short.MAX_VALUE))
         );
         btnAsignarEmpleadosLayout.setVerticalGroup(
             btnAsignarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnAsignarEmpleadosLayout.createSequentialGroup()
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(btnAsignarEmpleadosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         side_pane.add(btnAsignarEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 190, -1));
@@ -662,9 +660,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnConsultarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnConsultarEmpleadosLayout.createSequentialGroup()
                 .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 9, Short.MAX_VALUE))
         );
         btnConsultarEmpleadosLayout.setVerticalGroup(
             btnConsultarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -713,9 +711,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnInventarioLayout.createSequentialGroup()
                 .addComponent(ind_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel35)
-                .addGap(0, 79, Short.MAX_VALUE))
+                .addGap(0, 96, Short.MAX_VALUE))
         );
         btnInventarioLayout.setVerticalGroup(
             btnInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -764,9 +762,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnConsultarVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnConsultarVentasLayout.createSequentialGroup()
                 .addComponent(ind_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel32)
-                .addGap(32, 32, 32))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         btnConsultarVentasLayout.setVerticalGroup(
             btnConsultarVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1210,6 +1208,13 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
+        despedirBtn.setText("Despedir");
+        despedirBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                despedirBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ListaVendedoresLayout = new javax.swing.GroupLayout(ListaVendedores);
         ListaVendedores.setLayout(ListaVendedoresLayout);
         ListaVendedoresLayout.setHorizontalGroup(
@@ -1219,10 +1224,12 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addGap(318, 318, 318))
             .addGroup(ListaVendedoresLayout.createSequentialGroup()
-                .addGap(290, 290, 290)
+                .addGap(278, 278, 278)
                 .addComponent(cargarButton)
-                .addGap(89, 89, 89)
+                .addGap(69, 69, 69)
                 .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(despedirBtn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane2)
         );
@@ -1233,11 +1240,12 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addGroup(ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cargarButton)
-                    .addComponent(editarUser))
-                .addContainerGap(28, Short.MAX_VALUE))
+                    .addComponent(editarUser)
+                    .addComponent(despedirBtn))
+                .addGap(42, 42, 42))
         );
 
         parent.add(ListaVendedores, "card4");
@@ -1774,6 +1782,23 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         // TODO add your handling code here
         mostrarRegistroVentasJefeTaller();
     }//GEN-LAST:event_JBresetearActionPerformed
+
+    private void despedirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_despedirBtnActionPerformed
+        // TODO add your handling code here:
+        try {
+            int index = tablaDatos.getSelectedRow();
+            String aid = tablaDatos.getModel().getValueAt(index, 0).toString();
+            if(control.despedirUsuario(aid)){
+                JOptionPane.showMessageDialog(null, "El usuario fue despedido");
+                this.cargarTable();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "El usuario no puedo ser despedido");
+            }
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un vendedor de la tabla");
+        }
+    }//GEN-LAST:event_despedirBtnActionPerformed
     public void cargarTableProducto() {
         mdProducts.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());
@@ -1875,6 +1900,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboVendedoresDisponibles;
     private javax.swing.JButton crearOrden;
     private javax.swing.JButton createUser;
+    private javax.swing.JButton despedirBtn;
     private javax.swing.JTextField dirInput;
     private javax.swing.JFrame editPopUp;
     private javax.swing.JButton editarUser;

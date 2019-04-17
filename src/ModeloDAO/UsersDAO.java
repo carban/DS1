@@ -12,7 +12,7 @@ public class UsersDAO {
     }
     
     public String login (String user, String pass) {
-        String QuerySQL = "SELECT * FROM Users WHERE idUser = '" + user + "' and password = '"+ pass + "'";
+        String QuerySQL = "SELECT * FROM Users WHERE idUser = '" + user + "' AND password = '"+ pass + "' AND stateUser='Activo'";
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
         System.out.println("Connection: "+coneccion);
@@ -199,6 +199,40 @@ public class UsersDAO {
         }
         return false;    
         
+    }
+    
+    public boolean despedirUsuario(String idUser){
+            String QuerySQL = "UPDATE Users SET stateUser = 'Inactivo' where idUser = "+idUser;
+            
+        String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = "+idUser+" AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
+        String QueryDelete = "DELETE FROM vendedoresSede WHERE idUser= "+idUser;
+        System.out.println(QuerySQL);
+        System.out.println(QuerySQLaux);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQLaux);
+            System.out.println("resultado: "+resultado);
+            if(resultado.next()){
+                int res = sentencia.executeUpdate(QuerySQL);
+                int res2 = sentencia.executeUpdate(QueryDelete);
+                if(res==1 && res2==1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return false;  
     }
     
     

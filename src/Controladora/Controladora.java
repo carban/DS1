@@ -144,6 +144,10 @@ public class Controladora {
     public ArrayList<String[]> consultUsers() {
         return usersDao.consultUsers();
     }
+    
+    public boolean despedirUsuario(String idUser){
+        return usersDao.despedirUsuario(idUser);
+    }
 
     //Funcion para consultar vendedores desde el Jefe de taller
     public ArrayList<String[]> consultUsersVendedores(String idSede) {
