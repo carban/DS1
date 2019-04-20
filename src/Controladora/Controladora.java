@@ -270,5 +270,13 @@ public class Controladora {
         return sedesDao.consultSedesCoincidencia_tabla(busqueda);
     }
 
+    public ArrayList<String[]> consultProductosCoincidenciaDelJefe(String idSede, String busqueda) {
+        return productoDao.consulProductosCoincidenciaDelJefe(idSede, busqueda);
+    }
+
+    public ArrayList<String[]> consultUsersVendedoresCoincidencia(String idSede, String busqueda) {
+        return jefesDao.consultUsersVendedoresCoincidencia(idSede, busqueda);
+    }
+
 
 }

@@ -239,6 +239,43 @@ public Jefes consultProfile(String userID){
         }
         return new Vendedor(null, null, null, null, null, null, null,null, null, null);
     }
+
+    public ArrayList<String[]> consultUsersVendedoresCoincidencia(String idSede, String busqueda) {
+        
+        String QuerySQL = "SELECT * FROM (select iduser, first_name, last_name, telefono, direccion, work_position from (select * from users where work_position = 'Vendedor') as foo natural join (select * from vendedoressede where idsedes='"+idSede+"') as foo2) AS cons WHERE LOWER (cons.iduser::text)  LIKE LOWER ( '" + busqueda + "%')";
+       // System.out.println(QuerySQL);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+            System.out.println("resultado: "+resultado);
+            
+
+            ArrayList<String[]> matrixList = new ArrayList<String[]>();
+            int cont = 0;
+            while (resultado.next()) {
+                
+                String a1 = resultado.getString("iduser");
+                String a2 = resultado.getString("first_name");
+                String a3 = resultado.getString("last_name");
+                String a4 = resultado.getString("telefono");
+                String a5 = resultado.getString("direccion");
+                String a6 = resultado.getString("work_position");
+                String[] niu = {a1, a2, a3, a4, a5, a6}; //Es importante crear un nuevo arreglo cada vez
+                matrixList.add(niu);
+                cont++;
+            }
+            return matrixList;
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return null;
+    }
     
     
 }
