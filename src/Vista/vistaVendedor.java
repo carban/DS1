@@ -430,7 +430,7 @@ public class vistaVendedor extends javax.swing.JFrame {
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel20)
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         btnProductosDisponiblesLayout.setVerticalGroup(
             btnProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1194,18 +1194,19 @@ public class vistaVendedor extends javax.swing.JFrame {
         String preciototal = jtTotal.getText();
         String fecha = lblFecha.getText();
         String idsedes = profileidSede.getText();
-
-        if (control.agregarVenta(idventa, iduser, preciototal, fecha, idsedes)) {
-            MAXVEN();
-            limpiarventa();
-            jtTotal.setText("");
-            JOptionPane.showMessageDialog(null, " Venta realizada con exito ");
-        } else {
-            JOptionPane.showMessageDialog(null, "No se pudo realizar la compra. ", "Error", JOptionPane.ERROR_MESSAGE);
-
+        
+        if (preciototal.equals("")) {
+         JOptionPane.showMessageDialog(null, "Seleccione productos para hacer la compra. ", "Error", JOptionPane.ERROR_MESSAGE);   
+        }else{
+            if (control.agregarVenta(idventa, iduser, preciototal, fecha, idsedes)) {
+                MAXVEN();
+                limpiarventa();
+                jtTotal.setText("");
+                JOptionPane.showMessageDialog(null, " Venta realizada con exito ");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se pudo realizar la compra. ", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
-
-
     }//GEN-LAST:event_btnVentaActionPerformed
 
     private void jbtRegistroDeVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtRegistroDeVentasActionPerformed
