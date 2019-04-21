@@ -66,6 +66,11 @@ public class login2 extends javax.swing.JFrame {
                 userInputMouseReleased(evt);
             }
         });
+        userInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userInputActionPerformed(evt);
+            }
+        });
         userInput.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 userInputKeyPressed(evt);
@@ -163,7 +168,7 @@ public class login2 extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("INICIAR SESION");
+        jLabel5.setText("INICIAR SESIÓN");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 380, 100));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -293,6 +298,10 @@ public class login2 extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_passwordInputMouseReleased
+
+    private void userInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userInputActionPerformed
 
     public static void main(String args[]) {
 

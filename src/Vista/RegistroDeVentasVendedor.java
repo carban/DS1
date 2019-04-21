@@ -63,7 +63,7 @@ public class RegistroDeVentasVendedor extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo de Venta", "Codigo Vendedor", "Sede", "Fecha", "Precio Total"
+                "Código de Venta", "Código Vendedor", "Sede", "Fecha", "Precio Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {

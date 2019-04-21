@@ -1,7 +1,20 @@
+/*
 
+Nombre del archivo: Usuarios.java
+Fecha de creación: 09/10/2018
+Fecha de modificación: 23/04/2019
+Autores: Carlos Esteban Murillo Sandoval 1526857-3743
+         Juan Camilo Sánchez Barreiro    1527749-3743
+         Bryan Steven Biojó Romero       1629366-3743
+         Santiago Andrés Pineda Ramírez  1663634-2711
+
+*/
+
+// Paquete:
 package Modelo;
 
-public class Users {
+// INICIO DE LA CLASE.
+public class Usuarios {
     String id;
     String fname;
     String lname;
@@ -11,7 +24,8 @@ public class Users {
     String dir;
     String state;
     
-    public Users (String id, String fname, String lname, String tel, String dir, String position, String pass){
+    // Constructor de la clase:
+    public Usuarios(String id, String fname, String lname, String tel, String dir, String position, String pass) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
@@ -21,7 +35,7 @@ public class Users {
         this.dir = dir;
     }
 
-    public Users(String id, String fname, String lname, String tel, String dir, String position) {
+    public Usuarios(String id, String fname, String lname, String tel, String dir, String position) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
@@ -93,6 +107,4 @@ public class Users {
     public void setDir(String dir) {
         this.dir = dir;
     }
-    
-  
-}
+} // FIN DE LA CLASE.

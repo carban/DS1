@@ -58,14 +58,14 @@ public class ProductosDisponibles extends javax.swing.JFrame implements WindowFo
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Productos Disponibles");
+        jLabel1.setText("PRODUCTOS DISPONIBLES");
 
         jTproductosDis.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Codigo", "Nombre", "Color", "Cantidad", "Precio"
+                "Código", "Nombre", "Color", "Cantidad", "Precio"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -90,8 +90,8 @@ public class ProductosDisponibles extends javax.swing.JFrame implements WindowFo
             }
         });
 
-        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel23.setText("ID  Producto");
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel23.setText("ID Producto");
 
         jtfIDproducto1.setEditable(false);
         jtfIDproducto1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -100,12 +100,12 @@ public class ProductosDisponibles extends javax.swing.JFrame implements WindowFo
             }
         });
 
-        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel24.setText("Producto");
 
         jtfproducto1.setEditable(false);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Cantidad");
 
         jTCantidad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -124,8 +124,8 @@ public class ProductosDisponibles extends javax.swing.JFrame implements WindowFo
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtfIDproducto1)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfIDproducto1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)

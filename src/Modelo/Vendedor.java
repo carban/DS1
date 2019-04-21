@@ -1,11 +1,20 @@
+/*
+
+Nombre del archivo: Vendedor.java
+Fecha de creación: 09/10/2018
+Fecha de modificación: 23/04/2019
+Autores: Carlos Esteban Murillo Sandoval 1526857-3743
+         Juan Camilo Sánchez Barreiro    1527749-3743
+         Bryan Steven Biojó Romero       1629366-3743
+         Santiago Andrés Pineda Ramírez  1663634-2711
+
+*/
+
+// Paquete:
 package Modelo;
 
-/**
- *
- * @author carban
- */
+// INICIO DE LA CLASE.
 public class Vendedor {
-
     String id;
     String fname;
     String lname;
@@ -17,6 +26,7 @@ public class Vendedor {
     String sede;
     String idsede;
 
+    // Constructor de la clase:
     public Vendedor(String id, String fname, String lname, String tel, String dir, String wp, String pass, String state, String sede, String idsede) {
         this.id = id;
         this.fname = fname;
@@ -28,7 +38,6 @@ public class Vendedor {
         this.state = state;
         this.sede = sede;
         this.idsede = idsede;
-
     }
 
     public String getId() {
@@ -110,5 +119,4 @@ public class Vendedor {
     public void setIdsede(String idsede) {
         this.idsede = idsede;
     }
-
-}
+} // FIN DE LA CLASE.

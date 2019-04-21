@@ -1,14 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+Nombre del archivo: Sedes.java
+Fecha de creación: 09/10/2018
+Fecha de modificación: 23/04/2019
+Autores: Carlos Esteban Murillo Sandoval 1526857-3743
+         Juan Camilo Sánchez Barreiro    1527749-3743
+         Bryan Steven Biojó Romero       1629366-3743
+         Santiago Andrés Pineda Ramírez  1663634-2711
+
+*/
+
+// Paquete:
 package Modelo;
 
-/**
- *
- * @author juancamilo
- */
+// INICIO DE LA CLASE.
 public class Sedes {
     String id;
     String ciudad;
@@ -16,6 +21,7 @@ public class Sedes {
     String estado;
     String jefe;
 
+    // Constructor de la clase:
     public Sedes(String ciudad, String direccion,String estado, String jefe) {
         this.ciudad = ciudad;
         this.direccion = direccion;
@@ -61,8 +67,5 @@ public class Sedes {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-    
-    
-    
-}
+    }   
+} // FIN DE LA CLASE.

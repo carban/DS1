@@ -1,10 +1,19 @@
+/*
 
+Nombre del archivo: Producto.java
+Fecha de creación: 09/10/2018
+Fecha de modificación: 23/04/2019
+Autores: Carlos Esteban Murillo Sandoval 1526857-3743
+         Juan Camilo Sánchez Barreiro    1527749-3743
+         Bryan Steven Biojó Romero       1629366-3743
+         Santiago Andrés Pineda Ramírez  1663634-2711
+
+*/
+
+// Paquete:
 package Modelo;
 
-/**
- *
- * @author carban
- */
+// INICIO DE LA CLASE.
 public class Producto {
     String id;
     String nombre;
@@ -15,7 +24,8 @@ public class Producto {
     int ancho;
     int precio;
     
-    public Producto(String id, String nombre, String descripcion, String color, int alto, int largo, int ancho, int precio){
+    // Constructor de la clase:
+    public Producto(String id, String nombre, String descripcion, String color, int alto, int largo, int ancho, int precio) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -89,6 +99,4 @@ public class Producto {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-    
-    
-}
+} // FIN DE LA CLASE.

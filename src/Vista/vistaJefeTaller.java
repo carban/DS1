@@ -6,7 +6,7 @@
 package Vista;
 
 import Controladora.Controladora;
-import Modelo.Users;
+import Modelo.Usuarios;
 import Modelo.Jefes;
 import static Vista.vistaGerente.JTRegistroVenta;
 import static Vista.vistaVendedor.idusuario;
@@ -137,7 +137,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         side_pane = new javax.swing.JPanel();
         btnPerfil = new javax.swing.JPanel();
         ind_1 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
         btnOrdenesDeTrabajo = new javax.swing.JPanel();
         ind_2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -156,29 +155,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         parent = new javax.swing.JPanel();
-        PerfilJefeTaller = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        profileFName = new javax.swing.JLabel();
-        profileID = new javax.swing.JLabel();
-        profileLName = new javax.swing.JLabel();
-        profileTel = new javax.swing.JLabel();
-        profileDir = new javax.swing.JLabel();
-        profileWP = new javax.swing.JLabel();
-        SignOut = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        profileIdSede = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        profileCiudadSede = new javax.swing.JLabel();
-        profileDirSede = new javax.swing.JLabel();
         CrearVendedor = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         pink = new javax.swing.JPanel();
@@ -230,6 +206,29 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         DateChooserFinal = new datechooser.beans.DateChooserCombo();
         JBBuscarVentas = new javax.swing.JButton();
         JBresetear = new javax.swing.JButton();
+        PerfilJefeTaller = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        profileFName = new javax.swing.JLabel();
+        profileID = new javax.swing.JLabel();
+        profileLName = new javax.swing.JLabel();
+        profileTel = new javax.swing.JLabel();
+        profileDir = new javax.swing.JLabel();
+        profileWP = new javax.swing.JLabel();
+        SignOut = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        profileIdSede = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        profileCiudadSede = new javax.swing.JLabel();
+        profileDirSede = new javax.swing.JLabel();
 
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -506,32 +505,22 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Perfil");
-
         javax.swing.GroupLayout btnPerfilLayout = new javax.swing.GroupLayout(btnPerfil);
         btnPerfil.setLayout(btnPerfilLayout);
         btnPerfilLayout.setHorizontalGroup(
             btnPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnPerfilLayout.createSequentialGroup()
                 .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8)
-                .addGap(0, 128, Short.MAX_VALUE))
+                .addGap(0, 157, Short.MAX_VALUE))
         );
         btnPerfilLayout.setVerticalGroup(
             btnPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnPerfilLayout.createSequentialGroup()
                 .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(btnPerfilLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
         );
 
-        side_pane.add(btnPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 190, -1));
+        side_pane.add(btnPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, -1));
 
         btnOrdenesDeTrabajo.setBackground(new java.awt.Color(0, 51, 51));
         btnOrdenesDeTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -559,7 +548,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Ordenes de Trabajo");
+        jLabel9.setText("Órdenes de Trabajo");
 
         javax.swing.GroupLayout btnOrdenesDeTrabajoLayout = new javax.swing.GroupLayout(btnOrdenesDeTrabajo);
         btnOrdenesDeTrabajo.setLayout(btnOrdenesDeTrabajoLayout);
@@ -567,9 +556,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         btnOrdenesDeTrabajoLayout.setVerticalGroup(
             btnOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -612,9 +601,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnAsignarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnAsignarEmpleadosLayout.createSequentialGroup()
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         btnAsignarEmpleadosLayout.setVerticalGroup(
             btnAsignarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -660,9 +649,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnConsultarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnConsultarEmpleadosLayout.createSequentialGroup()
                 .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                .addContainerGap())
         );
         btnConsultarEmpleadosLayout.setVerticalGroup(
             btnConsultarEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -711,9 +700,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnInventarioLayout.createSequentialGroup()
                 .addComponent(ind_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel35)
-                .addGap(0, 96, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                .addContainerGap())
         );
         btnInventarioLayout.setVerticalGroup(
             btnInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -762,9 +751,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             btnConsultarVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnConsultarVentasLayout.createSequentialGroup()
                 .addComponent(ind_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel32)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         btnConsultarVentasLayout.setVerticalGroup(
             btnConsultarVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -819,177 +808,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         parent.setBackground(new java.awt.Color(255, 255, 255));
         parent.setLayout(new java.awt.CardLayout());
 
-        PerfilJefeTaller.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel14.setText("PERFIL JEFE DE TALLER");
-
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
-        jLabel1.setText("ID :");
-
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
-        jLabel2.setText("Nombre");
-
-        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
-        jLabel4.setText("Apellido: ");
-
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
-        jLabel5.setText("Telefono:");
-
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
-        jLabel6.setText("Cargo:");
-
-        jLabel12.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
-        jLabel12.setText("Direccion:");
-
-        profileFName.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
-        profileFName.setText("jLabel15");
-
-        profileID.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
-        profileID.setText("jLabel15");
-
-        profileLName.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
-        profileLName.setText("jLabel15");
-
-        profileTel.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
-        profileTel.setText("jLabel15");
-
-        profileDir.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
-        profileDir.setText("jLabel15");
-
-        profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
-        profileWP.setText("jLabel15");
-
-        SignOut.setBackground(new java.awt.Color(255, 0, 51));
-        SignOut.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        SignOut.setForeground(new java.awt.Color(255, 255, 255));
-        SignOut.setText("SALIR");
-        SignOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignOutActionPerformed(evt);
-            }
-        });
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/profile.png"))); // NOI18N
-
-        jLabel29.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
-        jLabel29.setText("ID Sede:");
-
-        jLabel37.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
-        jLabel37.setText("Ciudad Sede:");
-
-        profileIdSede.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
-        profileIdSede.setText("jLabel41");
-
-        jLabel42.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
-        jLabel42.setText("Direccion Sede:");
-
-        profileCiudadSede.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
-        profileCiudadSede.setText("jLabel43");
-
-        profileDirSede.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
-        profileDirSede.setText("jLabel44");
-
-        javax.swing.GroupLayout PerfilJefeTallerLayout = new javax.swing.GroupLayout(PerfilJefeTaller);
-        PerfilJefeTaller.setLayout(PerfilJefeTallerLayout);
-        PerfilJefeTallerLayout.setHorizontalGroup(
-            PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
-                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel29)
-                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
-                                .addGap(272, 272, 272)
-                                .addComponent(jLabel3))
-                            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
-                                .addGap(318, 318, 318)
-                                .addComponent(jLabel14))
-                            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
-                                .addGap(404, 404, 404)
-                                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(SignOut)
-                                    .addComponent(jLabel18)))))
-                    .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
-                        .addGap(474, 474, 474)
-                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel42)
-                            .addComponent(jLabel37)))
-                    .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
-                        .addGap(0, 93, Short.MAX_VALUE)
-                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel5))
-                        .addGap(72, 72, 72)
-                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(profileWP, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(profileDir, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(profileTel, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(profileLName, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(profileFName, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(profileID, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(329, 329, 329)))
-                .addGap(60, 60, 60)
-                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(profileCiudadSede)
-                    .addComponent(profileIdSede)
-                    .addComponent(profileDirSede))
-                .addContainerGap(127, Short.MAX_VALUE))
-        );
-        PerfilJefeTallerLayout.setVerticalGroup(
-            PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14)
-                .addGap(43, 43, 43)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(profileID)
-                    .addComponent(jLabel29)
-                    .addComponent(profileIdSede))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(profileFName)
-                        .addComponent(jLabel37)
-                        .addComponent(profileCiudadSede))
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel42)
-                    .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4)
-                        .addComponent(profileLName))
-                    .addComponent(profileDirSede))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(profileTel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(profileDir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(profileWP))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(119, 119, 119)
-                .addComponent(SignOut)
-                .addGap(32, 32, 32))
-        );
-
-        parent.add(PerfilJefeTaller, "card6");
-
         pink.setBackground(new java.awt.Color(255, 255, 255));
         pink.setForeground(new java.awt.Color(255, 153, 51));
 
@@ -1006,10 +824,10 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jLabel20.setText("ID:");
 
         jLabel22.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        jLabel22.setText("Telefono:");
+        jLabel22.setText("Teléfono:");
 
         jLabel23.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        jLabel23.setText("Direccion:");
+        jLabel23.setText("Dirección:");
 
         jLabel25.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel25.setText("Contrasena:");
@@ -1027,71 +845,73 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         pink.setLayout(pinkLayout);
         pinkLayout.setHorizontalGroup(
             pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
+                .addGap(0, 251, Short.MAX_VALUE)
+                .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addGroup(pinkLayout.createSequentialGroup()
+                        .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addGap(194, 194, 194))
+                            .addGroup(pinkLayout.createSequentialGroup()
+                                .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23)
+                                    .addComponent(jLabel25))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(passInput, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(telInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                .addComponent(fnameInput)
+                                .addComponent(idInput)
+                                .addComponent(lnameInput)
+                                .addComponent(dirInput)))))
+                .addGap(238, 238, 238))
             .addGroup(pinkLayout.createSequentialGroup()
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pinkLayout.createSequentialGroup()
-                        .addGap(345, 345, 345)
-                        .addComponent(jLabel15))
+                        .addGap(357, 357, 357)
+                        .addComponent(createUser, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pinkLayout.createSequentialGroup()
-                        .addGap(370, 370, 370)
-                        .addComponent(createUser, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(350, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
-                        .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel22))
-                        .addGap(124, 124, 124))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pinkLayout.createSequentialGroup()
-                        .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel23))
-                        .addGap(100, 100, 100)))
-                .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(telInput)
-                    .addComponent(fnameInput)
-                    .addComponent(idInput)
-                    .addComponent(lnameInput)
-                    .addComponent(dirInput)
-                    .addComponent(passInput, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(238, 238, 238))
+                        .addGap(331, 331, 331)
+                        .addComponent(jLabel15)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pinkLayout.setVerticalGroup(
             pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pinkLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel15)
-                .addGap(45, 45, 45)
-                .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel20)
-                    .addComponent(idInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
                 .addGap(18, 18, 18)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
-                .addGap(26, 26, 26)
-                .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
                 .addGap(18, 18, 18)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(telInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(telInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
                 .addGap(18, 18, 18)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dirInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dirInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23))
-                .addGap(16, 16, 16)
+                .addGap(18, 18, 18)
                 .addGroup(pinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(passInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                    .addComponent(passInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addComponent(createUser, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addGap(26, 26, 26))
         );
 
         jTabbedPane1.addTab("CREAR", pink);
@@ -1123,12 +943,12 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(268, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboVendedoresDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel24))
-                .addGap(260, 260, 260))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comboVendedoresDisponibles, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(301, 301, 301))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(383, 383, 383)
+                .addGap(374, 374, 374)
                 .addComponent(AsignarUnVendedor)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1139,9 +959,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(jLabel24)
                 .addGap(42, 42, 42)
                 .addComponent(comboVendedoresDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
                 .addComponent(AsignarUnVendedor)
-                .addGap(176, 176, 176))
+                .addGap(135, 135, 135))
         );
 
         jTabbedPane1.addTab("ASIGNAR", jPanel3);
@@ -1173,7 +993,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Apellido", "Telefono", "Direccion", "Posicion"
+                "ID", "Nombre", "Apellido", "Teléfono", "Dirección", "Cargo"
             }
         ) {
             Class[] types = new Class [] {
@@ -1191,7 +1011,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tablaDatos);
 
         cargarButton.setBackground(new java.awt.Color(153, 204, 255));
-        cargarButton.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        cargarButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         cargarButton.setText("CARGAR");
         cargarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1200,7 +1020,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         });
 
         editarUser.setBackground(new java.awt.Color(255, 255, 0));
-        editarUser.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        editarUser.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         editarUser.setText("EDITAR");
         editarUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1208,7 +1028,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
-        despedirBtn.setText("Despedir");
+        despedirBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        despedirBtn.setText("DESPEDIR");
         despedirBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 despedirBtnActionPerformed(evt);
@@ -1219,19 +1040,19 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         ListaVendedores.setLayout(ListaVendedoresLayout);
         ListaVendedoresLayout.setHorizontalGroup(
             ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListaVendedoresLayout.createSequentialGroup()
-                .addContainerGap(329, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addGap(318, 318, 318))
             .addGroup(ListaVendedoresLayout.createSequentialGroup()
                 .addGap(278, 278, 278)
                 .addComponent(cargarButton)
-                .addGap(69, 69, 69)
+                .addGap(72, 72, 72)
                 .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addGap(54, 54, 54)
                 .addComponent(despedirBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(193, Short.MAX_VALUE))
             .addComponent(jScrollPane2)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListaVendedoresLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(323, 323, 323))
         );
         ListaVendedoresLayout.setVerticalGroup(
             ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1240,7 +1061,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addGroup(ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cargarButton)
                     .addComponent(editarUser)
@@ -1311,7 +1132,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         InventarioLayout.setHorizontalGroup(
             InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(InventarioLayout.createSequentialGroup()
-                .addContainerGap(279, Short.MAX_VALUE)
+                .addContainerGap(307, Short.MAX_VALUE)
                 .addGroup(InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
                         .addComponent(jLabel36)
@@ -1378,7 +1199,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                     .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
                         .addGap(395, 395, 395)
                         .addComponent(finalizarOrden)))
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addContainerGap(348, Short.MAX_VALUE))
             .addComponent(jScrollPane4)
         );
         JTOrdenesDeTrabajoLayout.setVerticalGroup(
@@ -1416,7 +1237,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo de Venta", "Codigo Vendedor", "Sede", "Fecha", "Precio Total"
+                "Código de Venta", "Código Vendedor", "Sede", "Fecha", "Precio Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1472,7 +1293,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addComponent(JBresetear))
                     .addComponent(jLabel48))
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
         RegistroDeVentasJefeTallerLayout.setVerticalGroup(
             RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1499,22 +1320,183 @@ public class vistaJefeTaller extends javax.swing.JFrame {
 
         parent.add(RegistroDeVentasJefeTaller, "card9");
 
+        PerfilJefeTaller.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel14.setText("        PERFIL JEFE DE TALLER");
+
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel1.setText("ID:");
+
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel2.setText("Nombre");
+
+        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel4.setText("Apellido: ");
+
+        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel5.setText("Teléfono:");
+
+        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel6.setText("Cargo:");
+
+        jLabel12.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel12.setText("Dirección:");
+
+        profileFName.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileFName.setText("jLabel15");
+
+        profileID.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileID.setText("jLabel15");
+
+        profileLName.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileLName.setText("jLabel15");
+
+        profileTel.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileTel.setText("jLabel15");
+
+        profileDir.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileDir.setText("jLabel15");
+
+        profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileWP.setText("jLabel15");
+
+        SignOut.setBackground(new java.awt.Color(255, 0, 51));
+        SignOut.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        SignOut.setForeground(new java.awt.Color(255, 255, 255));
+        SignOut.setText("SALIR");
+        SignOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignOutActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/profile.png"))); // NOI18N
+
+        jLabel29.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel29.setText("ID Sede:");
+
+        jLabel37.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel37.setText("Ciudad Sede:");
+
+        profileIdSede.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileIdSede.setText("jLabel41");
+
+        jLabel42.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel42.setText("Dirección Sede:");
+
+        profileCiudadSede.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileCiudadSede.setText("jLabel43");
+
+        profileDirSede.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileDirSede.setText("jLabel44");
+
+        javax.swing.GroupLayout PerfilJefeTallerLayout = new javax.swing.GroupLayout(PerfilJefeTaller);
+        PerfilJefeTaller.setLayout(PerfilJefeTallerLayout);
+        PerfilJefeTallerLayout.setHorizontalGroup(
+            PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
+                            .addGap(272, 272, 272)
+                            .addComponent(jLabel3)
+                            .addGap(333, 333, 333))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PerfilJefeTallerLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
+                                    .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel29)
+                                        .addComponent(jLabel37)
+                                        .addComponent(jLabel42)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel6))
+                                    .addGap(88, 88, 88)
+                                    .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(profileCiudadSede)
+                                        .addComponent(profileDirSede)
+                                        .addComponent(profileFName)
+                                        .addComponent(profileLName)
+                                        .addComponent(profileTel)
+                                        .addComponent(profileDir)
+                                        .addComponent(profileIdSede)
+                                        .addComponent(profileWP)
+                                        .addComponent(profileID)))
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
+                        .addGap(399, 399, 399)
+                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel18)
+                            .addComponent(SignOut))))
+                .addContainerGap())
+        );
+        PerfilJefeTallerLayout.setVerticalGroup(
+            PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(profileID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(profileIdSede)
+                    .addComponent(jLabel29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(profileCiudadSede))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42)
+                    .addComponent(profileDirSede))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(profileFName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(profileLName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(profileTel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PerfilJefeTallerLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(profileDir))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PerfilJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(profileWP))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addComponent(SignOut)
+                        .addGap(44, 44, 44))))
+        );
+
+        parent.add(PerfilJefeTaller, "card6");
+
         getContentPane().add(parent, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 880, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnPerfilMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPerfilMousePressed
-        // TODO add your handling code here:
-        setColor(btnPerfil);
-        ind_1.setOpaque(true);
-        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnAsignarEmpleados, btnConsultarEmpleados, btnInventario, btnConsultarVentas}, new JPanel[]{ind_2, ind_3, ind_4, ind_5, ind_6});
-        parent.removeAll();
-        parent.add(PerfilJefeTaller);
-        parent.repaint();
-        parent.revalidate();
-
-    }//GEN-LAST:event_btnPerfilMousePressed
 
     private void btnAsignarEmpleadosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsignarEmpleadosMousePressed
         // TODO add your handling code here:
@@ -1654,13 +1636,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         this.editPopUp.dispose();
     }//GEN-LAST:event_exitBtnActionPerformed
 
-    private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
-        login2 log = new login2();
-        log.setLocationRelativeTo(null);
-        log.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_SignOutActionPerformed
-
     private void btnInventarioMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseReleased
         // TODO add your handling code here:
         setColor(btnInventario);
@@ -1799,6 +1774,24 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un vendedor de la tabla");
         }
     }//GEN-LAST:event_despedirBtnActionPerformed
+
+    private void btnPerfilMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPerfilMousePressed
+        // TODO add your handling code here:
+        setColor(btnPerfil);
+        ind_1.setOpaque(true);
+        resetColor(new JPanel[]{btnOrdenesDeTrabajo, btnAsignarEmpleados, btnConsultarEmpleados, btnInventario, btnConsultarVentas}, new JPanel[]{ind_2, ind_3, ind_4, ind_5, ind_6});
+        parent.removeAll();
+        parent.add(PerfilJefeTaller);
+        parent.repaint();
+        parent.revalidate();
+    }//GEN-LAST:event_btnPerfilMousePressed
+
+    private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
+        login2 log = new login2();
+        log.setLocationRelativeTo(null);
+        log.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_SignOutActionPerformed
     public void cargarTableProducto() {
         mdProducts.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());
@@ -1964,7 +1957,6 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

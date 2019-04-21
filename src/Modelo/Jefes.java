@@ -1,14 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+Nombre del archivo: Jefes.java
+Fecha de creación: 09/10/2018
+Fecha de modificación: 23/04/2019
+Autores: Carlos Esteban Murillo Sandoval 1526857-3743
+         Juan Camilo Sánchez Barreiro    1527749-3743
+         Bryan Steven Biojó Romero       1629366-3743
+         Santiago Andrés Pineda Ramírez  1663634-2711
+
+*/
+
+// Paquete:
 package Modelo;
 
-/**
- *
- * @author invitado
- */
+// INICIO DE LA CLASE.
 public class Jefes {
     String id;
     String fname;
@@ -22,6 +27,7 @@ public class Jefes {
     String ciudadSede;
     String dirSede;
 
+    // Constructor de la clase:
     public Jefes(String id, String fname, String lname, String tel, String dir, String wp, String pass, String state, String idSede, String ciudad, String dirSede) {
         this.id = id;
         this.fname = fname;
@@ -123,5 +129,4 @@ public class Jefes {
     public void setDirSede(String dirSede) {
         this.dirSede = dirSede;
     }
-    
-}
+} // FIN DE LA CLASE.

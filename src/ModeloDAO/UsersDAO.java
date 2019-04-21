@@ -1,5 +1,5 @@
 package ModeloDAO;
-import Modelo.Users;
+import Modelo.Usuarios;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -45,7 +45,7 @@ public class UsersDAO {
         return "error";
     }
     
-    public boolean createNewUser(Users aUser){
+    public boolean createNewUser(Usuarios aUser){
         String QuerySQL = "INSERT INTO Users VALUES ("+ aUser.getId() + ", '"+aUser.getFname()+ "', '"+aUser.getLname()+ "', '"
                 +aUser.getTel()+"', '"+aUser.getDir()+"', '"+aUser.getPosition()+ "', '"+aUser.getPass()+ "', '"+aUser.getState()+ "')";
         String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"'"; //AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
@@ -77,7 +77,7 @@ public class UsersDAO {
         return false;
     }
     
-    public Users consultProfile(String userID){
+    public Usuarios consultProfile(String userID){
         String QuerySQL = "SELECT * FROM Users WHERE idUser = '"+userID+"'";
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
@@ -98,16 +98,16 @@ public class UsersDAO {
                 String pass = resultado.getString("password");
                 String state = resultado.getString("stateuser");
                 
-                return new Users(iduser, fname, lname, tel, dir, wp, pass);
+                return new Usuarios(iduser, fname, lname, tel, dir, wp, pass);
             }else{
-                return new Users(null, null, null, null, null, null, null);
+                return new Usuarios(null, null, null, null, null, null, null);
             }
             
         } catch (SQLException ex) {
             System.out.println("---- Problema en la ejecucion.");
             ex.printStackTrace();
         }
-        return new Users(null, null, null, null, null, null, null);
+        return new Usuarios(null, null, null, null, null, null, null);
     }
     
     
@@ -167,7 +167,7 @@ public class UsersDAO {
         return null;
     }
 
-    public boolean updateUser(Users aUser) {
+    public boolean updateUser(Usuarios aUser) {
             String QuerySQL = "UPDATE Users SET first_name='"+aUser.getFname()+ "', last_name='"+aUser.getLname()
                     +"', telefono='"+aUser.getTel()+"', direccion='"+aUser.getDir()+"', work_position='"+aUser.getPosition()+"' WHERE iduser = '"+aUser.getId()+"' AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
             

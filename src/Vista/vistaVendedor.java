@@ -6,7 +6,7 @@
 package Vista;
 
 import Controladora.Controladora;
-import Modelo.Users;
+import Modelo.Usuarios;
 import Modelo.Jefes;
 import Modelo.Producto;
 import Modelo.Vendedor;
@@ -1038,7 +1038,7 @@ public class vistaVendedor extends javax.swing.JFrame {
         parent.add(JpCotizacion);
         parent.repaint();
         parent.revalidate();
-        Users usuario = control.consultProfile(idusuario);
+        Usuarios usuario = control.consultProfile(idusuario);
         jtfIDUsuario.setText(usuario.getId());
         jtfNombre.setText(usuario.getFname() + " " + usuario.getLname());
 
@@ -1148,7 +1148,7 @@ public class vistaVendedor extends javax.swing.JFrame {
         parent.add(ProductosDisponibles);
         parent.repaint();
         parent.revalidate();
-        Users usuario = control.consultProfile(idusuario);
+        Usuarios usuario = control.consultProfile(idusuario);
         jtfIDUsuario1.setText(usuario.getId());
         jtfNombre1.setText(usuario.getFname() + " " + usuario.getLname());
         MAXVEN();
