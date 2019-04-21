@@ -188,4 +188,39 @@ public class SedesDAO {
         }
         return null;
     }
+
+    public ArrayList<String[]> consultSedesCoincidencia_tabla(String busqueda) {
+        String QuerySQL = "select * from (select idSedes, city, address, stateSede, idUser, first_name, last_name from sedes NATURAL JOIN users) as sedes where LOWER (city) LIKE LOWER ('" + busqueda + "%');";
+        System.out.println(QuerySQL);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+            System.out.println("resultado: "+resultado);
+            
+
+            ArrayList<String[]> matrixList = new ArrayList<String[]>();
+            int cont = 0;
+            while (resultado.next()) {
+                
+                String a1 = resultado.getString("idSedes");
+                String a2 = resultado.getString("city");
+                String a3 = resultado.getString("address");
+                String a4 = resultado.getString("stateSede");
+                String a5 = resultado.getString("idUser")+", "+resultado.getString("first_name")+" "+resultado.getString("last_name");
+                String[] niu = {a1, a2, a3, a4, a5}; //Es importante crear un nuevo arreglo cada vez
+                matrixList.add(niu);
+                cont++;
+            }
+            return matrixList;
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return null;
+    }
 }

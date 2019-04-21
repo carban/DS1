@@ -185,6 +185,10 @@ public class Controladora {
     public ArrayList<String[]> consultProductos() {
         return productoDao.consultProductos();
     }
+    
+    public ArrayList<String[]> consultProductosCoincidencia_tabla(String busqueda) {
+       return productoDao.consultProductosCoincidencia_tabla(busqueda);
+    }
 
     public void AlterComboVendedoresDisponibles(JComboBox<String> comboVendedoresDisponibles) {
         comboVendedoresDisponibles.removeAllItems();
@@ -211,7 +215,6 @@ public class Controladora {
     public ArrayList<String[]> consultProductosDelJefe(String sedeid) {
         return productoDao.consultProductosDelJefe(sedeid);
     }
-
     public boolean crearOrden(String cantidad, boolean estado, String idProducto, String idSede) {
         Orden ao = new Orden(cantidad, estado, idProducto, idSede);
         return ordenDao.crearOrden(ao);
@@ -260,4 +263,34 @@ public class Controladora {
     public DefaultTableModel consultarRegistroVentasJefeTaller(String idsede, String fechaInicio, String fechaFinal) {
         return productoDao.BuscarRegistrosDeVentaJefeTaller(idsede, fechaInicio, fechaFinal);
     }
+<<<<<<< HEAD
 } // FIN DE LA CLASE.
+=======
+
+    public ArrayList<String[]> consultUsersJefes() {
+        return usersDao.consultUsersJefes();
+    }
+    
+    public ArrayList<String[]> consultUsersVendedores() {
+        return usersDao.consultUsersVendedores();
+    }
+
+    public ArrayList<String[]> consultUsersCoincidencia_tabla(String busqueda) {
+        return usersDao.consultUsersCoincidencia_tabla(busqueda);
+    }
+
+    public ArrayList<String[]> consultSedesCoincidencia_tabla(String busqueda) {
+        return sedesDao.consultSedesCoincidencia_tabla(busqueda);
+    }
+
+    public ArrayList<String[]> consultProductosCoincidenciaDelJefe(String idSede, String busqueda) {
+        return productoDao.consulProductosCoincidenciaDelJefe(idSede, busqueda);
+    }
+
+    public ArrayList<String[]> consultUsersVendedoresCoincidencia(String idSede, String busqueda) {
+        return jefesDao.consultUsersVendedoresCoincidencia(idSede, busqueda);
+    }
+
+
+}
+>>>>>>> beb3c8032a4bcf12c3fa4078232613305c3650a5

@@ -26,9 +26,15 @@ public class Acceso {
         //this.url = "jdbc:postgresql://otto.db.elephantsql.com:5432/vvpcnayj";
         //this.usuario = "vvpcnayj";
         //this.password = "LaDK1W0ZNGd-S-TQCRVRd0Z7F5Qm6DUY";
+<<<<<<< HEAD
         this.url = "jdbc:postgresql://localhost:5433/xyz";
         this.usuario = "postgres";
         this.password = "papulogico";
+=======
+        this.url = "jdbc:postgresql://localhost:5432/ds33";
+        this.usuario = "postgres";
+        this.password = "lordpostgres123";
+>>>>>>> beb3c8032a4bcf12c3fa4078232613305c3650a5
     }
     
     // Conexión a la base de datos:

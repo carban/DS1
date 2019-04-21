@@ -183,6 +183,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         cargarButton = new javax.swing.JButton();
         editarUser = new javax.swing.JButton();
         despedirBtn = new javax.swing.JButton();
+        textoCoincidenciaVendedor = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         Inventario = new javax.swing.JPanel();
@@ -190,6 +192,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaProductosJefe = new javax.swing.JTable();
         crearOrden = new javax.swing.JButton();
+        textoProductoCoincidencia = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
         OrdenesDeTrabajo = new javax.swing.JPanel();
         JTOrdenesDeTrabajo = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -1036,10 +1040,19 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
+        textoCoincidenciaVendedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textoCoincidenciaVendedorKeyReleased(evt);
+            }
+        });
+
+        jLabel40.setText("ID");
+
         javax.swing.GroupLayout ListaVendedoresLayout = new javax.swing.GroupLayout(ListaVendedores);
         ListaVendedores.setLayout(ListaVendedoresLayout);
         ListaVendedoresLayout.setHorizontalGroup(
             ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(ListaVendedoresLayout.createSequentialGroup()
                 .addGap(278, 278, 278)
                 .addComponent(cargarButton)
@@ -1053,15 +1066,45 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addGap(323, 323, 323))
+=======
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListaVendedoresLayout.createSequentialGroup()
+                .addContainerGap(329, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(318, 318, 318))
+            .addComponent(jScrollPane2)
+            .addGroup(ListaVendedoresLayout.createSequentialGroup()
+                .addGroup(ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ListaVendedoresLayout.createSequentialGroup()
+                        .addGap(278, 278, 278)
+                        .addComponent(cargarButton)
+                        .addGap(69, 69, 69)
+                        .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(despedirBtn))
+                    .addGroup(ListaVendedoresLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel40)
+                        .addGap(18, 18, 18)
+                        .addComponent(textoCoincidenciaVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> beb3c8032a4bcf12c3fa4078232613305c3650a5
         );
         ListaVendedoresLayout.setVerticalGroup(
             ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ListaVendedoresLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel13)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoCoincidenciaVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel40))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+=======
+                .addGap(41, 41, 41)
+>>>>>>> beb3c8032a4bcf12c3fa4078232613305c3650a5
                 .addGroup(ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cargarButton)
                     .addComponent(editarUser)
@@ -1127,31 +1170,55 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
+        textoProductoCoincidencia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textoProductoCoincidenciaKeyReleased(evt);
+            }
+        });
+
+        jLabel39.setText("ID/ Nombre");
+
         javax.swing.GroupLayout InventarioLayout = new javax.swing.GroupLayout(Inventario);
         Inventario.setLayout(InventarioLayout);
         InventarioLayout.setHorizontalGroup(
             InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(InventarioLayout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap(307, Short.MAX_VALUE)
+=======
+                .addContainerGap()
+>>>>>>> beb3c8032a4bcf12c3fa4078232613305c3650a5
                 .addGroup(InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
-                        .addComponent(jLabel36)
-                        .addGap(300, 300, 300))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
-                        .addComponent(crearOrden)
-                        .addGap(319, 319, 319))))
-            .addComponent(jScrollPane3)
+                    .addGroup(InventarioLayout.createSequentialGroup()
+                        .addGap(0, 273, Short.MAX_VALUE)
+                        .addGroup(InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
+                                .addComponent(jLabel36)
+                                .addGap(300, 300, 300))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
+                                .addComponent(crearOrden)
+                                .addGap(319, 319, 319))))
+                    .addComponent(jScrollPane3)
+                    .addGroup(InventarioLayout.createSequentialGroup()
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textoProductoCoincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         InventarioLayout.setVerticalGroup(
             InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(InventarioLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel36)
-                .addGap(39, 39, 39)
+                .addGap(48, 48, 48)
+                .addGroup(InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(textoProductoCoincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
+                .addGap(18, 18, 18)
                 .addComponent(crearOrden)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         parent.add(Inventario, "card7");
@@ -1191,6 +1258,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         JTOrdenesDeTrabajo.setLayout(JTOrdenesDeTrabajoLayout);
         JTOrdenesDeTrabajoLayout.setHorizontalGroup(
             JTOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4)
             .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addGroup(JTOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
@@ -1199,16 +1267,20 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                     .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
                         .addGap(395, 395, 395)
                         .addComponent(finalizarOrden)))
+<<<<<<< HEAD
                 .addContainerGap(348, Short.MAX_VALUE))
             .addComponent(jScrollPane4)
+=======
+                .addContainerGap(334, Short.MAX_VALUE))
+>>>>>>> beb3c8032a4bcf12c3fa4078232613305c3650a5
         );
         JTOrdenesDeTrabajoLayout.setVerticalGroup(
             JTOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel33)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(finalizarOrden)
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -1775,6 +1847,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_despedirBtnActionPerformed
 
+<<<<<<< HEAD
     private void btnPerfilMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPerfilMousePressed
         // TODO add your handling code here:
         setColor(btnPerfil);
@@ -1792,6 +1865,25 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_SignOutActionPerformed
+=======
+    private void textoProductoCoincidenciaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textoProductoCoincidenciaKeyReleased
+        String busqueda = textoProductoCoincidencia.getText();
+        mdProducts.setRowCount(0); //Para limpiar la tabla
+        ArrayList<String[]> lista = control.consultProductosCoincidenciaDelJefe(this.profileInfo.getIdSede(), busqueda);
+        for (int i = 0; i < lista.size(); i++) {
+            mdProducts.addRow(lista.get(i));
+        }
+    }//GEN-LAST:event_textoProductoCoincidenciaKeyReleased
+
+    private void textoCoincidenciaVendedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textoCoincidenciaVendedorKeyReleased
+        String busqueda = textoCoincidenciaVendedor.getText();
+        md.setRowCount(0); //Para limpiar la tabla
+        ArrayList<String[]> lista = control.consultUsersVendedoresCoincidencia(this.profileInfo.getIdSede(), busqueda);//NUEVO METODO PARA CREAR SOLO VENDEDORES Y ASIGNARLOS A LA SEDE DEL JEFE EN PARTICULAR
+        for (int i = 0; i < lista.size(); i++) {
+            md.addRow(lista.get(i));
+        }
+    }//GEN-LAST:event_textoCoincidenciaVendedorKeyReleased
+>>>>>>> beb3c8032a4bcf12c3fa4078232613305c3650a5
     public void cargarTableProducto() {
         mdProducts.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());
@@ -1945,7 +2037,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
@@ -1994,5 +2088,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JTable tablaOrdenesJefe;
     private javax.swing.JTable tablaProductosJefe;
     private javax.swing.JTextField telInput;
+    private javax.swing.JTextField textoCoincidenciaVendedor;
+    private javax.swing.JTextField textoProductoCoincidencia;
     // End of variables declaration//GEN-END:variables
 }
