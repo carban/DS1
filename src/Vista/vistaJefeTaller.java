@@ -16,11 +16,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
 
 /**
  *
@@ -207,6 +210,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         cargarButton = new javax.swing.JButton();
         editarUser = new javax.swing.JButton();
         despedirBtn = new javax.swing.JButton();
+        textoCoincidenciaVendedor = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         Inventario = new javax.swing.JPanel();
@@ -214,12 +219,16 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaProductosJefe = new javax.swing.JTable();
         crearOrden = new javax.swing.JButton();
+        textoProductoCoincidencia = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
         OrdenesDeTrabajo = new javax.swing.JPanel();
         JTOrdenesDeTrabajo = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaOrdenesJefe = new javax.swing.JTable();
         finalizarOrden = new javax.swing.JButton();
+        textoorden_coincidencia = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
         RegistroDeVentasJefeTaller = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -230,6 +239,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         DateChooserFinal = new datechooser.beans.DateChooserCombo();
         JBBuscarVentas = new javax.swing.JButton();
         JBresetear = new javax.swing.JButton();
+        boton_reporteVentas_Jefedetaller = new javax.swing.JButton();
 
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1215,6 +1225,14 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
+        textoCoincidenciaVendedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textoCoincidenciaVendedorKeyReleased(evt);
+            }
+        });
+
+        jLabel40.setText("ID");
+
         javax.swing.GroupLayout ListaVendedoresLayout = new javax.swing.GroupLayout(ListaVendedores);
         ListaVendedores.setLayout(ListaVendedoresLayout);
         ListaVendedoresLayout.setHorizontalGroup(
@@ -1223,24 +1241,35 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addContainerGap(329, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addGap(318, 318, 318))
-            .addGroup(ListaVendedoresLayout.createSequentialGroup()
-                .addGap(278, 278, 278)
-                .addComponent(cargarButton)
-                .addGap(69, 69, 69)
-                .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(despedirBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane2)
+            .addGroup(ListaVendedoresLayout.createSequentialGroup()
+                .addGroup(ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ListaVendedoresLayout.createSequentialGroup()
+                        .addGap(278, 278, 278)
+                        .addComponent(cargarButton)
+                        .addGap(69, 69, 69)
+                        .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(despedirBtn))
+                    .addGroup(ListaVendedoresLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel40)
+                        .addGap(18, 18, 18)
+                        .addComponent(textoCoincidenciaVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ListaVendedoresLayout.setVerticalGroup(
             ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ListaVendedoresLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel13)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoCoincidenciaVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel40))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
                 .addGroup(ListaVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cargarButton)
                     .addComponent(editarUser)
@@ -1306,31 +1335,51 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
+        textoProductoCoincidencia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textoProductoCoincidenciaKeyReleased(evt);
+            }
+        });
+
+        jLabel39.setText("ID/ Nombre");
+
         javax.swing.GroupLayout InventarioLayout = new javax.swing.GroupLayout(Inventario);
         Inventario.setLayout(InventarioLayout);
         InventarioLayout.setHorizontalGroup(
             InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(InventarioLayout.createSequentialGroup()
-                .addContainerGap(279, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
-                        .addComponent(jLabel36)
-                        .addGap(300, 300, 300))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
-                        .addComponent(crearOrden)
-                        .addGap(319, 319, 319))))
-            .addComponent(jScrollPane3)
+                    .addGroup(InventarioLayout.createSequentialGroup()
+                        .addGap(0, 273, Short.MAX_VALUE)
+                        .addGroup(InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
+                                .addComponent(jLabel36)
+                                .addGap(300, 300, 300))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InventarioLayout.createSequentialGroup()
+                                .addComponent(crearOrden)
+                                .addGap(319, 319, 319))))
+                    .addComponent(jScrollPane3)
+                    .addGroup(InventarioLayout.createSequentialGroup()
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textoProductoCoincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         InventarioLayout.setVerticalGroup(
             InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(InventarioLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel36)
-                .addGap(39, 39, 39)
+                .addGap(48, 48, 48)
+                .addGroup(InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(textoProductoCoincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
+                .addGap(18, 18, 18)
                 .addComponent(crearOrden)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         parent.add(Inventario, "card7");
@@ -1366,10 +1415,19 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
+        textoorden_coincidencia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textoorden_coincidenciaKeyReleased(evt);
+            }
+        });
+
+        jLabel49.setText("ID / Nombre:");
+
         javax.swing.GroupLayout JTOrdenesDeTrabajoLayout = new javax.swing.GroupLayout(JTOrdenesDeTrabajo);
         JTOrdenesDeTrabajo.setLayout(JTOrdenesDeTrabajoLayout);
         JTOrdenesDeTrabajoLayout.setHorizontalGroup(
             JTOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4)
             .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addGroup(JTOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
@@ -1377,17 +1435,25 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                         .addComponent(jLabel33))
                     .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
                         .addGap(395, 395, 395)
-                        .addComponent(finalizarOrden)))
+                        .addComponent(finalizarOrden))
+                    .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel49)
+                        .addGap(35, 35, 35)
+                        .addComponent(textoorden_coincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(334, Short.MAX_VALUE))
-            .addComponent(jScrollPane4)
         );
         JTOrdenesDeTrabajoLayout.setVerticalGroup(
             JTOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JTOrdenesDeTrabajoLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel33)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(JTOrdenesDeTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoorden_coincidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(finalizarOrden)
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -1449,6 +1515,13 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             }
         });
 
+        boton_reporteVentas_Jefedetaller.setText("REPORTE");
+        boton_reporteVentas_Jefedetaller.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_reporteVentas_JefedetallerActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout RegistroDeVentasJefeTallerLayout = new javax.swing.GroupLayout(RegistroDeVentasJefeTaller);
         RegistroDeVentasJefeTaller.setLayout(RegistroDeVentasJefeTallerLayout);
         RegistroDeVentasJefeTallerLayout.setHorizontalGroup(
@@ -1459,20 +1532,25 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                 .addComponent(jLabel34)
                 .addGap(353, 353, 353))
             .addGroup(RegistroDeVentasJefeTallerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel38)
-                    .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(73, 73, 73)
                 .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistroDeVentasJefeTallerLayout.createSequentialGroup()
-                        .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
-                        .addComponent(JBBuscarVentas)
-                        .addGap(28, 28, 28)
-                        .addComponent(JBresetear))
-                    .addComponent(jLabel48))
-                .addContainerGap(245, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel38)
+                            .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(73, 73, 73)
+                        .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(RegistroDeVentasJefeTallerLayout.createSequentialGroup()
+                                .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(54, 54, 54)
+                                .addComponent(JBBuscarVentas)
+                                .addGap(28, 28, 28)
+                                .addComponent(JBresetear))
+                            .addComponent(jLabel48)))
+                    .addGroup(RegistroDeVentasJefeTallerLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(boton_reporteVentas_Jefedetaller)))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         RegistroDeVentasJefeTallerLayout.setVerticalGroup(
             RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1485,16 +1563,17 @@ public class vistaJefeTaller extends javax.swing.JFrame {
                     .addComponent(jLabel48))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegistroDeVentasJefeTallerLayout.createSequentialGroup()
-                        .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(RegistroDeVentasJefeTallerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(JBBuscarVentas)
                         .addComponent(JBresetear)))
-                .addGap(0, 0, 0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(boton_reporteVentas_Jefedetaller)
+                .addGap(18, 18, 18))
         );
 
         parent.add(RegistroDeVentasJefeTaller, "card9");
@@ -1681,7 +1760,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
         String vendedorSeleccionado = comboVendedoresDisponibles.getItemAt(comboVendedoresDisponibles.getSelectedIndex());
         String[] splitter = vendedorSeleccionado.split(",");
         if (control.AsignarUnVendedor(splitter[0], profileInfo.getIdSede())) {
-            JOptionPane.showConfirmDialog(null, "Asignado");
+            JOptionPane.showMessageDialog(null, "Asignado Correctamente");
+        }else {
+            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_AsignarUnVendedorActionPerformed
@@ -1799,6 +1880,42 @@ public class vistaJefeTaller extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un vendedor de la tabla");
         }
     }//GEN-LAST:event_despedirBtnActionPerformed
+
+    private void textoProductoCoincidenciaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textoProductoCoincidenciaKeyReleased
+        String busqueda = textoProductoCoincidencia.getText();
+        mdProducts.setRowCount(0); //Para limpiar la tabla
+        ArrayList<String[]> lista = control.consultProductosCoincidenciaDelJefe(this.profileInfo.getIdSede(), busqueda);
+        for (int i = 0; i < lista.size(); i++) {
+            mdProducts.addRow(lista.get(i));
+        }
+    }//GEN-LAST:event_textoProductoCoincidenciaKeyReleased
+
+    private void textoCoincidenciaVendedorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textoCoincidenciaVendedorKeyReleased
+        String busqueda = textoCoincidenciaVendedor.getText();
+        md.setRowCount(0); //Para limpiar la tabla
+        ArrayList<String[]> lista = control.consultUsersVendedoresCoincidencia(this.profileInfo.getIdSede(), busqueda);//NUEVO METODO PARA CREAR SOLO VENDEDORES Y ASIGNARLOS A LA SEDE DEL JEFE EN PARTICULAR
+        for (int i = 0; i < lista.size(); i++) {
+            md.addRow(lista.get(i));
+        }
+    }//GEN-LAST:event_textoCoincidenciaVendedorKeyReleased
+
+    private void textoorden_coincidenciaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textoorden_coincidenciaKeyReleased
+        String busqueda = textoorden_coincidencia.getText();
+        mdOrdenes.setRowCount(0);
+        ArrayList<String[]> lista = control.consultOrdenesCoincidencia(this.profileInfo.getIdSede(), busqueda);//NUEVO METODO PARA CREAR SOLO VENDEDORES Y ASIGNARLOS A LA SEDE DEL JEFE EN PARTICULAR
+        for (int i = 0; i < lista.size(); i++) {
+            mdOrdenes.addRow(lista.get(i));
+        }
+        
+    }//GEN-LAST:event_textoorden_coincidenciaKeyReleased
+
+    private void boton_reporteVentas_JefedetallerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_reporteVentas_JefedetallerActionPerformed
+        try {
+            control.generarReporteVentasJefeDeTaller(this.profileInfo.getIdSede(), fechaInicio(), fechaFinal());
+        } catch (JRException ex) {
+            Logger.getLogger(vistaGerente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_boton_reporteVentas_JefedetallerActionPerformed
     public void cargarTableProducto() {
         mdProducts.setRowCount(0); //Para limpiar la tabla
         ArrayList<String[]> lista = control.consultProductosDelJefe(this.profileInfo.getIdSede());
@@ -1890,6 +2007,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JPanel PerfilJefeTaller;
     private javax.swing.JPanel RegistroDeVentasJefeTaller;
     private javax.swing.JButton SignOut;
+    private javax.swing.JButton boton_reporteVentas_Jefedetaller;
     private javax.swing.JPanel btnAsignarEmpleados;
     private javax.swing.JPanel btnConsultarEmpleados;
     private javax.swing.JPanel btnConsultarVentas;
@@ -1952,7 +2070,9 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
@@ -1961,6 +2081,7 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2002,5 +2123,8 @@ public class vistaJefeTaller extends javax.swing.JFrame {
     private javax.swing.JTable tablaOrdenesJefe;
     private javax.swing.JTable tablaProductosJefe;
     private javax.swing.JTextField telInput;
+    private javax.swing.JTextField textoCoincidenciaVendedor;
+    private javax.swing.JTextField textoProductoCoincidencia;
+    private javax.swing.JTextField textoorden_coincidencia;
     // End of variables declaration//GEN-END:variables
 }

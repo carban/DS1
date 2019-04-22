@@ -665,11 +665,6 @@ public class vistaVendedor extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("ID/Nombre  Producto");
 
-        jtfIDproducto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfIDproductoActionPerformed(evt);
-            }
-        });
         jtfIDproducto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtfIDproductoKeyReleased(evt);
@@ -1174,10 +1169,6 @@ public class vistaVendedor extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnProductosActionPerformed
-
-    private void jtfIDproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfIDproductoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtfIDproductoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:

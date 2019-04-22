@@ -1,13 +1,24 @@
 package ModeloDAO;
 
 import Modelo.Producto;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import org.postgresql.util.PSQLException;
 
 /**
@@ -224,7 +235,7 @@ public class ProductoDAO {
     }
 
     public Producto consultProductosCoincidencia(String nombre) {
-        String QuerySQL = "SELECT * FROM producto WHERE LOWER (nombre)  LIKE LOWER ( '" + nombre + "%') OR "
+        String QuerySQL = "SELECT * FROM producto WHERE LOWER (nombre)  LIKE LOWER ( '%" + nombre + "%') OR "
                 + "CAST(idProducto AS TEXT) LIKE '" + nombre + "%' ";
         Connection coneccion = this.access.getConnetion();
 
@@ -474,7 +485,8 @@ public class ProductoDAO {
         String[] registro = new String[5];
 
         modelo = new DefaultTableModel(null, titulos);
-
+        System.out.println(fechaInicio);
+        System.out.println(fechaFinal);
         sSql = " SELECT v.idventa, u.iduser ,s.city,v.fecha,v.preciototal "
                 + "FROM venta v ,users u, sedes s, vendedoressede ven "
                 + " WHERE  u.iduser = ven.iduser and v.iduser = u.iduser and v.idsedes = s.idsedes and  ven.idsedes  =   s.idsedes  and  v.fecha between '" + fechaInicio + "' and '" + fechaFinal + "';  ";
@@ -608,6 +620,95 @@ public class ProductoDAO {
             JOptionPane.showMessageDialog(null, e);
             return null;
         }
+    }
+
+    public ArrayList<String[]> consulProductosCoincidenciaDelJefe(String idSede, String busqueda) {
+                
+        String QuerySQL = "SELECT * FROM "
+                + "(Select idproducto, idsedes, nombre, descripcion, color, alto, largo, ancho, precio, cantidad from "
+                + "(select * from inventario order by idsedes, idproducto) as foo natural join (select * from producto) as goo) "
+                + "as cons WHERE cons.idsedes = '"+idSede+"' AND (LOWER (cons.nombre)  LIKE LOWER ( '%" + busqueda + "%') OR "
+                + "CAST(cons.idProducto AS TEXT) LIKE '" + busqueda + "%') ";
+
+        Connection coneccion = this.access.getConnetion();
+//        System.out.println("Connection: " + coneccion);
+
+        try {
+            Statement sentencia = coneccion.createStatement();
+//            System.out.println("sentencia: " + sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+//            System.out.println("resultado: " + resultado);
+
+            ArrayList<String[]> matrixList = new ArrayList<String[]>();
+            int cont = 0;
+            while (resultado.next()) {
+
+                String a1 = resultado.getString("idproducto");
+                String a2 = resultado.getString("idsedes");
+                String a3 = resultado.getString("nombre");
+                String a4 = resultado.getString("descripcion");
+                String a5 = resultado.getString("color");
+                String a6 = resultado.getString("alto");
+                String a7 = resultado.getString("largo");
+                String a8 = resultado.getString("ancho");
+                String a9 = resultado.getString("precio");
+                String a10 = resultado.getString("cantidad");
+                String[] niu = {a1, a2, a3, a4, a5, a6, a7, a8, a9, a10}; //Es importante crear un nuevo arreglo cada vez
+                matrixList.add(niu);
+                cont++;
+            }
+            return matrixList;
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+    public void generarReporte(String Finicio, String Ffinal) throws JRException {
+        Connection coneccion = this.access.getConnetion();
+        String report = "/home/carban/NetBeansProjects/DS6/DS1/src/Reportes/report1.jrxml";
+        Map parametro = new HashMap();
+        parametro.put("fechaInicio", Finicio);
+        parametro.put("fechaFin", Ffinal);
+        JasperReport jr = JasperCompileManager.compileReport(report);
+        JasperPrint jp = JasperFillManager.fillReport(jr, parametro, coneccion);
+        JasperViewer jv = new JasperViewer(jp, false);
+        jv.setTitle("Reporte de ventas");
+        jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        jv.setVisible(true);
+        
+        
+//        JasperReport reporte = (JasperReport) JRLoader.loadObject("/home/carban/NetBeansProjects/DS6/DS1/src/Reportes/newReport.jasper");
+////        URL path = this.getClass().getResource("src/Reportes/newReport.jasper");
+//        JasperPrint print = JasperFillManager.fillReport(reporte, null, coneccion);
+//        JasperViewer jv = new JasperViewer(print, false);
+//        jv.setTitle("Reporte de ventas");
+//        jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+//        jv.setVisible(true);
+        
+
+
+//        String REPORT = "/home/carban/Desktop/report1.jrxml";
+//        JasperReport rep = JasperCompileManager.compileReport(REPORT);
+//        JasperPrint print = JasperFillManager.fillReport(rep, null, coneccion);
+//        JasperViewer.viewReport(print);
+    }
+
+    public void generarReporteVentasJefeDeTaller(String sede, String fechaInicio, String fechaFinal) throws JRException {
+        Connection coneccion = this.access.getConnetion();
+        String report = "/home/carban/NetBeansProjects/DS6/DS1/src/Reportes/report2.jrxml";
+        Map parametro = new HashMap();
+        parametro.put("fechaInicio", fechaInicio);
+        parametro.put("fechaFin", fechaFinal);
+        parametro.put("sede", sede);
+        JasperReport jr = JasperCompileManager.compileReport(report);
+        JasperPrint jp = JasperFillManager.fillReport(jr, parametro, coneccion);
+        JasperViewer jv = new JasperViewer(jp, false);
+        jv.setTitle("Reporte de ventas");
+        jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        jv.setVisible(true);
     }
 
 }

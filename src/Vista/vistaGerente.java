@@ -15,11 +15,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
 
 /**
  *
@@ -244,6 +247,7 @@ public class vistaGerente extends javax.swing.JFrame {
         DateChooserFinal = new datechooser.beans.DateChooserCombo();
         JBBuscarVentas = new javax.swing.JButton();
         JBresetear = new javax.swing.JButton();
+        reporteVentas = new javax.swing.JButton();
 
         editPopUp.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1030,7 +1034,7 @@ public class vistaGerente extends javax.swing.JFrame {
                         .addGap(354, 354, 354)
                         .addComponent(jLabel14))
                     .addGroup(PerfilGerenteLayout.createSequentialGroup()
-                        .addGap(404, 404, 404)
+                        .addGap(407, 407, 407)
                         .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(SignOut)
                             .addComponent(jLabel18))))
@@ -1707,6 +1711,13 @@ public class vistaGerente extends javax.swing.JFrame {
             }
         });
 
+        reporteVentas.setText("REPORTE");
+        reporteVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reporteVentasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout RegistroDeVentasGerenteLayout = new javax.swing.GroupLayout(RegistroDeVentasGerente);
         RegistroDeVentasGerente.setLayout(RegistroDeVentasGerenteLayout);
         RegistroDeVentasGerenteLayout.setHorizontalGroup(
@@ -1717,20 +1728,25 @@ public class vistaGerente extends javax.swing.JFrame {
                 .addComponent(jLabel29)
                 .addGap(353, 353, 353))
             .addGroup(RegistroDeVentasGerenteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(RegistroDeVentasGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel32)
-                    .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(73, 73, 73)
                 .addGroup(RegistroDeVentasGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistroDeVentasGerenteLayout.createSequentialGroup()
-                        .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
-                        .addComponent(JBBuscarVentas)
-                        .addGap(28, 28, 28)
-                        .addComponent(JBresetear))
-                    .addComponent(jLabel42))
-                .addContainerGap(245, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(RegistroDeVentasGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel32)
+                            .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(73, 73, 73)
+                        .addGroup(RegistroDeVentasGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(RegistroDeVentasGerenteLayout.createSequentialGroup()
+                                .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(54, 54, 54)
+                                .addComponent(JBBuscarVentas)
+                                .addGap(28, 28, 28)
+                                .addComponent(JBresetear))
+                            .addComponent(jLabel42)))
+                    .addGroup(RegistroDeVentasGerenteLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(reporteVentas)))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         RegistroDeVentasGerenteLayout.setVerticalGroup(
             RegistroDeVentasGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1743,16 +1759,17 @@ public class vistaGerente extends javax.swing.JFrame {
                     .addComponent(jLabel42))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(RegistroDeVentasGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegistroDeVentasGerenteLayout.createSequentialGroup()
-                        .addGroup(RegistroDeVentasGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RegistroDeVentasGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(DateChooserInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DateChooserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(RegistroDeVentasGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(JBBuscarVentas)
                         .addComponent(JBresetear)))
-                .addGap(0, 0, 0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(reporteVentas)
+                .addGap(37, 37, 37))
         );
 
         parent.add(RegistroDeVentasGerente, "card9");
@@ -2179,6 +2196,14 @@ public class vistaGerente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_textoCoincidenciaSedesKeyReleased
 
+    private void reporteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteVentasActionPerformed
+        try {
+            control.generarReporte(fechaInicio(), fechaFinal());
+        } catch (JRException ex) {
+            Logger.getLogger(vistaGerente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_reporteVentasActionPerformed
+
     private void cleanCreateSection() {
         idInput.setText("");
         fnameInput.setText("");
@@ -2395,6 +2420,7 @@ public class vistaGerente extends javax.swing.JFrame {
     private javax.swing.JLabel profileLName;
     private javax.swing.JLabel profileTel;
     private javax.swing.JLabel profileWP;
+    private javax.swing.JButton reporteVentas;
     private javax.swing.JButton saveButton;
     private javax.swing.JButton saveButtonSede;
     private javax.swing.JPanel side_pane;

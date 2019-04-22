@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
 
 public class Controladora {
 
@@ -268,6 +269,26 @@ public class Controladora {
 
     public ArrayList<String[]> consultSedesCoincidencia_tabla(String busqueda) {
         return sedesDao.consultSedesCoincidencia_tabla(busqueda);
+    }
+
+    public ArrayList<String[]> consultProductosCoincidenciaDelJefe(String idSede, String busqueda) {
+        return productoDao.consulProductosCoincidenciaDelJefe(idSede, busqueda);
+    }
+
+    public ArrayList<String[]> consultUsersVendedoresCoincidencia(String idSede, String busqueda) {
+        return jefesDao.consultUsersVendedoresCoincidencia(idSede, busqueda);
+    }
+
+    public void generarReporte(String finicio, String ffinal) throws JRException {
+        productoDao.generarReporte(finicio, ffinal);
+    }
+
+    public ArrayList<String[]> consultOrdenesCoincidencia(String idSede, String busqueda) {
+        return ordenDao.consultOrdenesCoincidencia(idSede, busqueda);
+    }
+
+    public void generarReporteVentasJefeDeTaller(String sede, String fechaInicio, String fechaFinal) throws JRException {
+        productoDao.generarReporteVentasJefeDeTaller(sede, fechaInicio, fechaFinal);
     }
 
 
