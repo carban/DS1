@@ -111,7 +111,11 @@ public class Controladora {
     //Funcion para crear usuarios desde el gerente
     public boolean createUser(String id, String fname, String lname, String telefono, String direccion, String position, String pass) {
         Users aU = new Users(id, fname, lname, telefono, direccion, position, pass);
-        aU.setState("Inactivo");
+        if(position.equals("Gerente")){
+            aU.setState("Activo");
+        }else{
+            aU.setState("Inactivo");
+        }
         return usersDao.createNewUser(aU);
     }
 
@@ -126,6 +130,12 @@ public class Controladora {
     public boolean updateUser(String id, String fname, String lname, String telefono, String direccion, String position) {
         Users aU = new Users(id, fname, lname, telefono, direccion, position);
         return usersDao.updateUser(aU);
+    }
+    
+    //Actualizar un gerente desde el Administrador del Sistema
+    public boolean updateGerente(String id, String fname, String lname, String telefono, String direccion, String position) {
+        Users aU = new Users(id, fname, lname, telefono, direccion, position);
+        return usersDao.updateGerente(aU);
     }
 
     //Funcion para actualizar usuarios desde el gerente
@@ -146,10 +156,18 @@ public class Controladora {
         return usersDao.consultUsers();
     }
     
+    public ArrayList<String[]> consultGerente() {
+        return usersDao.consultGerente();
+    }
+    
     public boolean despedirUsuario(String idUser){
         return usersDao.despedirUsuario(idUser);
     }
-
+    
+    public boolean despedirGerente(String idUser){
+        return usersDao.despedirGerente(idUser);
+    }
+    
     //Funcion para consultar vendedores desde el Jefe de taller
     public ArrayList<String[]> consultUsersVendedores(String idSede) {
         return jefesDao.consultUsersVendedores(idSede);

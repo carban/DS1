@@ -668,7 +668,7 @@ public class ProductoDAO {
 
     public void generarReporte(String Finicio, String Ffinal) throws JRException {
         Connection coneccion = this.access.getConnetion();
-        String report = "/home/carban/NetBeansProjects/DS6/DS1/src/Reportes/report1.jrxml";
+        String report = "/home/juancamilo/Cursos/2018-2/Desarrollo/DS1/src/Reportes/report1.jrxml";
         Map parametro = new HashMap();
         parametro.put("fechaInicio", Finicio);
         parametro.put("fechaFin", Ffinal);
@@ -698,7 +698,7 @@ public class ProductoDAO {
 
     public void generarReporteVentasJefeDeTaller(String sede, String fechaInicio, String fechaFinal) throws JRException {
         Connection coneccion = this.access.getConnetion();
-        String report = "/home/carban/NetBeansProjects/DS6/DS1/src/Reportes/report2.jrxml";
+        String report = "/home/juancamilo/Cursos/2018-2/Desarrollo/DS1/src/Reportes/report2.jrxml";
         Map parametro = new HashMap();
         parametro.put("fechaInicio", fechaInicio);
         parametro.put("fechaFin", fechaFinal);

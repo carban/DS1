@@ -194,6 +194,7 @@ public class vistaGerente extends javax.swing.JFrame {
         comboFiltroPosicion = new javax.swing.JComboBox<>();
         textoCoincidenciaUsuarios = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
+        despedirBtn = new javax.swing.JButton();
         CrearSede = new javax.swing.JPanel();
         pink1 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -1254,6 +1255,13 @@ public class vistaGerente extends javax.swing.JFrame {
 
         jLabel60.setText("ID");
 
+        despedirBtn.setText("DESPEDIR");
+        despedirBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                despedirBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ListarUsuarioLayout = new javax.swing.GroupLayout(ListarUsuario);
         ListarUsuario.setLayout(ListarUsuarioLayout);
         ListarUsuarioLayout.setHorizontalGroup(
@@ -1268,8 +1276,10 @@ public class vistaGerente extends javax.swing.JFrame {
                     .addGroup(ListarUsuarioLayout.createSequentialGroup()
                         .addGap(249, 249, 249)
                         .addComponent(cargarButton)
-                        .addGap(130, 130, 130)
-                        .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(68, 68, 68)
+                        .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(despedirBtn))
                     .addGroup(ListarUsuarioLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel60)
@@ -1277,7 +1287,7 @@ public class vistaGerente extends javax.swing.JFrame {
                         .addComponent(textoCoincidenciaUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
                         .addComponent(comboFiltroPosicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(226, Short.MAX_VALUE))
         );
         ListarUsuarioLayout.setVerticalGroup(
             ListarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1294,8 +1304,9 @@ public class vistaGerente extends javax.swing.JFrame {
                 .addGap(64, 64, 64)
                 .addGroup(ListarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cargarButton)
-                    .addComponent(editarUser))
-                .addContainerGap(69, Short.MAX_VALUE))
+                    .addComponent(editarUser)
+                    .addComponent(despedirBtn))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         parent.add(ListarUsuario, "card4");
@@ -2204,6 +2215,23 @@ public class vistaGerente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reporteVentasActionPerformed
 
+    private void despedirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_despedirBtnActionPerformed
+        // TODO add your handling code here:
+        try {
+            int index = tablaDatos.getSelectedRow();
+            String aid = tablaDatos.getModel().getValueAt(index, 0).toString();
+            boolean despedirGerente = control.despedirUsuario(aid);
+            if(despedirGerente){
+                JOptionPane.showMessageDialog(null, "Usuario despedido");
+                this.cargarTable();
+            }else{
+                JOptionPane.showMessageDialog(null, "No se pudo despedir");
+            }
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un usuario de la tabla");
+        }
+    }//GEN-LAST:event_despedirBtnActionPerformed
+
     private void cleanCreateSection() {
         idInput.setText("");
         fnameInput.setText("");
@@ -2314,6 +2342,7 @@ public class vistaGerente extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboWP;
     private javax.swing.JButton crearProducto;
     private javax.swing.JButton createUser;
+    private javax.swing.JButton despedirBtn;
     private javax.swing.JTextField dirInput;
     private javax.swing.JFrame editPopUp;
     private javax.swing.JFrame editSedePopUp;

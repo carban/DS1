@@ -34,6 +34,9 @@ public class UsersDAO {
                 else if(cargo.equals("Vendedor")){
                     return "Vendedor";
                 }
+                else if(cargo.equals("admin")){
+                    return "Admin";
+                }
             }else{
                 return "error";
             }
@@ -112,7 +115,43 @@ public class UsersDAO {
     
     
     public ArrayList<String[]> consultUsers(){
-        String QuerySQL = "select iduser, first_name, last_name, telefono, direccion, work_position from users where work_position='Jefe de Taller' union select iduser, first_name, last_name, telefono, direccion, work_position from users where work_position='Vendedor'";
+        String QuerySQL = "select iduser, first_name, last_name, telefono, direccion, work_position from users where work_position='Jefe de Taller' and stateuser='Activo' union select iduser, first_name, last_name, telefono, direccion, work_position from users where work_position='Vendedor' and stateuser='Activo'";
+        System.out.println(QuerySQL);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQL);
+            System.out.println("resultado: "+resultado);
+            
+
+            ArrayList<String[]> matrixList = new ArrayList<String[]>();
+            int cont = 0;
+            while (resultado.next()) {
+                
+                String a1 = resultado.getString("iduser");
+                String a2 = resultado.getString("first_name");
+                String a3 = resultado.getString("last_name");
+                String a4 = resultado.getString("telefono");
+                String a5 = resultado.getString("direccion");
+                String a6 = resultado.getString("work_position");
+                String[] niu = {a1, a2, a3, a4, a5, a6}; //Es importante crear un nuevo arreglo cada vez
+                matrixList.add(niu);
+                cont++;
+            }
+            return matrixList;
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
+    public ArrayList<String[]> consultGerente(){
+        String QuerySQL = "select iduser, first_name, last_name, telefono, direccion, work_position from users where work_position='Gerente' and stateuser='Activo'";
         System.out.println(QuerySQL);
         Connection coneccion= this.access.getConnetion();
         System.out.println("Connection: "+coneccion);
@@ -201,11 +240,11 @@ public class UsersDAO {
         
     }
     
-    public boolean despedirUsuario(String idUser){
-            String QuerySQL = "UPDATE Users SET stateUser = 'Inactivo' where idUser = "+idUser;
+    public boolean updateGerente(Users aUser) {
+            String QuerySQL = "UPDATE Users SET first_name='"+aUser.getFname()+ "', last_name='"+aUser.getLname()
+                    +"', telefono='"+aUser.getTel()+"', direccion='"+aUser.getDir()+"' WHERE iduser = '"+aUser.getId()+"' AND work_position='Gerente'";
             
-        String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = "+idUser+" AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
-        String QueryDelete = "DELETE FROM vendedoresSede WHERE idUser= "+idUser;
+        String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = '"+aUser.getId()+"' AND work_position='Gerente'";
         System.out.println(QuerySQL);
         System.out.println(QuerySQLaux);
         Connection coneccion= this.access.getConnetion();
@@ -218,8 +257,73 @@ public class UsersDAO {
             System.out.println("resultado: "+resultado);
             if(resultado.next()){
                 int res = sentencia.executeUpdate(QuerySQL);
+                if(res==1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return false;    
+        
+    }
+    
+    public boolean despedirUsuario(String idUser){
+        String QuerySQL = "UPDATE Users SET stateUser = 'Inactivo' where idUser = "+idUser;  
+        String QuerySQLaux = "SELECT idUser,work_position FROM Users WHERE idUser = "+idUser+" AND (work_position='Jefe de Taller' OR work_position='Vendedor')";
+        String QueryDelete = "DELETE FROM vendedoresSede WHERE idUser= "+idUser;
+        System.out.println(QuerySQL);
+        System.out.println(QuerySQLaux);
+        Connection coneccion = this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQLaux);
+            System.out.println("resultado: "+resultado);
+            if(resultado.next()){
+                String cargo = resultado.getString("work_position");
+                int res = sentencia.executeUpdate(QuerySQL);
                 int res2 = sentencia.executeUpdate(QueryDelete);
-                if(res==1 && res2==1){
+                if(res==1 && (res2==1 || cargo.equals("Jefe de Taller"))){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("---- Problema en la ejecucion.");
+            ex.printStackTrace();
+        }
+        return false;  
+    }
+    
+    public boolean despedirGerente(String idUser){
+        String QuerySQL = "UPDATE Users SET stateUser = 'Inactivo' where idUser = "+idUser;           
+        String QuerySQLaux = "SELECT idUser FROM Users WHERE idUser = "+idUser+" AND work_position='Gerente'";
+        System.out.println(QuerySQL);
+        System.out.println(QuerySQLaux);
+        Connection coneccion= this.access.getConnetion();
+        System.out.println("Connection: "+coneccion);
+        
+        try {
+            Statement sentencia = coneccion.createStatement();
+            System.out.println("sentencia: "+sentencia);
+            ResultSet resultado = sentencia.executeQuery(QuerySQLaux);
+            System.out.println("resultado: "+resultado);
+            if(resultado.next()){
+                int res = sentencia.executeUpdate(QuerySQL);
+                if(res==1){
                     return true;
                 }else{
                     return false;

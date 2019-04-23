@@ -338,7 +338,12 @@ public class login2 extends javax.swing.JFrame {
                         viJefeTaller.setLocationRelativeTo(null);
                         viJefeTaller.setVisible(true);
                         dispose();
-                    } else {
+                    } else if (aux == "Admin") {
+                        vistaAdmin viAdmin = new vistaAdmin(user);
+                        viAdmin.setLocationRelativeTo(null);
+                        viAdmin.setVisible(true);
+                        dispose();
+                    }else {
                         JOptionPane.showMessageDialog(null, "Informacion incorrecta, prueba otra vez", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 } catch (NumberFormatException e) {
