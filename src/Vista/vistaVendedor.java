@@ -299,6 +299,7 @@ public class vistaVendedor extends javax.swing.JFrame {
         side_pane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnPerfil.setBackground(new java.awt.Color(0, 0, 0));
+        btnPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnPerfilMousePressed(evt);
@@ -347,6 +348,7 @@ public class vistaVendedor extends javax.swing.JFrame {
         side_pane.add(btnPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 190, -1));
 
         btnCotizacion.setBackground(new java.awt.Color(0, 0, 0));
+        btnCotizacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCotizacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnCotizacionMousePressed(evt);
@@ -395,6 +397,7 @@ public class vistaVendedor extends javax.swing.JFrame {
         side_pane.add(btnCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 190, -1));
 
         btnProductosDisponibles.setBackground(new java.awt.Color(0, 0, 0));
+        btnProductosDisponibles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnProductosDisponibles.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnProductosDisponiblesMouseClicked(evt);
@@ -490,51 +493,55 @@ public class vistaVendedor extends javax.swing.JFrame {
 
         PerfilVendedor.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setText("PERFIL VENDEDOR");
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setText("ID :");
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel2.setText("Nombre");
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel4.setText("Apellido: ");
 
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel5.setText("Telefono:");
 
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel6.setText("Cargo:");
 
-        jLabel12.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel12.setText("Direccion:");
 
-        profileFName.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileFName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileFName.setText("jLabel15");
 
-        profileID.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileID.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileID.setText("jLabel15");
 
-        profileLName.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileLName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileLName.setText("jLabel15");
 
-        profileTel.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileTel.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileTel.setText("jLabel15");
 
-        profileDir.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileDir.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileDir.setText("jLabel15");
 
-        profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileWP.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileWP.setText("jLabel15");
 
-        SignOut.setBackground(new java.awt.Color(255, 0, 51));
+        SignOut.setBackground(new java.awt.Color(255, 255, 255));
         SignOut.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         SignOut.setForeground(new java.awt.Color(255, 255, 255));
-        SignOut.setText("SALIR");
+        SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/salida.png"))); // NOI18N
+        SignOut.setBorderPainted(false);
+        SignOut.setContentAreaFilled(false);
+        SignOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SignOut.setFocusable(false);
         SignOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignOutActionPerformed(evt);
@@ -543,16 +550,16 @@ public class vistaVendedor extends javax.swing.JFrame {
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/profile.png"))); // NOI18N
 
-        jLabel33.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel33.setText("Código Sede:");
 
-        profileSede.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileSede.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileSede.setText("jLabel15");
 
-        jLabel34.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel34.setText("Sede");
 
-        profileidSede.setFont(new java.awt.Font("DejaVu Sans", 0, 14)); // NOI18N
+        profileidSede.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileidSede.setText("jLabel15");
 
         javax.swing.GroupLayout PerfilVendedorLayout = new javax.swing.GroupLayout(PerfilVendedor);
@@ -565,84 +572,84 @@ public class vistaVendedor extends javax.swing.JFrame {
                         .addGap(272, 272, 272)
                         .addComponent(jLabel3))
                     .addGroup(PerfilVendedorLayout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(SignOut)
-                            .addComponent(jLabel18)))
-                    .addGroup(PerfilVendedorLayout.createSequentialGroup()
                         .addGap(342, 342, 342)
                         .addComponent(jLabel14))
                     .addGroup(PerfilVendedorLayout.createSequentialGroup()
-                        .addGap(322, 322, 322)
-                        .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(PerfilVendedorLayout.createSequentialGroup()
-                                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel33))
-                                .addGap(72, 72, 72)
-                                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(profileWP)
-                                    .addComponent(profileDir)
-                                    .addComponent(profileTel)
-                                    .addComponent(profileLName)
-                                    .addComponent(profileFName)
-                                    .addComponent(profileID)
-                                    .addComponent(profileidSede)))
-                            .addGroup(PerfilVendedorLayout.createSequentialGroup()
-                                .addComponent(jLabel34)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(profileSede)))))
-                .addContainerGap(327, Short.MAX_VALUE))
+                        .addGap(0, 287, Short.MAX_VALUE)
+                        .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel33)
+                            .addComponent(jLabel34))
+                        .addGap(101, 101, 101)
+                        .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(profileWP)
+                                .addComponent(profileDir)
+                                .addComponent(profileTel)
+                                .addComponent(profileLName)
+                                .addComponent(profileFName)
+                                .addComponent(profileID)
+                                .addComponent(profileidSede))
+                            .addComponent(profileSede, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(325, 325, 325))
+            .addGroup(PerfilVendedorLayout.createSequentialGroup()
+                .addGap(385, 385, 385)
+                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel18)
+                    .addComponent(SignOut))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PerfilVendedorLayout.setVerticalGroup(
             PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PerfilVendedorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addGap(43, 43, 43)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(profileID))
-                .addGap(14, 14, 14)
-                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(profileFName)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(profileLName))
                 .addGap(18, 18, 18)
-                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(profileTel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(profileDir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(profileWP))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33)
-                    .addComponent(profileidSede))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel34)
-                    .addComponent(profileSede))
-                .addGap(60, 60, 60)
-                .addComponent(SignOut)
-                .addGap(32, 32, 32))
+                .addGroup(PerfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PerfilVendedorLayout.createSequentialGroup()
+                        .addComponent(profileID)
+                        .addGap(14, 14, 14)
+                        .addComponent(profileFName)
+                        .addGap(15, 15, 15)
+                        .addComponent(profileLName)
+                        .addGap(19, 19, 19)
+                        .addComponent(profileTel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(profileDir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(profileWP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(profileidSede)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(profileSede)
+                        .addGap(37, 37, 37)
+                        .addComponent(SignOut))
+                    .addGroup(PerfilVendedorLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel34)))
+                .addGap(49, 49, 49))
         );
 
         parent.add(PerfilVendedor, "card6");
@@ -699,14 +706,22 @@ public class vistaVendedor extends javax.swing.JFrame {
 
         jtfTotal.setEditable(false);
 
-        JBagregarprodu.setText("Agregar");
+        JBagregarprodu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/agregarVenta.png"))); // NOI18N
+        JBagregarprodu.setBorderPainted(false);
+        JBagregarprodu.setContentAreaFilled(false);
+        JBagregarprodu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JBagregarprodu.setFocusable(false);
         JBagregarprodu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBagregarproduActionPerformed(evt);
             }
         });
 
-        JBeliminar.setText("Eliminar");
+        JBeliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/eliminar.png"))); // NOI18N
+        JBeliminar.setBorderPainted(false);
+        JBeliminar.setContentAreaFilled(false);
+        JBeliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JBeliminar.setFocusable(false);
         JBeliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBeliminarActionPerformed(evt);
@@ -718,7 +733,11 @@ public class vistaVendedor extends javax.swing.JFrame {
             }
         });
 
-        JBlimpiar.setText("Limpiar");
+        JBlimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/limpiar.png"))); // NOI18N
+        JBlimpiar.setBorderPainted(false);
+        JBlimpiar.setContentAreaFilled(false);
+        JBlimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JBlimpiar.setFocusable(false);
         JBlimpiar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JBlimpiarMouseClicked(evt);
@@ -763,9 +782,9 @@ public class vistaVendedor extends javax.swing.JFrame {
                                 .addComponent(jtfproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(77, 77, 77)
                                 .addComponent(JBagregarprodu)
-                                .addGap(35, 35, 35)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(JBeliminar)
-                                .addGap(34, 34, 34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(JBlimpiar)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpCotizacionLayout.createSequentialGroup()
@@ -800,7 +819,7 @@ public class vistaVendedor extends javax.swing.JFrame {
                 .addGroup(JpCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JBlimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jtfIDproducto)
-                    .addComponent(JBagregarprodu, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(JBagregarprodu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jtfproducto, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(JBeliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(40, 40, 40)
@@ -837,7 +856,11 @@ public class vistaVendedor extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jtDispoVen);
 
-        btnVenta.setText("Realizar Venta");
+        btnVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/RealizarVenta.png"))); // NOI18N
+        btnVenta.setBorderPainted(false);
+        btnVenta.setContentAreaFilled(false);
+        btnVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVenta.setFocusable(false);
         btnVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVentaActionPerformed(evt);
@@ -854,7 +877,11 @@ public class vistaVendedor extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel28.setText("ID Usuario ");
 
-        btnProductos.setText("Productos");
+        btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/bolsadeCompra.png"))); // NOI18N
+        btnProductos.setBorderPainted(false);
+        btnProductos.setContentAreaFilled(false);
+        btnProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProductos.setFocusable(false);
         btnProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProductosActionPerformed(evt);
@@ -866,7 +893,11 @@ public class vistaVendedor extends javax.swing.JFrame {
 
         jtTotal.setEditable(false);
 
-        jButton1.setText("Eliminar");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/eliminar.png"))); // NOI18N
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusable(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -882,7 +913,11 @@ public class vistaVendedor extends javax.swing.JFrame {
         lblFecha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblFecha.setText("jLabel24");
 
-        jbtRegistroDeVentas.setText("Registro De Ventas");
+        jbtRegistroDeVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/registro.png"))); // NOI18N
+        jbtRegistroDeVentas.setBorderPainted(false);
+        jbtRegistroDeVentas.setContentAreaFilled(false);
+        jbtRegistroDeVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtRegistroDeVentas.setFocusable(false);
         jbtRegistroDeVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtRegistroDeVentasActionPerformed(evt);
@@ -898,6 +933,13 @@ public class vistaVendedor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
+                        .addComponent(jtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(JTidVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
+                    .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
                         .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
                                 .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -912,22 +954,15 @@ public class vistaVendedor extends javax.swing.JFrame {
                                         .addComponent(btnProductos)
                                         .addGap(18, 18, 18)
                                         .addComponent(jButton1)
-                                        .addGap(45, 45, 45)
+                                        .addGap(18, 18, 18)
                                         .addComponent(jbtRegistroDeVentas))))
                             .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
                                 .addComponent(jLabel29)
                                 .addGap(134, 134, 134)
                                 .addComponent(jLabel23)))
-                        .addContainerGap(211, Short.MAX_VALUE))
-                    .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
-                        .addComponent(jtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(JTidVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVenta)
-                        .addGap(21, 21, 21))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProductosDisponiblesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(302, Short.MAX_VALUE)
                 .addComponent(jLabel22)
                 .addGap(117, 117, 117)
                 .addComponent(lblFecha)
@@ -954,17 +989,19 @@ public class vistaVendedor extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
-                .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel23))
+                .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
-                        .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel29)
-                            .addComponent(jLabel23))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(ProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JTidVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64))
+                    .addGroup(ProductosDisponiblesLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(btnVenta)))
+                .addGap(73, 73, 73))
         );
 
         parent.add(ProductosDisponibles, "card4");

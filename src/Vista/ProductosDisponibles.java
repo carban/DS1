@@ -60,6 +60,7 @@ public class ProductosDisponibles extends javax.swing.JFrame implements WindowFo
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Productos Disponibles");
 
+        jTproductosDis.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jTproductosDis.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -83,7 +84,11 @@ public class ProductosDisponibles extends javax.swing.JFrame implements WindowFo
         });
         jScrollPane1.setViewportView(jTproductosDis);
 
-        btnAgregarProducto.setText("Agregar");
+        btnAgregarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/agregarVenta.png"))); // NOI18N
+        btnAgregarProducto.setBorderPainted(false);
+        btnAgregarProducto.setContentAreaFilled(false);
+        btnAgregarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregarProducto.setFocusable(false);
         btnAgregarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarProductoActionPerformed(evt);
@@ -162,7 +167,7 @@ public class ProductosDisponibles extends javax.swing.JFrame implements WindowFo
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtfIDproducto1)
                             .addComponent(jtfproducto1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnAgregarProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
+                            .addComponent(btnAgregarProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(35, 35, 35))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jTCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)

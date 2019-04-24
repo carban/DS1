@@ -51,7 +51,7 @@
 		<band height="70" splitType="Stretch">
 			<image>
 				<reportElement x="275" y="0" width="300" height="64"/>
-				<imageExpression><![CDATA["/home/juancamilo/Cursos/2018-2/Desarrollo/DS1/src/Reportes/leaf_banner_red.png"]]></imageExpression>
+				<imageExpression><![CDATA["C:/Users/Acer/DS1/src/Reportes/leaf_banner_red.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement style="Title" x="0" y="13" width="363" height="33"/>

@@ -267,10 +267,11 @@ public class vistaAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        side_pane.setBackground(new java.awt.Color(23, 35, 51));
+        side_pane.setBackground(new java.awt.Color(0, 0, 0));
         side_pane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_1.setBackground(new java.awt.Color(23, 35, 51));
+        btn_1.setBackground(new java.awt.Color(0, 0, 0));
+        btn_1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_1MousePressed(evt);
@@ -291,7 +292,7 @@ public class vistaAdmin extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Perfil");
 
@@ -301,9 +302,9 @@ public class vistaAdmin extends javax.swing.JFrame {
             btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_1Layout.createSequentialGroup()
                 .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addGap(0, 120, Short.MAX_VALUE))
+                .addGap(0, 125, Short.MAX_VALUE))
         );
         btn_1Layout.setVerticalGroup(
             btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,7 +319,8 @@ public class vistaAdmin extends javax.swing.JFrame {
 
         side_pane.add(btn_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 190, -1));
 
-        btn_3.setBackground(new java.awt.Color(23, 35, 51));
+        btn_3.setBackground(new java.awt.Color(0, 0, 0));
+        btn_3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_3MousePressed(evt);
@@ -339,7 +341,7 @@ public class vistaAdmin extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Crear Gerentes");
 
@@ -349,9 +351,9 @@ public class vistaAdmin extends javax.swing.JFrame {
             btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_3Layout.createSequentialGroup()
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(17, 17, 17))
         );
         btn_3Layout.setVerticalGroup(
             btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,13 +368,14 @@ public class vistaAdmin extends javax.swing.JFrame {
 
         side_pane.add(btn_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 190, -1));
 
-        btn_4.setBackground(new java.awt.Color(23, 35, 51));
+        btn_4.setBackground(new java.awt.Color(0, 0, 0));
+        btn_4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_4MousePressed(evt);
-            }
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_4consultarEmpleados(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_4MousePressed(evt);
             }
         });
 
@@ -390,7 +393,7 @@ public class vistaAdmin extends javax.swing.JFrame {
             .addGap(0, 43, Short.MAX_VALUE)
         );
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Consultar Gerentes");
 
@@ -400,9 +403,9 @@ public class vistaAdmin extends javax.swing.JFrame {
             btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_4Layout.createSequentialGroup()
                 .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel11)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btn_4Layout.setVerticalGroup(
             btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,51 +462,55 @@ public class vistaAdmin extends javax.swing.JFrame {
         PerfilGerente.setBackground(new java.awt.Color(255, 255, 255));
         PerfilGerente.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel14.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setText("PERFIL ADMIN DEL SISTEMA");
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel1.setText("ID :");
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setText("Nombre");
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setText("Apellido: ");
 
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel5.setText("Telefono:");
 
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel6.setText("Cargo:");
 
-        jLabel12.setFont(new java.awt.Font("DejaVu Sans", 1, 16)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel12.setText("Direccion:");
 
-        profileFName.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileFName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileFName.setText("jLabel15");
 
-        profileID.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileID.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileID.setText("jLabel15");
 
-        profileLName.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileLName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileLName.setText("jLabel15");
 
-        profileTel.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileTel.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileTel.setText("jLabel15");
 
-        profileDir.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileDir.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileDir.setText("jLabel15");
 
-        profileWP.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        profileWP.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         profileWP.setText("jLabel15");
 
-        SignOut.setBackground(new java.awt.Color(255, 0, 51));
+        SignOut.setBackground(new java.awt.Color(255, 255, 255));
         SignOut.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         SignOut.setForeground(new java.awt.Color(255, 255, 255));
-        SignOut.setText("SALIR");
+        SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/salida.png"))); // NOI18N
+        SignOut.setBorderPainted(false);
+        SignOut.setContentAreaFilled(false);
+        SignOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SignOut.setFocusable(false);
         SignOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignOutActionPerformed(evt);
@@ -518,11 +525,6 @@ public class vistaAdmin extends javax.swing.JFrame {
             PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PerfilGerenteLayout.createSequentialGroup()
                 .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PerfilGerenteLayout.createSequentialGroup()
-                        .addGap(407, 407, 407)
-                        .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SignOut)
-                            .addComponent(jLabel18)))
                     .addGroup(PerfilGerenteLayout.createSequentialGroup()
                         .addGap(272, 272, 272)
                         .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -546,45 +548,53 @@ public class vistaAdmin extends javax.swing.JFrame {
                                     .addComponent(profileTel)
                                     .addComponent(profileLName)
                                     .addComponent(profileID)
-                                    .addComponent(profileFName))))))
-                .addContainerGap(302, Short.MAX_VALUE))
+                                    .addComponent(profileFName)))))
+                    .addGroup(PerfilGerenteLayout.createSequentialGroup()
+                        .addGap(406, 406, 406)
+                        .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel18)
+                            .addComponent(SignOut))))
+                .addGap(322, 322, 322))
         );
         PerfilGerenteLayout.setVerticalGroup(
             PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PerfilGerenteLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel14)
-                .addGap(35, 35, 35)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(profileID))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(profileFName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(profileLName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(profileTel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(profileDir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(profileWP))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addGap(124, 124, 124)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PerfilGerenteLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(91, 91, 91))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PerfilGerenteLayout.createSequentialGroup()
+                        .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(profileID))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(profileFName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(profileLName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(profileTel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(profileDir))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PerfilGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(profileWP))
+                        .addGap(46, 46, 46)))
                 .addComponent(SignOut)
-                .addGap(28, 28, 28))
+                .addGap(61, 61, 61))
         );
 
         parent.add(PerfilGerente, "card6");
@@ -595,77 +605,95 @@ public class vistaAdmin extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel15.setText("CREAR GERENTE");
 
-        jLabel16.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("Nombre: ");
 
-        jLabel17.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Apellido:");
 
-        jLabel20.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setText("ID:");
 
-        jLabel22.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setText("Telefono:");
 
-        jLabel23.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel23.setText("Direccion:");
 
-        jLabel24.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel24.setText("Posicion de trabajo:");
 
-        jLabel25.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Contrasena:");
 
-        createUser.setBackground(new java.awt.Color(153, 255, 153));
+        idInput.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        fnameInput.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        telInput.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        lnameInput.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        passInput.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        dirInput.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        createUser.setBackground(new java.awt.Color(255, 255, 255));
         createUser.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        createUser.setText("GUARDAR");
+        createUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/guardar.Azul.png"))); // NOI18N
+        createUser.setBorderPainted(false);
+        createUser.setContentAreaFilled(false);
+        createUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        createUser.setFocusable(false);
         createUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createUserActionPerformed(evt);
             }
         });
 
+        comboPosition.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         comboPosition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente" }));
+        comboPosition.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout CrearUsuarioLayout = new javax.swing.GroupLayout(CrearUsuario);
         CrearUsuario.setLayout(CrearUsuarioLayout);
         CrearUsuarioLayout.setHorizontalGroup(
             CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CrearUsuarioLayout.createSequentialGroup()
-                .addGap(285, 285, 285)
-                .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(createUser, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15)
+                .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CrearUsuarioLayout.createSequentialGroup()
-                        .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearUsuarioLayout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel15)
+                            .addGroup(CrearUsuarioLayout.createSequentialGroup()
                                 .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel20)
                                     .addComponent(jLabel17)
                                     .addComponent(jLabel16)
                                     .addComponent(jLabel24)
                                     .addComponent(jLabel25)
-                                    .addComponent(jLabel22))
-                                .addGap(43, 43, 43))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearUsuarioLayout.createSequentialGroup()
-                                .addComponent(jLabel23)
-                                .addGap(117, 117, 117)))
-                        .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(telInput)
-                            .addComponent(fnameInput)
-                            .addComponent(idInput)
-                            .addComponent(lnameInput)
-                            .addComponent(dirInput)
-                            .addComponent(passInput)
-                            .addComponent(comboPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(221, Short.MAX_VALUE))
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23))
+                                .addGap(43, 43, 43)
+                                .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(telInput)
+                                    .addComponent(fnameInput)
+                                    .addComponent(idInput)
+                                    .addComponent(lnameInput)
+                                    .addComponent(dirInput)
+                                    .addComponent(passInput)
+                                    .addComponent(comboPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(CrearUsuarioLayout.createSequentialGroup()
+                        .addGap(388, 388, 388)
+                        .addComponent(createUser, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(414, 414, 414))
         );
         CrearUsuarioLayout.setVerticalGroup(
             CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CrearUsuarioLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel20)
                     .addComponent(idInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -693,9 +721,9 @@ public class vistaAdmin extends javax.swing.JFrame {
                 .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passInput, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel25))
-                .addGap(41, 41, 41)
-                .addComponent(createUser, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(createUser, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         parent.add(CrearUsuario, "card5");
@@ -705,13 +733,10 @@ public class vistaAdmin extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel13.setText("LISTA DE GERENTES");
 
-        tablaDatos.setFont(new java.awt.Font("DejaVu Sans", 0, 16)); // NOI18N
+        tablaDatos.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         tablaDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Nombre", "Apellido", "Telefono", "Direccion", "Posicion"
@@ -720,9 +745,16 @@ public class vistaAdmin extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         tablaDatos.setAlignmentY(1.0F);
@@ -730,18 +762,26 @@ public class vistaAdmin extends javax.swing.JFrame {
         tablaDatos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(tablaDatos);
 
-        cargarButton.setBackground(new java.awt.Color(153, 204, 255));
+        cargarButton.setBackground(new java.awt.Color(255, 255, 255));
         cargarButton.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        cargarButton.setText("CARGAR");
+        cargarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/btnCargar.png"))); // NOI18N
+        cargarButton.setBorderPainted(false);
+        cargarButton.setContentAreaFilled(false);
+        cargarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cargarButton.setFocusable(false);
         cargarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cargarButtonActionPerformed(evt);
             }
         });
 
-        editarUser.setBackground(new java.awt.Color(255, 255, 0));
+        editarUser.setBackground(new java.awt.Color(255, 255, 255));
         editarUser.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        editarUser.setText("EDITAR");
+        editarUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/editarAzul.png"))); // NOI18N
+        editarUser.setBorderPainted(false);
+        editarUser.setContentAreaFilled(false);
+        editarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        editarUser.setFocusable(false);
         editarUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editarUserActionPerformed(evt);
@@ -749,6 +789,7 @@ public class vistaAdmin extends javax.swing.JFrame {
         });
 
         comboFiltroPosicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Jefe de Taller", "Vendedor" }));
+        comboFiltroPosicion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         comboFiltroPosicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboFiltroPosicionActionPerformed(evt);
@@ -761,9 +802,14 @@ public class vistaAdmin extends javax.swing.JFrame {
             }
         });
 
+        jLabel60.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel60.setText("ID");
 
-        despedirBtn.setText("Despedir");
+        despedirBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/btnDespedir.png"))); // NOI18N
+        despedirBtn.setBorderPainted(false);
+        despedirBtn.setContentAreaFilled(false);
+        despedirBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        despedirBtn.setFocusable(false);
         despedirBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 despedirBtnActionPerformed(evt);
@@ -775,27 +821,27 @@ public class vistaAdmin extends javax.swing.JFrame {
         ListarUsuarioLayout.setHorizontalGroup(
             ListarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListarUsuarioLayout.createSequentialGroup()
-                .addContainerGap(317, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addGap(362, 362, 362))
             .addComponent(jScrollPane2)
             .addGroup(ListarUsuarioLayout.createSequentialGroup()
                 .addGroup(ListarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ListarUsuarioLayout.createSequentialGroup()
-                        .addGap(249, 249, 249)
-                        .addComponent(cargarButton)
-                        .addGap(47, 47, 47)
-                        .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(despedirBtn))
-                    .addGroup(ListarUsuarioLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel60)
                         .addGap(14, 14, 14)
                         .addComponent(textoCoincidenciaUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(comboFiltroPosicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(262, Short.MAX_VALUE))
+                        .addComponent(comboFiltroPosicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ListarUsuarioLayout.createSequentialGroup()
+                        .addGap(249, 249, 249)
+                        .addComponent(cargarButton)
+                        .addGap(37, 37, 37)
+                        .addComponent(editarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(despedirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(218, 218, 218))
         );
         ListarUsuarioLayout.setVerticalGroup(
             ListarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -810,11 +856,12 @@ public class vistaAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
-                .addGroup(ListarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cargarButton)
-                    .addComponent(editarUser)
-                    .addComponent(despedirBtn))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addGroup(ListarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(despedirBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(ListarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cargarButton)
+                        .addComponent(editarUser)))
+                .addGap(35, 35, 35))
         );
 
         parent.add(ListarUsuario, "card4");
@@ -1052,7 +1099,7 @@ public class vistaAdmin extends javax.swing.JFrame {
 
     private void resetColor(JPanel[] pane, JPanel[] indicators) {
         for (int i = 0; i < pane.length; i++) {
-            pane[i].setBackground(new Color(23, 35, 51));
+            pane[i].setBackground(new Color(0, 0, 0));
 
         }
         for (int i = 0; i < indicators.length; i++) {

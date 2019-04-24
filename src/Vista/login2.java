@@ -91,12 +91,12 @@ public class login2 extends javax.swing.JFrame {
         });
 
         signIn.setBackground(new java.awt.Color(255, 255, 255));
-        signIn.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        signIn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         signIn.setForeground(new java.awt.Color(255, 255, 255));
         signIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Bton Login.png"))); // NOI18N
         signIn.setBorderPainted(false);
         signIn.setContentAreaFilled(false);
-        signIn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        signIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         signIn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/bton login cursor oscuro.png"))); // NOI18N
         signIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,12 +105,12 @@ public class login2 extends javax.swing.JFrame {
         });
 
         btnExit.setBackground(new java.awt.Color(255, 255, 255));
-        btnExit.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        btnExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/bton salida.png"))); // NOI18N
         btnExit.setBorderPainted(false);
         btnExit.setContentAreaFilled(false);
-        btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExit.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/bton salida cursor oscuro.png"))); // NOI18N
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
